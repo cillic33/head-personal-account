@@ -1,4 +1,4 @@
-import {Props} from "./Props";
+import {Props} from "./props";
 import styled from "styled-components";
 
 const StyledFlexbox = styled.div<Props>`
