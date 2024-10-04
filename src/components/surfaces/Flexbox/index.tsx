@@ -11,7 +11,7 @@ const StyledFlexbox = styled.div<Props>`
   gap: ${props => props.$gap || undefined};
 `
 
-const Flexbox = ({children, ...props}: Props) => {
+const Index = ({children, ...props}: Props) => {
   return (
     <StyledFlexbox {...props}>
       {children}
@@ -19,4 +19,4 @@ const Flexbox = ({children, ...props}: Props) => {
   );
 }
 
-export default Flexbox;
+export default Index;
