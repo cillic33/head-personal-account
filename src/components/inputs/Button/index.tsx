@@ -2,8 +2,7 @@ import {Props} from "./props";
 import styled from "styled-components";
 
 const StyledButton = styled.button<Props>`
-  border: none;
-  background: none;
+  padding: ${props => props.$padding || undefined};
 `
 
 const Button = ({...props}: Props) => {

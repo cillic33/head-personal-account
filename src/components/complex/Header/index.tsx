@@ -29,7 +29,7 @@ const Header = () => {
           <Typography $variant="body-regular">
             Иванов Сергей Владимирович
           </Typography>
-          <Button type="button">
+          <Button type="button" $padding="6px">
             <Image src={CaretDownGray} />
           </Button>
         </Flexbox>
