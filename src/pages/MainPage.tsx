@@ -4,10 +4,9 @@ import Flexbox from "@components/surfaces/Flexbox";
 const MainPage = () => {
   return (
     <PageContainer>
-      <Flexbox $justify="space-around">
-        <div>111</div>
-        <div>222</div>
-      </Flexbox>
+      <div>111</div>
+      <div>222</div>
+      <div>333</div>
     </PageContainer>
   );
 }
