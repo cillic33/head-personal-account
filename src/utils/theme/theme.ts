@@ -19,6 +19,7 @@ export const theme = {
     textIconAccentError: '#C83E3E',
     systemSuccessFaded: '#71B0A5',
     systemErrorFaded: '#F48888',
+    systemErrorNormal: '#E34F4F',
   },
   breakpoints: {
     s: '425px',

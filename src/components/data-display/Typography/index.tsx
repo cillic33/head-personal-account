@@ -46,6 +46,12 @@ const StyledTypography = styled.span<Props>`
           line-height: 16px;
           font-weight: 600;
         `
+      case "chip-xs":
+        return css`
+          font-size: 8px;
+          line-height: 12.4px;
+          font-weight: 600;
+        `
     }
   }}
   

@@ -7,6 +7,8 @@ import AvatarIvanov from "@images/AvatarIvanov.png"
 import Button from "@components/inputs/Button";
 import CaretDownGray from "@images/CaretDownGray.svg";
 import BellBlue from "@images/BellBlue.svg";
+import Chip from "@components/data-display/Chip";
+import {theme} from "@utils/theme/theme";
 
 const StyledHeader = styled.div`
   background: #fff;
@@ -36,8 +38,22 @@ const Header = () => {
             </Button>
           </Flexbox>
 
-          <Button type="button">
+          <Button type="button" $position="relative">
             <Image src={BellBlue} $width="24px" $height="24px" />
+            <Chip
+              $background={theme.colors.systemErrorNormal}
+              $width="13px"
+              $height="14px"
+              $borderRadius="8px"
+              $position="absolute"
+              $top="0px"
+              $right="2px"
+              $border="1px solid #fff"
+            >
+              <Typography
+                $variant="chip-xs"
+                $color="#fff">2</Typography>
+            </Chip>
           </Button>
         </Flexbox>
 

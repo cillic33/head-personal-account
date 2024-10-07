@@ -1,8 +1,7 @@
 import {ReactNode} from "react";
+import {TAlign} from "@typing/TCssValues";
 
-type Variant = 'h2' | 'h3' | 'h4' | 'body-regular' | 'body-semibold' | 'caption-regular' | 'caption-semibold';
-
-type Align = 'left' | 'center' | 'right';
+type Variant = 'h2' | 'h3' | 'h4' | 'body-regular' | 'body-semibold' | 'caption-regular' | 'caption-semibold' | 'chip-xs';
 
 export type Props = {
   children: ReactNode;
@@ -10,5 +9,5 @@ export type Props = {
   $color?: string;
   $padding?: string;
   $nowrap?: boolean;
-  $align?: Align;
+  $align?: TAlign;
 }

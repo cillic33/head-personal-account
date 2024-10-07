@@ -26,7 +26,8 @@
       "@utils/*": ["./src/utils/*"],
       "@layouts/*": ["./src/layouts/*"],
       "@pages/*": ["./src/pages/*"],
-      "@images/*": ["./src/images/*"]
+      "@images/*": ["./src/images/*"],
+      "@typing/*": ["./src/typing/*"]
     }
   },
   "include": ["src"],

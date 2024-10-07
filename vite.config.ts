@@ -11,6 +11,7 @@ export default defineConfig({
       "@layouts": "/src/layouts",
       "@pages": "/src/pages",
       "@images": "/src/images",
+      "@typing": "/src/typing",
     }
   }
 })
