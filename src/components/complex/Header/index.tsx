@@ -4,6 +4,8 @@ import Image from "@components/data-display/Image";
 import Typography from "@components/data-display/Typography";
 import LogoIbs from "@images/LogoIbs.svg"
 import AvatarIvanov from "@images/AvatarIvanov.png"
+import Button from "@components/inputs/Button";
+import CaretDownGray from "@images/CaretDownGray.svg";
 
 const StyledHeader = styled.div`
   background: #fff;
@@ -27,6 +29,9 @@ const Header = () => {
           <Typography $variant="body-regular">
             Иванов Сергей Владимирович
           </Typography>
+          <Button type="button">
+            <Image src={CaretDownGray} />
+          </Button>
         </Flexbox>
 
       </Flexbox>

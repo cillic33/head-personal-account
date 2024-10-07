@@ -1,10 +1,7 @@
 import {Props} from "./props";
 import styled from "styled-components";
 
-const StyledImage = styled.img.attrs((props) => ({
-  src: props.src,
-  alt: props.alt,
-}))<Props>`
+const StyledImage = styled.img<Props>`
   width: ${props => props.$width || undefined};
   height: ${props => props.$height || undefined};
 `
