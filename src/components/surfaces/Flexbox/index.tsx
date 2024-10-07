@@ -9,6 +9,7 @@ const StyledFlexbox = styled.div<Props>`
   justify-content: ${props => props.$justify || undefined};
   flex-direction: ${props => props.$direction || undefined};
   gap: ${props => props.$gap || undefined};
+  padding: ${props => props.$padding || undefined};
 `
 
 const Index = ({children, ...props}: Props) => {

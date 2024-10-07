@@ -13,7 +13,7 @@ const PageContainer = ({children}: Props) => {
     <StyledPageContainer>
       <Flexbox $direction="column">
         <Header />
-        <Flexbox $justify="space-between">
+        <Flexbox $justify="space-between" $padding="24px 32px">
           {children}
         </Flexbox>
       </Flexbox>

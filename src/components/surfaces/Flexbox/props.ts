@@ -12,4 +12,5 @@ export interface Props {
   $justify?: Justify;
   $direction?: Direction;
   $gap?: string;
+  $padding?: string;
 }
