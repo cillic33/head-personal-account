@@ -6,6 +6,7 @@ import LogoIbs from "@images/LogoIbs.svg"
 import AvatarIvanov from "@images/AvatarIvanov.png"
 import Button from "@components/inputs/Button";
 import CaretDownGray from "@images/CaretDownGray.svg";
+import BellBlue from "@images/BellBlue.svg";
 
 const StyledHeader = styled.div`
   background: #fff;
@@ -24,13 +25,19 @@ const Header = () => {
           </Typography>
         </Flexbox>
 
-        <Flexbox $gap="8px" $align="center">
-          <Image src={AvatarIvanov} alt="Иванов Сергей Владимирович" $width="40px" $height="40px" />
-          <Typography $variant="body-regular">
-            Иванов Сергей Владимирович
-          </Typography>
-          <Button type="button" $padding="6px">
-            <Image src={CaretDownGray} />
+        <Flexbox $gap="18px" $align="center">
+          <Flexbox $gap="8px" $align="center">
+            <Image src={AvatarIvanov} alt="Иванов Сергей Владимирович" $width="40px" $height="40px" />
+            <Typography $variant="body-regular">
+              Иванов Сергей Владимирович
+            </Typography>
+            <Button type="button" $padding="6px">
+              <Image src={CaretDownGray} $width="20px" $height="20px" />
+            </Button>
+          </Flexbox>
+
+          <Button type="button">
+            <Image src={BellBlue} $width="24px" $height="24px" />
           </Button>
         </Flexbox>
 
