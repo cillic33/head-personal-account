@@ -1,5 +1,4 @@
 import PageContainer from "@layouts/PageContainer";
-import Flexbox from "@components/surfaces/Flexbox";
 
 const MainPage = () => {
   return (
