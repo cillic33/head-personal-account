@@ -1,7 +1,7 @@
 import {ReactNode} from "react";
 import {TAlign, TDirection, TJustify} from "@typing/TCssValues";
 
-export interface Props {
+export interface IProps {
   children: ReactNode;
   $width?: string;
   $height?: string;

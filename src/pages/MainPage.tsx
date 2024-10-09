@@ -12,17 +12,17 @@ import Flexbox from "@components/surfaces/Flexbox";
 import {IColumn, IInitialDataColumn, IWidget} from "@typing/TDnd";
 
 const ContainerColumn = styled.div`
-  background: #ccc;
 `;
 
 const WidgetList = styled.div`
-  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 `;
 
 const ContainerWidget = styled.div`
-  padding: 8px;
-  border: 2px solid #ccc;
-  border-radius: 4px;
+  border: #E1E7ED;
+  border-radius: 8px;
   background: #fff;
 `;
 
@@ -125,7 +125,7 @@ const MainPage = () => {
     <DragDropContext onDragEnd={handleDragEnd}>
       <PageContainer>
 
-        <Flexbox>
+        <Flexbox $gap="16px">
           {
             data.columnOrder.map(item => {
               const column = data.columns[item];

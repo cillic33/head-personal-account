@@ -1,7 +1,7 @@
-import {Props} from "./props";
+import {IProps} from "./props";
 import styled, {css} from "styled-components";
 
-const StyledTypography = styled.span<Props>`
+const StyledTypography = styled.span<IProps>`
   ${props => {
     switch (props.$variant) {
       case "h2":
@@ -61,7 +61,7 @@ const StyledTypography = styled.span<Props>`
   text-align: ${props => props.$align || undefined};
 `
 
-const Typography = (props: Props): JSX.Element => {
+const Typography = (props: IProps): JSX.Element => {
   return (
     <StyledTypography {...props} />
   );

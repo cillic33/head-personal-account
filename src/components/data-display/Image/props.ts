@@ -1,4 +1,4 @@
-export interface Props {
+export interface IProps {
   src: string;
   alt?: string;
   $width?: string;

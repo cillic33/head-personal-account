@@ -1,7 +1,7 @@
-import {Props} from "./props";
+import {IProps} from "./props";
 import styled from "styled-components";
 
-const StyledChip = styled.div<Props>`
+const StyledChip = styled.div<IProps>`
   width: ${props => props.$width || undefined};
   height: ${props => props.$height || undefined};
   background: ${props => props.$background || undefined};
@@ -16,7 +16,7 @@ const StyledChip = styled.div<Props>`
   justify-content: center;
 `
 
-const Chip = ({...props}: Props) => {
+const Chip = ({...props}: IProps) => {
   return (
     <StyledChip {...props} />
   );

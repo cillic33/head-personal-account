@@ -1,11 +1,11 @@
 import {ReactNode} from "react";
 import {TPosition} from "@typing/TCssValues";
 
-type ButtonType = 'button' | 'submit' | 'reset';
+type TButtonType = 'button' | 'submit' | 'reset';
 
-export interface Props {
+export interface IProps {
   children: ReactNode;
-  type?: ButtonType;
+  type?: TButtonType;
   $padding?: string;
   $position?: TPosition;
 }
