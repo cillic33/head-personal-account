@@ -1,6 +1,7 @@
+import {ReactNode} from "react";
+
 export interface IInitialDataWidget {
   id: string,
-  content: string
 }
 
 export interface IInitialDataWidgets {
@@ -9,7 +10,7 @@ export interface IInitialDataWidgets {
 
 export interface IInitialDataColumn {
   id: string,
-  widgetIds: string[]
+  widgetIds: string[],
 }
 
 export interface IInitialDataColumns {
@@ -19,15 +20,17 @@ export interface IInitialDataColumns {
 export interface IInitialData {
   widgets: IInitialDataWidgets,
   columns: IInitialDataColumns,
-  columnOrder: string[]
+  columnOrder: string[],
 }
 
 export interface IWidget {
+  children: ReactNode,
   index: number,
   data: IInitialDataWidget,
 }
 
 export interface IColumn {
+  children: ReactNode,
   column: IInitialDataColumn,
-  widgets: IInitialDataWidget[]
+  widgets: IInitialDataWidget[],
 }

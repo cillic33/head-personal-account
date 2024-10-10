@@ -1,5 +1,4 @@
-import {useState} from 'react';
-import {MInitialData} from "@utils/mock";
+import {Children, isValidElement, useState} from 'react';
 import styled from "styled-components";
 import {
   DragDropContext,
@@ -9,6 +8,7 @@ import {
 } from '@hello-pangea/dnd';
 import Flexbox from "@components/surfaces/Flexbox";
 import {IColumn, IInitialDataColumn, IWidget} from "@typing/TDnd";
+import {IProps} from "@components/complex/Dnd/props";
 
 const ContainerColumn = styled.div`
 `;
@@ -25,8 +25,8 @@ const ContainerWidget = styled.div`
   margin-bottom: 16px;
 `;
 
-const Widget = ({ index, ...props }: IWidget) => {
-  const { id, content } = props.data;
+const Widget = ({children, index, ...props}: IWidget) => {
+  const { id } = props.data;
 
   return (
     <Draggable draggableId={id} index={index}>
@@ -36,15 +36,21 @@ const Widget = ({ index, ...props }: IWidget) => {
           {...provided.dragHandleProps}
           ref={provided.innerRef}
         >
-          {content}
-          <p>ldf ;flg d;lhg ;sldh</p>
+          {Children.toArray(children).find((child) => {
+            if (isValidElement<{id: string}>(child)) {
+              if (child.props.id == id) {
+                return child;
+              }
+            }
+            return;
+          })}
         </ContainerWidget>
       )}
     </Draggable>
   )
 }
 
-const Column = ({widgets, ...props}: IColumn) => {
+const Column = ({children, widgets, ...props}: IColumn) => {
   const {id} = props.column;
 
   return (
@@ -55,7 +61,9 @@ const Column = ({widgets, ...props}: IColumn) => {
             ref={provided.innerRef}
             {...provided.droppableProps}
           >
-            {widgets.map((widget, idx) => (<Widget key={widget.id} data={widget} index={idx} />))}
+            {widgets.map((widget, idx) => (
+              <Widget key={widget.id} data={widget} index={idx} children={children} />
+            ))}
             {provided.placeholder}
           </WidgetList>
         )}
@@ -64,8 +72,8 @@ const Column = ({widgets, ...props}: IColumn) => {
   );
 }
 
-const Dnd = () => {
-  const [data, setData] = useState(MInitialData);
+const Dnd = ({children, initialData}: IProps) => {
+  const [data, setData] = useState(initialData);
 
   const handleDragEnd = (result: DropResult): void => {
     const {destination, source, draggableId } = result;
@@ -123,18 +131,18 @@ const Dnd = () => {
 
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
-        <Flexbox $gap="16px">
-          {
-            data.columnOrder.map(item => {
-              const column = data.columns[item];
-              const widgets = column.widgetIds.map(widgetId => data.widgets[widgetId]);
+      <Flexbox $gap="16px">
+        {
+          data.columnOrder.map(item => {
+            const column = data.columns[item];
+            const widgets = column.widgetIds.map(widgetId => data.widgets[widgetId]);
 
-              return (
-                <Column key={column.id} column={column} widgets={widgets} />
-              );
-            })
-          }
-        </Flexbox>
+            return (
+              <Column key={column.id} column={column} widgets={widgets} children={children} />
+            );
+          })
+        }
+      </Flexbox>
     </DragDropContext>
   );
 }
