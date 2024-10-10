@@ -12,6 +12,7 @@ export default defineConfig({
       "@pages": "/src/pages",
       "@images": "/src/images",
       "@typing": "/src/typing",
+      "@hooks": "/src/hooks",
     }
   }
 })

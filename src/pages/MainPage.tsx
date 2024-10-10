@@ -1,12 +1,13 @@
 import PageContainer from "@layouts/PageContainer";
 import Dnd from "@components/complex/Dnd";
 import {MInitialData} from "@utils/mock";
+import WidgetApplicationsForApproval from "@components/complex/WidgetApplicationsForApproval";
 
 const MainPage = () => {
   return (
     <PageContainer>
       <Dnd initialData={MInitialData}>
-        <div id="widget-1">Заявки на утверждение</div>
+        <WidgetApplicationsForApproval id="widget-1" />
         <div id="widget-2">Мои заместители</div>
         <div id="widget-3">Занятость сотрудников</div>
         <div id="widget-4">Сотрудники</div>
