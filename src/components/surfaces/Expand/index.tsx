@@ -41,11 +41,12 @@ const StyledExpand = styled.div<Props>`
   }
 `
 
-const Expand = ({children, title, $isDragIcon = false}: Props): JSX.Element => {
+const Expand = (props: Props): JSX.Element => {
+  const {children, title, $isDragIcon = false} = props;
   const {isOn, toggle} = useBoolean(true);
 
   return (
-    <StyledExpand>
+    <StyledExpand {...props}>
       <div className="expand__head" onClick={toggle}>
         <Flexbox $gap="12px" $align="center" $justify="space-between">
           {$isDragIcon &&
@@ -56,7 +57,12 @@ const Expand = ({children, title, $isDragIcon = false}: Props): JSX.Element => {
               $height="24px"
             />
           }
-          <Typography $variant="h4" className="expand__title">{title}</Typography>
+          <Typography
+            $variant="h4"
+            className="expand__title"
+          >
+            {title}
+          </Typography>
           <Image
             src={ChevronDownGray}
             className={clsx(

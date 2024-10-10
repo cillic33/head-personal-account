@@ -10,4 +10,5 @@ export type IProps = {
   $padding?: string;
   $nowrap?: boolean;
   $align?: TAlign;
+  className?: string;
 }

@@ -3,4 +3,5 @@ export interface IProps {
   alt?: string;
   $width?: string;
   $height?: string;
+  className?: string;
 }
