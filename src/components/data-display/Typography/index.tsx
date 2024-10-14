@@ -52,6 +52,18 @@ const StyledTypography = styled.span<IProps>`
           line-height: 12.4px;
           font-weight: 600;
         `
+      case "chip-s":
+        return css`
+          font-size: 14px;
+          line-height: 16px;
+          font-weight: 600;
+        `
+      case "chip-m":
+        return css`
+          font-size: 16px;
+          line-height: 20px;
+          font-weight: 600;
+        `
     }
   }}
   

@@ -11,4 +11,6 @@ export interface IProps {
   $top?: string;
   $right?: string;
   $border?: string;
+  $padding?: string;
+  $gap?: string;
 }

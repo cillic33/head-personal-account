@@ -47,20 +47,22 @@ const Expand = (props: Props) => {
     <StyledExpand {...props}>
       <div className="expand__head" onClick={toggle}>
         <Flexbox $gap="12px" $align="center" $justify="space-between">
-          {$isDragIcon &&
-            <Image
-              src={DragNDropIcon}
-              className="expand__draggable"
-              $width="24px"
-              $height="24px"
-            />
-          }
-          <Typography
-            $variant="h4"
-            className="expand__title"
-          >
-            {title}
-          </Typography>
+          <Flexbox $gap="12px" $align="center">
+            {$isDragIcon &&
+              <Image
+                src={DragNDropIcon}
+                className="expand__draggable"
+                $width="24px"
+                $height="24px"
+              />
+            }
+            <Typography
+              $variant="h4"
+              className="expand__title"
+            >
+              {title}
+            </Typography>
+          </Flexbox>
           <Image
             src={ChevronDownGray}
             className={clsx(

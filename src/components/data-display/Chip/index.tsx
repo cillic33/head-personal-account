@@ -10,10 +10,11 @@ const StyledChip = styled.div<IProps>`
   top: ${props => props.$top || undefined};
   right: ${props => props.$right || undefined};
   border: ${props => props.$border || undefined};
-  
+  padding: ${props => props.$padding || undefined};
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: ${props => props.$gap || undefined};
 `
 
 const Chip = ({...props}: IProps) => {
