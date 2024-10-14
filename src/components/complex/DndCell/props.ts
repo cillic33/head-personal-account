@@ -1,8 +1,8 @@
 import {ReactNode} from "react";
-import {IInitialDataWidget} from "@typing/TDnd";
+import {IInitialDataCell} from "@typing/TDnd";
 
 export interface Props {
   children: ReactNode,
   index: number,
-  data: IInitialDataWidget,
+  data: IInitialDataCell,
 }

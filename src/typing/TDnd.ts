@@ -1,14 +1,14 @@
-export interface IInitialDataWidget {
+export interface IInitialDataCell {
   id: string,
 }
 
-export interface IInitialDataWidgets {
-  [name: string]: IInitialDataWidget
+export interface IInitialDataCells {
+  [name: string]: IInitialDataCell
 }
 
 export interface IInitialDataColumn {
   id: string,
-  widgetIds: string[],
+  cellIds: string[],
 }
 
 export interface IInitialDataColumns {
@@ -16,7 +16,7 @@ export interface IInitialDataColumns {
 }
 
 export interface IInitialData {
-  widgets: IInitialDataWidgets,
+  cells: IInitialDataCells,
   columns: IInitialDataColumns,
   columnOrder: string[],
 }

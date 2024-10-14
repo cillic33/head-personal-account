@@ -3,20 +3,20 @@ import {Children, isValidElement} from "react";
 import {Props} from "./props";
 import styled from "styled-components";
 
-const StyledDndWidget = styled.div`
+const StyledDndCell = styled.div`
   border: #E1E7ED;
   border-radius: 8px;
   background: #fff;
   margin-bottom: 16px;
 `;
 
-const DndWidget = ({children, index, ...props}: Props) => {
+const DndCell = ({children, index, ...props}: Props) => {
   const { id } = props.data;
 
   return (
     <Draggable draggableId={id} index={index}>
       {(provided) => (
-        <StyledDndWidget
+        <StyledDndCell
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
@@ -29,9 +29,9 @@ const DndWidget = ({children, index, ...props}: Props) => {
             }
             return;
           })}
-        </StyledDndWidget>
+        </StyledDndCell>
       )}
     </Draggable>
   )
 }
-export default DndWidget;
+export default DndCell;

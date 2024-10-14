@@ -26,32 +26,32 @@ const Dnd = ({children, initialData}: IProps) => {
     }
 
     const SourceColumn = data.columns[source.droppableId];
-    const SourceColumnWidgetIds = Array.from(SourceColumn.widgetIds);
-    SourceColumnWidgetIds.splice(source.index, 1);
+    const SourceColumnCellIds = Array.from(SourceColumn.cellIds);
+    SourceColumnCellIds.splice(source.index, 1);
 
     const newSourceColumn = {
       ...SourceColumn,
-      widgetIds: SourceColumnWidgetIds,
+      cellIds: SourceColumnCellIds,
     };
 
     const DestColumn = data.columns[destination.droppableId];
-    const DestColumnWidgetIds = Array.from(DestColumn.widgetIds);
+    const DestColumnCellIds = Array.from(DestColumn.cellIds);
 
     let newDestColumn: IInitialDataColumn;
 
     if (SourceColumn.id !== DestColumn.id) {
-      DestColumnWidgetIds.splice(destination.index, 0, draggableId);
+      DestColumnCellIds.splice(destination.index, 0, draggableId);
 
       newDestColumn = {
         ...DestColumn,
-        widgetIds: DestColumnWidgetIds,
+        cellIds: DestColumnCellIds,
       };
     } else {
-      SourceColumnWidgetIds.splice(destination.index, 0, draggableId);
+      SourceColumnCellIds.splice(destination.index, 0, draggableId);
 
       newDestColumn = {
         ...SourceColumn,
-        widgetIds: SourceColumnWidgetIds,
+        cellIds: SourceColumnCellIds,
       };
     }
 
@@ -71,10 +71,10 @@ const Dnd = ({children, initialData}: IProps) => {
         {
           data.columnOrder.map(item => {
             const column = data.columns[item];
-            const widgets = column.widgetIds.map(widgetId => data.widgets[widgetId]);
+            const cells = column.cellIds.map(cellId => data.cells[cellId]);
 
             return (
-              <DndColumn key={column.id} column={column} widgets={widgets} children={children} />
+              <DndColumn key={column.id} column={column} cells={cells} children={children} />
             );
           })
         }

@@ -1,7 +1,7 @@
 import {IInitialData} from "@typing/TDnd";
 
 export const MInitialData: IInitialData = {
-  widgets: {
+  cells: {
     'widget-1': { id: 'widget-1'},
     'widget-2': { id: 'widget-2'},
     'widget-3': { id: 'widget-3'},
@@ -18,15 +18,15 @@ export const MInitialData: IInitialData = {
   columns: {
     'column-1': {
       id: 'column-1',
-      widgetIds: ['widget-1', 'widget-2', 'widget-3'],
+      cellIds: ['widget-1', 'widget-2', 'widget-3'],
     },
     'column-2': {
       id: 'column-2',
-      widgetIds: ['widget-4', 'widget-5', 'widget-6', 'widget-7', 'widget-8'],
+      cellIds: ['widget-4', 'widget-5', 'widget-6', 'widget-7', 'widget-8'],
     },
     'column-3': {
       id: 'column-3',
-      widgetIds: ['widget-9', 'widget-10', 'widget-11', 'widget-12'],
+      cellIds: ['widget-9', 'widget-10', 'widget-11', 'widget-12'],
     },
   },
   columnOrder: ['column-1', 'column-2', 'column-3'],

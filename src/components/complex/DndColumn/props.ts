@@ -1,8 +1,8 @@
 import {ReactNode} from "react";
-import {IInitialDataColumn, IInitialDataWidget} from "@typing/TDnd";
+import {IInitialDataColumn, IInitialDataCell} from "@typing/TDnd";
 
 export interface Props {
   children: ReactNode,
   column: IInitialDataColumn,
-  widgets: IInitialDataWidget[],
+  cells: IInitialDataCell[],
 }
