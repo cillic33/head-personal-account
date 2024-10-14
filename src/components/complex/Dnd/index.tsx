@@ -1,76 +1,12 @@
-import {Children, isValidElement, useState} from 'react';
-import styled from "styled-components";
+import {useState} from 'react';
 import {
   DragDropContext,
-  Droppable,
-  Draggable,
   DropResult,
 } from '@hello-pangea/dnd';
 import Flexbox from "@components/surfaces/Flexbox";
-import {IColumn, IInitialDataColumn, IWidget} from "@typing/TDnd";
+import { IInitialDataColumn} from "@typing/TDnd";
 import {IProps} from "@components/complex/Dnd/props";
-
-const ContainerColumn = styled.div`
-`;
-
-const WidgetList = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const ContainerWidget = styled.div`
-  border: #E1E7ED;
-  border-radius: 8px;
-  background: #fff;
-  margin-bottom: 16px;
-`;
-
-const Widget = ({children, index, ...props}: IWidget) => {
-  const { id } = props.data;
-
-  return (
-    <Draggable draggableId={id} index={index}>
-      {(provided) => (
-        <ContainerWidget
-          {...provided.draggableProps}
-          {...provided.dragHandleProps}
-          ref={provided.innerRef}
-        >
-          {Children.toArray(children).find((child) => {
-            if (isValidElement<{id: string}>(child)) {
-              if (child.props.id == id) {
-                return child;
-              }
-            }
-            return;
-          })}
-        </ContainerWidget>
-      )}
-    </Draggable>
-  )
-}
-
-const Column = ({children, widgets, ...props}: IColumn) => {
-  const {id} = props.column;
-
-  return (
-    <ContainerColumn>
-      <Droppable droppableId={id}>
-        {(provided) => (
-          <WidgetList
-            ref={provided.innerRef}
-            {...provided.droppableProps}
-          >
-            {widgets.map((widget, idx) => (
-              <Widget key={widget.id} data={widget} index={idx} children={children} />
-            ))}
-            {provided.placeholder}
-          </WidgetList>
-        )}
-      </Droppable>
-    </ContainerColumn>
-  );
-}
+import DndColumn from "@components/complex/DndColumn";
 
 const Dnd = ({children, initialData}: IProps) => {
   const [data, setData] = useState(initialData);
@@ -138,7 +74,7 @@ const Dnd = ({children, initialData}: IProps) => {
             const widgets = column.widgetIds.map(widgetId => data.widgets[widgetId]);
 
             return (
-              <Column key={column.id} column={column} widgets={widgets} children={children} />
+              <DndColumn key={column.id} column={column} widgets={widgets} children={children} />
             );
           })
         }

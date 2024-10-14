@@ -2,10 +2,8 @@ import {useBoolean} from "@hooks/use-toggle";
 import clsx from "clsx";
 import Typography from "@components/data-display/Typography";
 import {Props} from "./props";
-
 import DragNDropIcon from "@images/DragNDropIcon.svg";
 import ChevronDownGray from "@images/ChevronDownGray.svg";
-
 import styled from "styled-components";
 import Flexbox from "@components/surfaces/Flexbox";
 import Image from "@components/data-display/Image";
@@ -41,7 +39,7 @@ const StyledExpand = styled.div<Props>`
   }
 `
 
-const Expand = (props: Props): JSX.Element => {
+const Expand = (props: Props) => {
   const {children, title, $isDragIcon = false} = props;
   const {isOn, toggle} = useBoolean(true);
 
