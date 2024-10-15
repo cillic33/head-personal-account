@@ -7,6 +7,7 @@ import FireRedIcon from "@images/FireRedIcon.svg";
 import PlusGreenIcon from "@images/PlusGreenIcon.svg";
 import GotoGrayIcon from "@images/GotoGrayIcon.svg";
 import {IProps} from "./props";
+import Link from "@components/data-display/Link";
 
 const WidgetApplicationsForApprovalRow = ({item}: IProps) => {
   return (
@@ -61,7 +62,9 @@ const WidgetApplicationsForApprovalRow = ({item}: IProps) => {
         </Flexbox>
         <Typography $variant={item.id === 'all' ? 'h2' : 'h3'}>{item.count}</Typography>
         {item.id !== 'all' &&
-          <Image src={GotoGrayIcon} $width="20px" $height="20px" />
+          <Link href={item.link ? item.link : ''} target="_blank">
+            <Image src={GotoGrayIcon} $width="20px" $height="20px" />
+          </Link>
         }
       </Flexbox>
     </Flexbox>

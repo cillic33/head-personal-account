@@ -48,7 +48,7 @@ export const MApplications: TApplications = [
     important: 0,
     increase: 1,
     count: 5,
-    link: '/link1',
+    link: 'https://life.ibs.ru/link1',
   },
   {
     id: '2',
@@ -56,7 +56,7 @@ export const MApplications: TApplications = [
     important: 0,
     increase: 1,
     count: 6,
-    link: '/link2',
+    link: 'https://life.ibs.ru/link2',
   },
   {
     id: '3',
@@ -64,7 +64,7 @@ export const MApplications: TApplications = [
     important: 1,
     increase: 0,
     count: 10,
-    link: '/link3',
+    link: 'https://life.ibs.ru/link3',
   },
   {
     id: '4',
@@ -72,7 +72,7 @@ export const MApplications: TApplications = [
     important: 0,
     increase: 1,
     count: 80,
-    link: '/link4',
+    link: 'https://life.ibs.ru/link4',
   },
   {
     id: '5',
@@ -80,7 +80,7 @@ export const MApplications: TApplications = [
     important: 0,
     increase: 0,
     count: 10,
-    link: '/link5',
+    link: 'https://life.ibs.ru/link5',
   },
   {
     id: '6',
@@ -88,7 +88,7 @@ export const MApplications: TApplications = [
     important: 1,
     increase: 1,
     count: 10,
-    link: '/link6',
+    link: 'https://life.ibs.ru/link6',
   },
   {
     id: '7',
@@ -96,7 +96,7 @@ export const MApplications: TApplications = [
     important: 0,
     increase: 0,
     count: 10,
-    link: '/link7',
+    link: 'https://life.ibs.ru/link7',
   },
   {
     id: '8',
@@ -104,7 +104,7 @@ export const MApplications: TApplications = [
     important: 0,
     increase: 0,
     count: 10,
-    link: '/link8',
+    link: 'https://life.ibs.ru/link8',
   },
   {
     id: '9',
@@ -112,7 +112,7 @@ export const MApplications: TApplications = [
     important: 0,
     increase: 1,
     count: 10,
-    link: '/link9',
+    link: 'https://life.ibs.ru/link9',
   },
   {
     id: '10',
@@ -120,7 +120,7 @@ export const MApplications: TApplications = [
     important: 1,
     increase: 0,
     count: 10,
-    link: '/link10',
+    link: 'https://life.ibs.ru/link10',
   },
   {
     id: '11',
@@ -128,7 +128,7 @@ export const MApplications: TApplications = [
     important: 1,
     increase: 1,
     count: 10,
-    link: '/link11',
+    link: 'https://life.ibs.ru/link11',
   },
   {
     id: '12',
@@ -136,6 +136,6 @@ export const MApplications: TApplications = [
     important: 1,
     increase: 1,
     count: 10,
-    link: '/link12',
+    link: 'https://life.ibs.ru/link12',
   },
 ]

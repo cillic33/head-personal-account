@@ -6,7 +6,7 @@ const WidgetTraining = (props: IProps) => {
     <Expand
       title="Обучение"
       $isDragIcon={true}
-      $isArrowButton={true}
+      $internalLink="/training"
     >
       <div data-id={props.id}></div>
 

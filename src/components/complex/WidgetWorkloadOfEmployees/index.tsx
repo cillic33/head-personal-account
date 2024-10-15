@@ -6,7 +6,7 @@ const WidgetWorkloadOfEmployees = (props: IProps) => {
     <Expand
       title="Занятость сотрудников"
       $isDragIcon={true}
-      $isGotoButton={true}
+      $externalLink="https://life.ibs.ru/stream/"
     >
       <div data-id={props.id}></div>
 

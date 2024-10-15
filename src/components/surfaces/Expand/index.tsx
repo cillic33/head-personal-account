@@ -10,6 +10,7 @@ import ArrowGrayIcon from "@images/ArrowGrayIcon.svg";
 import styled from "styled-components";
 import Flexbox from "@components/surfaces/Flexbox";
 import Image from "@components/data-display/Image";
+import Link from "@components/data-display/Link";
 
 const StyledExpand = styled.div<Props>`
   .expand {
@@ -47,9 +48,9 @@ const Expand = (props: Props) => {
     children,
     title,
     $isDragIcon = false,
-    $isGotoButton = false,
-    $isPlusButton = false,
-    $isArrowButton = false
+    $externalLink = '',
+    $internalLink = '',
+    $popupId = '',
   } = props;
   const {isOn, toggle} = useBoolean(true);
 
@@ -75,7 +76,7 @@ const Expand = (props: Props) => {
           </Flexbox>
 
           <Flexbox $gap="12px" $align="center">
-            {$isPlusButton &&
+            {$popupId !== "" &&
               <Flexbox $width="24px" $height="24px" $align="center" $justify="center">
                 <Image
                   src={PlusCircleGrayIcon}
@@ -84,22 +85,26 @@ const Expand = (props: Props) => {
                 />
               </Flexbox>
             }
-            {$isArrowButton &&
+            {$internalLink !== "" &&
               <Flexbox $width="24px" $height="24px" $align="center" $justify="center">
-                <Image
-                  src={ArrowGrayIcon}
-                  $width="20px"
-                  $height="20px"
-                />
+                <Link href={$internalLink} target="_blank">
+                  <Image
+                    src={ArrowGrayIcon}
+                    $width="20px"
+                    $height="20px"
+                  />
+                </Link>
               </Flexbox>
             }
-            {$isGotoButton &&
+            {$externalLink !== "" &&
               <Flexbox $width="24px" $height="24px" $align="center" $justify="center">
-                <Image
-                  src={GotoGrayIcon}
-                  $width="20px"
-                  $height="20px"
-                />
+                <Link href={$externalLink} target="_blank">
+                  <Image
+                    src={GotoGrayIcon}
+                    $width="20px"
+                    $height="20px"
+                  />
+                </Link>
               </Flexbox>
             }
             <div onClick={toggle}>

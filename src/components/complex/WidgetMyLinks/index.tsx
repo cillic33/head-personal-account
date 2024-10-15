@@ -6,7 +6,7 @@ const WidgetMyLinks = (props: IProps) => {
     <Expand
       title="Мои ссылки"
       $isDragIcon={true}
-      $isPlusButton={true}
+      $popupId="addLinkPopup"
     >
       <div data-id={props.id}></div>
 

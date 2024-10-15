@@ -8,7 +8,8 @@ const WidgetApplicationsForApproval = (props: IProps) => {
   return (
     <Expand
       title="Заявки на утверждение"
-      $isDragIcon={true}>
+      $isDragIcon={true}
+    >
       <div data-id={props.id}></div>
 
       <Flexbox

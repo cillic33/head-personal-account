@@ -6,7 +6,7 @@ const WidgetRelevanceOfProfiles = (props: IProps) => {
     <Expand
       title="Актуальность профилей"
       $isDragIcon={true}
-      $isGotoButton={true}
+      $externalLink="https://life.ibs.ru/stream/"
     >
       <div data-id={props.id}></div>
 

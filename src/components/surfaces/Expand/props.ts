@@ -4,7 +4,7 @@ export interface Props {
   children: ReactNode;
   title: string;
   $isDragIcon?: boolean;
-  $isGotoButton?: boolean;
-  $isPlusButton?: boolean;
-  $isArrowButton?: boolean;
+  $externalLink?: string;
+  $internalLink?: string;
+  $popupId?: string;
 }
