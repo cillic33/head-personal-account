@@ -13,7 +13,7 @@ const StyledDndCell = styled.div<IDndCellProps>`
 
 const DndCell = ({children, index, ...props}: IProps) => {
   const { id } = props.data;
-
+  
   return (
     <Draggable draggableId={id} index={index}>
       {(provided, snapshot) => (
@@ -25,6 +25,7 @@ const DndCell = ({children, index, ...props}: IProps) => {
         >
           {Children.toArray(children).find((child) => {
             if (isValidElement<{id: string}>(child)) {
+
               if (child.props.id == id) {
                 return child;
               }

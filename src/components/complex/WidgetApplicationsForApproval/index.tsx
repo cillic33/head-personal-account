@@ -7,14 +7,13 @@ import WidgetApplicationsForApprovalRow from "@components/complex/WidgetApplicat
 const WidgetApplicationsForApproval = (props: IProps) => {
   return (
     <Expand
-      title="Заявки на утверждение"
+      title={props.title}
       $isDragIcon={true}
     >
-      <div data-id={props.id}></div>
-
       <Flexbox
         $gap="4px"
-        $direction="column">
+        $direction="column"
+      >
         {MApplications.map((item) => (
           <WidgetApplicationsForApprovalRow item={item} key={item.id} />
         ))}

@@ -1,17 +1,14 @@
 import Expand from "@components/surfaces/Expand";
-import {IProps} from "@components/complex/WidgetApplicationsForApproval/props";
+import {IProps} from "./props";
 
 const WidgetAbsence = (props: IProps) => {
   return (
     <Expand
-      title="Отсутствия"
+      title={props.title}
       $isDragIcon={true}
       $externalLink="https://life.ibs.ru/stream/"
     >
-      <div data-id={props.id}></div>
-
       WidgetAbsence
-
     </Expand>
   );
 }

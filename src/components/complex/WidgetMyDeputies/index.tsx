@@ -1,17 +1,14 @@
 import Expand from "@components/surfaces/Expand";
-import {IProps} from "@components/complex/WidgetApplicationsForApproval/props";
+import {IProps} from "./props";
 
 const WidgetMyDeputies = (props: IProps) => {
   return (
     <Expand
-      title="Мои заместители"
+      title={props.title}
       $isDragIcon={true}
       $externalLink="https://life.ibs.ru/stream/"
     >
-      <div data-id={props.id}></div>
-
       WidgetMyDeputies
-
     </Expand>
   );
 }

@@ -1,16 +1,13 @@
 import Expand from "@components/surfaces/Expand";
-import {IProps} from "@components/complex/WidgetApplicationsForApproval/props";
+import {IProps} from "./props";
 
 const Employees = (props: IProps) => {
   return (
     <Expand
-      title="Сотрудники"
+      title={props.title}
       $isDragIcon={true}
     >
-      <div data-id={props.id}></div>
-
       Employees
-
     </Expand>
   );
 }

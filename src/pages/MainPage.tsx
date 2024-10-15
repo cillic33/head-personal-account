@@ -18,18 +18,18 @@ const MainPage = () => {
   return (
     <PageContainer>
       <Dnd initialData={MInitialData}>
-        <WidgetApplicationsForApproval id="widget-1" />
-        <WidgetMyDeputies id="widget-2" />
-        <WidgetWorkloadOfEmployees id="widget-3" />
-        <Employees id="widget-4" />
-        <WidgetReportingWeekTS id="widget-5" />
-        <WidgetAbsence id="widget-6" />
-        <WidgetHappinessIndex id="widget-7" />
-        <WidgetMoodMonitoring id="widget-8" />
-        <WidgetMyLinks id="widget-9" />
-        <WidgetTraining id="widget-10" />
-        <WidgetStaffMovement id="widget-11" />
-        <WidgetRelevanceOfProfiles id="widget-12" />
+        <WidgetApplicationsForApproval id="widget-1" title="Заявки на утверждение" />
+        <WidgetMyDeputies id="widget-2" title="Мои заместители" />
+        <WidgetWorkloadOfEmployees id="widget-3" title="Занятость сотрудников" />
+        <Employees id="widget-4" title="Сотрудники" />
+        <WidgetReportingWeekTS id="widget-5" title="TS за отчетную неделю" />
+        <WidgetAbsence id="widget-6" title="Отсутствия" />
+        <WidgetHappinessIndex id="widget-7" title="Индекс счастья" />
+        <WidgetMoodMonitoring id="widget-8" title="Мониторинг настроения" />
+        <WidgetMyLinks id="widget-9" title="Мои ссылки" />
+        <WidgetTraining id="widget-10" title="Обучение" />
+        <WidgetStaffMovement id="widget-11" title="Движение персонала" />
+        <WidgetRelevanceOfProfiles id="widget-12" title="Актуальность профилей" />
       </Dnd>
     </PageContainer>
   );
