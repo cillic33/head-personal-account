@@ -47,12 +47,13 @@ const Expand = (props: Props) => {
   const {
     children,
     title,
+    $isOpen = false,
     $isDragIcon = false,
     $externalLink = '',
     $internalLink = '',
     $popupId = '',
   } = props;
-  const {isOn, toggle} = useBoolean(true);
+  const {isOn, toggle} = useBoolean($isOpen);
 
   return (
     <StyledExpand {...props}>

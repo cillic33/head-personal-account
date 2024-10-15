@@ -1,14 +1,15 @@
 import Expand from "@components/surfaces/Expand";
-import {IProps} from "./props";
 import {MApplications} from "@utils/mock";
 import Flexbox from "@components/surfaces/Flexbox";
 import WidgetApplicationsForApprovalRow from "@components/complex/WidgetApplicationsForApprovalRow";
+import {IWidget} from "@typing/TWidgetProps";
 
-const WidgetApplicationsForApproval = (props: IProps) => {
+const WidgetApplicationsForApproval = (props: IWidget) => {
   return (
     <Expand
       title={props.title}
-      $isDragIcon={true}
+      $isOpen={props.$isOpen}
+      $isDragIcon={props.$isDragIcon}
     >
       <Flexbox
         $gap="4px"

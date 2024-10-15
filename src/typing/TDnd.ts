@@ -1,7 +1,6 @@
-export interface IInitialDataCell {
-  id: string,
-  title: string,
-}
+import {IWidget} from "@typing/TWidgetProps";
+
+export interface IInitialDataCell extends IWidget {}
 
 export interface IInitialDataCells {
   [name: string]: IInitialDataCell

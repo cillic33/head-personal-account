@@ -1,12 +1,13 @@
 import Expand from "@components/surfaces/Expand";
-import {IProps} from "./props";
+import {IWidget} from "@typing/TWidgetProps";
 
-const WidgetTraining = (props: IProps) => {
+const WidgetTraining = (props: IWidget) => {
   return (
     <Expand
       title={props.title}
-      $isDragIcon={true}
-      $internalLink="/training"
+      $isOpen={props.$isOpen}
+      $isDragIcon={props.$isDragIcon}
+      $internalLink={props.$internalLink}
     >
       WidgetTraining
     </Expand>

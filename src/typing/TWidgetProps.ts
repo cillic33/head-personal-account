@@ -1,7 +1,5 @@
-import {ReactNode} from "react";
-
-export interface Props {
-  children: ReactNode;
+export interface IWidget {
+  id: string;
   title: string;
   $isOpen?: boolean;
   $isDragIcon?: boolean;

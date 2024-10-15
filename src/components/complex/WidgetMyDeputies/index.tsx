@@ -1,12 +1,13 @@
 import Expand from "@components/surfaces/Expand";
-import {IProps} from "./props";
+import {IWidget} from "@typing/TWidgetProps";
 
-const WidgetMyDeputies = (props: IProps) => {
+const WidgetMyDeputies = (props: IWidget) => {
   return (
     <Expand
       title={props.title}
-      $isDragIcon={true}
-      $externalLink="https://life.ibs.ru/stream/"
+      $isOpen={props.$isOpen}
+      $isDragIcon={props.$isDragIcon}
+      $externalLink={props.$externalLink}
     >
       WidgetMyDeputies
     </Expand>

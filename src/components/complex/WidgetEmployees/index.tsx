@@ -1,11 +1,12 @@
 import Expand from "@components/surfaces/Expand";
-import {IProps} from "./props";
+import {IWidget} from "@typing/TWidgetProps";
 
-const Employees = (props: IProps) => {
+const Employees = (props: IWidget) => {
   return (
     <Expand
       title={props.title}
-      $isDragIcon={true}
+      $isOpen={props.$isOpen}
+      $isDragIcon={props.$isDragIcon}
     >
       Employees
     </Expand>
