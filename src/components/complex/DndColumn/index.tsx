@@ -19,7 +19,7 @@ const StyledDndColumn = styled.div`
 const StyledCellList = styled.div<ICellListProps>`
   display: flex;
   flex-direction: column;
-  background: ${props => props.$isDraggingOver ? '#e9edf1' : 'transparent'};
+  background: ${props => props.$isDraggingOver ? '#bcbcbc14' : 'transparent'};
   border-radius: 8px;
 `;
 

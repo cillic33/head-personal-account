@@ -4,6 +4,9 @@ import Typography from "@components/data-display/Typography";
 import {Props} from "./props";
 import DragNDropIcon from "@images/DragNDropIcon.svg";
 import ChevronDownGray from "@images/ChevronDownGray.svg";
+import GotoGrayIcon from "@images/GotoGrayIcon.svg";
+import PlusCircleGrayIcon from "@images/PlusCircleGrayIcon.svg";
+import ArrowGrayIcon from "@images/ArrowGrayIcon.svg";
 import styled from "styled-components";
 import Flexbox from "@components/surfaces/Flexbox";
 import Image from "@components/data-display/Image";
@@ -40,12 +43,19 @@ const StyledExpand = styled.div<Props>`
 `
 
 const Expand = (props: Props) => {
-  const {children, title, $isDragIcon = false} = props;
+  const {
+    children,
+    title,
+    $isDragIcon = false,
+    $isGotoButton = false,
+    $isPlusButton = false,
+    $isArrowButton = false
+  } = props;
   const {isOn, toggle} = useBoolean(true);
 
   return (
     <StyledExpand {...props}>
-      <div className="expand__head" onClick={toggle}>
+      <div className="expand__head">
         <Flexbox $gap="12px" $align="center" $justify="space-between">
           <Flexbox $gap="12px" $align="center">
             {$isDragIcon &&
@@ -63,15 +73,47 @@ const Expand = (props: Props) => {
               {title}
             </Typography>
           </Flexbox>
-          <Image
-            src={ChevronDownGray}
-            className={clsx(
-              !isOn && 'expand__chevron',
-              isOn && 'expand__chevron_active'
-            )}
-            $width="24px"
-            $height="24px"
-          />
+
+          <Flexbox $gap="12px" $align="center">
+            {$isPlusButton &&
+              <Flexbox $width="24px" $height="24px" $align="center" $justify="center">
+                <Image
+                  src={PlusCircleGrayIcon}
+                  $width="20px"
+                  $height="20px"
+                />
+              </Flexbox>
+            }
+            {$isArrowButton &&
+              <Flexbox $width="24px" $height="24px" $align="center" $justify="center">
+                <Image
+                  src={ArrowGrayIcon}
+                  $width="20px"
+                  $height="20px"
+                />
+              </Flexbox>
+            }
+            {$isGotoButton &&
+              <Flexbox $width="24px" $height="24px" $align="center" $justify="center">
+                <Image
+                  src={GotoGrayIcon}
+                  $width="20px"
+                  $height="20px"
+                />
+              </Flexbox>
+            }
+            <div onClick={toggle}>
+              <Image
+                src={ChevronDownGray}
+                className={clsx(
+                  !isOn && 'expand__chevron',
+                  isOn && 'expand__chevron_active'
+                )}
+                $width="24px"
+                $height="24px"
+              />
+            </div>
+          </Flexbox>
         </Flexbox>
       </div>
       {isOn &&

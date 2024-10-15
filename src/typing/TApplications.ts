@@ -4,6 +4,7 @@ export type TApplication = {
   important: number,
   increase: number,
   count: number,
+  link?: string,
 };
 
 export type TApplications = TApplication[];

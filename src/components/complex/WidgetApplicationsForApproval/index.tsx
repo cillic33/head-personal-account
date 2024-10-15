@@ -1,10 +1,10 @@
 import Expand from "@components/surfaces/Expand";
-import {Props} from "./props";
+import {IProps} from "./props";
 import {MApplications} from "@utils/mock";
 import Flexbox from "@components/surfaces/Flexbox";
 import WidgetApplicationsForApprovalRow from "@components/complex/WidgetApplicationsForApprovalRow";
 
-const WidgetApplicationsForApproval = (props: Props) => {
+const WidgetApplicationsForApproval = (props: IProps) => {
   return (
     <Expand
       title="Заявки на утверждение"
