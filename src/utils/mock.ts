@@ -3,18 +3,18 @@ import {TApplications} from "@typing/TApplications";
 
 export const MInitialData: IInitialData = {
   cells: {
-    'widget-1': { id: 'widget-1'},
-    'widget-2': { id: 'widget-2'},
-    'widget-3': { id: 'widget-3'},
-    'widget-4': { id: 'widget-4'},
-    'widget-5': { id: 'widget-5'},
-    'widget-6': { id: 'widget-6'},
-    'widget-7': { id: 'widget-7'},
-    'widget-8': { id: 'widget-8'},
-    'widget-9': { id: 'widget-9'},
-    'widget-10': { id: 'widget-10'},
-    'widget-11': { id: 'widget-11'},
-    'widget-12': { id: 'widget-12'},
+    'widget-1': { id: 'widget-1', title: 'Заявки на утверждение'},
+    'widget-2': { id: 'widget-2', title: 'Мои заместители'},
+    'widget-3': { id: 'widget-3', title: 'Занятость сотрудников'},
+    'widget-4': { id: 'widget-4', title: 'Сотрудники'},
+    'widget-5': { id: 'widget-5', title: 'TS за отчетную неделю'},
+    'widget-6': { id: 'widget-6', title: 'Отсутствия'},
+    'widget-7': { id: 'widget-7', title: 'Индекс счастья'},
+    'widget-8': { id: 'widget-8', title: 'Мониторинг настроения'},
+    'widget-9': { id: 'widget-9', title: 'Мои ссылки'},
+    'widget-10': { id: 'widget-10', title: 'Обучение'},
+    'widget-11': { id: 'widget-11', title: 'Движение персонала'},
+    'widget-12': { id: 'widget-12', title: 'Актуальность профилей'},
   },
   columns: {
     'column-1': {

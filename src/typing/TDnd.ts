@@ -1,5 +1,6 @@
 export interface IInitialDataCell {
   id: string,
+  title: string,
 }
 
 export interface IInitialDataCells {

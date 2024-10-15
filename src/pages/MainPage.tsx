@@ -18,18 +18,18 @@ const MainPage = () => {
   return (
     <PageContainer>
       <Dnd initialData={MInitialData}>
-        <WidgetApplicationsForApproval id="widget-1" title="Заявки на утверждение" />
-        <WidgetMyDeputies id="widget-2" title="Мои заместители" />
-        <WidgetWorkloadOfEmployees id="widget-3" title="Занятость сотрудников" />
-        <Employees id="widget-4" title="Сотрудники" />
-        <WidgetReportingWeekTS id="widget-5" title="TS за отчетную неделю" />
-        <WidgetAbsence id="widget-6" title="Отсутствия" />
-        <WidgetHappinessIndex id="widget-7" title="Индекс счастья" />
-        <WidgetMoodMonitoring id="widget-8" title="Мониторинг настроения" />
-        <WidgetMyLinks id="widget-9" title="Мои ссылки" />
-        <WidgetTraining id="widget-10" title="Обучение" />
-        <WidgetStaffMovement id="widget-11" title="Движение персонала" />
-        <WidgetRelevanceOfProfiles id="widget-12" title="Актуальность профилей" />
+        <WidgetApplicationsForApproval {...MInitialData.cells["widget-1"]} />
+        <WidgetMyDeputies {...MInitialData.cells["widget-2"]} />
+        <WidgetWorkloadOfEmployees {...MInitialData.cells["widget-3"]} />
+        <Employees {...MInitialData.cells["widget-4"]} />
+        <WidgetReportingWeekTS {...MInitialData.cells["widget-5"]} />
+        <WidgetAbsence {...MInitialData.cells["widget-6"]} />
+        <WidgetHappinessIndex {...MInitialData.cells["widget-7"]} />
+        <WidgetMoodMonitoring {...MInitialData.cells["widget-8"]} />
+        <WidgetMyLinks {...MInitialData.cells["widget-9"]} />
+        <WidgetTraining {...MInitialData.cells["widget-10"]} />
+        <WidgetStaffMovement {...MInitialData.cells["widget-11"]} />
+        <WidgetRelevanceOfProfiles {...MInitialData.cells["widget-12"]} />
       </Dnd>
     </PageContainer>
   );
