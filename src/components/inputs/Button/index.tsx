@@ -4,10 +4,13 @@ import {RefObject} from "react";
 
 const StyledButton = styled.button<IProps>`
   display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   cursor: pointer;
   white-space: nowrap;
   position: ${props => props.$position || undefined};
+  width: ${props => props.$width || undefined};
   
   ${({$isActive, ...props}) => {
     switch (props.$variant) {
@@ -124,7 +127,7 @@ const StyledButton = styled.button<IProps>`
   }
 `
 
-const Button = (props: IProps): JSX.Element => {
+const Button = (props: IProps) => {
   return (
     <StyledButton {...props} ref={props.$ref as RefObject<HTMLButtonElement>} />
   );

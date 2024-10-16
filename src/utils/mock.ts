@@ -2,6 +2,7 @@ import {IInitialData} from "@typing/TDnd";
 import {TApplications} from "@typing/TApplications";
 import {TMyDeputies} from "@typing/TMyDeputies";
 import {TWorkloadOfEmployees} from "@typing/TWorkloadOfEmployees";
+import {IButtonGroupData} from "@typing/TButtonGroupData";
 
 // Виджеты на главной
 export const MInitialData: IInitialData = {
@@ -222,3 +223,8 @@ export const MWorkloadOfEmployees: TWorkloadOfEmployees = [
     color: '#D18101',
   },
 ]
+
+export const MPeriodsSwitcher: IButtonGroupData[] = [
+  {id: 'week', title: 'Неделя', isActive: true},
+  {id: 'month', title: 'Месяц', isActive: false},
+];

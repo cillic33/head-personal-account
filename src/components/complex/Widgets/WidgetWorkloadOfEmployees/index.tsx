@@ -1,11 +1,17 @@
 import Expand from "@components/surfaces/Expand";
 import {IWidget} from "@typing/TWidget";
-import {MWorkloadOfEmployees} from "@utils/mock";
+import {MPeriodsSwitcher, MWorkloadOfEmployees} from "@utils/mock";
 import ProgressBar from "@components/data-display/ProgressBar";
 import Flexbox from "@components/surfaces/Flexbox";
-import Button from "@components/inputs/Button";
+import ButtonGroup from "@components/inputs/ButtonGroup";
+import {MouseEvent} from "react";
 
 const WidgetWorkloadOfEmployees = (props: IWidget) => {
+
+  const handlePeriodsSwitcherClick = (event: MouseEvent<HTMLButtonElement>): void => {
+    console.log('Period', event.currentTarget.id);
+  }
+
   return (
     <Expand
       title={props.title}
@@ -13,13 +19,16 @@ const WidgetWorkloadOfEmployees = (props: IWidget) => {
       $isDragIcon={props.$isDragIcon}
       $externalLink={props.$externalLink}
     >
-      <Flexbox $justify="space-between" $gap="16px">
-        <Button $variant="primary" size="m">Неделя</Button>
-      </Flexbox>
-      <Flexbox $gap="8px" $direction="column">
-        {MWorkloadOfEmployees.map(item => (
-          <ProgressBar key={item.id} $percent={item.percent} $color={item.color} $title={item.title} />
-        ))}
+      <Flexbox $gap="16px" $direction="column">
+        <Flexbox $justify="space-between" $gap="16px">
+          <div>10–16 Сентября</div>
+          <ButtonGroup buttons={MPeriodsSwitcher} onClick={handlePeriodsSwitcherClick} $buttonsWidth="92px" />
+        </Flexbox>
+        <Flexbox $gap="8px" $direction="column">
+          {MWorkloadOfEmployees.map(item => (
+            <ProgressBar key={item.id} $percent={item.percent} $color={item.color} $title={item.title} />
+          ))}
+        </Flexbox>
       </Flexbox>
     </Expand>
   );

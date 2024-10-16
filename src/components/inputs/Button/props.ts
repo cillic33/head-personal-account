@@ -16,4 +16,5 @@ export interface IProps {
   $padding?: string;
   $ref?: RefObject<HTMLElement> | null;
   $position?: TPosition;
+  $width?: string;
 }
