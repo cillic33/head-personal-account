@@ -1,6 +1,7 @@
 import {IInitialData} from "@typing/TDnd";
 import {TApplications} from "@typing/TApplications";
 import {TMyDeputies} from "@typing/TMyDeputies";
+import {TWorkloadOfEmployees} from "@typing/TWorkloadOfEmployees";
 
 // Виджеты на главной
 export const MInitialData: IInitialData = {
@@ -173,5 +174,51 @@ export const MMyDeputies: TMyDeputies = [
         period: "неограничен",
       },
     ],
+  },
+]
+
+// Виджет "Занятость сотрудников"
+export const MWorkloadOfEmployees: TWorkloadOfEmployees = [
+  {
+    id: "1",
+    title: "Коммерческая занятость",
+    percent: 20,
+    color: '#008670',
+  },
+  {
+    id: "2",
+    title: "Пресейл",
+    percent: 17,
+    color: '#007DBB',
+  },
+  {
+    id: "3",
+    title: "Инвест",
+    percent: 11,
+    color: '#7B61FF',
+  },
+  {
+    id: "4",
+    title: "Отсутствия",
+    percent: 8,
+    color: '#F48888',
+  },
+  {
+    id: "5",
+    title: "Собрания",
+    percent: 8,
+    color: '#5684B6',
+  },
+  {
+    id: "6",
+    title: "Не отчитался",
+    percent: 7,
+    color: '#C83E3E',
+  },
+  {
+    id: "7",
+    title: "Прочее",
+    percent: 2,
+    color: '#D18101',
   },
 ]
