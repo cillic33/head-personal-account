@@ -1,5 +1,5 @@
 import Expand from "@components/surfaces/Expand";
-import {IWidget} from "@typing/TWidgetProps";
+import {IWidget} from "@typing/TWidget";
 
 const WidgetTraining = (props: IWidget) => {
   return (
