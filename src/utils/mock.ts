@@ -1,6 +1,8 @@
 import {IInitialData} from "@typing/TDnd";
 import {TApplications} from "@typing/TApplications";
+import {TMyDeputies} from "@typing/TMyDeputies";
 
+// Виджеты на главной
 export const MInitialData: IInitialData = {
   cells: {
     'widget-1': { id: 'widget-1', title: 'Заявки на утверждение', $isOpen: false},
@@ -33,7 +35,7 @@ export const MInitialData: IInitialData = {
   columnOrder: ['column-1', 'column-2', 'column-3'],
 }
 
-// Заявки на утверждение
+// Виджет "Заявки на утверждение"
 export const MApplications: TApplications = [
   {
     id: 'all',
@@ -137,5 +139,39 @@ export const MApplications: TApplications = [
     increase: 1,
     count: 10,
     link: 'https://life.ibs.ru/link12',
+  },
+]
+
+// Виджет "Мои заместители"
+export const MMyDeputies: TMyDeputies = [
+  {
+    id: "1",
+    title: "Управление конкурсными проектами",
+    rows: [
+      {
+        id: "1",
+        name: "Попова Александра",
+        src: "/src/images/AvatarPopova.png",
+        period: "05.03.24 - 03.04.24",
+      },
+      {
+        id: "2",
+        name: "Васильев Анатолий",
+        src: "/src/images/AvatarVasiliev.png",
+        period: "неограничен",
+      },
+    ],
+  },
+  {
+    id: "2",
+    title: "Кредитный комитет",
+    rows: [
+      {
+        id: "1",
+        name: "Васильев Анатолий",
+        src: "/src/images/AvatarVasiliev.png",
+        period: "неограничен",
+      },
+    ],
   },
 ]

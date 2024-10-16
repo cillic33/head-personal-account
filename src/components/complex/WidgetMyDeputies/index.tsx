@@ -1,5 +1,7 @@
 import Expand from "@components/surfaces/Expand";
-import {IWidget} from "@typing/TWidgetProps";
+import {IWidget} from "@typing/TWidget";
+import {MMyDeputies} from "@utils/mock";
+import WidgetMyDeputiesList from "@components/complex/WidgetMyDeputiesList";
 
 const WidgetMyDeputies = (props: IWidget) => {
   return (
@@ -9,7 +11,7 @@ const WidgetMyDeputies = (props: IWidget) => {
       $isDragIcon={props.$isDragIcon}
       $externalLink={props.$externalLink}
     >
-      WidgetMyDeputies
+      <WidgetMyDeputiesList data={MMyDeputies} />
     </Expand>
   );
 }

@@ -1,4 +1,4 @@
-import {IWidget} from "@typing/TWidgetProps";
+import {IWidget} from "@typing/TWidget";
 
 export interface IInitialDataCell extends IWidget {}
 
