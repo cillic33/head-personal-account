@@ -9,6 +9,7 @@ import CaretDownGray from "@images/CaretDownGray.svg";
 import BellBlue from "@images/BellBlue.svg";
 import Chip from "@components/data-display/Chip";
 import {theme} from "@utils/theme/theme";
+import Person from "@components/data-display/Person";
 
 const StyledHeader = styled.div`
   background: #fff;
@@ -29,10 +30,7 @@ const Header = () => {
 
         <Flexbox $gap="18px" $align="center">
           <Flexbox $gap="8px" $align="center">
-            <Image src={AvatarIvanov} alt="Иванов Сергей Владимирович" $width="40px" $height="40px" />
-            <Typography $variant="body-regular">
-              Иванов Сергей Владимирович
-            </Typography>
+            <Person src={AvatarIvanov} name="Иванов Сергей Владимирович" $width="40px" $height="40px" />
             <Button type="button" $padding="6px">
               <Image src={CaretDownGray} $width="20px" $height="20px" />
             </Button>
