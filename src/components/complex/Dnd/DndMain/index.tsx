@@ -5,10 +5,10 @@ import {
 } from '@hello-pangea/dnd';
 import Flexbox from "@components/surfaces/Flexbox";
 import { IInitialDataColumn} from "@typing/TDnd";
-import {IProps} from "@components/complex/Dnd/props";
-import DndColumn from "@components/complex/DndColumn";
+import {IProps} from "@components/complex/Dnd/DndMain/props";
+import DndColumn from "@components/complex/Dnd/DndColumn";
 
-const Dnd = ({children, initialData}: IProps) => {
+const DndMain = ({children, initialData}: IProps) => {
   const [data, setData] = useState(initialData);
 
   const handleDragEnd = (result: DropResult): void => {
@@ -83,4 +83,4 @@ const Dnd = ({children, initialData}: IProps) => {
   );
 }
 
-export default Dnd;
+export default DndMain;

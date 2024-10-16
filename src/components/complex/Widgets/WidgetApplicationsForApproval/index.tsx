@@ -1,7 +1,7 @@
 import Expand from "@components/surfaces/Expand";
 import {MApplications} from "@utils/mock";
 import Flexbox from "@components/surfaces/Flexbox";
-import WidgetApplicationsForApprovalRow from "@components/complex/WidgetApplicationsForApprovalRow";
+import WidgetApplicationsForApprovalRow from "@components/complex/Widgets/WidgetApplicationsForApprovalRow";
 import {IWidget} from "@typing/TWidget";
 
 const WidgetApplicationsForApproval = (props: IWidget) => {

@@ -2,7 +2,7 @@ import Flexbox from "@components/surfaces/Flexbox";
 import Typography from "@components/data-display/Typography";
 import {theme} from "@utils/theme/theme";
 import {IProps} from "./props";
-import WidgetMyDeputiesRow from "@components/complex/WidgetMyDeputiesRow";
+import WidgetMyDeputiesRow from "@components/complex/Widgets/WidgetMyDeputiesRow";
 
 const WidgetMyDeputiesList = ({data}: IProps) => {
   return (

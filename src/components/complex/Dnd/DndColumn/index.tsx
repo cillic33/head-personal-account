@@ -1,5 +1,5 @@
 import {Droppable} from "@hello-pangea/dnd";
-import DndCell from "@components/complex/DndCell";
+import DndCell from "@components/complex/Dnd/DndCell";
 import styled from "styled-components";
 import {ICellListProps, IProps} from "./props";
 import {theme} from "@utils/theme/theme";
