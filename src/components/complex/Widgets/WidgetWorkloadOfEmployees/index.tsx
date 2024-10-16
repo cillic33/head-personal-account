@@ -3,7 +3,7 @@ import {IWidget} from "@typing/TWidget";
 import {MWorkloadOfEmployees} from "@utils/mock";
 import ProgressBar from "@components/data-display/ProgressBar";
 import Flexbox from "@components/surfaces/Flexbox";
-import Button from "@components/data-display/Button";
+import Button from "@components/inputs/Button";
 
 const WidgetWorkloadOfEmployees = (props: IWidget) => {
   return (
@@ -14,7 +14,7 @@ const WidgetWorkloadOfEmployees = (props: IWidget) => {
       $externalLink={props.$externalLink}
     >
       <Flexbox $justify="space-between" $gap="16px">
-        <Button $variant="primary">Неделя</Button>
+        <Button $variant="primary" size="m">Неделя</Button>
       </Flexbox>
       <Flexbox $gap="8px" $direction="column">
         {MWorkloadOfEmployees.map(item => (

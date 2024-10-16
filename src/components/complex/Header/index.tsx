@@ -31,12 +31,12 @@ const Header = () => {
         <Flexbox $gap="18px" $align="center">
           <Flexbox $gap="8px" $align="center">
             <Person src={AvatarIvanov} name="Иванов Сергей Владимирович" $width="40px" $height="40px" />
-            <Button type="button" $padding="6px">
+            <Button type="button" $variant="no-style" size="no-size">
               <Image src={CaretDownGray} $width="20px" $height="20px" />
             </Button>
           </Flexbox>
 
-          <Button type="button" $position="relative">
+          <Button type="button" $variant="no-style" size="no-size" $position="relative">
             <Image src={BellBlue} $width="24px" $height="24px" />
             <Chip
               $background={theme.colors.systemErrorNormal}

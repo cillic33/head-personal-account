@@ -7,3 +7,5 @@ export type TJustify = 'flex-start' | 'flex-end' | 'center' | 'space-around' | '
 export type TDirection = 'row' | 'column';
 
 export type TFlexWrap = 'inherit' | 'initial' | 'wrap' | 'nowrap' | 'wrap-reverse' | 'revert' | 'revert-layer' | 'unset';
+
+export type TButtonType = 'button' | 'submit' | 'reset';

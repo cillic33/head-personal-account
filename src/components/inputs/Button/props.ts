@@ -1,11 +1,19 @@
-import {ReactNode} from "react";
-import {TPosition} from "@typing/TCssValues";
+import {MouseEvent, ReactNode, RefObject} from "react";
+import {TButtonType, TPosition} from "@typing/TCssValues";
 
-type TButtonType = 'button' | 'submit' | 'reset';
+type Variant = "primary" | "dark" | "light" | "no-style";
+
+type Size = "s" | "m" | "no-size";
 
 export interface IProps {
   children: ReactNode;
+  id?: string;
   type?: TButtonType;
+  $variant: Variant;
+  size: Size;
+  $isActive?: boolean;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   $padding?: string;
+  $ref?: RefObject<HTMLElement> | null;
   $position?: TPosition;
 }
