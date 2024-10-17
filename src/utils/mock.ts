@@ -3,12 +3,13 @@ import {TApplications} from "@typing/TApplications";
 import {TMyDeputies} from "@typing/TMyDeputies";
 import {TWorkloadOfEmployees} from "@typing/TWorkloadOfEmployees";
 import {IButtonGroupData} from "@typing/TButtonGroupData";
+import {TWeeksSlider} from "@typing/TWeeksSlider";
 
 // Виджеты на главной
 export const MInitialData: IInitialData = {
   cells: {
     'widget-1': { id: 'widget-1', title: 'Заявки на утверждение', $isOpen: false, $isDragIcon: true},
-    'widget-2': { id: 'widget-2', title: 'Мои заместители', $isOpen: true, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
+    'widget-2': { id: 'widget-2', title: 'Мои заместители', $isOpen: false, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
     'widget-3': { id: 'widget-3', title: 'Занятость сотрудников', $isOpen: true, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
     'widget-4': { id: 'widget-4', title: 'Сотрудники', $isOpen: true, $isDragIcon: true},
     'widget-5': { id: 'widget-5', title: 'TS за отчетную неделю', $isOpen: true, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
@@ -35,7 +36,7 @@ export const MInitialData: IInitialData = {
     },
   },
   columnOrder: ['column-1', 'column-2', 'column-3'],
-}
+};
 
 // Виджет "Заявки на утверждение"
 export const MApplications: TApplications = [
@@ -142,7 +143,7 @@ export const MApplications: TApplications = [
     count: 10,
     link: 'https://life.ibs.ru/link12',
   },
-]
+];
 
 // Виджет "Мои заместители"
 export const MMyDeputies: TMyDeputies = [
@@ -176,7 +177,7 @@ export const MMyDeputies: TMyDeputies = [
       },
     ],
   },
-]
+];
 
 // Виджет "Занятость сотрудников"
 export const MWorkloadOfEmployees: TWorkloadOfEmployees = [
@@ -222,9 +223,15 @@ export const MWorkloadOfEmployees: TWorkloadOfEmployees = [
     percent: 2,
     color: '#D18101',
   },
-]
+];
 
 export const MPeriodsSwitcher: IButtonGroupData[] = [
   {id: 'week', title: 'Неделя', isActive: true},
   {id: 'month', title: 'Месяц', isActive: false},
+];
+
+export const MWeeksSlider: TWeeksSlider = [
+  {id: '1', text: "3-9 Сентября"},
+  {id: '2', text: "10–16 Сентября"},
+  {id: '3', text: "17-23 Сентября"},
 ];

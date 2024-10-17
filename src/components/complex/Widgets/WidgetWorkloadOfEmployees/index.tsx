@@ -1,13 +1,13 @@
 import Expand from "@components/surfaces/Expand";
 import {IWidget} from "@typing/TWidget";
-import {MPeriodsSwitcher, MWorkloadOfEmployees} from "@utils/mock";
+import {MPeriodsSwitcher, MWeeksSlider, MWorkloadOfEmployees} from "@utils/mock";
 import ProgressBar from "@components/data-display/ProgressBar";
 import Flexbox from "@components/surfaces/Flexbox";
 import ButtonGroup from "@components/inputs/ButtonGroup";
 import {MouseEvent} from "react";
+import Slider from "@components/data-display/Slider";
 
 const WidgetWorkloadOfEmployees = (props: IWidget) => {
-
   const handlePeriodsSwitcherClick = (event: MouseEvent<HTMLButtonElement>): void => {
     console.log('Period', event.currentTarget.id);
   }
@@ -21,7 +21,7 @@ const WidgetWorkloadOfEmployees = (props: IWidget) => {
     >
       <Flexbox $gap="16px" $direction="column">
         <Flexbox $justify="space-between" $gap="16px">
-          <div>10–16 Сентября</div>
+          <Slider $weeksData={MWeeksSlider} $width="200px" />
           <ButtonGroup buttons={MPeriodsSwitcher} onClick={handlePeriodsSwitcherClick} $buttonsWidth="92px" />
         </Flexbox>
         <Flexbox $gap="8px" $direction="column">
