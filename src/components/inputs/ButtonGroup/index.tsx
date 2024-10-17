@@ -28,7 +28,7 @@ const StyledButtonGroup = styled.div<IProps>`
   }
 `
 
-const ButtonGroup = ({buttons, onClick, title, isReset, $buttonsWidth}: IProps) => {
+const ButtonGroup = ({buttons, onClick, $buttonsWidth}: IProps) => {
   const [currentButtons, setCurrentButtons] = useState<IButtonGroupData[]>(ensure(buttons));
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
@@ -43,26 +43,8 @@ const ButtonGroup = ({buttons, onClick, title, isReset, $buttonsWidth}: IProps) 
     }
   }
 
-  useEffect(() => {
-    const Reset = () => {
-      setCurrentButtons(currentButtons.map((item, index) => {
-        return {
-          ...item,
-          isActive: index === 0,
-        }
-      }));
-    }
-
-    if (isReset) {
-      Reset();
-    }
-  }, [isReset, currentButtons]);
-
   return (
     <StyledButtonGroupWrap>
-      {title &&
-        <Typography $variant="body-regular" $color={theme.colors.textIconBaseSecondary}>{title}</Typography>
-      }
       <StyledButtonGroup>
         {currentButtons && currentButtons.map((item, index) =>
           <Fragment key={item.id}>
