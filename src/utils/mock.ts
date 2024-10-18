@@ -3,6 +3,7 @@ import {TApplications} from "@typing/TApplications";
 import {TMyDeputies} from "@typing/TMyDeputies";
 import {TWorkloadOfEmployees} from "@typing/TWorkloadOfEmployees";
 import {IButtonGroupData} from "@typing/TButtonGroupData";
+import {TEmployeesWidget} from "@typing/TEmployeesWidget";
 
 // Виджеты на главной
 export const MInitialData: IInitialData = {
@@ -224,7 +225,32 @@ export const MWorkloadOfEmployees: TWorkloadOfEmployees = [
   },
 ];
 
+// Переключатель "Неделя" / "Месяц"
 export const MPeriodsSwitcher: IButtonGroupData[] = [
   {id: 'week', title: 'Неделя', isActive: true},
   {id: 'month', title: 'Месяц', isActive: false},
+];
+
+// Виджет "Сотрудники "
+export const MEmployeesWidget: TEmployeesWidget = [
+  {
+    id: 'all',
+    title: 'Всего сотрудников',
+    count: 23,
+    link: '/',
+  },
+  {
+    id: 'attestation',
+    title: 'На аттестации в этом месяце',
+    count: 3,
+    link: '/',
+  },
+  {
+    id: 'adaptation',
+    title: 'На адаптации',
+    count: 2,
+    link: '/',
+    important: 1,
+    warning: 2,
+  },
 ];
