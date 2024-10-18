@@ -47,24 +47,19 @@ const StyledWrapSlider = styled.div<IProps>`
 
 export default function SimpleSlider(props: IProps) {
   const {$weeksData, $onSlide} = props;
-  const FIRST_SLIDE = 0; // TODO передать в пропсах
-  //const countSlides = $weeksData.length;
-  const [oldSlide, setOldSlide] = useState<number>(FIRST_SLIDE);
-
+  const [oldSlide, setOldSlide] = useState<number>(1);
 
   const settings = {
+    initialSlide: 1,
     dots: false,
     arrows: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     afterChange: (current: number) => {
       setOldSlide(current);
       $onSlide(oldSlide, current);
-      /*if ($onSlide) {
-        $onSlide(current);
-      }*/
     },
   };
 

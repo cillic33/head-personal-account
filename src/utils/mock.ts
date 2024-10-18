@@ -3,7 +3,6 @@ import {TApplications} from "@typing/TApplications";
 import {TMyDeputies} from "@typing/TMyDeputies";
 import {TWorkloadOfEmployees} from "@typing/TWorkloadOfEmployees";
 import {IButtonGroupData} from "@typing/TButtonGroupData";
-import {TWeeksSlider} from "@typing/TWeeksSlider";
 
 // Виджеты на главной
 export const MInitialData: IInitialData = {
@@ -228,10 +227,4 @@ export const MWorkloadOfEmployees: TWorkloadOfEmployees = [
 export const MPeriodsSwitcher: IButtonGroupData[] = [
   {id: 'week', title: 'Неделя', isActive: true},
   {id: 'month', title: 'Месяц', isActive: false},
-];
-
-export const MWeeksSlider: TWeeksSlider = [
-  {id: '1', text: "3-9 Сентября"},
-  {id: '2', text: "10–16 Сентября"},
-  {id: '3', text: "17-23 Сентября"},
 ];
