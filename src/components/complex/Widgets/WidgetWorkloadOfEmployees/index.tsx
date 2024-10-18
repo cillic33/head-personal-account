@@ -5,7 +5,7 @@ import ProgressBar from "@components/data-display/ProgressBar";
 import Flexbox from "@components/surfaces/Flexbox";
 import ButtonGroup from "@components/inputs/ButtonGroup";
 import {MouseEvent} from "react";
-import Slider from "@components/data-display/Slider";
+import SimpleSlider from "@components/data-display/SimpleSlider";
 
 const WidgetWorkloadOfEmployees = (props: IWidget) => {
   const handlePeriodsSwitcherClick = (event: MouseEvent<HTMLButtonElement>): void => {
@@ -21,7 +21,7 @@ const WidgetWorkloadOfEmployees = (props: IWidget) => {
     >
       <Flexbox $gap="16px" $direction="column">
         <Flexbox $justify="space-between" $gap="16px">
-          <Slider $weeksData={MWeeksSlider} $width="200px" />
+          <SimpleSlider $weeksData={MWeeksSlider} $maxWidth="200px" $height="32px" />
           <ButtonGroup buttons={MPeriodsSwitcher} onClick={handlePeriodsSwitcherClick} $buttonsWidth="92px" />
         </Flexbox>
         <Flexbox $gap="8px" $direction="column">

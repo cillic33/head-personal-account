@@ -1,12 +1,10 @@
-import {Fragment, MouseEvent, useEffect, useState} from "react";
+import {Fragment, MouseEvent, useState} from "react";
 import {IButtonGroupData} from "@typing/TButtonGroupData";
 import Button from "@components/inputs/Button";
 import Divider from "@components/data-display/Divider";
 import {IProps} from "./props";
 import styled from "styled-components";
 import {ensure} from "@utils/index";
-import Typography from "@components/data-display/Typography";
-import {theme} from "@utils/theme/theme";
 
 const StyledButtonGroupWrap = styled.div<IProps>`
   display: flex;
