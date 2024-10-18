@@ -1,10 +1,10 @@
 import Slider from "react-slick";
-//import {useState} from "react";
 import {IProps} from "./props";
 import styled from "styled-components";
 import ChevronLeftBlue from "@images/ChevronLeftBlue.svg";
 import ChevronRightBlue from "@images/ChevronRightBlue.svg";
 import Typography from "@components/data-display/Typography";
+import {useState} from "react";
 
 const StyledWrapSlider = styled.div<IProps>`
   position: relative;
@@ -46,18 +46,11 @@ const StyledWrapSlider = styled.div<IProps>`
 `
 
 export default function SimpleSlider(props: IProps) {
-  const {$weeksData} = props;
-  //const FIRST_SLIDE = 1; // TODO передать в пропсах
+  const {$weeksData, $onSlide} = props;
+  const FIRST_SLIDE = 0; // TODO передать в пропсах
   //const countSlides = $weeksData.length;
-  //const [activeId, setActiveId] = useState<number>(FIRST_SLIDE);
+  const [oldSlide, setOldSlide] = useState<number>(FIRST_SLIDE);
 
-  /*const handleLeftArrowClick = () => {
-    setActiveId((prev: number) => prev > 1 ?  prev - 1 : 1);
-  }
-
-  const handleRightArrowClick = () => {
-    setActiveId((prev: number) => prev < countSlides - 1 ? prev + 1 : countSlides);
-  }*/
 
   const settings = {
     dots: false,
@@ -66,6 +59,13 @@ export default function SimpleSlider(props: IProps) {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    afterChange: (current: number) => {
+      setOldSlide(current);
+      $onSlide(oldSlide, current);
+      /*if ($onSlide) {
+        $onSlide(current);
+      }*/
+    },
   };
 
   return (
@@ -78,6 +78,5 @@ export default function SimpleSlider(props: IProps) {
         ))}
       </Slider>
     </StyledWrapSlider>
-
   );
 }

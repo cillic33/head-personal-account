@@ -12,6 +12,10 @@ const WidgetWorkloadOfEmployees = (props: IWidget) => {
     console.log('Period', event.currentTarget.id);
   }
 
+  const handleSlide = (oldSlide: number, currentSlide: number) => {
+    console.log("Slide", oldSlide, currentSlide);
+  }
+
   return (
     <Expand
       title={props.title}
@@ -22,7 +26,7 @@ const WidgetWorkloadOfEmployees = (props: IWidget) => {
       <Flexbox $gap="16px" $direction="column">
         <Flexbox $justify="space-between" $gap="16px" $flexWrap="wrap" $direction="row-reverse">
           <ButtonGroup buttons={MPeriodsSwitcher} onClick={handlePeriodsSwitcherClick} $buttonsWidth="92px" />
-          <SimpleSlider $weeksData={MWeeksSlider} $maxWidth="200px" $height="32px" />
+          <SimpleSlider $weeksData={MWeeksSlider} $maxWidth="200px" $height="32px" $onSlide={handleSlide} />
         </Flexbox>
         <Flexbox $gap="8px" $direction="column">
           {MWorkloadOfEmployees.map(item => (
