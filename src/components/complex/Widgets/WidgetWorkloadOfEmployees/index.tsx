@@ -20,9 +20,9 @@ const WidgetWorkloadOfEmployees = (props: IWidget) => {
       $externalLink={props.$externalLink}
     >
       <Flexbox $gap="16px" $direction="column">
-        <Flexbox $justify="space-between" $gap="16px">
-          <SimpleSlider $weeksData={MWeeksSlider} $maxWidth="200px" $height="32px" />
+        <Flexbox $justify="space-between" $gap="16px" $flexWrap="wrap" $direction="row-reverse">
           <ButtonGroup buttons={MPeriodsSwitcher} onClick={handlePeriodsSwitcherClick} $buttonsWidth="92px" />
+          <SimpleSlider $weeksData={MWeeksSlider} $maxWidth="200px" $height="32px" />
         </Flexbox>
         <Flexbox $gap="8px" $direction="column">
           {MWorkloadOfEmployees.map(item => (

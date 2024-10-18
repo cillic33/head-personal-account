@@ -20,10 +20,6 @@ const StyledButtonGroup = styled.div<IProps>`
   background: #ffffff;
   border-radius: 8px;
   border: 1px solid ${props => props.theme.colors.surfacePrimary};
-  
-  @media (max-width: ${props => props.theme.breakpoints.s}) {
-    flex-direction: column;
-  }
 `
 
 const ButtonGroup = ({buttons, onClick, $buttonsWidth}: IProps) => {
