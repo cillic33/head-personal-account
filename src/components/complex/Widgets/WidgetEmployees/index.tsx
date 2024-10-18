@@ -1,7 +1,7 @@
 import Expand from "@components/surfaces/Expand";
 import {IWidget} from "@typing/TWidget";
 import Flexbox from "@components/surfaces/Flexbox";
-import {MEmployeesWidget} from "@utils/mock";
+import {MWidgetEmployees} from "@utils/mock";
 import WidgetEmployeesRow from "@components/complex/Widgets/WidgetEmployeesRow";
 
 const Employees = (props: IWidget) => {
@@ -12,7 +12,7 @@ const Employees = (props: IWidget) => {
       $isDragIcon={props.$isDragIcon}
     >
       <Flexbox $gap="4px" $direction="column">
-        {MEmployeesWidget.map((item) => (
+        {MWidgetEmployees.map((item) => (
           <WidgetEmployeesRow key={item.id} item={item} />
         ))}
       </Flexbox>

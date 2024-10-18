@@ -1,5 +1,8 @@
 import Expand from "@components/surfaces/Expand";
 import {IWidget} from "@typing/TWidget";
+import {MWidgetReportingWeekTS} from "@utils/mock";
+import Typography from "@components/data-display/Typography";
+import Flexbox from "@components/surfaces/Flexbox";
 
 const WidgetReportingWeekTS = (props: IWidget) => {
   return (
@@ -9,7 +12,16 @@ const WidgetReportingWeekTS = (props: IWidget) => {
       $isDragIcon={props.$isDragIcon}
       $externalLink={props.$externalLink}
     >
-      WidgetReportingWeekTS
+      <Flexbox $gap="4px" $direction="column">
+        {
+          MWidgetReportingWeekTS.map((item) => (
+            <Flexbox $justify="space-between" key={item.id} $padding="8px 12px">
+              <Typography $variant="body-regular">{item.title}</Typography>
+              <Typography $variant="h3">{item.count}</Typography>
+            </Flexbox>
+          ))
+        }
+      </Flexbox>
     </Expand>
   );
 }

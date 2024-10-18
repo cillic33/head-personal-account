@@ -4,6 +4,7 @@ import {TWidgetMyDeputies} from "@typing/TWidgetMyDeputies";
 import {TWidgetWorkloadOfEmployees} from "@typing/TWidgetWorkloadOfEmployees";
 import {IButtonGroupData} from "@typing/TButtonGroupData";
 import {TWidgetEmployees} from "@typing/TWidgetEmployees";
+import {TWidgetReportingWeekTSList} from "@typing/TWidgetReportingWeekTS";
 
 // Виджеты на главной
 export const MInitialData: IInitialData = {
@@ -232,7 +233,7 @@ export const MPeriodsSwitcher: IButtonGroupData[] = [
 ];
 
 // Виджет "Сотрудники "
-export const MEmployeesWidget: TWidgetEmployees = [
+export const MWidgetEmployees: TWidgetEmployees = [
   {
     id: 'all',
     title: 'Всего сотрудников',
@@ -252,5 +253,19 @@ export const MEmployeesWidget: TWidgetEmployees = [
     link: '/',
     important: 1,
     warning: 2,
+  },
+];
+
+// Виджет "TS за отчетную неделю"
+export const MWidgetReportingWeekTS: TWidgetReportingWeekTSList = [
+  {
+    id: "1",
+    title: "TS утверждены",
+    count: 23,
+  },
+  {
+    id: "2",
+    title: "TS не утверждены",
+    count: 12,
   },
 ];
