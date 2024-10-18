@@ -1,9 +1,9 @@
 import {IInitialData} from "@typing/TDnd";
-import {TApplications} from "@typing/TApplications";
-import {TMyDeputies} from "@typing/TMyDeputies";
-import {TWorkloadOfEmployees} from "@typing/TWorkloadOfEmployees";
+import {TWidgetApplications} from "@typing/TWidgetApplications";
+import {TWidgetMyDeputies} from "@typing/TWidgetMyDeputies";
+import {TWidgetWorkloadOfEmployees} from "@typing/TWidgetWorkloadOfEmployees";
 import {IButtonGroupData} from "@typing/TButtonGroupData";
-import {TEmployeesWidget} from "@typing/TEmployeesWidget";
+import {TWidgetEmployees} from "@typing/TWidgetEmployees";
 
 // Виджеты на главной
 export const MInitialData: IInitialData = {
@@ -39,7 +39,7 @@ export const MInitialData: IInitialData = {
 };
 
 // Виджет "Заявки на утверждение"
-export const MApplications: TApplications = [
+export const MApplications: TWidgetApplications = [
   {
     id: 'all',
     title: 'Всего сегодня',
@@ -146,7 +146,7 @@ export const MApplications: TApplications = [
 ];
 
 // Виджет "Мои заместители"
-export const MMyDeputies: TMyDeputies = [
+export const MMyDeputies: TWidgetMyDeputies = [
   {
     id: "1",
     title: "Управление конкурсными проектами",
@@ -180,7 +180,7 @@ export const MMyDeputies: TMyDeputies = [
 ];
 
 // Виджет "Занятость сотрудников"
-export const MWorkloadOfEmployees: TWorkloadOfEmployees = [
+export const MWorkloadOfEmployees: TWidgetWorkloadOfEmployees = [
   {
     id: "1",
     title: "Коммерческая занятость",
@@ -232,7 +232,7 @@ export const MPeriodsSwitcher: IButtonGroupData[] = [
 ];
 
 // Виджет "Сотрудники "
-export const MEmployeesWidget: TEmployeesWidget = [
+export const MEmployeesWidget: TWidgetEmployees = [
   {
     id: 'all',
     title: 'Всего сотрудников',

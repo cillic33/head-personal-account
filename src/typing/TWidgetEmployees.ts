@@ -1,4 +1,4 @@
-export interface TEmployeeWidget {
+export interface IWidgetEmployee {
   id: string;
   title: string;
   count: number;
@@ -7,4 +7,4 @@ export interface TEmployeeWidget {
   warning?: number;
 }
 
-export type TEmployeesWidget = TEmployeeWidget[];
+export type TWidgetEmployees = IWidgetEmployee[];

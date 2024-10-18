@@ -1,5 +1,5 @@
-import {IMyDeputy} from "@typing/TMyDeputies";
+import {IWidgetMyDeputy} from "@typing/TWidgetMyDeputies";
 
 export interface IProps {
-  data: IMyDeputy;
+  data: IWidgetMyDeputy;
 }

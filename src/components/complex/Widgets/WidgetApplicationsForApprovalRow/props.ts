@@ -1,5 +1,5 @@
-import {TApplication} from "@typing/TApplications";
+import {IWidgetApplication} from "@typing/TWidgetApplications";
 
 export interface IProps {
-  item: TApplication,
+  item: IWidgetApplication,
 }

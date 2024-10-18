@@ -1,4 +1,4 @@
-export interface TApplication {
+export interface IWidgetApplication {
   id: string,
   title: string,
   important: number,
@@ -7,4 +7,4 @@ export interface TApplication {
   link?: string,
 }
 
-export type TApplications = TApplication[];
+export type TWidgetApplications = IWidgetApplication[];

@@ -1,5 +1,5 @@
-import {TMyDeputies} from "@typing/TMyDeputies";
+import {TWidgetMyDeputies} from "@typing/TWidgetMyDeputies";
 
 export interface IProps {
-  data: TMyDeputies;
+  data: TWidgetMyDeputies;
 }
