@@ -7,11 +7,21 @@ import {MouseEvent} from "react";
 import {theme} from "@utils/theme/theme";
 import Typography from "@components/data-display/Typography";
 import Chip from "@components/data-display/Chip";
+import PieChartComponent from "@components/data-display/PieChart";
 
 const WidgetHappinessIndex = (props: IWidget) => {
   const handlePeriodsSwitcherClick = (event: MouseEvent<HTMLButtonElement>): void => {
     console.log('Period', event.currentTarget.id);
   }
+
+  const dataPieChart = {
+    variants: [
+      { name: "В зоне риска", value: 10 },
+      { name: "Требуют контроля", value: 10 },
+      { name: "Вне зоны риска", value: 10 },
+    ],
+    colors: ["#FF7979", "#FFA556", "#00BF9F"],
+  };
 
   return (
     <Expand
@@ -36,7 +46,12 @@ const WidgetHappinessIndex = (props: IWidget) => {
               <Typography $variant="h2" $color={theme.colors.systemWarningDarkened}>4,2</Typography>
             </Flexbox>
           </Flexbox>
-          <div>Diagram</div>
+
+          <Flexbox $gap="16px" $padding="16px">
+            <PieChartComponent $data={dataPieChart} />
+
+          </Flexbox>
+
         </Flexbox>
 
       </Flexbox>
