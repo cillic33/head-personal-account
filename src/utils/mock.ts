@@ -5,6 +5,7 @@ import {TWidgetWorkloadOfEmployees} from "@typing/TWidgetWorkloadOfEmployees";
 import {IButtonGroupData} from "@typing/TButtonGroupData";
 import {TWidgetEmployees} from "@typing/TWidgetEmployees";
 import {TWidgetReportingWeekTSList} from "@typing/TWidgetReportingWeekTS";
+import {TWidgetAbsenceList} from "@typing/TWidgetAbsence";
 
 // Виджеты на главной
 export const MInitialData: IInitialData = {
@@ -267,5 +268,24 @@ export const MWidgetReportingWeekTS: TWidgetReportingWeekTSList = [
     id: "2",
     title: "TS не утверждены",
     count: 12,
+  },
+];
+
+// Виджет "Отсутствия"
+export const MWidgetAbsence: TWidgetAbsenceList = [
+  {
+    id: "1",
+    title: "Отсутствуют сегодня",
+    count: 23,
+  },
+  {
+    id: "2",
+    title: "Отсутствуют завтра",
+    count: 1,
+  },
+  {
+    id: "3",
+    title: "Отсутствуют в ближ. 7 дней",
+    count: 15,
   },
 ];
