@@ -227,11 +227,6 @@ export const MWorkloadOfEmployees: TWidgetWorkloadOfEmployees = [
   },
 ];
 
-// Переключатель "Неделя" / "Месяц"
-export const MPeriodsSwitcher: IButtonGroupData[] = [
-  {id: 'week', title: 'Неделя', isActive: true},
-  {id: 'month', title: 'Месяц', isActive: false},
-];
 
 // Виджет "Сотрудники "
 export const MWidgetEmployees: TWidgetEmployees = [
@@ -288,4 +283,21 @@ export const MWidgetAbsence: TWidgetAbsenceList = [
     title: "Отсутствуют в ближ. 7 дней",
     count: 15,
   },
+];
+
+// Виджет "Индекс счастья"
+
+
+
+// Переключатель "Неделя" / "Месяц"
+export const MWeekMonthSwitcher: IButtonGroupData[] = [
+  {id: 'week', title: 'Неделя', isActive: true},
+  {id: 'month', title: 'Месяц', isActive: false},
+];
+
+// Переключатель "Месяц" / "Квартал" / "Год"
+export const MMonthQuarterYearSwitcher: IButtonGroupData[] = [
+  {id: 'month', title: 'Месяц', isActive: true, width: '63px'},
+  {id: 'quarter', title: 'Квартал', isActive: false, width: '74px'},
+  {id: 'year', title: 'Год', isActive: false, width: '41px'},
 ];

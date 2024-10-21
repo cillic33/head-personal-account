@@ -1,6 +1,6 @@
 import Expand from "@components/surfaces/Expand";
 import {IWidget} from "@typing/TWidget";
-import {MPeriodsSwitcher, MWorkloadOfEmployees} from "@utils/mock";
+import {MWeekMonthSwitcher, MWorkloadOfEmployees} from "@utils/mock";
 import ProgressBar from "@components/data-display/ProgressBar";
 import Flexbox from "@components/surfaces/Flexbox";
 import ButtonGroup from "@components/inputs/ButtonGroup";
@@ -34,8 +34,8 @@ const WidgetWorkloadOfEmployees = (props: IWidget) => {
       $externalLink={props.$externalLink}
     >
       <Flexbox $gap="16px" $direction="column">
-        <Flexbox $justify="space-between" $gap="16px" $flexWrap="wrap" $direction="row-reverse">
-          <ButtonGroup buttons={MPeriodsSwitcher} onClick={handlePeriodsSwitcherClick} $buttonsWidth="92px" />
+        <Flexbox $justify="space-between" $gap="16px" $flexWrap="wrap" $direction="row-reverse" $align="center">
+          <ButtonGroup buttons={MWeekMonthSwitcher} onClick={handlePeriodsSwitcherClick} $buttonsWidth="92px" />
           <SimpleSlider $weeksData={weeksData} $maxWidth="200px" $height="32px" $onSlide={handleSlide} />
         </Flexbox>
         <Flexbox $gap="8px" $direction="column">

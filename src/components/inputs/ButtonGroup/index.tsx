@@ -52,7 +52,7 @@ const ButtonGroup = ({buttons, onClick, $buttonsWidth}: IProps) => {
               $padding="2px"
               $isActive={item.isActive}
               onClick={handleClick}
-              $width={$buttonsWidth}
+              $width={item.width || $buttonsWidth}
             >
               {item.title}
             </Button>
