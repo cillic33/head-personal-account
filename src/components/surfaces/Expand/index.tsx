@@ -16,7 +16,6 @@ const StyledExpand = styled.div<Props>`
   .expand {
     &__head {
       padding: 16px;
-      border-bottom: 1px solid ${props => props.theme.colors.onSurfaceFaintSecondary};
     }
     
     &__title {
@@ -39,6 +38,7 @@ const StyledExpand = styled.div<Props>`
     
     &__body {
       padding: 16px;
+      border-top: 1px solid ${props => props.theme.colors.onSurfaceFaintSecondary};
     }
   }
 `
