@@ -14,6 +14,8 @@ const StyledFlexbox = styled.div<IProps>`
   margin: ${props => props.$margin || undefined};
   background: ${props => props.$background || undefined};
   border-radius: ${props => props.$borderRadius || undefined};
+  border: ${props => props.$border || undefined};
+  border-width: ${props => props.$borderWidth || undefined};
 `
 
 const Flexbox = ({children, ...props}: IProps) => {

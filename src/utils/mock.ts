@@ -6,6 +6,7 @@ import {IButtonGroupData} from "@typing/TButtonGroupData";
 import {TWidgetEmployees} from "@typing/TWidgetEmployees";
 import {TWidgetReportingWeekTSList} from "@typing/TWidgetReportingWeekTS";
 import {TWidgetAbsenceList} from "@typing/TWidgetAbsence";
+import {TWidgetMetrics} from "@typing/TMetrics";
 
 // Виджеты на главной
 export const MInitialData: IInitialData = {
@@ -286,7 +287,32 @@ export const MWidgetAbsence: TWidgetAbsenceList = [
 ];
 
 // Виджет "Индекс счастья"
-
+export const MWidgetMetrics: TWidgetMetrics = [
+  {
+    id: "1",
+    title: "HR-метрики ",
+    percent: -0.1,
+    total: 4.2,
+    employeesCount: 40,
+    detailedList: [
+      {
+        id: "1",
+        title: "В зоне риска",
+        count: 10,
+      },
+      {
+        id: "2",
+        title: "Требуют контроля",
+        count: 10,
+      },
+      {
+        id: "3",
+        title: "Вне зоны риска",
+        count: 10,
+      },
+    ],
+  },
+];
 
 
 // Переключатель "Неделя" / "Месяц"
@@ -301,3 +327,4 @@ export const MMonthQuarterYearSwitcher: IButtonGroupData[] = [
   {id: 'quarter', title: 'Квартал', isActive: false, width: '74px'},
   {id: 'year', title: 'Год', isActive: false, width: '41px'},
 ];
+

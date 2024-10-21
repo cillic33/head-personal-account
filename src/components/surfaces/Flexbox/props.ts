@@ -14,4 +14,6 @@ export interface IProps {
   $margin?: string;
   $background?: string;
   $borderRadius?: string;
+  $border?: string;
+  $borderWidth?: string;
 }

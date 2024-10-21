@@ -26,6 +26,7 @@ export const theme = {
     systemErrorFaded: '#F48888',
     systemErrorNormal: '#E34F4F',
     systemErrorFaintSecondary: 'rgba(227, 79, 79, 0.15)',
+    systemWarningDarkened: '#EEAD00',
   },
   breakpoints: {
     xs: '425px',
