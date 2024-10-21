@@ -64,6 +64,12 @@ const StyledTypography = styled.span<IProps>`
           line-height: 20px;
           font-weight: 600;
         `
+      case "xs-bold":
+        return css`
+          font-size: 12px;
+          line-height: 19.2px;
+          font-weight: 700;
+        `
     }
   }}
   

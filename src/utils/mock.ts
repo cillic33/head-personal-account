@@ -6,7 +6,7 @@ import {IButtonGroupData} from "@typing/TButtonGroupData";
 import {TWidgetEmployees} from "@typing/TWidgetEmployees";
 import {TWidgetReportingWeekTSList} from "@typing/TWidgetReportingWeekTS";
 import {TWidgetAbsenceList} from "@typing/TWidgetAbsence";
-import {TWidgetMetrics} from "@typing/TMetrics";
+import {IWidgetMetrics} from "@typing/TMetrics";
 
 // Виджеты на главной
 export const MInitialData: IInitialData = {
@@ -14,9 +14,9 @@ export const MInitialData: IInitialData = {
     'widget-1': { id: 'widget-1', title: 'Заявки на утверждение', $isOpen: false, $isDragIcon: true},
     'widget-2': { id: 'widget-2', title: 'Мои заместители', $isOpen: false, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
     'widget-3': { id: 'widget-3', title: 'Занятость сотрудников', $isOpen: true, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
-    'widget-4': { id: 'widget-4', title: 'Сотрудники', $isOpen: true, $isDragIcon: true},
-    'widget-5': { id: 'widget-5', title: 'TS за отчетную неделю', $isOpen: true, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
-    'widget-6': { id: 'widget-6', title: 'Отсутствия', $isOpen: true, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
+    'widget-4': { id: 'widget-4', title: 'Сотрудники', $isOpen: false, $isDragIcon: true},
+    'widget-5': { id: 'widget-5', title: 'TS за отчетную неделю', $isOpen: false, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
+    'widget-6': { id: 'widget-6', title: 'Отсутствия', $isOpen: false, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
     'widget-7': { id: 'widget-7', title: 'Индекс счастья', $isOpen: true, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
     'widget-8': { id: 'widget-8', title: 'Мониторинг настроения', $isOpen: true, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
     'widget-9': { id: 'widget-9', title: 'Мои ссылки', $isOpen: true, $isDragIcon: true, $popupId: "addLinkPopup"},
@@ -287,32 +287,56 @@ export const MWidgetAbsence: TWidgetAbsenceList = [
 ];
 
 // Виджет "Индекс счастья"
-export const MWidgetMetrics: TWidgetMetrics = [
-  {
-    id: "1",
-    title: "HR-метрики ",
+export const MWidgetMetrics: IWidgetMetrics = {
+  "hrMetric": {
+    title: "HR-метрики",
     percent: -0.1,
     total: 4.2,
-    employeesCount: 40,
-    detailedList: [
+    variants: [
       {
-        id: "1",
-        title: "В зоне риска",
-        count: 10,
+        name: "В зоне риска",
+        value: 1,
+        color: "#FF7979",
       },
       {
-        id: "2",
-        title: "Требуют контроля",
-        count: 10,
+        name: "Требуют контроля",
+        value: 4,
+        color: "#FFA556",
       },
       {
-        id: "3",
-        title: "Вне зоны риска",
-        count: 10,
+        name: "Вне зоны риска",
+        value: 10,
+        color: "#00BF9F",
       },
     ],
+    centerCount: "24",
+    centerText: "Cотруд.",
   },
-];
+  "mlMetric": {
+    title: "ML-метрики",
+    percent: 0.1,
+    total: 4.8,
+    variants: [
+      {
+        name: "В зоне риска",
+        value: 11,
+        color: "#FF7979",
+      },
+      {
+        name: "Требуют контроля",
+        value: 12,
+        color: "#FFA556",
+      },
+      {
+        name: "Вне зоны риска",
+        value: 13,
+        color: "#00BF9F",
+      },
+    ],
+    centerCount: "50",
+    centerText: "Cотруд.",
+  },
+};
 
 
 // Переключатель "Неделя" / "Месяц"
@@ -327,4 +351,3 @@ export const MMonthQuarterYearSwitcher: IButtonGroupData[] = [
   {id: 'quarter', title: 'Квартал', isActive: false, width: '74px'},
   {id: 'year', title: 'Год', isActive: false, width: '41px'},
 ];
-

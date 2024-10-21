@@ -1,11 +1,16 @@
 interface IPieChartVariant {
   name: string;
   value: number;
+  color: string;
 }
 
-type TPieChartVariants = IPieChartVariant[]
+export type TPieChartVariants = IPieChartVariant[]
 
-export type TPieChartComponent = {
+export interface IPieChartComponent {
+  title: string;
+  percent: number;
+  total: number;
   variants: TPieChartVariants;
-  colors: string[];
+  centerCount: string;
+  centerText: string;
 }

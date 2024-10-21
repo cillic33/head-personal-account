@@ -1,18 +1,5 @@
-interface IWidgetMetricsRow {
-  id: string;
-  title: string;
-  count: number
+import {IPieChartComponent} from "@typing/TPieChart";
+
+export interface IWidgetMetrics {
+  [key: string]: IPieChartComponent;
 }
-
-type TWidgetMetricsList = IWidgetMetricsRow[]
-
-export type TWidgetMetrics = [
-  {
-    id: string;
-    title: string;
-    percent: number;
-    total: number;
-    employeesCount: number;
-    detailedList: TWidgetMetricsList;
-  }
-]

@@ -2,26 +2,16 @@ import Expand from "@components/surfaces/Expand";
 import {IWidget} from "@typing/TWidget";
 import Flexbox from "@components/surfaces/Flexbox";
 import ButtonGroup from "@components/inputs/ButtonGroup";
-import {MMonthQuarterYearSwitcher} from "@utils/mock";
+import {MMonthQuarterYearSwitcher, MWidgetMetrics} from "@utils/mock";
 import {MouseEvent} from "react";
-import {theme} from "@utils/theme/theme";
-import Typography from "@components/data-display/Typography";
-import Chip from "@components/data-display/Chip";
 import PieChartComponent from "@components/data-display/PieChart";
 
 const WidgetHappinessIndex = (props: IWidget) => {
+  const dataHrMetric = MWidgetMetrics["hrMetric"];
+  const dataMlMetric = MWidgetMetrics["mlMetric"];
   const handlePeriodsSwitcherClick = (event: MouseEvent<HTMLButtonElement>): void => {
     console.log('Period', event.currentTarget.id);
   }
-
-  const dataPieChart = {
-    variants: [
-      { name: "В зоне риска", value: 10 },
-      { name: "Требуют контроля", value: 10 },
-      { name: "Вне зоны риска", value: 10 },
-    ],
-    colors: ["#FF7979", "#FFA556", "#00BF9F"],
-  };
 
   return (
     <Expand
@@ -36,24 +26,10 @@ const WidgetHappinessIndex = (props: IWidget) => {
           <>Simple Slider here</>
         </Flexbox>
 
-        <Flexbox $direction="column" $borderRadius="6px" $border={`1px solid ${theme.colors.surfacePrimary}`}>
-          <Flexbox $padding="16px" $gap="12px" $align="center" $justify="space-between" $border={`1px solid ${theme.colors.surfacePrimary}`} $borderWidth="0 0 1px 0">
-            <Typography $variant="body-semibold" $color={theme.colors.textIconBaseSecondary}>HR-метрики</Typography>
-            <Flexbox $gap="12px" $align="center">
-              <Chip $padding="2px 6px 2px 4px" $background={theme.colors.systemErrorFaintSecondary} $borderRadius="4px">
-                <Typography $variant="chip-m" $color={theme.colors.textIconAccentError}>−0,1%</Typography>
-              </Chip>
-              <Typography $variant="h2" $color={theme.colors.systemWarningDarkened}>4,2</Typography>
-            </Flexbox>
-          </Flexbox>
-
-          <Flexbox $gap="16px" $padding="16px">
-            <PieChartComponent $data={dataPieChart} />
-
-          </Flexbox>
-
+        <Flexbox $gap="16px" $padding="16px" $direction="column">
+          <PieChartComponent $data={dataHrMetric} />
+          <PieChartComponent $data={dataMlMetric} />
         </Flexbox>
-
       </Flexbox>
     </Expand>
   );
