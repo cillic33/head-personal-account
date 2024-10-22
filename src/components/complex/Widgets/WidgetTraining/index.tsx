@@ -51,7 +51,7 @@ const WidgetTraining = (props: IWidget) => {
 
         <PieChartComponent $data={dataCoursesMetric} $isHeader={false} />
 
-        <PieChartComponent $data={dataCostsMetric} $isHeader={false} $postfix="т.р." />
+        <PieChartComponent $data={dataCostsMetric} $isHeader={false} />
       </Flexbox>
     </Expand>
   );

@@ -6,7 +6,7 @@ import styled from "styled-components";
 import {theme} from "@utils/theme/theme";
 import Chip from "@components/data-display/Chip";
 
-function CustomLabel({viewBox, centerCount, centerText, $postfix}: ICustomLabelProps) {
+function CustomLabel({viewBox, centerCount, centerText, postfix}: ICustomLabelProps) {
   const {cx, cy} = viewBox;
 
   return (
@@ -20,7 +20,7 @@ function CustomLabel({viewBox, centerCount, centerText, $postfix}: ICustomLabelP
         <tspan
           alignmentBaseline="middle"
           fontSize="12"
-          fontWeight={700}>{centerCount}{$postfix ? ` ${$postfix}` : ''}</tspan>
+          fontWeight={700}>{centerCount}{postfix ? ` ${postfix}` : ''}</tspan>
       </text>
       <text
         x={cx}
@@ -66,10 +66,9 @@ const PieChartComponent = (
     $isCenterText = true,
     $isRightInfo = true,
     $isHeader = true,
-    $postfix,
   }: IProps
 ) => {
-  const {title = "", percent, total, ratio, variants, centerCount, centerText} = $data;
+  const {title = "", percent, total, ratio, variants, centerCount, centerText, postfix} = $data;
 
   return (
     <Flexbox
@@ -106,7 +105,7 @@ const PieChartComponent = (
                 $variant="h2"
                 $color={percent && percent > 0 ? theme.colors.textIconAccentSuccess : theme.colors.systemWarningDarkened}
               >
-                {total}{$postfix ? ` ${$postfix}` : ''}
+                {total}{postfix ? ` ${postfix}` : ''}
               </Typography>
             }
             {ratio &&
@@ -153,7 +152,7 @@ const PieChartComponent = (
                     viewBox={{cx: $width!, cy: $height!}}
                     centerCount={centerCount}
                     centerText={centerText}
-                    $postfix={$postfix}
+                    postfix={postfix}
                   />
                 }></Label>
             }
@@ -172,7 +171,7 @@ const PieChartComponent = (
                   $variant="caption-regular"
                   $color={theme.colors.textIconBaseSecondary}>{item.name}</Typography>
                 <StyledDottedLine/>
-                <Typography $variant="body-semibold">{item.value}{$postfix ? ` ${$postfix}` : ''}</Typography>
+                <Typography $variant="body-semibold">{item.value}{postfix ? ` ${postfix}` : ''}</Typography>
               </Flexbox>
             ))}
           </StyledRightInfo>

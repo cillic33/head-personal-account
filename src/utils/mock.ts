@@ -19,12 +19,12 @@ export const MInitialData: IInitialData = {
     'widget-4': { id: 'widget-4', title: 'Сотрудники', $isOpen: false, $isDragIcon: true},
     'widget-5': { id: 'widget-5', title: 'TS за отчетную неделю', $isOpen: false, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
     'widget-6': { id: 'widget-6', title: 'Отсутствия', $isOpen: false, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
-    'widget-7': { id: 'widget-7', title: 'Индекс счастья', $isOpen: true, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
+    'widget-7': { id: 'widget-7', title: 'Индекс счастья', $isOpen: false, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
     'widget-8': { id: 'widget-8', title: 'Мониторинг настроения', $isOpen: false, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
     'widget-9': { id: 'widget-9', title: 'Мои ссылки', $isOpen: false, $isDragIcon: true, $popupId: "addLinkPopup"},
-    'widget-10': { id: 'widget-10', title: 'Обучение', $isOpen: true, $isDragIcon: true, $internalLink: "/training"},
-    'widget-11': { id: 'widget-11', title: 'Движение персонала', $isOpen: true, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
-    'widget-12': { id: 'widget-12', title: 'Актуальность профилей', $isOpen: true, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
+    'widget-10': { id: 'widget-10', title: 'Обучение', $isOpen: false, $isDragIcon: true, $internalLink: "/training"},
+    'widget-11': { id: 'widget-11', title: 'Движение персонала', $isOpen: false, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
+    'widget-12': { id: 'widget-12', title: 'Актуальность профилей', $isOpen: false, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
   },
   columns: {
     'column-1': {
@@ -385,6 +385,7 @@ export const MWidgetMetrics: IWidgetMetrics = {
     ],
     centerCount: "640",
     centerText: "Затраты",
+    postfix: "т.р.",
   },
   // Виджет "Движение персонала"
   "staffTurnoverRateMetric": {

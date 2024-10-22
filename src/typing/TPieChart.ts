@@ -14,4 +14,5 @@ export interface IPieChartComponent {
   variants: TPieChartVariants;
   centerCount: string;
   centerText: string;
+  postfix?: string;
 }
