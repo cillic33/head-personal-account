@@ -8,6 +8,7 @@ import {TWidgetReportingWeekTSList} from "@typing/TWidgetReportingWeekTS";
 import {TWidgetAbsenceList} from "@typing/TWidgetAbsence";
 import {IWidgetMetrics} from "@typing/TMetrics";
 import {TWidgetMoodMonitoring} from "@typing/TWidgetMoodMonitoring";
+import {TWidgetMyLinks} from "@typing/TWidgetMyLinks";
 
 // Виджеты на главной
 export const MInitialData: IInitialData = {
@@ -352,6 +353,58 @@ export const MWidgetMoodMonitoring: TWidgetMoodMonitoring = [
     title: "Коэффициент по компании",
     percent: 0.1,
     count: 4.5,
+  },
+];
+
+// Виджет "Мои ссылки"
+export const MWidgetMyLinks: TWidgetMyLinks = [
+  {
+    id: "1",
+    title: "Chat GPT",
+    imageSrc: "/src/images/LogoGhatGpt.svg",
+    link: "https://life.ibs.ru",
+  },
+  {
+    id: "2",
+    title: "Моя полезная ссылка",
+    imageSrc: "/src/images/LogoIbsRound.svg",
+    link: "https://life.ibs.ru",
+  },
+  {
+    id: "3",
+    title: "Sales graph",
+    imageSrc: "/src/images/LogoSalesGraph.svg",
+    link: "https://life.ibs.ru",
+  },
+  {
+    id: "4",
+    title: "Awwwards",
+    imageSrc: "/src/images/LogoAwwwards.svg",
+    link: "https://life.ibs.ru",
+  },
+  {
+    id: "5",
+    title: "Chat GPT",
+    imageSrc: "/src/images/LogoGhatGpt.svg",
+    link: "https://life.ibs.ru",
+  },
+  {
+    id: "6",
+    title: "Моя полезная ссылка",
+    imageSrc: "/src/images/LogoIbsRound.svg",
+    link: "https://life.ibs.ru",
+  },
+  {
+    id: "7",
+    title: "Sales graph",
+    imageSrc: "/src/images/LogoSalesGraph.svg",
+    link: "https://life.ibs.ru",
+  },
+  {
+    id: "8",
+    title: "Awwwards",
+    imageSrc: "/src/images/LogoAwwwards.svg",
+    link: "https://life.ibs.ru",
   },
 ];
 

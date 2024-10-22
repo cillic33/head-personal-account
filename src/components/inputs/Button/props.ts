@@ -17,4 +17,6 @@ export interface IProps {
   $ref?: RefObject<HTMLElement> | null;
   $position?: TPosition;
   $width?: string;
+  $flex?: string;
+  $opacity?: number;
 }

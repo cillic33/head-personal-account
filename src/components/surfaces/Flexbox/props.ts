@@ -17,4 +17,6 @@ export interface IProps {
   $border?: string;
   $borderWidth?: string;
   $flex?: string;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
