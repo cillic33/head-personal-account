@@ -19,4 +19,5 @@ export interface IProps {
   $flex?: string;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
+  onClick?: () => void;
 }

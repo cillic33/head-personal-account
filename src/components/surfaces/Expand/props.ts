@@ -1,4 +1,4 @@
-import {ReactNode} from "react";
+import {MouseEvent, ReactNode} from "react";
 
 export interface Props {
   children: ReactNode;
@@ -7,5 +7,6 @@ export interface Props {
   $isDragIcon?: boolean;
   $externalLink?: string;
   $internalLink?: string;
-  $popupId?: string;
+  $isPlusIcon?: boolean;
+  $onPlusClick?: (event?: MouseEvent<HTMLDivElement>) => void;
 }

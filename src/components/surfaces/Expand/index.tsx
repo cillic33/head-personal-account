@@ -51,9 +51,16 @@ const Expand = (props: Props) => {
     $isDragIcon = false,
     $externalLink = '',
     $internalLink = '',
-    $popupId = '',
+    $isPlusIcon = false,
+    $onPlusClick,
   } = props;
   const {isOn, toggle} = useBoolean($isOpen);
+
+  const handlePlusClick = () => {
+    if ($onPlusClick) {
+      $onPlusClick();
+    }
+  }
 
   return (
     <StyledExpand {...props}>
@@ -77,8 +84,8 @@ const Expand = (props: Props) => {
           </Flexbox>
 
           <Flexbox $gap="12px" $align="center">
-            {$popupId !== "" &&
-              <Flexbox $width="24px" $height="24px" $align="center" $justify="center" $flex="1 0 20px">
+            {$isPlusIcon &&
+              <Flexbox $width="24px" $height="24px" $align="center" $justify="center" $flex="1 0 20px" onClick={handlePlusClick}>
                 <Image
                   src={PlusCircleGrayIcon}
                   $width="20px"

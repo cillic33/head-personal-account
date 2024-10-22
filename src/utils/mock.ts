@@ -21,7 +21,7 @@ export const MInitialData: IInitialData = {
     'widget-6': { id: 'widget-6', title: 'Отсутствия', isOpen: true, isDragIcon: true, externalLink: "https://life.ibs.ru/stream/"},
     'widget-7': { id: 'widget-7', title: 'Индекс счастья', isOpen: true, isDragIcon: true, externalLink: "https://life.ibs.ru/stream/"},
     'widget-8': { id: 'widget-8', title: 'Мониторинг настроения', isOpen: true, isDragIcon: true, externalLink: "https://life.ibs.ru/stream/"},
-    'widget-9': { id: 'widget-9', title: 'Мои ссылки', isOpen: true, isDragIcon: true, popupId: "addLinkPopup"},
+    'widget-9': { id: 'widget-9', title: 'Мои ссылки', isOpen: true, isDragIcon: true, isPlusIcon: true},
     'widget-10': { id: 'widget-10', title: 'Обучение', isOpen: true, isDragIcon: true, internalLink: "/training"},
     'widget-11': { id: 'widget-11', title: 'Движение персонала', isOpen: true, isDragIcon: true, externalLink: "https://life.ibs.ru/stream/"},
     'widget-12': { id: 'widget-12', title: 'Актуальность профилей', isOpen: true, isDragIcon: true, externalLink: "https://life.ibs.ru/stream/"},
@@ -231,7 +231,7 @@ export const MWorkloadOfEmployees: TWidgetWorkloadOfEmployees = [
 ];
 
 
-// Виджет "Сотрудники "
+// Виджет "Сотрудники"
 export const MWidgetEmployees: TWidgetEmployees = [
   {
     id: 'all',

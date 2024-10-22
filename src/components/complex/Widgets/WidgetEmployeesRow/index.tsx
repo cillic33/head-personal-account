@@ -27,13 +27,13 @@ const WidgetEmployeesRow = ({item}: IProps) => {
       <Flexbox $gap="12px" $align="center">
         <Flexbox $gap="4px" $align="center">
           {important &&
-            <Chip $background={theme.colors.systemErrorFaintSecondary} $borderRadius="4px" $padding="2px 4px 2px 2px">
+            <Chip $background={theme.colors.systemErrorFaintSecondary} $borderRadius="4px" $padding="2px 4px 2px 2px" $gap="2px">
               <Image src={ExclamationRoundRed} $width="16px" $height="16px" />
               <Typography $variant="chip-s" $color={theme.colors.textIconAccentError}>{important}</Typography>
             </Chip>
           }
           {warning &&
-            <Chip $background={theme.colors.complimentaryYellowFaintSecondary} $borderRadius="4px" $padding="2px 4px 2px 2px">
+            <Chip $background={theme.colors.complimentaryYellowFaintSecondary} $borderRadius="4px" $padding="2px 4px 2px 2px" $gap="2px">
               <Image src={ExclamationTriangleYellow} $width="16px" $height="16px" />
               <Typography $variant="chip-s" $color={theme.colors.textIconAccentWarning}>{warning}</Typography>
             </Chip>

@@ -5,5 +5,5 @@ export interface IWidget {
   isDragIcon?: boolean;
   externalLink?: string;
   internalLink?: string;
-  popupId?: string;
+  isPlusIcon?: boolean;
 }

@@ -4,6 +4,9 @@ import {MWidgetMyLinks} from "@utils/mock";
 import WidgetMyLinksRow from "@components/complex/Widgets/WidgetMyLinksRow";
 import styled from "styled-components";
 import {scroll} from "@utils/mixins";
+import SimplePopup from "@components/data-display/SimplePopup";
+import {useState} from "react";
+
 
 const StyledWidgetMyLinks = styled.div`
   display: flex;
@@ -18,12 +21,20 @@ const StyledWidgetMyLinks = styled.div`
 
 const WidgetMyLinks = (props: IWidget) => {
   // TODO Добавить попап окна
+  const [isPopupShow, setIsPopupShow] = useState<boolean>(false);
+  //const {isOn: isOnPopup, on: onPopup, off: offPopup} = useBoolean(false);
+
+  const handlePlusClick = () => {
+    setIsPopupShow(true);
+  }
+
   return (
     <Expand
       title={props.title}
       $isOpen={props.isOpen}
       $isDragIcon={props.isDragIcon}
-      $popupId={props.popupId}
+      $isPlusIcon={props.isPlusIcon}
+      $onPlusClick={handlePlusClick}
     >
       <StyledWidgetMyLinks>
         {
@@ -32,6 +43,11 @@ const WidgetMyLinks = (props: IWidget) => {
           ))
         }
       </StyledWidgetMyLinks>
+
+      {/* Попап */}
+      <SimplePopup isPopupShow={isPopupShow}>
+        FORM
+      </SimplePopup>
     </Expand>
   );
 }
