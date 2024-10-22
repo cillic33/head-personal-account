@@ -11,4 +11,5 @@ export type IProps = {
   $nowrap?: boolean;
   $align?: TAlign;
   className?: string;
+  $flex?: string;
 }

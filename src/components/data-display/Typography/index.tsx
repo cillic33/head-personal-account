@@ -77,6 +77,7 @@ const StyledTypography = styled.span<IProps>`
   padding: ${props => props.$padding || undefined};
   white-space: ${props => props.$nowrap && 'nowrap'};
   text-align: ${props => props.$align || undefined};
+  flex: ${props => props.$flex || undefined};
 `
 
 const Typography = (props: IProps): JSX.Element => {
