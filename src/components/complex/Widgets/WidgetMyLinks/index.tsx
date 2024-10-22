@@ -21,9 +21,9 @@ const WidgetMyLinks = (props: IWidget) => {
   return (
     <Expand
       title={props.title}
-      $isOpen={props.$isOpen}
-      $isDragIcon={props.$isDragIcon}
-      $popupId={props.$popupId}
+      $isOpen={props.isOpen}
+      $isDragIcon={props.isDragIcon}
+      $popupId={props.popupId}
     >
       <StyledWidgetMyLinks>
         {

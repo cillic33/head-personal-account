@@ -31,9 +31,9 @@ const WidgetTraining = (props: IWidget) => {
   return (
     <Expand
       title={props.title}
-      $isOpen={props.$isOpen}
-      $isDragIcon={props.$isDragIcon}
-      $internalLink={props.$internalLink}
+      $isOpen={props.isOpen}
+      $isDragIcon={props.isDragIcon}
+      $internalLink={props.internalLink}
     >
       <Flexbox $gap="16px" $direction="column">
         <Flexbox $align="center" $gap="16px" $padding="16px" $border={`1px solid ${theme.colors.surfacePrimary}`} $borderRadius="6px">

@@ -9,9 +9,9 @@ const WidgetRelevanceOfProfiles = (props: IWidget) => {
   return (
     <Expand
       title={props.title}
-      $isOpen={props.$isOpen}
-      $isDragIcon={props.$isDragIcon}
-      $externalLink={props.$externalLink}
+      $isOpen={props.isOpen}
+      $isDragIcon={props.isDragIcon}
+      $externalLink={props.externalLink}
     >
       <PieChartComponent $data={dataRelevanceFactor} />
     </Expand>

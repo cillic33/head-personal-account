@@ -3,7 +3,6 @@ import {MInitialData} from "@utils/mock";
 import WidgetApplicationsForApproval from "@components/complex/Widgets/WidgetApplicationsForApproval";
 import WidgetMyDeputies from "@components/complex/Widgets/WidgetMyDeputies";
 import WidgetWorkloadOfEmployees from "@components/complex/Widgets/WidgetWorkloadOfEmployees";
-import Employees from "@components/complex/Widgets/WidgetEmployees";
 import WidgetReportingWeekTS from "@components/complex/Widgets/WidgetReportingWeekTS";
 import WidgetAbsence from "@components/complex/Widgets/WidgetAbsence";
 import WidgetHappinessIndex from "@components/complex/Widgets/WidgetHappinessIndex";
@@ -13,23 +12,39 @@ import WidgetTraining from "@components/complex/Widgets/WidgetTraining";
 import WidgetStaffMovement from "@components/complex/Widgets/WidgetStaffMovement";
 import WidgetRelevanceOfProfiles from "@components/complex/Widgets/WidgetRelevanceOfProfiles";
 import DndMain from "@components/complex/Dnd/DndMain";
+import WidgetEmployees from "@components/complex/Widgets/WidgetEmployees";
 
 const MainPage = () => {
+  const {
+    ["widget-1"]: dataApplicationsForApproval,
+    ["widget-2"]: dataMyDeputies,
+    ["widget-3"]: dataWorkloadOfEmployees,
+    ["widget-4"]: dataEmployees,
+    ["widget-5"]: dataReportingWeekTS,
+    ["widget-6"]: dataAbsence,
+    ["widget-7"]: dataHappinessIndex,
+    ["widget-8"]: dataMoodMonitoring,
+    ["widget-9"]: dataMyLinks,
+    ["widget-10"]: dataTraining,
+    ["widget-11"]: dataStaffMovement,
+    ["widget-12"]: dataRelevanceOfProfiles,
+  } = MInitialData.cells;
+
   return (
     <PageContainer>
       <DndMain initialData={MInitialData}>
-        <WidgetApplicationsForApproval {...MInitialData.cells["widget-1"]} />
-        <WidgetMyDeputies {...MInitialData.cells["widget-2"]} />
-        <WidgetWorkloadOfEmployees {...MInitialData.cells["widget-3"]} />
-        <Employees {...MInitialData.cells["widget-4"]} />
-        <WidgetReportingWeekTS {...MInitialData.cells["widget-5"]} />
-        <WidgetAbsence {...MInitialData.cells["widget-6"]} />
-        <WidgetHappinessIndex {...MInitialData.cells["widget-7"]} />
-        <WidgetMoodMonitoring {...MInitialData.cells["widget-8"]} />
-        <WidgetMyLinks {...MInitialData.cells["widget-9"]} />
-        <WidgetTraining {...MInitialData.cells["widget-10"]} />
-        <WidgetStaffMovement {...MInitialData.cells["widget-11"]} />
-        <WidgetRelevanceOfProfiles {...MInitialData.cells["widget-12"]} />
+        <WidgetApplicationsForApproval {...dataApplicationsForApproval} />
+        <WidgetMyDeputies {...dataMyDeputies} />
+        <WidgetWorkloadOfEmployees {...dataWorkloadOfEmployees} />
+        <WidgetEmployees {...dataEmployees} />
+        <WidgetReportingWeekTS {...dataReportingWeekTS} />
+        <WidgetAbsence {...dataAbsence} />
+        <WidgetHappinessIndex {...dataHappinessIndex} />
+        <WidgetMoodMonitoring {...dataMoodMonitoring} />
+        <WidgetMyLinks {...dataMyLinks} />
+        <WidgetTraining {...dataTraining} />
+        <WidgetStaffMovement {...dataStaffMovement} />
+        <WidgetRelevanceOfProfiles {...dataRelevanceOfProfiles} />
       </DndMain>
     </PageContainer>
   );

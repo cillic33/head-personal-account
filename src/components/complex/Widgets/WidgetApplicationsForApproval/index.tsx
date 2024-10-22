@@ -8,8 +8,8 @@ const WidgetApplicationsForApproval = (props: IWidget) => {
   return (
     <Expand
       title={props.title}
-      $isOpen={props.$isOpen}
-      $isDragIcon={props.$isDragIcon}
+      $isOpen={props.isOpen}
+      $isDragIcon={props.isDragIcon}
     >
       <Flexbox
         $gap="4px"

@@ -4,12 +4,12 @@ import Flexbox from "@components/surfaces/Flexbox";
 import {MWidgetEmployees} from "@utils/mock";
 import WidgetEmployeesRow from "@components/complex/Widgets/WidgetEmployeesRow";
 
-const Employees = (props: IWidget) => {
+const WidgetEmployees = (props: IWidget) => {
   return (
     <Expand
       title={props.title}
-      $isOpen={props.$isOpen}
-      $isDragIcon={props.$isDragIcon}
+      $isOpen={props.isOpen}
+      $isDragIcon={props.isDragIcon}
     >
       <Flexbox $gap="4px" $direction="column">
         {MWidgetEmployees.map((item) => (
@@ -20,4 +20,4 @@ const Employees = (props: IWidget) => {
   );
 }
 
-export default Employees;
+export default WidgetEmployees;
