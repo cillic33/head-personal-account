@@ -78,7 +78,7 @@ const Expand = (props: Props) => {
 
           <Flexbox $gap="12px" $align="center">
             {$popupId !== "" &&
-              <Flexbox $width="24px" $height="24px" $align="center" $justify="center">
+              <Flexbox $width="24px" $height="24px" $align="center" $justify="center" $flex="1 0 20px">
                 <Image
                   src={PlusCircleGrayIcon}
                   $width="20px"
@@ -87,7 +87,7 @@ const Expand = (props: Props) => {
               </Flexbox>
             }
             {$internalLink !== "" &&
-              <Flexbox $width="24px" $height="24px" $align="center" $justify="center">
+              <Flexbox $width="24px" $height="24px" $align="center" $justify="center" $flex="1 0 20px">
                 <Link href={$internalLink} target="_blank">
                   <Image
                     src={ArrowGrayIcon}
@@ -98,7 +98,7 @@ const Expand = (props: Props) => {
               </Flexbox>
             }
             {$externalLink !== "" &&
-              <Flexbox $width="24px" $height="24px" $align="center" $justify="center">
+              <Flexbox $width="24px" $height="24px" $align="center" $justify="center" $flex="1 0 20px">
                 <Link href={$externalLink} target="_blank">
                   <Image
                     src={GotoGrayIcon}
@@ -108,20 +108,21 @@ const Expand = (props: Props) => {
                 </Link>
               </Flexbox>
             }
-            <div onClick={toggle}>
-              <Image
-                src={ChevronDownGray}
-                className={clsx(
-                  !isOn && 'expand__chevron',
-                  isOn && 'expand__chevron_active'
-                )}
-                $width="24px"
-                $height="24px"
-              />
-            </div>
+            <Image
+              src={ChevronDownGray}
+              className={clsx(
+                !isOn && 'expand__chevron',
+                isOn && 'expand__chevron_active'
+              )}
+              $width="24px"
+              $height="24px"
+              $flex="1 0 24px"
+              onClick={toggle}
+            />
           </Flexbox>
         </Flexbox>
       </div>
+
       {isOn &&
         <div className="expand__body">
           {children}

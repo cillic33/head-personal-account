@@ -5,4 +5,5 @@ export interface IProps {
   $height?: string;
   className?: string;
   onClick?: () => void;
+  $flex?: string;
 }

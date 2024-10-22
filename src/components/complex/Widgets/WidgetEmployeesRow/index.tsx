@@ -40,7 +40,7 @@ const WidgetEmployeesRow = ({item}: IProps) => {
           }
         </Flexbox>
         <Typography $variant="h3">{count}</Typography>
-        <Link href={link ? link : ''} target="_blank">
+        <Link href={link ? link : ''} target="_blank" $flex="1 0 20px">
           <Image src={id === 'all' ? ArrowGrayIcon : GotoGrayIcon} $width="20px" $height="20px" />
         </Link>
       </Flexbox>

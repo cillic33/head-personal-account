@@ -16,4 +16,5 @@ export interface IProps {
   $borderRadius?: string;
   $border?: string;
   $borderWidth?: string;
+  $flex?: string;
 }

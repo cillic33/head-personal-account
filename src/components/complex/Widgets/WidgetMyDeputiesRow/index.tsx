@@ -7,7 +7,7 @@ const WidgetMyDeputiesRow = ({data}: IProps) => {
   return (
     <Flexbox $gap="16px" $align="center" $justify="space-between">
       <Person src={data.src} name={data.name} />
-      <Typography $variant="body-regular">{data.period}</Typography>
+      <Typography $variant="body-regular" $textAlign="end">{data.period}</Typography>
     </Flexbox>
   );
 }

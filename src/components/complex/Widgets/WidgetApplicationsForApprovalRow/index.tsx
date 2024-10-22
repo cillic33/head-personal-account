@@ -29,6 +29,7 @@ const WidgetApplicationsForApprovalRow = ({item}: IProps) => {
               $borderRadius="4px"
               $padding="2px 6px 2px 4px"
               $gap="4px"
+              $flex="1 0 auto"
             >
               <Image
                 src={FireRedIcon}
@@ -47,6 +48,7 @@ const WidgetApplicationsForApprovalRow = ({item}: IProps) => {
               $borderRadius="4px"
               $padding="2px 6px 2px 4px"
               $gap="4px"
+              $flex="1 0 auto"
             >
               <Image
                 src={PlusGreenIcon}
@@ -62,7 +64,7 @@ const WidgetApplicationsForApprovalRow = ({item}: IProps) => {
         </Flexbox>
         <Typography $variant={item.id === 'all' ? 'h2' : 'h3'}>{item.count}</Typography>
         {item.id !== 'all' &&
-          <Link href={item.link ? item.link : ''} target="_blank">
+          <Link href={item.link ? item.link : ''} target="_blank" $flex="1 0 auto">
             <Image src={GotoGrayIcon} $width="20px" $height="20px" />
           </Link>
         }

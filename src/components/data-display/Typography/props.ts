@@ -1,5 +1,5 @@
 import {ReactNode} from "react";
-import {TAlign} from "@typing/TCssValues";
+import {TTextAlign} from "@typing/TCssValues";
 
 type Variant = 'h2' | 'h3' | 'h4' | 'body-regular' | 'body-semibold' | 'caption-regular' | 'caption-semibold' | 'chip-xs' | 'chip-s' | 'chip-m' | 'xs-bold';
 
@@ -9,7 +9,7 @@ export type IProps = {
   $color?: string;
   $padding?: string;
   $nowrap?: boolean;
-  $align?: TAlign;
+  $textAlign?: TTextAlign;
   className?: string;
   $flex?: string;
 }

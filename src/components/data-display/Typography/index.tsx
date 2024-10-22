@@ -76,7 +76,7 @@ const StyledTypography = styled.span<IProps>`
   color: ${props => props.$color || props.theme.colors.textIconBasePrimary};
   padding: ${props => props.$padding || undefined};
   white-space: ${props => props.$nowrap && 'nowrap'};
-  text-align: ${props => props.$align || undefined};
+  text-align: ${props => props.$textAlign || undefined};
   flex: ${props => props.$flex || undefined};
 `
 
