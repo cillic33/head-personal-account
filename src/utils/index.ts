@@ -9,11 +9,13 @@ export function ensure<T>(argument: T | undefined | null, message: string = 'Thi
 
 export const DAY = 24 * 60 * 60 * 1000;
 
+const MONTHS = [ "Января", "Февраля", "Марта", "Апреля", "Мая", "Июня",
+  "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря" ];
 
+
+// Возвращает массив из трех строк (недель) относительно переданной даты
+// [предыдущая неделя, текущая неделя, следующая неделя]
 export function getWeeksArray(date: Date) {
-  const MONTHS = [ "Января", "Февраля", "Марта", "Апреля", "Мая", "Июня",
-    "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря" ];
-
   const day = date.getDay();
   const delta: number = (day > 1) ? day - 1 : 6;
   const closestMonday = new Date(date.valueOf() - delta * DAY);

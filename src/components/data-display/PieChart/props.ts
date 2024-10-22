@@ -8,7 +8,8 @@ export interface IProps {
   $outerRadius?: number;
   $isCenterText?: boolean;
   $isRightInfo?: boolean;
-  $isWrapper?: boolean;
+  $isHeader?: boolean;
+  $postfix?: string;
 }
 
 interface IViewBox {
@@ -20,6 +21,7 @@ export interface ICustomLabelProps {
   viewBox: IViewBox;
   centerCount: string;
   centerText: string;
+  $postfix?: string;
 }
 
 

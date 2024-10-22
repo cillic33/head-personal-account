@@ -3,14 +3,24 @@ import {IWidget} from "@typing/TWidget";
 import Flexbox from "@components/surfaces/Flexbox";
 import ButtonGroup from "@components/inputs/ButtonGroup";
 import {MMonthQuarterYearSwitcher, MWidgetMetrics} from "@utils/mock";
-import {MouseEvent} from "react";
+import {MouseEvent, useState} from "react";
 import PieChartComponent from "@components/data-display/PieChart";
+import SimpleSlider from "@components/data-display/SimpleSlider";
+import {TWeeksSlider} from "@typing/TWeeksSlider";
+import {getWeeksArray} from "@utils/index";
 
 const WidgetHappinessIndex = (props: IWidget) => {
   const dataHrMetric = MWidgetMetrics["hrMetric"];
   const dataMlMetric = MWidgetMetrics["mlMetric"];
+  const [currentDate] = useState<Date>(new Date());
+  const [weeksData] = useState<TWeeksSlider>(getWeeksArray(currentDate));
+
   const handlePeriodsSwitcherClick = (event: MouseEvent<HTMLButtonElement>): void => {
     console.log('Period', event.currentTarget.id);
+  }
+
+  const handleSlide = (oldSlide: number, currentSlide: number) => {
+    console.log("Slide", oldSlide, currentSlide);
   }
 
   return (
@@ -23,7 +33,7 @@ const WidgetHappinessIndex = (props: IWidget) => {
       <Flexbox $gap="16px" $direction="column">
         <Flexbox $justify="space-between" $gap="16px" $flexWrap="wrap" $direction="row-reverse" $align="center">
           <ButtonGroup buttons={MMonthQuarterYearSwitcher} onClick={handlePeriodsSwitcherClick} $buttonsWidth="74px" />
-          <>Simple Slider here</>
+          <SimpleSlider $weeksData={weeksData} $maxWidth="200px" $height="32px" $onSlide={handleSlide} />
         </Flexbox>
 
         <Flexbox $gap="16px" $padding="16px" $direction="column">

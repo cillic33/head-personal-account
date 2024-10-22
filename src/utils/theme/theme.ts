@@ -15,6 +15,7 @@ export const theme = {
     onSurfaceFaintPrimary: 'rgba(13, 31, 51, 0.2)',
     onSurfaceFaintSecondary: 'rgba(13, 31, 51, 0.1)',
     onSurfaceFaintTertiary: 'rgba(13, 31, 51, 0.05)',
+    onSurfaceFaintQuaternary: 'rgba(13, 31, 51, 0.03)',
     textIconBasePrimary: '#363B40',
     textIconBaseSecondary: '#616A73',
     textIconBaseTertiary: '#8391A0',

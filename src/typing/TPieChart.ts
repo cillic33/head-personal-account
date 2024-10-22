@@ -7,9 +7,10 @@ interface IPieChartVariant {
 export type TPieChartVariants = IPieChartVariant[]
 
 export interface IPieChartComponent {
-  title: string;
-  percent: number;
-  total: number;
+  title?: string;
+  percent?: number;
+  total?: number;
+  ratio?: number;
   variants: TPieChartVariants;
   centerCount: string;
   centerText: string;

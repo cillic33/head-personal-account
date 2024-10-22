@@ -21,8 +21,8 @@ export const MInitialData: IInitialData = {
     'widget-6': { id: 'widget-6', title: 'Отсутствия', $isOpen: false, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
     'widget-7': { id: 'widget-7', title: 'Индекс счастья', $isOpen: false, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
     'widget-8': { id: 'widget-8', title: 'Мониторинг настроения', $isOpen: false, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
-    'widget-9': { id: 'widget-9', title: 'Мои ссылки', $isOpen: true, $isDragIcon: true, $popupId: "addLinkPopup"},
-    'widget-10': { id: 'widget-10', title: 'Обучение', $isOpen: true, $isDragIcon: true, $internalLink: "/training"},
+    'widget-9': { id: 'widget-9', title: 'Мои ссылки', $isOpen: false, $isDragIcon: true, $popupId: "addLinkPopup"},
+    'widget-10': { id: 'widget-10', title: 'Обучение', $isOpen: false, $isDragIcon: true, $internalLink: "/training"},
     'widget-11': { id: 'widget-11', title: 'Движение персонала', $isOpen: true, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
     'widget-12': { id: 'widget-12', title: 'Актуальность профилей', $isOpen: true, $isDragIcon: true, $externalLink: "https://life.ibs.ru/stream/"},
   },
@@ -288,8 +288,8 @@ export const MWidgetAbsence: TWidgetAbsenceList = [
   },
 ];
 
-// Виджет "Индекс счастья"
 export const MWidgetMetrics: IWidgetMetrics = {
+  // Виджет "Индекс счастья"
   "hrMetric": {
     title: "HR-метрики",
     percent: -0.1,
@@ -336,6 +336,78 @@ export const MWidgetMetrics: IWidgetMetrics = {
       },
     ],
     centerCount: "50",
+    centerText: "Cотруд.",
+  },
+  // Виджет "Обучение"
+  "coursesMetric": {
+    variants: [
+      {
+        name: "Завершены успешно",
+        value: 40,
+        color: "#00BF9F",
+      },
+      {
+        name: "Неявки",
+        value: 10,
+        color: "#C83E3E",
+      },
+      {
+        name: "В процессе изучения",
+        value: 10,
+        color: "#00AAFF",
+      },
+      {
+        name: "На согласовании",
+        value: 10,
+        color: "#FFA556",
+      },
+    ],
+    centerCount: "350",
+    centerText: "Курсов",
+  },
+  "costsMetric": {
+    variants: [
+      {
+        name: "Израсходовано",
+        value: 40,
+        color: "#00BF9F",
+      },
+      {
+        name: "Запланировано",
+        value: 10,
+        color: "#00AAFF",
+      },
+      {
+        name: "На согласовании",
+        value: 10,
+        color: "#FFA556",
+      },
+    ],
+    centerCount: "640",
+    centerText: "Затраты",
+  },
+  // Виджет "Движение персонала"
+  "staffTurnoverRateMetric": {
+    title: "Коэффициент текучести кадров",
+    ratio: 30,
+    variants: [
+      {
+        name: "Увольнений",
+        value: 7,
+        color: "#FF7979",
+      },
+      {
+        name: "Новых сотрудников",
+        value: 11,
+        color: "#00BF9F",
+      },
+      {
+        name: "Без изменений",
+        value: 10,
+        color: "#28ABEC",
+      },
+    ],
+    centerCount: "33",
     centerText: "Cотруд.",
   },
 };
@@ -409,6 +481,8 @@ export const MWidgetMyLinks: TWidgetMyLinks = [
 ];
 
 
+
+
 // Переключатель "Неделя" / "Месяц"
 export const MWeekMonthSwitcher: IButtonGroupData[] = [
   {id: 'week', title: 'Неделя', isActive: true},
@@ -420,4 +494,10 @@ export const MMonthQuarterYearSwitcher: IButtonGroupData[] = [
   {id: 'month', title: 'Месяц', isActive: true, width: '63px'},
   {id: 'quarter', title: 'Квартал', isActive: false, width: '74px'},
   {id: 'year', title: 'Год', isActive: false, width: '41px'},
+];
+
+// Переключатель "Месяц" / "Год"
+export const MMonthYearSwitcher: IButtonGroupData[] = [
+  {id: 'month', title: 'Месяц', isActive: true},
+  {id: 'year', title: 'Год', isActive: false},
 ];

@@ -6,7 +6,7 @@ import styled from "styled-components";
 import {theme} from "@utils/theme/theme";
 import Chip from "@components/data-display/Chip";
 
-function CustomLabel({viewBox, centerCount, centerText}: ICustomLabelProps) {
+function CustomLabel({viewBox, centerCount, centerText, $postfix}: ICustomLabelProps) {
   const {cx, cy} = viewBox;
 
   return (
@@ -20,7 +20,7 @@ function CustomLabel({viewBox, centerCount, centerText}: ICustomLabelProps) {
         <tspan
           alignmentBaseline="middle"
           fontSize="12"
-          fontWeight={700}>{centerCount}</tspan>
+          fontWeight={700}>{centerCount}{$postfix ? ` ${$postfix}` : ''}</tspan>
       </text>
       <text
         x={cx}
@@ -65,17 +65,18 @@ const PieChartComponent = (
     $outerRadius = 50,
     $isCenterText = true,
     $isRightInfo = true,
-    $isWrapper = true,
+    $isHeader = true,
+    $postfix,
   }: IProps
 ) => {
-  const {title, percent, total, variants, centerCount, centerText} = $data;
+  const {title = "", percent, total, ratio, variants, centerCount, centerText} = $data;
 
   return (
     <Flexbox
       $direction="column"
-      $borderRadius={$isWrapper ? "6px" : undefined}
-      $border={$isWrapper ? `1px solid ${theme.colors.surfacePrimary}` : undefined}>
-      {$isWrapper &&
+      $borderRadius="6px"
+      $border={`1px solid ${theme.colors.surfacePrimary}`}>
+      {$isHeader &&
         <Flexbox
           $padding="16px"
           $gap="12px"
@@ -89,18 +90,33 @@ const PieChartComponent = (
           <Flexbox
             $gap="12px"
             $align="center">
-            <Chip
-              $padding="2px 6px 2px 4px"
-              $background={percent > 0 ? theme.colors.complimentaryGreenFaintSecondary : theme.colors.systemErrorFaintSecondary}
-              $borderRadius="4px">
+            {percent &&
+              <Chip
+                $padding="2px 6px 2px 4px"
+                $background={percent > 0 ? theme.colors.complimentaryGreenFaintSecondary : theme.colors.systemErrorFaintSecondary}
+                $borderRadius="4px">
+                <Typography
+                  $variant="chip-m"
+                  $color={percent > 0 ? theme.colors.textIconAccentSuccess : theme.colors.textIconAccentError}
+                >{percent}%</Typography>
+              </Chip>
+            }
+            {total &&
               <Typography
-                $variant="chip-m"
-                $color={percent > 0 ? theme.colors.textIconAccentSuccess : theme.colors.textIconAccentError}
-              >{percent}%</Typography>
-            </Chip>
-            <Typography
-              $variant="h2"
-              $color={percent > 0 ? theme.colors.textIconAccentSuccess : theme.colors.systemWarningDarkened}>{total}</Typography>
+                $variant="h2"
+                $color={percent && percent > 0 ? theme.colors.textIconAccentSuccess : theme.colors.systemWarningDarkened}
+              >
+                {total}{$postfix ? ` ${$postfix}` : ''}
+              </Typography>
+            }
+            {ratio &&
+              <Typography
+                $variant="h2"
+                $color={ratio <= 30 ? theme.colors.textIconAccentError : ratio <= 60 ?  theme.colors.systemWarningDarkened :  theme.colors.textIconAccentSuccess}
+              >
+                {ratio}%
+              </Typography>
+            }
           </Flexbox>
         </Flexbox>
       }
@@ -136,7 +152,9 @@ const PieChartComponent = (
                   <CustomLabel
                     viewBox={{cx: $width!, cy: $height!}}
                     centerCount={centerCount}
-                    centerText={centerText}/>
+                    centerText={centerText}
+                    $postfix={$postfix}
+                  />
                 }></Label>
             }
           </Pie>
@@ -154,7 +172,7 @@ const PieChartComponent = (
                   $variant="caption-regular"
                   $color={theme.colors.textIconBaseSecondary}>{item.name}</Typography>
                 <StyledDottedLine/>
-                <Typography $variant="body-semibold">{item.value}</Typography>
+                <Typography $variant="body-semibold">{item.value}{$postfix ? ` ${$postfix}` : ''}</Typography>
               </Flexbox>
             ))}
           </StyledRightInfo>

@@ -1,6 +1,6 @@
 import Expand from "@components/surfaces/Expand";
 import {IWidget} from "@typing/TWidget";
-import {MouseEvent} from "react";
+import {MouseEvent, useState} from "react";
 import Flexbox from "@components/surfaces/Flexbox";
 import ButtonGroup from "@components/inputs/ButtonGroup";
 import {MWeekMonthSwitcher, MWidgetMoodMonitoring} from "@utils/mock";
@@ -10,10 +10,20 @@ import {theme} from "@utils/theme/theme";
 import Image from "@components/data-display/Image";
 import MoodImg5 from "@images/MoodImg5.svg"
 import MoodImg4 from "@images/MoodImg4.svg"
+import SimpleSlider from "@components/data-display/SimpleSlider";
+import {TWeeksSlider} from "@typing/TWeeksSlider";
+import {getWeeksArray} from "@utils/index";
 
 const WidgetMoodMonitoring = (props: IWidget) => {
+  const [currentDate] = useState<Date>(new Date());
+  const [weeksData] = useState<TWeeksSlider>(getWeeksArray(currentDate));
+
   const handlePeriodsSwitcherClick = (event: MouseEvent<HTMLButtonElement>): void => {
     console.log('Period', event.currentTarget.id);
+  }
+
+  const handleSlide = (oldSlide: number, currentSlide: number) => {
+    console.log("Slide", oldSlide, currentSlide);
   }
 
   return (
@@ -36,7 +46,11 @@ const WidgetMoodMonitoring = (props: IWidget) => {
             buttons={MWeekMonthSwitcher}
             onClick={handlePeriodsSwitcherClick}
             $buttonsWidth="92px"/>
-          Simple Slider here
+          <SimpleSlider
+            $weeksData={weeksData}
+            $maxWidth="200px"
+            $height="32px"
+            $onSlide={handleSlide}/>
         </Flexbox>
         <Flexbox
           $gap="16px"
