@@ -8,6 +8,8 @@ import SimplePopup from "@components/data-display/SimplePopup";
 import {useState} from "react";
 import LinkForm from "@components/complex/Forms/LinkForm";
 import {ILinkForm} from "@typing/TLinkForm";
+import {IWidgetMyLink} from "@typing/TWidgetMyLinks";
+import {createLogger} from "vite";
 
 
 const StyledWidgetMyLinks = styled.div`
@@ -23,33 +25,38 @@ const StyledWidgetMyLinks = styled.div`
 
 const WidgetMyLinks = (props: IWidget) => {
   const [isPopupShow, setIsPopupShow] = useState<boolean>(false);
-  const [isDisabled, setIsDisabled] = useState<boolean>(false);
+  const [isDisabledSubmit, setIsDisabledSubmit] = useState<boolean>(false);
+  const [titleForm, setTitleForm] = useState<string>('')
+  const [initialDataForm, setInitialDataForm] = useState<ILinkForm>({
+    name: "",
+    link: "",
+  });
 
   const handlePlusClick = () => {
+    setTitleForm("Добавить ссылку");
+    setInitialDataForm({
+      name: "",
+      link: "",
+    });
     setIsPopupShow(true);
+    setIsDisabledSubmit(true);
   }
 
   const handlePopupCloseClick = () => {
     setIsPopupShow(false);
   }
-
   const handlePopupSubmitClick = () => {
-    console.log('submit')
     setIsPopupShow(false);
   }
-
   const handlePopupCancelClick = () => {
     setIsPopupShow(false);
   }
-
   const setDisabledForm = () => {
-    setIsDisabled(true);
+    setIsDisabledSubmit(true);
   }
-
   const setEnabledForm = () => {
-    setIsDisabled(false);
+    setIsDisabledSubmit(false);
   }
-
   const handleChangeForm = (dataForm: ILinkForm) => {
     const values: string[] = Object.values(dataForm);
     if (values.includes('')) {
@@ -58,6 +65,21 @@ const WidgetMyLinks = (props: IWidget) => {
       setEnabledForm();
     }
   }
+
+  const handleEditLinkClick = (item: IWidgetMyLink) => {
+    setTitleForm("Редактировать ссылку");
+    setInitialDataForm({
+      name: item.title,
+      link: item.link,
+    });
+    setIsPopupShow(true);
+  }
+
+  const handleDeleteLinkClick = (item: IWidgetMyLink) => {
+    // TODO Уточнить поведение
+    console.log('Del link', item.title)
+  }
+
 
   return (
     <Expand
@@ -70,22 +92,21 @@ const WidgetMyLinks = (props: IWidget) => {
       <StyledWidgetMyLinks>
         {
           MWidgetMyLinks.map((item) => (
-            <WidgetMyLinksRow key={item.id} $item={item} />
+            <WidgetMyLinksRow key={item.id} $item={item} onEditClick={handleEditLinkClick} onDeleteClick={handleDeleteLinkClick} />
           ))
         }
       </StyledWidgetMyLinks>
 
-      {/* Попап "Добавить ссылку" */}
       <SimplePopup
-        isPopupShow={isPopupShow}
-        title="Добавить ссылку"
+        isShow={isPopupShow}
+        title={titleForm}
         $width="448px"
         onClose={handlePopupCloseClick}
         onSubmit={handlePopupSubmitClick}
         onCancel={handlePopupCancelClick}
-        $isDisabledSubmit={isDisabled}
+        $isDisabledSubmit={isDisabledSubmit}
       >
-        <LinkForm action="/" method="post" onChange={handleChangeForm} />
+        <LinkForm action="/" method="post" initialDataForm={initialDataForm} onChange={handleChangeForm} />
       </SimplePopup>
     </Expand>
   );

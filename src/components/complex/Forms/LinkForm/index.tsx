@@ -10,11 +10,8 @@ const StyledForm = styled.form`
   width: 100%;
 `
 
-const LinkForm = ({action, method, onChange}: IProps) => {
-  const [dataForm, setDataForm] = useState({
-    name: "",
-    link: "",
-  });
+const LinkForm = ({action, method, initialDataForm, onChange}: IProps) => {
+  const [dataForm, setDataForm] = useState(initialDataForm);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newDataForm = {...dataForm, [event.target.name]: event.target.value};

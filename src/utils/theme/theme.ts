@@ -1,6 +1,7 @@
 export const theme = {
   colors: {
     accentBrandNormal: '#0254AC',
+    AccentBrandFaded: '#5684B6',
     accentBrandClarified: '#026DDE',
     accentBrandDarkened: '#013B79',
     accentFaintBrandPrimary: 'rgba(2, 84, 172, 0.5)',

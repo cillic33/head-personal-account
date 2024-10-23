@@ -32,7 +32,7 @@ const StyledPopup = styled.div<IStyledPopupProps>`
 const SimplePopup = (
   {
     children,
-    isPopupShow,
+    isShow,
     title,
     $width,
     submitTitle = 'Добавить',
@@ -86,7 +86,7 @@ const SimplePopup = (
 
   return (
     <>
-      {isPopupShow &&
+      {isShow &&
         <StyledOverlay ref={overlayRef} onClick={handleCloseClick}>`
           <StyledPopup $width={$width}>
             <Flexbox $padding="16px 16px 16px 24px" $align="center" $gap="16px" $justify="space-between" $background="#fff" $borderRadius="12px 12px 0 0">

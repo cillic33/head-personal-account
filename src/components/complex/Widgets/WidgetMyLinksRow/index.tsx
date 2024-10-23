@@ -8,8 +8,20 @@ import DeleteRedIcon from "@images/DeleteRedIcon.svg";
 import {useState} from "react";
 import {theme} from "@utils/theme/theme";
 
-const WidgetMyLinksRow = ({$item}: IProps) => {
+const WidgetMyLinksRow = ({$item, onEditClick, onDeleteClick}: IProps) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
+
+  const handlerEditClick = () => {
+    if (onEditClick) {
+      onEditClick($item);
+    }
+  }
+
+  const handlerDeleteClick = () => {
+    if (onDeleteClick) {
+      onDeleteClick($item);
+    }
+  }
 
   return (
     <Flexbox
@@ -33,6 +45,7 @@ const WidgetMyLinksRow = ({$item}: IProps) => {
         size="no-size"
         $flex="0 0 24px"
         $opacity={isHovered ? 1 : 0}
+        onClick={handlerEditClick}
       >
         <Image
           src={EditBlueIcon}
@@ -42,6 +55,7 @@ const WidgetMyLinksRow = ({$item}: IProps) => {
         $variant="no-style"
         size="no-size"
         $opacity={isHovered ? 1 : 0}
+        onClick={handlerDeleteClick}
       >
         <Image
           src={DeleteRedIcon}

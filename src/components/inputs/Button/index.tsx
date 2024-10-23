@@ -116,14 +116,14 @@ const StyledButton = styled.button<IProps>`
   padding: ${props => props.$padding && props.$padding};
   
   &[disabled] {
-    background: ${props => props.theme.colors.onSurfaceFaintTertiary};
-    color: ${props => props.theme.colors.textIconBaseTertiary};
+    background: ${props => props.theme.colors.AccentBrandFaded};
+    color: #cddaea;
 
     &:hover,
     &:focus,
     &:active {
-      background: ${props => props.theme.colors.onSurfaceFaintTertiary};
-      color: ${props => props.theme.colors.textIconBaseTertiary};
+      background: ${props => props.theme.colors.AccentBrandFaded};
+      color: #cddaea;
       border-color: transparent;
       cursor: default;
     }

@@ -2,7 +2,7 @@ import {MouseEvent, ReactNode} from "react";
 
 export interface IProps {
   children: ReactNode;
-  isPopupShow: boolean;
+  isShow: boolean;
   title: string;
   $width?: string;
   submitTitle?: string;

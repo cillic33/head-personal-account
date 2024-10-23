@@ -83,6 +83,7 @@ const Input = (
         value={query}
         onChange={handleChange}
         ref={inputRef}
+        autoComplete="off"
       />
       {query &&
         <Button $variant="no-style" size="no-size" onClick={handleClear}>
