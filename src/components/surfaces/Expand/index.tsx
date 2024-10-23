@@ -85,7 +85,7 @@ const Expand = (props: Props) => {
 
           <Flexbox $gap="12px" $align="center">
             {$isPlusIcon &&
-              <Flexbox $width="24px" $height="24px" $align="center" $justify="center" $flex="1 0 20px" onClick={handlePlusClick}>
+              <Flexbox $width="24px" $height="24px" $align="center" $justify="center" $flex="1 0 20px" onClick={handlePlusClick} $cursor="pointer">
                 <Image
                   src={PlusCircleGrayIcon}
                   $width="20px"

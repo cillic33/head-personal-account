@@ -11,3 +11,5 @@ export type TDirection = 'inherit' | 'initial' | 'row' | 'row-reverse' | 'column
 export type TFlexWrap = 'inherit' | 'initial' | 'wrap' | 'nowrap' | 'wrap-reverse' | 'revert' | 'revert-layer' | 'unset';
 
 export type TButtonType = 'button' | 'submit' | 'reset';
+
+export type TCursor = 'auto' | 'default' | 'grab' | 'move' | 'pointer';

@@ -20,12 +20,23 @@ const StyledWidgetMyLinks = styled.div`
 `
 
 const WidgetMyLinks = (props: IWidget) => {
-  // TODO Добавить попап окна
   const [isPopupShow, setIsPopupShow] = useState<boolean>(false);
-  //const {isOn: isOnPopup, on: onPopup, off: offPopup} = useBoolean(false);
 
   const handlePlusClick = () => {
     setIsPopupShow(true);
+  }
+
+  const handlePopupCloseClick = () => {
+    setIsPopupShow(false);
+  }
+
+  const handlePopupSubmitClick = () => {
+    console.log('submit')
+    setIsPopupShow(false);
+  }
+
+  const handlePopupCancelClick = () => {
+    setIsPopupShow(false);
   }
 
   return (
@@ -45,7 +56,13 @@ const WidgetMyLinks = (props: IWidget) => {
       </StyledWidgetMyLinks>
 
       {/* Попап */}
-      <SimplePopup isPopupShow={isPopupShow}>
+      <SimplePopup
+        isPopupShow={isPopupShow}
+        title="Добавить ссылку"
+        onClose={handlePopupCloseClick}
+        onSubmit={handlePopupSubmitClick}
+        onCancel={handlePopupCancelClick}
+      >
         FORM
       </SimplePopup>
     </Expand>

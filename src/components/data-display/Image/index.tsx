@@ -1,5 +1,6 @@
 import {IProps} from "./props";
 import styled from "styled-components";
+import {RefObject} from "react";
 
 const StyledImage = styled.img<IProps>`
   width: ${props => props.$width || undefined};
@@ -9,7 +10,7 @@ const StyledImage = styled.img<IProps>`
 
 const Image = ({...props}: IProps) => {
   return (
-    <StyledImage {...props} />
+    <StyledImage {...props} ref={props.$ref as RefObject<HTMLButtonElement>} />
   );
 }
 

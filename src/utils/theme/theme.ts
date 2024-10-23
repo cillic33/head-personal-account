@@ -7,6 +7,7 @@ export const theme = {
     accentFaintBrandSecondary: 'rgba(2, 84, 172, 0.25)',
     accentFaintBrandTertiary: 'rgba(2, 84, 172, 0.15)',
     accentFaintBrandQuaternary: 'rgba(2, 84, 172, 0.1)',
+    baseShadowFar: 'rgba(1, 59, 121, 0.12)',
     complimentaryGreenFaintSecondary: 'rgba(0, 159, 132, 0.15)',
     complimentaryYellowFaintSecondary: 'rgba(255, 170, 0, 0.15)',
     surfacePrimary: '#E1E7ED',
@@ -28,6 +29,7 @@ export const theme = {
     systemErrorNormal: '#E34F4F',
     systemErrorFaintSecondary: 'rgba(227, 79, 79, 0.15)',
     systemWarningDarkened: '#EEAD00',
+    specialModalOverlay: 'rgba(54, 59, 64, 0.3)',
   },
   breakpoints: {
     xs: '425px',

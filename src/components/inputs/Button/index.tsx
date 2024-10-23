@@ -11,6 +11,7 @@ const StyledButton = styled.button<IProps>`
   white-space: nowrap;
   position: ${props => props.$position || undefined};
   width: ${props => props.$width || undefined};
+  height: ${props => props.$height || undefined};
   flex: ${props => props.$flex || undefined};
   opacity: ${props => props.$opacity ||undefined};
   
