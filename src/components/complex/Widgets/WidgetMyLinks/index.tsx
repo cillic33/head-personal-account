@@ -85,7 +85,7 @@ const WidgetMyLinks = (props: IWidget) => {
         onCancel={handlePopupCancelClick}
         $isDisabledSubmit={isDisabled}
       >
-        <LinkForm onChange={handleChangeForm} />
+        <LinkForm action="/" method="post" onChange={handleChangeForm} />
       </SimplePopup>
     </Expand>
   );

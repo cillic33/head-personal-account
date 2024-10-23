@@ -10,7 +10,7 @@ const StyledForm = styled.form`
   width: 100%;
 `
 
-const LinkForm = ({onChange}: IProps) => {
+const LinkForm = ({action, method, onChange}: IProps) => {
   const [dataForm, setDataForm] = useState({
     name: "",
     link: "",
@@ -37,7 +37,7 @@ const LinkForm = ({onChange}: IProps) => {
   }
 
   return (
-    <StyledForm>
+    <StyledForm action={action} method={method}>
       <Input type="text" name="name" value={dataForm.name} placeholder="Название" onChange={handleInputChange} onClear={handleInputClear} />
       <Input type="url" name="link" value={dataForm.link} placeholder="Ссылка" onChange={handleInputChange} onClear={handleInputClear} />
     </StyledForm>
