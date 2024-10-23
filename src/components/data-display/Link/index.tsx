@@ -5,10 +5,10 @@ const StyledLink = styled.a<IProps>`
   flex: ${props => props.$flex || undefined}
 `
 
-const Link = ({...props}: IProps) => {
+const LinkComponent = ({...props}: IProps) => {
   return (
     <StyledLink {...props} />
   );
 }
 
-export default Link;
+export default LinkComponent;

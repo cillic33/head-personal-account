@@ -10,7 +10,7 @@ import ArrowGrayIcon from "@images/ArrowGrayIcon.svg";
 import styled from "styled-components";
 import Flexbox from "@components/surfaces/Flexbox";
 import Image from "@components/data-display/Image";
-import Link from "@components/data-display/Link";
+import LinkComponent from "@components/data-display/Link";
 
 const StyledExpand = styled.div<Props>`
   .expand {
@@ -95,24 +95,24 @@ const Expand = (props: Props) => {
             }
             {$internalLink !== "" &&
               <Flexbox $width="24px" $height="24px" $align="center" $justify="center" $flex="1 0 20px">
-                <Link href={$internalLink} target="_blank">
+                <LinkComponent href={$internalLink} target="_blank">
                   <Image
                     src={ArrowGrayIcon}
                     $width="20px"
                     $height="20px"
                   />
-                </Link>
+                </LinkComponent>
               </Flexbox>
             }
             {$externalLink !== "" &&
               <Flexbox $width="24px" $height="24px" $align="center" $justify="center" $flex="1 0 20px">
-                <Link href={$externalLink} target="_blank">
+                <LinkComponent href={$externalLink} target="_blank">
                   <Image
                     src={GotoGrayIcon}
                     $width="20px"
                     $height="20px"
                   />
-                </Link>
+                </LinkComponent>
               </Flexbox>
             }
             <Image

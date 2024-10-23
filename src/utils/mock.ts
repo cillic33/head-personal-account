@@ -9,6 +9,7 @@ import {TWidgetAbsenceList} from "@typing/TWidgetAbsence";
 import {IWidgetMetrics} from "@typing/TMetrics";
 import {TWidgetMoodMonitoring} from "@typing/TWidgetMoodMonitoring";
 import {TWidgetMyLinks} from "@typing/TWidgetMyLinks";
+import {AppRoutes} from "@utils/const";
 
 // Виджеты на главной
 export const MInitialData: IInitialData = {
@@ -237,7 +238,7 @@ export const MWidgetEmployees: TWidgetEmployees = [
     id: 'all',
     title: 'Всего сотрудников',
     count: 23,
-    link: '/',
+    link: `${AppRoutes.Employees}`,
   },
   {
     id: 'attestation',

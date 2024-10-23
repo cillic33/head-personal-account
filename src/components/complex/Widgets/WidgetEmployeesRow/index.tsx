@@ -1,7 +1,6 @@
 import Flexbox from "@components/surfaces/Flexbox";
 import {IProps} from "@components/complex/Widgets/WidgetEmployeesRow/props";
 import Typography from "@components/data-display/Typography";
-import Link from "@components/data-display/Link";
 import GotoGrayIcon from "@images/GotoGrayIcon.svg";
 import ArrowGrayIcon from "@images/ArrowGrayIcon.svg";
 import ExclamationRoundRed from "@images/ExclamationRoundRed.svg";
@@ -9,6 +8,8 @@ import ExclamationTriangleYellow from "@images/ExclamationTriangleYellow.svg";
 import Image from "@components/data-display/Image";
 import {theme} from "@utils/theme/theme";
 import Chip from "@components/data-display/Chip";
+import {Link} from "react-router-dom";
+import LinkComponent from "@components/data-display/Link";
 
 const WidgetEmployeesRow = ({item}: IProps) => {
   const {id, title, count, link, important, warning} = item;
@@ -40,9 +41,16 @@ const WidgetEmployeesRow = ({item}: IProps) => {
           }
         </Flexbox>
         <Typography $variant="h3">{count}</Typography>
-        <Link href={link ? link : ''} target="_blank" $flex="1 0 20px">
-          <Image src={id === 'all' ? ArrowGrayIcon : GotoGrayIcon} $width="20px" $height="20px" />
-        </Link>
+        {id === 'all' &&
+          <Link to={link ? link : ''}>
+            <Image src={ArrowGrayIcon} $width="20px" $height="20px" />
+          </Link>
+        }
+        {id !== 'all' &&
+          <LinkComponent href={link ? link : ''} target="_blank" $flex="1 0 20px">
+            <Image src={GotoGrayIcon} $width="20px" $height="20px" />
+          </LinkComponent>
+        }
       </Flexbox>
 
     </Flexbox>
