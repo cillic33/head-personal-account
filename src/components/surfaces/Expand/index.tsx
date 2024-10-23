@@ -6,7 +6,7 @@ import DragNDropIcon from "@images/DragNDropIcon.svg";
 import ChevronDownGray from "@images/ChevronDownGray.svg";
 import GotoGrayIcon from "@images/GotoGrayIcon.svg";
 import PlusCircleGrayIcon from "@images/PlusCircleGrayIcon.svg";
-import ArrowGrayIcon from "@images/ArrowGrayIcon.svg";
+import ArrowRightGray from "@images/ArrowRightGray.svg";
 import styled from "styled-components";
 import Flexbox from "@components/surfaces/Flexbox";
 import Image from "@components/data-display/Image";
@@ -97,7 +97,7 @@ const Expand = (props: Props) => {
               <Flexbox $width="24px" $height="24px" $align="center" $justify="center" $flex="1 0 20px">
                 <LinkComponent href={$internalLink} target="_blank">
                   <Image
-                    src={ArrowGrayIcon}
+                    src={ArrowRightGray}
                     $width="20px"
                     $height="20px"
                   />

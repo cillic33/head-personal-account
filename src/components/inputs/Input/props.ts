@@ -8,6 +8,7 @@ export interface IProps {
   value?: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   onClear?: (target: HTMLInputElement) => void;
+  icon?: string;
 }
 
 export interface IStyledInput {

@@ -107,7 +107,7 @@ const StyledButton = styled.button<IProps>`
         `
       case "no-size":
         return css`
-          border-radius: 0;
+          border-radius: 8px;
           padding: 0;
         `
     }

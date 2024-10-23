@@ -2,7 +2,7 @@ import Flexbox from "@components/surfaces/Flexbox";
 import {IProps} from "@components/complex/Widgets/WidgetEmployeesRow/props";
 import Typography from "@components/data-display/Typography";
 import GotoGrayIcon from "@images/GotoGrayIcon.svg";
-import ArrowGrayIcon from "@images/ArrowGrayIcon.svg";
+import ArrowRightGray from "@images/ArrowRightGray.svg";
 import ExclamationRoundRed from "@images/ExclamationRoundRed.svg";
 import ExclamationTriangleYellow from "@images/ExclamationTriangleYellow.svg";
 import Image from "@components/data-display/Image";
@@ -43,7 +43,7 @@ const WidgetEmployeesRow = ({item}: IProps) => {
         <Typography $variant="h3">{count}</Typography>
         {id === 'all' &&
           <Link to={link ? link : ''}>
-            <Image src={ArrowGrayIcon} $width="20px" $height="20px" />
+            <Image src={ArrowRightGray} $width="20px" $height="20px" />
           </Link>
         }
         {id !== 'all' &&

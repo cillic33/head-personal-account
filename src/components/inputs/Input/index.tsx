@@ -50,6 +50,7 @@ const Input = (
     value,
     onChange,
     onClear,
+    icon,
   }: IProps) => {
   const [query, setQuery] = useState<string>(value || "");
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -76,6 +77,9 @@ const Input = (
 
   return (
     <StyledInputWrap>
+      {icon &&
+        <Image src={icon} $width="24px" $height="24px" />
+      }
       <StyledInput
         type={type}
         name={name}
