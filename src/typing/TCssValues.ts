@@ -13,3 +13,5 @@ export type TFlexWrap = 'inherit' | 'initial' | 'wrap' | 'nowrap' | 'wrap-revers
 export type TButtonType = 'button' | 'submit' | 'reset';
 
 export type TCursor = 'auto' | 'default' | 'grab' | 'move' | 'pointer';
+
+export type TInputType = 'text' | 'email' | 'search' | 'tel' | 'url' | 'password' | 'number';

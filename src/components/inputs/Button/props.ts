@@ -20,4 +20,5 @@ export interface IProps {
   $height?: string;
   $flex?: string;
   $opacity?: number;
+  disabled?: boolean;
 }

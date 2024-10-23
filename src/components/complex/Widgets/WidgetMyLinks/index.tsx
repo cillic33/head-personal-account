@@ -6,6 +6,8 @@ import styled from "styled-components";
 import {scroll} from "@utils/mixins";
 import SimplePopup from "@components/data-display/SimplePopup";
 import {useState} from "react";
+import LinkForm from "@components/complex/Forms/LinkForm";
+import {ILinkForm} from "@typing/TLinkForm";
 
 
 const StyledWidgetMyLinks = styled.div`
@@ -21,6 +23,7 @@ const StyledWidgetMyLinks = styled.div`
 
 const WidgetMyLinks = (props: IWidget) => {
   const [isPopupShow, setIsPopupShow] = useState<boolean>(false);
+  const [isDisabled, setIsDisabled] = useState<boolean>(false);
 
   const handlePlusClick = () => {
     setIsPopupShow(true);
@@ -39,6 +42,23 @@ const WidgetMyLinks = (props: IWidget) => {
     setIsPopupShow(false);
   }
 
+  const setDisabledForm = () => {
+    setIsDisabled(true);
+  }
+
+  const setEnabledForm = () => {
+    setIsDisabled(false);
+  }
+
+  const handleChangeForm = (dataForm: ILinkForm) => {
+    const values: string[] = Object.values(dataForm);
+    if (values.includes('')) {
+      setDisabledForm();
+    } else {
+      setEnabledForm();
+    }
+  }
+
   return (
     <Expand
       title={props.title}
@@ -55,15 +75,17 @@ const WidgetMyLinks = (props: IWidget) => {
         }
       </StyledWidgetMyLinks>
 
-      {/* Попап */}
+      {/* Попап "Добавить ссылку" */}
       <SimplePopup
         isPopupShow={isPopupShow}
         title="Добавить ссылку"
+        $width="448px"
         onClose={handlePopupCloseClick}
         onSubmit={handlePopupSubmitClick}
         onCancel={handlePopupCancelClick}
+        $isDisabledSubmit={isDisabled}
       >
-        FORM
+        <LinkForm onChange={handleChangeForm} />
       </SimplePopup>
     </Expand>
   );
