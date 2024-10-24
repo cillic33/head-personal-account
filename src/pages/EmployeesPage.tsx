@@ -8,6 +8,9 @@ import {AppRoutes} from "@utils/const";
 import {Link} from "react-router-dom";
 import Input from "@components/inputs/Input";
 import SearchGray from "@images/SearchGray.svg";
+import ColumnBlueIcon from "@images/ColumnBlueIcon.svg";
+import FilterBlueIcon from "@images/FilterBlueIcon.svg";
+import DownloadBlueIcon from "@images/DownloadBlueIcon.svg";
 
 const EmployeesPage = () => {
   return (
@@ -23,10 +26,22 @@ const EmployeesPage = () => {
             <Typography $variant="h2">Сотрудники</Typography>
           </Flexbox>
 
-          <Flexbox $gap="16px" $align="center">
-            <Input type="search" name="employeeSearchInput" placeholder="Начните вводить ФИО сотрудника" icon={SearchGray} />
+          <Flexbox $gap="12px" $align="center">
+            <Flexbox $width="320px" $flex="0 0 320px">
+              <Input type="search" name="employeeSearchInput" placeholder="Начните вводить ФИО сотрудника" icon={SearchGray} />
+            </Flexbox>
+            <Button $variant="primary" size="no-size" $width="40px" $height="40px" $flex="0 0 40px">
+              <Image src={ColumnBlueIcon} $width="24px" $height="24px" />
+            </Button>
+            <Button $variant="primary" size="no-size" $width="40px" $height="40px" $flex="0 0 40px">
+              <Image src={FilterBlueIcon} $width="24px" $height="24px" />
+            </Button>
+            <Button $variant="primary" size="no-size" $width="40px" $height="40px" $flex="0 0 40px">
+              <Image src={DownloadBlueIcon} $width="24px" $height="24px" />
+            </Button>
           </Flexbox>
         </Flexbox>
+        
         <div>table</div>
       </Flexbox>
     </PageContainer>

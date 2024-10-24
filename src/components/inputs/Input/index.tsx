@@ -89,7 +89,7 @@ const Input = (
         ref={inputRef}
         autoComplete="off"
       />
-      {query &&
+      {query && type !== "search" &&
         <Button $variant="no-style" size="no-size" onClick={handleClear}>
           <Image src={CloseGrayIcon} />
         </Button>
