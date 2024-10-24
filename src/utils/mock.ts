@@ -10,6 +10,7 @@ import {IWidgetMetrics} from "@typing/TMetrics";
 import {TWidgetMoodMonitoring} from "@typing/TWidgetMoodMonitoring";
 import {TWidgetMyLinks} from "@typing/TWidgetMyLinks";
 import {AppRoutes} from "@utils/const";
+import {IEmployees} from "@typing/TEmployees";
 
 // Виджеты на главной
 export const MInitialData: IInitialData = {
@@ -506,9 +507,6 @@ export const MWidgetMyLinks: TWidgetMyLinks = [
   },
 ];
 
-
-
-
 // Переключатель "Неделя" / "Месяц"
 export const MWeekMonthSwitcher: IButtonGroupData[] = [
   {id: 'week', title: 'Неделя', isActive: true},
@@ -527,3 +525,77 @@ export const MMonthYearSwitcher: IButtonGroupData[] = [
   {id: 'month', title: 'Месяц', isActive: true},
   {id: 'year', title: 'Год', isActive: false},
 ];
+
+// Таблица "Сотрудники"
+export const MEmployees: IEmployees = {
+  head: {
+    employee: "Сотрудник",
+    division: "Подразделение",
+    specialization: "Специализация",
+    post: "Должность",
+    direction: "Направление",
+    technology: "Технология",
+    lineManager: "Лин. руководитель",
+    grade: "Грейд",
+    grossRate: "Дн. брутто-ставка, ₽",
+    city: "Город",
+    timeZone: "Час. пояс",
+    profileStatus: "Статус профиля",
+    nearestReleaseDate: "Ближ. дата высвоб.",
+    workExperienceIBS: "Стаж работы (IBS)",
+    nearestPeriodAbsence: "Ближ. период отсут.",
+    tsStatus: "Статус TS",
+    happinessIndex: "Индекс счастья",
+    moodMonitoring: "Мониторинг настроения",
+  },
+  body: [
+    {
+      id: "1",
+      employee: {
+        avatar: "/src/images/AvatarBurmakin.png",
+        name: "Бурмакин Евгений Дмитриевич",
+      },
+      division: "Группа клиентского сервиса",
+      specialization: "Дизайнер",
+      post: "Старший дизайнер",
+      direction: "UX аналитик",
+      technology: "Lean UX",
+      lineManager: "Афанасьев Д. Г.",
+      grade: 1,
+      grossRate: 1500,
+      city: "Екатеринбург",
+      timeZone: "+2 МСК",
+      profileStatus: "Актуален",
+      nearestReleaseDate: "02.07.24",
+      workExperienceIBS: "6 лет",
+      nearestPeriodAbsence: "07.06.24 - 14.06.24",
+      tsStatus: "Утвержден",
+      happinessIndex: 5.5,
+      moodMonitoring: 5,
+    },
+    {
+      id: "2",
+      employee: {
+        avatar: "/src/images/AvatarBurmakin.png",
+        name: "Бурмакин Евгений Дмитриевич",
+      },
+      division: "Группа клиентского сервиса",
+      specialization: "Дизайнер",
+      post: "Старший дизайнер",
+      direction: "UX аналитик",
+      technology: "Lean UX",
+      lineManager: "Афанасьев Д. Г.",
+      grade: 1,
+      grossRate: 1500,
+      city: "Екатеринбург",
+      timeZone: "+2 МСК",
+      profileStatus: "Актуален",
+      nearestReleaseDate: "02.07.24",
+      workExperienceIBS: "6 лет",
+      nearestPeriodAbsence: "07.06.24 - 14.06.24",
+      tsStatus: "Утвержден",
+      happinessIndex: 5.5,
+      moodMonitoring: 5,
+    },
+  ],
+};
