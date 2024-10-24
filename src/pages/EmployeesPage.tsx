@@ -12,11 +12,9 @@ import ColumnBlueIcon from "@images/ColumnBlueIcon.svg";
 import FilterBlueIcon from "@images/FilterBlueIcon.svg";
 import DownloadBlueIcon from "@images/DownloadBlueIcon.svg";
 import {MEmployees} from "@utils/mock";
+import Table from "@components/data-display/Table";
 
 const EmployeesPage = () => {
-  const tableTitles = Object.values(MEmployees.head);
-  const tableRows = MEmployees.body;
-
   return (
     <PageContainer>
       <Flexbox $gap="16px" $direction="column" $width="100%">
@@ -46,43 +44,8 @@ const EmployeesPage = () => {
           </Flexbox>
         </Flexbox>
 
-        <table>
-          <thead>
-            <tr>
-              {tableTitles.map((item, index) => (
-                <th key={index}>{item}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {tableRows.map(row => (
-              <tr key={row.id}>
-                {
-                  Object.keys(row).map(key => {
-                    if (key === "id") {
-                      return;
-                    }
+        <Table data={MEmployees} />
 
-                    if (key === "employee") {
-                      return (
-                        <td key={key}>
-                          {row[key]["avatar"]}
-                          {row[key]["name"]}
-                        </td>
-                      );
-                    }
-
-                    return (
-                      <td key={key}>
-                        {row[key as (keyof Omit<typeof row, 'employee'>)]}
-                      </td>
-                    );
-                  })
-                }
-              </tr>
-            ))}
-          </tbody>
-        </table>
       </Flexbox>
     </PageContainer>
   );

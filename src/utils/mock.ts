@@ -10,7 +10,7 @@ import {IWidgetMetrics} from "@typing/TMetrics";
 import {TWidgetMoodMonitoring} from "@typing/TWidgetMoodMonitoring";
 import {TWidgetMyLinks} from "@typing/TWidgetMyLinks";
 import {AppRoutes} from "@utils/const";
-import {IEmployees} from "@typing/TEmployees";
+import {TTable} from "@typing/TTable";
 
 // Виджеты на главной
 export const MInitialData: IInitialData = {
@@ -527,7 +527,7 @@ export const MMonthYearSwitcher: IButtonGroupData[] = [
 ];
 
 // Таблица "Сотрудники"
-export const MEmployees: IEmployees = {
+export const MEmployees: TTable = {
   head: {
     employee: "Сотрудник",
     division: "Подразделение",

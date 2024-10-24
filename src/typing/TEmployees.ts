@@ -1,3 +1,4 @@
+// TODO Удалить
 interface IEmployee {
   avatar: string;
   name: string;
