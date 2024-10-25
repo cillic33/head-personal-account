@@ -1,13 +1,12 @@
 import {IProps} from "./props";
-import TableHead from "@components/data-display/TableHead/TableHead";
 import TableBody from "@components/data-display/TableBody";
 import styled from "styled-components";
 import {useEffect, useRef} from "react";
 import {scroll} from "@utils/mixins";
 import {theme} from "@utils/theme/theme";
+import TableHead from "@components/data-display/TableHead";
 
 const PADDING_WITH_SCROLL = '14px';
-const PADDING_WITHOUT_SCROLL = '18px';
 
 const StyledTableWrap = styled.div`
   width: 100%;
@@ -37,10 +36,6 @@ const StyledTableWrap = styled.div`
     box-shadow: inset 0 0 16px 16px ${theme.colors.onSurfaceFaintPrimary};
     border: solid 6px transparent;
   }
-
-  //width: calc(100% + ${PADDING_WITHOUT_SCROLL});
-  //margin-right: -${PADDING_WITHOUT_SCROLL};
-  //padding-right: ${PADDING_WITHOUT_SCROLL};
 `
 
 const StyledTable = styled.table`
@@ -59,8 +54,8 @@ const Table = ({data}: IProps) => {
   return (
     <StyledTableWrap ref={tableWrapRef}>
       <StyledTable>
-        <TableHead data={data.head} />
-        <TableBody data={data.body} />
+        <TableHead settings={data.settings} />
+        <TableBody settings={data.settings} data={data.body} />
       </StyledTable>
     </StyledTableWrap>
   );

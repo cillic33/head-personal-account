@@ -25,16 +25,24 @@ const StyledTableHead = styled.thead`
   }
 `
 
-const TableHead = ({data}: IProps) => {
-  const tableTitles = Object.values(data);
+interface IStyledHeadTh {
+  width?: number;
+}
+
+const StyledHeadTh = styled.th<IStyledHeadTh>`
+  width: ${props => props.width ? props.width + "px" : undefined};
+`
+
+const TableHead = ({settings}: IProps) => {
+  const tableTitles = Object.values(settings);
 
   return (
     <StyledTableHead>
       <tr>
         {tableTitles.map((item, index) => (
-          <th key={index}>
-            <Typography $variant="caption-semibold" $color={theme.colors.textIconBaseSecondary}>{item}</Typography>
-          </th>
+          <StyledHeadTh key={index} width={item.width}>
+            <Typography $variant="caption-semibold" $color={theme.colors.textIconBaseSecondary}>{item.name}</Typography>
+          </StyledHeadTh>
         ))}
       </tr>
     </StyledTableHead>

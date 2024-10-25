@@ -75,12 +75,22 @@ const StyledTypography = styled.span<IProps>`
   
   color: ${props => props.$color || props.theme.colors.textIconBasePrimary};
   padding: ${props => props.$padding || undefined};
-  white-space: ${props => props.$nowrap && 'nowrap'};
+  white-space: ${props => props.$isNowrap && 'nowrap'};
   text-align: ${props => props.$textAlign || undefined};
   flex: ${props => props.$flex || undefined};
+  
+  ${props => {
+    if (props.$isEllipsis) {
+      return css`
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      `
+    }
+  }};
 `
 
-const Typography = (props: IProps): JSX.Element => {
+const Typography = (props: IProps) => {
   return (
     <StyledTypography {...props} />
   );

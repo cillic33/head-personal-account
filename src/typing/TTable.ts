@@ -11,11 +11,17 @@ export type TTableBody = ITableRow[];
 
 type TTableKeys = keyof ITableRow;
 
-export type TTableHead = {
-  [Key in TTableKeys]?: string;
+export interface ITableSetting {
+  name: string;
+  width?: number;
+  isEmployee?: boolean;
 }
 
+export type TTableSettings = {
+  [Key in TTableKeys]: ITableSetting;
+};
+
 export interface TTable {
-  head: TTableHead;
+  settings: TTableSettings;
   body: TTableBody;
 }

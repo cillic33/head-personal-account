@@ -5,11 +5,11 @@ import styled from "styled-components";
 const StyledTableBodyTr = styled.tr`
 `
 
-const TableBodyTr = ({data}: IProps) => {
+const TableBodyTr = ({data, settings}: IProps) => {
   return (
     <StyledTableBodyTr>
       {Object.keys(data).map(key => (
-        <TableBodyTd key={key} k={key} data={data[key]} />
+        <TableBodyTd key={key} k={key} data={data[key]} settings={settings[key]} />
       ))}
     </StyledTableBodyTr>
   );

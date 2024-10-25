@@ -1,5 +1,5 @@
-import {TTableHead} from "@typing/TTable";
+import {TTableSettings} from "@typing/TTable";
 
 export interface IProps {
-  data: TTableHead;
+  settings: TTableSettings;
 }
