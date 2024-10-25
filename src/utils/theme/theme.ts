@@ -18,6 +18,7 @@ export const theme = {
     onSurfaceFaintSecondary: 'rgba(13, 31, 51, 0.1)',
     onSurfaceFaintTertiary: 'rgba(13, 31, 51, 0.05)',
     onSurfaceFaintQuaternary: 'rgba(13, 31, 51, 0.03)',
+    onSurfaceFaintQuaternaryNotTransparent: '#f7f8fa',
     textIconBasePrimary: '#363B40',
     textIconBaseSecondary: '#616A73',
     textIconBaseTertiary: '#8391A0',

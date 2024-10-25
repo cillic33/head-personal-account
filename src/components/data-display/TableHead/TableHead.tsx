@@ -5,21 +5,22 @@ import Typography from "@components/data-display/Typography";
 
 const StyledTableHead = styled.thead`
   th {
-    background: ${theme.colors.onSurfaceFaintQuaternary};
+    position: sticky;
+    top: 0;
+    background: ${theme.colors.onSurfaceFaintQuaternaryNotTransparent};
     white-space: nowrap;
     padding: 12px 16.5px;
-    border-top: 1px solid ${theme.colors.surfacePrimary};
     border-right: 1px solid ${theme.colors.surfacePrimary};
     border-bottom: 1px solid ${theme.colors.surfacePrimary};
     text-align: left;
     
     &:first-child {
       border-radius: 8px 0 0 0;
-      border-left: 1px solid ${theme.colors.surfacePrimary};
     }
 
     &:last-child {
       border-radius: 0 8px 0 0;
+      border-right: none;
     }
   }
 `
