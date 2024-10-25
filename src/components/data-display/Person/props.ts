@@ -6,4 +6,6 @@ export interface IProps {
   $width?: string;
   $height?: string;
   $fontVariant?: FontVariant;
+  $isNowrap?: boolean;
+  $isEllipsis?: boolean;
 }

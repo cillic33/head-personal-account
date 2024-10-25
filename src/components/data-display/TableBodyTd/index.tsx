@@ -5,6 +5,9 @@ import Typography from "@components/data-display/Typography";
 import {theme} from "@utils/theme/theme";
 import Flexbox from "@components/surfaces/Flexbox";
 import Person from "@components/data-display/Person";
+import Image from "@components/data-display/Image";
+import DivisionBlueIcon from "@images/DivisionBlueIcon.svg";
+import Chip from "@components/data-display/Chip";
 
 interface IStyledTableBodyTd {
   width?: number;
@@ -22,6 +25,9 @@ const StyledTableBodyTd = styled.td<IStyledTableBodyTd>`
 const TableBodyTd = ({k: key, data, settings}: IProps) => {
   const width = (settings && settings.width) ? settings.width : undefined;
   const isEmployee = (settings && settings.isEmployee) ? settings.isEmployee : undefined;
+  const isDivision = (settings && settings.isDivision) ? settings.isDivision : undefined;
+  const isCenter = (settings && settings.isCenter) ? settings.isCenter : undefined;
+  const isStatus = (settings && settings.isStatus) ? settings.isStatus : undefined;
 
   if (key === "id") {
     return;
@@ -30,11 +36,25 @@ const TableBodyTd = ({k: key, data, settings}: IProps) => {
   if (typeof data === "object") {
     return (
       <StyledTableBodyTd key={key} width={width}>
-        <Flexbox $gap="8px" $align="center">
+        <Flexbox $gap="8px" $align="center" $justify={isStatus ? "center" : undefined}>
           {isEmployee &&
-            <Person src={data["avatar" as keyof TTableCell]} name={data["name" as keyof TTableCell]} $fontVariant="caption-regular" />
+            <Person
+              src={data["avatar" as keyof TTableCell]}
+              name={data["name" as keyof TTableCell]}
+              $fontVariant="caption-regular"
+              $isNowrap
+              $isEllipsis
+            />
           }
-          {!isEmployee && Object.keys(data).map((nestedKey) => {
+          {isStatus &&
+            <Chip $background={data["bgColor" as keyof TTableCell]} $padding="4px 12px" $borderRadius="4px">
+              <Typography $variant="caption-semibold" $color={data["color" as keyof TTableCell]} $isNowrap>
+                {data["title" as keyof TTableCell]}
+              </Typography>
+            </Chip>
+          }
+          {!isEmployee && !isStatus &&
+            Object.keys(data).map((nestedKey) => {
               return (
                 <Typography $variant="caption-regular" key={nestedKey}>
                   {data[nestedKey as keyof TTableCell]}
@@ -48,9 +68,14 @@ const TableBodyTd = ({k: key, data, settings}: IProps) => {
 
   return (
     <StyledTableBodyTd key={key} width={width}>
-      <Typography $variant="caption-regular" $isNowrap $isEllipsis>
-        {data}
-      </Typography>
+      <Flexbox $gap="8px" $align="center" $justify={isCenter ? "center" : undefined}>
+        {isDivision &&
+          <Image src={DivisionBlueIcon} $width="24px" $height="24px" />
+        }
+        <Typography $variant="caption-regular" $isNowrap $isEllipsis>
+          {data}
+        </Typography>
+      </Flexbox>
     </StyledTableBodyTd>
   );
 }

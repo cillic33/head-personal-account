@@ -15,6 +15,9 @@ export interface ITableSetting {
   name: string;
   width?: number;
   isEmployee?: boolean;
+  isDivision?: boolean;
+  isCenter?: boolean;
+  isStatus?: boolean;
 }
 
 export type TTableSettings = {

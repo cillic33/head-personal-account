@@ -9,11 +9,11 @@ const StyledPerson = styled.div`
   gap: 8px;
 `
 
-const Person = ({src, name, $width = "32px", $height = "32px", $fontVariant}: IProps) => {
+const Person = ({src, name, $width = "32px", $height = "32px", $fontVariant, $isNowrap, $isEllipsis}: IProps) => {
   return (
     <StyledPerson>
       <Image src={src} $width={$width} $height={$height} />
-      <Typography $variant={$fontVariant ? $fontVariant : "body-regular"}>{name}</Typography>
+      <Typography $variant={$fontVariant ? $fontVariant : "body-regular"} $isNowrap={$isNowrap} $isEllipsis={$isEllipsis}>{name}</Typography>
     </StyledPerson>
   );
 }
