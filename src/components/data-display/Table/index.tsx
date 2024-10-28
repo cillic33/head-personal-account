@@ -1,7 +1,6 @@
 import {IProps} from "./props";
 import TableBody from "@components/data-display/TableBody";
 import styled from "styled-components";
-import {useEffect, useRef} from "react";
 import {scroll} from "@utils/mixins";
 import {theme} from "@utils/theme/theme";
 import TableHead from "@components/data-display/TableHead";
