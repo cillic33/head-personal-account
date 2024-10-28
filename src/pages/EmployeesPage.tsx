@@ -17,7 +17,7 @@ import Table from "@components/data-display/Table";
 const EmployeesPage = () => {
   return (
     <PageContainer>
-      <Flexbox $gap="16px" $direction="column" $width="100%">
+      <Flexbox $gap="16px" $direction="column" $width="100%" $borderRadius="8px">
         <Flexbox $gap="16px" $align="center" $justify="space-between" $width="100%">
           <Flexbox $gap="16px" $align="center">
             <Link to={AppRoutes.Main}>

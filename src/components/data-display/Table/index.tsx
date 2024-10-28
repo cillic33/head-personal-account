@@ -6,8 +6,6 @@ import {scroll} from "@utils/mixins";
 import {theme} from "@utils/theme/theme";
 import TableHead from "@components/data-display/TableHead";
 
-const PADDING_WITH_SCROLL = '14px';
-
 const StyledTableWrap = styled.div`
   width: 100%;
   height: calc(100vh - 162px);
@@ -43,16 +41,8 @@ const StyledTable = styled.table`
 `
 
 const Table = ({data}: IProps) => {
-  const tableWrapRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (tableWrapRef.current && tableWrapRef.current.scrollHeight > tableWrapRef.current.offsetHeight) {
-      tableWrapRef.current.style.paddingRight = PADDING_WITH_SCROLL;
-    }
-  }, []);
-
   return (
-    <StyledTableWrap ref={tableWrapRef}>
+    <StyledTableWrap>
       <StyledTable>
         <TableHead settings={data.settings} />
         <TableBody settings={data.settings} data={data.body} />
