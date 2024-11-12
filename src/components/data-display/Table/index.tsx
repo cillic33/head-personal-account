@@ -7,7 +7,7 @@ import TableHead from "@components/data-display/TableHead";
 
 const StyledTableWrap = styled.div`
   width: 100%;
-  height: calc(100vh - 162px);
+  height: calc(100vh - 170px);
   background: #ffffff;
   border-radius: 8px;
   border: 1px solid ${theme.colors.surfacePrimary};
