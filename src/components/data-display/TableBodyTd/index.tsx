@@ -22,12 +22,18 @@ const StyledTableBodyTd = styled.td<IStyledTableBodyTd>`
   max-width: ${props => props.width + "px" || undefined};
 `
 
-const TableBodyTd = ({k: key, data, settings}: IProps) => {
+const TableBodyTd = ({k: key, data, settings, onClick}: IProps) => {
   const width = (settings && settings.width) ? settings.width : undefined;
   const isEmployee = (settings && settings.isEmployee) ? settings.isEmployee : undefined;
   const isDivision = (settings && settings.isDivision) ? settings.isDivision : undefined;
   const isCenter = (settings && settings.isCenter) ? settings.isCenter : undefined;
   const isStatus = (settings && settings.isStatus) ? settings.isStatus : undefined;
+
+  const handleClick = () => {
+    if (onClick) {
+      onClick();
+    }
+  }
 
   if (key === "id") {
     return;
@@ -35,7 +41,7 @@ const TableBodyTd = ({k: key, data, settings}: IProps) => {
 
   if (typeof data === "object") {
     return (
-      <StyledTableBodyTd key={key} width={width}>
+      <StyledTableBodyTd key={key} width={width} onClick={handleClick}>
         <Flexbox $gap="8px" $align="center" $justify={isStatus ? "center" : undefined}>
           {isEmployee &&
             <Person
@@ -67,7 +73,7 @@ const TableBodyTd = ({k: key, data, settings}: IProps) => {
   }
 
   return (
-    <StyledTableBodyTd key={key} width={width}>
+    <StyledTableBodyTd key={key} width={width} onClick={handleClick}>
       <Flexbox $gap="8px" $align="center" $justify={isCenter ? "center" : undefined}>
         {isDivision &&
           <Image src={DivisionBlueIcon} $width="24px" $height="24px" />

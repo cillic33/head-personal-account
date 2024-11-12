@@ -4,4 +4,5 @@ export interface IProps {
   k: string;
   data: TTableCell;
   settings: ITableSetting;
+  onClick?: () => void;
 }
