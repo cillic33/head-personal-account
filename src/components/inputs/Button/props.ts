@@ -9,8 +9,8 @@ export interface IProps {
   children: ReactNode;
   id?: string;
   type?: TButtonType;
-  $variant: Variant;
-  size: Size;
+  $variant?: Variant;
+  size?: Size;
   $isActive?: boolean;
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   $padding?: string;
@@ -21,4 +21,6 @@ export interface IProps {
   $flex?: string;
   $opacity?: number;
   disabled?: boolean;
+  $background?: string;
+  $borderRadius?: string;
 }

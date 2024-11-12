@@ -40,10 +40,15 @@ const StyledTable = styled.table`
 `
 
 const Table = ({data}: IProps) => {
+  const handleSortClick = (id: string, direction: string) => {
+    // TODO сделать сортировку данных
+    console.log('Столбец', id, 'Направление', direction)
+  }
+
   return (
     <StyledTableWrap>
       <StyledTable>
-        <TableHead settings={data.settings} />
+        <TableHead settings={data.settings} sortClick={handleSortClick} />
         <TableBody settings={data.settings} data={data.body} />
       </StyledTable>
     </StyledTableWrap>
