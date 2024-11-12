@@ -15,7 +15,8 @@ interface IStyledTableBodyTd {
 
 const StyledTableBodyTd = styled.td<IStyledTableBodyTd>`
   background: #fff;
-  padding: 6px 8px;
+  padding: 5px 8px;
+  border-top: 1px solid #fff;
   border-bottom: 1px solid ${theme.colors.surfacePrimary};
   width: ${props => props.width + "px" || undefined};
   min-width: ${props => props.width + "px" || undefined};

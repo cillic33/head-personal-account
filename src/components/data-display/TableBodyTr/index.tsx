@@ -7,6 +7,7 @@ import {useRef} from "react";
 const StyledTableBodyTr = styled.tr`
   &.active td {
     background: ${theme.colors.surfaceBackground};
+    border-color: ${theme.colors.AccentBrandFaded};
   }
 `
 
