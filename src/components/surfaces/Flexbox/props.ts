@@ -1,5 +1,5 @@
 import {ReactNode} from "react";
-import {TAlign, TDirection, TJustify, TFlexWrap, TCursor} from "@typing/TCssValues";
+import {TAlign, TDirection, TJustify, TFlexWrap, TCursor, TPosition} from "@typing/TCssValues";
 
 export interface IProps {
   children: ReactNode;
@@ -21,4 +21,5 @@ export interface IProps {
   onMouseLeave?: () => void;
   onClick?: () => void;
   $cursor?: TCursor;
+  $position?: TPosition;
 }

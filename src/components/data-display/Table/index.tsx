@@ -39,17 +39,23 @@ const StyledTable = styled.table`
   border-spacing: 0;
 `
 
-const Table = ({data}: IProps) => {
+const Table = ({data, onRowClick}: IProps) => {
   const handleSortClick = (id: string, direction: string) => {
     // TODO сделать сортировку данных
     console.log('Столбец', id, 'Направление', direction)
+  }
+
+  const handleRowClick = () => {
+    if (onRowClick) {
+      onRowClick();
+    }
   }
 
   return (
     <StyledTableWrap>
       <StyledTable>
         <TableHead settings={data.settings} sortClick={handleSortClick} />
-        <TableBody settings={data.settings} data={data.body} />
+        <TableBody settings={data.settings} data={data.body} onClick={handleRowClick} />
       </StyledTable>
     </StyledTableWrap>
   );

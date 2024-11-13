@@ -18,6 +18,7 @@ const StyledFlexbox = styled.div<IProps>`
   border-width: ${props => props.$borderWidth || undefined};
   flex: ${props => props.$flex || undefined};
   cursor: ${props => props.$cursor || undefined};
+  position: ${props => props.$position ||undefined};
 `
 
 const Flexbox = ({children, ...props}: IProps) => {

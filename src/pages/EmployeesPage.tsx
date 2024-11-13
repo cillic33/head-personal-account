@@ -13,8 +13,28 @@ import FilterBlueIcon from "@images/FilterBlueIcon.svg";
 import DownloadBlueIcon from "@images/DownloadBlueIcon.svg";
 import {MEmployees} from "@utils/mock";
 import Table from "@components/data-display/Table";
+import RightPanel from "@components/complex/RightPanel";
+import {useState} from "react";
+import styled from "styled-components";
+import {SLIDE_PANEL_TIME} from "@utils/const"
+
+const StyledTableWrap = styled.div`
+  width: 100%;
+  transition: width ${SLIDE_PANEL_TIME}ms ease;
+  
+  &.active {
+    width: calc(100% - 560px - 16px);
+  }
+`
 
 const EmployeesPage = () => {
+  const [showPanel, setShowPanel] = useState<boolean>(false);
+
+  const handleRowClick = () => {
+    setShowPanel(true);
+    // TODO заменить данные в панели
+  }
+
   return (
     <PageContainer>
       <Flexbox $gap="16px" $direction="column" $width="100%" $borderRadius="8px">
@@ -30,6 +50,7 @@ const EmployeesPage = () => {
 
           <Flexbox $gap="12px" $align="center">
             <Flexbox $width="320px" $flex="0 0 320px">
+              {/* TODO сделать поиск */}
               <Input type="search" name="employeeSearchInput" placeholder="Начните вводить ФИО сотрудника" icon={SearchGray} />
             </Flexbox>
             <Button $variant="primary" size="no-size" $width="40px" $height="40px" $flex="0 0 40px">
@@ -44,7 +65,15 @@ const EmployeesPage = () => {
           </Flexbox>
         </Flexbox>
 
-        <Table data={MEmployees} />
+        <Flexbox $position="relative">
+          <StyledTableWrap className={showPanel ? 'active' : undefined}>
+            <Table data={MEmployees} onRowClick={handleRowClick} />
+          </StyledTableWrap>
+
+          <RightPanel isShow={showPanel}>
+            children
+          </RightPanel>
+        </Flexbox>
 
       </Flexbox>
     </PageContainer>
