@@ -34,6 +34,7 @@ const WidgetTraining = (props: IWidget) => {
       $isOpen={props.isOpen}
       $isDragIcon={props.isDragIcon}
       $internalLink={props.internalLink}
+      $isSplitter={true}
     >
       <Flexbox $gap="16px" $direction="column">
         <Flexbox $align="center" $gap="16px" $padding="16px" $border={`1px solid ${theme.colors.surfacePrimary}`} $borderRadius="6px">

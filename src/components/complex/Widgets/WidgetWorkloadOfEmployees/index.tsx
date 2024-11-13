@@ -32,6 +32,7 @@ const WidgetWorkloadOfEmployees = (props: IWidget) => {
       $isOpen={props.isOpen}
       $isDragIcon={props.isDragIcon}
       $externalLink={props.externalLink}
+      $isSplitter={true}
     >
       <Flexbox $gap="16px" $direction="column">
         <Flexbox $justify="space-between" $gap="16px" $flexWrap="wrap" $direction="row-reverse" $align="center">

@@ -10,6 +10,7 @@ const WidgetMyDeputies = (props: IWidget) => {
       $isOpen={props.isOpen}
       $isDragIcon={props.isDragIcon}
       $externalLink={props.externalLink}
+      $isSplitter={true}
     >
       <WidgetMyDeputiesList data={MMyDeputies} />
     </Expand>

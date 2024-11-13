@@ -32,6 +32,7 @@ const WidgetMoodMonitoring = (props: IWidget) => {
       $isOpen={props.isOpen}
       $isDragIcon={props.isDragIcon}
       $externalLink={props.externalLink}
+      $isSplitter={true}
     >
       <Flexbox
         $gap="16px"

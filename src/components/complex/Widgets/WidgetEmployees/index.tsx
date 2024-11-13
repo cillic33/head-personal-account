@@ -10,6 +10,7 @@ const WidgetEmployees = (props: IWidget) => {
       title={props.title}
       $isOpen={props.isOpen}
       $isDragIcon={props.isDragIcon}
+      $isSplitter={true}
     >
       <Flexbox $gap="4px" $direction="column">
         {MWidgetEmployees.map((item) => (

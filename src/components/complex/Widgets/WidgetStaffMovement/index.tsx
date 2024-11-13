@@ -34,6 +34,7 @@ const WidgetStaffMovement = (props: IWidget) => {
       $isOpen={props.isOpen}
       $isDragIcon={props.isDragIcon}
       $externalLink={props.externalLink}
+      $isSplitter={true}
     >
       <Flexbox $gap="16px" $direction="column">
         <Flexbox $borderRadius="6px" $border={`1px solid ${theme.colors.surfacePrimary}`}>

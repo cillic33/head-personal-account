@@ -11,6 +11,7 @@ const WidgetReportingWeekTS = (props: IWidget) => {
       $isOpen={props.isOpen}
       $isDragIcon={props.isDragIcon}
       $externalLink={props.externalLink}
+      $isSplitter={true}
     >
       <Flexbox $gap="4px" $direction="column">
         {

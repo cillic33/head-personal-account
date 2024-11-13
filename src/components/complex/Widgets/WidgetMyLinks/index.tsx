@@ -86,6 +86,7 @@ const WidgetMyLinks = (props: IWidget) => {
       $isDragIcon={props.isDragIcon}
       $isPlusIcon={props.isPlusIcon}
       $onPlusClick={handlePlusClick}
+      $isSplitter={true}
     >
       <StyledWidgetMyLinks>
         {

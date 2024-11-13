@@ -9,4 +9,6 @@ export interface Props {
   $internalLink?: string;
   $isPlusIcon?: boolean;
   $onPlusClick?: (event?: MouseEvent<HTMLDivElement>) => void;
+  $width?: string;
+  $isSplitter?: boolean;
 }

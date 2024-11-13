@@ -17,6 +17,7 @@ import RightPanel from "@components/complex/RightPanel";
 import {MutableRefObject, useRef, useState} from "react";
 import styled from "styled-components";
 import {SLIDE_PANEL_TIME} from "@utils/const"
+import EmployeeCard from "@components/complex/EmployeeCard";
 
 const StyledTableWrap = styled.div`
   width: 100%;
@@ -96,7 +97,7 @@ const EmployeesPage = () => {
           </StyledTableWrap>
 
           <RightPanel isShow={showPanel} $width="560px" onCloseClick={handleClosePanelClick}>
-            children
+            <EmployeeCard />
           </RightPanel>
         </Flexbox>
 

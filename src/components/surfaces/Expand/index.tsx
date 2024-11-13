@@ -11,9 +11,12 @@ import styled from "styled-components";
 import Flexbox from "@components/surfaces/Flexbox";
 import Image from "@components/data-display/Image";
 import LinkComponent from "@components/data-display/Link";
+import {theme} from "@utils/theme/theme";
 
 const StyledExpand = styled.div<Props>`
-  .expand {
+  width: ${props => props.$width || undefined};
+  
+  .expand {    
     &__head {
       padding: 16px;
     }
@@ -38,7 +41,7 @@ const StyledExpand = styled.div<Props>`
     
     &__body {
       padding: 16px;
-      border-top: 1px solid ${props => props.theme.colors.onSurfaceFaintSecondary};
+      border-top: ${props => props.$isSplitter ? `1px solid ${theme.colors.onSurfaceFaintSecondary}` : undefined};
     }
   }
 `
