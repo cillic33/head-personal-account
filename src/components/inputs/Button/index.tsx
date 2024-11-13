@@ -16,6 +16,10 @@ const StyledButton = styled.button<IProps>`
   opacity: ${props => props.$opacity || undefined};
   background: ${props => props.$background || undefined};
   border-radius: ${props => props.$borderRadius || undefined};
+  top: ${props => props.$top || undefined};
+  right: ${props => props.$right || undefined};
+  bottom: ${props => props.$bottom || undefined};
+  left: ${props => props.$left || undefined};
   
   ${({$isActive, ...props}) => {
     switch (props.$variant) {

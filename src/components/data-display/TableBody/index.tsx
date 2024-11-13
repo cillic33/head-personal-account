@@ -1,27 +1,16 @@
 import {IProps} from "./props";
 import TableBodyTr from "@components/data-display/TableBodyTr";
-import {MutableRefObject, useRef} from "react";
+import {MutableRefObject} from "react";
 
 const TableBody = ({data, settings, onClick}: IProps) => {
-  const bodyRef = useRef<HTMLTableSectionElement | null>(null);
-
   const handleClick = (trRef: MutableRefObject<HTMLTableRowElement | null>) => {
-    // Стилизация строк
-    if (bodyRef.current) {
-      const rows = Array.from(bodyRef.current.querySelectorAll('tr'));
-      rows.forEach(row => row.classList.remove('active'));
-    }
-    if (trRef.current) {
-      trRef.current.classList.add('active');
-    }
-    // Передача клика по строке наверх
     if (onClick) {
-      onClick();
+      onClick(trRef);
     }
   }
 
   return (
-    <tbody ref={bodyRef}>
+    <tbody>
     {data.map(row => (
       <TableBodyTr data={row} key={row.id as string} settings={settings} onClick={handleClick} />
     ))}

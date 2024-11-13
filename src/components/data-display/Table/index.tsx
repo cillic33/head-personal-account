@@ -4,6 +4,7 @@ import styled from "styled-components";
 import {scroll} from "@utils/mixins";
 import {theme} from "@utils/theme/theme";
 import TableHead from "@components/data-display/TableHead";
+import {MutableRefObject} from "react";
 
 const StyledTableWrap = styled.div`
   width: 100%;
@@ -39,21 +40,21 @@ const StyledTable = styled.table`
   border-spacing: 0;
 `
 
-const Table = ({data, onRowClick}: IProps) => {
+const Table = ({data, $ref, onRowClick}: IProps) => {
   const handleSortClick = (id: string, direction: string) => {
     // TODO сделать сортировку данных
     console.log('Столбец', id, 'Направление', direction)
   }
 
-  const handleRowClick = () => {
+  const handleRowClick = (trRef: MutableRefObject<HTMLTableRowElement | null>) => {
     if (onRowClick) {
-      onRowClick();
+      onRowClick(trRef);
     }
   }
 
   return (
     <StyledTableWrap>
-      <StyledTable>
+      <StyledTable ref={$ref}>
         <TableHead settings={data.settings} sortClick={handleSortClick} />
         <TableBody settings={data.settings} data={data.body} onClick={handleRowClick} />
       </StyledTable>

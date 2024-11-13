@@ -10,7 +10,7 @@ const StyledImage = styled.img<IProps>`
 
 const Image = ({...props}: IProps) => {
   return (
-    <StyledImage {...props} ref={props.$ref as RefObject<HTMLButtonElement>} />
+    <StyledImage {...props} ref={props.$ref as RefObject<HTMLImageElement>} />
   );
 }
 

@@ -23,4 +23,8 @@ export interface IProps {
   disabled?: boolean;
   $background?: string;
   $borderRadius?: string;
+  $top?: string;
+  $right?: string;
+  $bottom?: string;
+  $left?: string;
 }
