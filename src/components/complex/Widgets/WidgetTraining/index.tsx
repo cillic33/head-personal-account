@@ -38,8 +38,8 @@ const WidgetTraining = (props: IWidget) => {
       $internalLink={props.internalLink}
       $isSplitter={true}
     >
-      <Flexbox $gap="16px" $direction="column">
-        <Flexbox $align="center" $gap="16px" $padding="16px" $border={`1px solid ${theme.colors.surfacePrimary}`} $borderRadius="6px">
+      <Flexbox gap="16px" $direction="column">
+        <Flexbox $align="center" gap="16px" $padding="16px" $border={`1px solid ${theme.colors.surfacePrimary}`} $borderRadius="6px">
           <Image src={EducationBlueIcon} $width="20px" $flex="0 0 20px"></Image>
           <Typography $variant="body-semibold" $color={theme.colors.textIconBasePrimary} $flex="1 0 auto">Сотрудники на обучении</Typography>
           <Typography $variant="h2">2</Typography>
@@ -47,7 +47,7 @@ const WidgetTraining = (props: IWidget) => {
 
         <Divider direction="horizontal" $color={theme.colors.onSurfaceFaintQuaternary} />
 
-        <Flexbox $justify="space-between" $gap="16px" $flexWrap="wrap" $direction="row-reverse" $align="center">
+        <Flexbox $justify="space-between" gap="16px" $flexWrap="wrap" $direction="row-reverse" $align="center">
           <ButtonGroup buttons={MMonthYearSwitcher} onClick={handlePeriodsSwitcherClick} $buttonsWidth="92px" />
           <SimpleSlider $weeksData={weeksData} $maxWidth="200px" $height="32px" $onSlide={handleSlide} />
         </Flexbox>

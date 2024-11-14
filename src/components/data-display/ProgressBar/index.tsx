@@ -26,7 +26,7 @@ const StyledFilledBar = styled.div<IProps>`
 // @barrelblur: убрать доллары
 const ProgressBar = ({$percent, $color, $title = ""}: IProps) => {
   return (
-    <Flexbox $gap="4px" $direction="column" $padding="4px 0">
+    <Flexbox gap="4px" $direction="column" $padding="4px 0">
       {$title !== "" &&
         <Flexbox $justify="space-between">
           <Typography $variant="body-regular">{$title}</Typography>

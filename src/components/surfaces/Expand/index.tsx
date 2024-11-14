@@ -73,8 +73,8 @@ const Expand = (props: Props) => {
   return (
     <StyledExpand {...props}>
       <div className="expand__head">
-        <Flexbox $gap="12px" $align="center" $justify="space-between">
-          <Flexbox $gap="12px" $align="center">
+        <Flexbox gap="12px" $align="center" $justify="space-between">
+          <Flexbox gap="12px" $align="center">
             {$isDragIcon &&
               <Image
                 src={DragNDropIcon}
@@ -91,7 +91,7 @@ const Expand = (props: Props) => {
             </Typography>
           </Flexbox>
 
-          <Flexbox $gap="12px" $align="center">
+          <Flexbox gap="12px" $align="center">
             {$isPlusIcon &&
               <Flexbox $width="24px" $height="24px" $align="center" $justify="center" $flex="1 0 20px" onClick={handlePlusClick} $cursor="pointer">
                 <Image

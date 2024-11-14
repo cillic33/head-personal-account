@@ -16,7 +16,7 @@ const StyledChip = styled.div<IProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: ${props => props.$gap || undefined};
+  gap: ${props => props.gap || undefined};
   flex: ${props => props.$flex || undefined};
 `
 

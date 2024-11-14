@@ -14,7 +14,7 @@ const WidgetEmployees = (props: IWidget) => {
       $isDragIcon={props.isDragIcon}
       $isSplitter={true}
     >
-      <Flexbox $gap="4px" $direction="column">
+      <Flexbox gap="4px" $direction="column">
         {MWidgetEmployees.map((item) => (
           <WidgetEmployeesRow key={item.id} item={item} />
         ))}

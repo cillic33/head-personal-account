@@ -15,7 +15,7 @@ const WidgetReportingWeekTS = (props: IWidget) => {
       $externalLink={props.externalLink}
       $isSplitter={true}
     >
-      <Flexbox $gap="4px" $direction="column">
+      <Flexbox gap="4px" $direction="column">
         {
           MWidgetReportingWeekTS.map((item) => (
             <Flexbox $justify="space-between" key={item.id} $padding="8px 12px">

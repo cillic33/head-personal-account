@@ -18,7 +18,7 @@ const WidgetEmployeesRow = ({item}: IProps) => {
 
   return (
     <Flexbox
-      $gap="12px"
+      gap="12px"
       $justify="space-between"
       $align="center"
       $background={theme.colors.surfaceSecondary}
@@ -27,19 +27,19 @@ const WidgetEmployeesRow = ({item}: IProps) => {
     >
       <Typography $variant="body-regular">{title}</Typography>
 
-      <Flexbox $gap="12px" $align="center">
-        <Flexbox $gap="4px" $align="center">
+      <Flexbox gap="12px" $align="center">
+        <Flexbox gap="4px" $align="center">
           {important &&
               // @barrelblur почему столько переопределяющихся параметров в каждом компоненте?
               // @barrelblur если у тебя Chip выглядит по-другому, следует создаь другой варант на основе Chip
 
-            <Chip $background={theme.colors.systemErrorFaintSecondary} $borderRadius="4px" $padding="2px 4px 2px 2px" $gap="2px">
+            <Chip $background={theme.colors.systemErrorFaintSecondary} $borderRadius="4px" $padding="2px 4px 2px 2px" gap="2px">
               <Image src={ExclamationRoundRed} $width="16px" $height="16px" />
               <Typography $variant="chip-s" $color={theme.colors.textIconAccentError}>{important}</Typography>
             </Chip>
           }
           {warning &&
-            <Chip $background={theme.colors.complimentaryYellowFaintSecondary} $borderRadius="4px" $padding="2px 4px 2px 2px" $gap="2px">
+            <Chip $background={theme.colors.complimentaryYellowFaintSecondary} $borderRadius="4px" $padding="2px 4px 2px 2px" gap="2px">
               <Image src={ExclamationTriangleYellow} $width="16px" $height="16px" />
               <Typography $variant="chip-s" $color={theme.colors.textIconAccentWarning}>{warning}</Typography>
             </Chip>

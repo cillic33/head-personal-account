@@ -33,13 +33,13 @@ const WidgetHappinessIndex = (props: IWidget) => {
       $externalLink={props.externalLink}
       $isSplitter={true}
     >
-      <Flexbox $gap="16px" $direction="column">
-        <Flexbox $justify="space-between" $gap="16px" $flexWrap="wrap" $direction="row-reverse" $align="center">
+      <Flexbox gap="16px" $direction="column">
+        <Flexbox $justify="space-between" gap="16px" $flexWrap="wrap" $direction="row-reverse" $align="center">
           <ButtonGroup buttons={MMonthQuarterYearSwitcher} onClick={handlePeriodsSwitcherClick} $buttonsWidth="74px" />
           <SimpleSlider $weeksData={weeksData} $maxWidth="200px" $height="32px" $onSlide={handleSlide} />
         </Flexbox>
 
-        <Flexbox $gap="16px" $padding="16px" $direction="column">
+        <Flexbox gap="16px" $padding="16px" $direction="column">
           <PieChartComponent $data={dataHrMetric} />
           <PieChartComponent $data={dataMlMetric} />
         </Flexbox>

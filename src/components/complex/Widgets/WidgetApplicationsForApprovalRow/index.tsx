@@ -14,7 +14,7 @@ import LinkComponent from "@components/data-display/Link";
 const WidgetApplicationsForApprovalRow = ({item}: IProps) => {
   return (
     <Flexbox
-      $gap="12px"
+      gap="12px"
       $justify="space-between"
       $background={item.id === 'all' ? 'transparent' : theme.colors.surfaceSecondary}
       $borderRadius="6px"
@@ -23,14 +23,14 @@ const WidgetApplicationsForApprovalRow = ({item}: IProps) => {
       $align="center"
     >
       <Typography $variant="body-regular">{item.title}</Typography>
-      <Flexbox $gap="12px">
-        <Flexbox $gap="8px">
+      <Flexbox gap="12px">
+        <Flexbox gap="8px">
           {item.important > 0 &&
             <Chip
               $background={theme.colors.systemErrorFaintSecondary}
               $borderRadius="4px"
               $padding="2px 6px 2px 4px"
-              $gap="4px"
+              gap="4px"
               $flex="1 0 auto"
             >
               <Image
@@ -49,7 +49,7 @@ const WidgetApplicationsForApprovalRow = ({item}: IProps) => {
               $background={theme.colors.complimentaryGreenFaintSecondary}
               $borderRadius="4px"
               $padding="2px 6px 2px 4px"
-              $gap="4px"
+              gap="4px"
               $flex="1 0 auto"
             >
               <Image

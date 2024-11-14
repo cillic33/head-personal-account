@@ -64,9 +64,9 @@ const EmployeesPage = () => {
 
   return (
     <PageContainer>
-      <Flexbox $gap="16px" $direction="column" $width="100%" $borderRadius="8px">
-        <Flexbox $gap="16px" $align="center" $justify="space-between" $width="100%">
-          <Flexbox $gap="16px" $align="center">
+      <Flexbox gap="16px" $direction="column" $width="100%" $borderRadius="8px">
+        <Flexbox gap="16px" $align="center" $justify="space-between" $width="100%">
+          <Flexbox gap="16px" $align="center">
             <Link to={AppRoutes.Main}>
               <Button $variant="primary" size="no-size" $width="32px" $height="32px">
                 <Image src={ArrowLeftBlue} $width="20px" $height="20px" />
@@ -75,7 +75,7 @@ const EmployeesPage = () => {
             <Typography $variant="h2">Сотрудники</Typography>
           </Flexbox>
 
-          <Flexbox $gap="12px" $align="center">
+          <Flexbox gap="12px" $align="center">
             <Flexbox $width="320px" $flex="0 0 320px">
               {/* TODO сделать поиск */}
               <Input type="search" name="employeeSearchInput" placeholder="Начните вводить ФИО сотрудника" icon={SearchGray} />

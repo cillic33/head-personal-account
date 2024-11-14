@@ -37,11 +37,11 @@ const WidgetMoodMonitoring = (props: IWidget) => {
       $isSplitter={true}
     >
       <Flexbox
-        $gap="16px"
+        gap="16px"
         $direction="column">
         <Flexbox
           $justify="space-between"
-          $gap="16px"
+          gap="16px"
           $flexWrap="wrap"
           $direction="row-reverse"
           $align="center">
@@ -56,13 +56,13 @@ const WidgetMoodMonitoring = (props: IWidget) => {
             $onSlide={handleSlide}/>
         </Flexbox>
         <Flexbox
-          $gap="16px"
+          gap="16px"
           $direction="column">
           {
             MWidgetMoodMonitoring.map(item => (
               <Flexbox
                 key={item.id}
-                $gap="12px"
+                gap="12px"
                 $align="center"
                 $padding="16px"
                 $border={`1px solid ${theme.colors.surfacePrimary}`}

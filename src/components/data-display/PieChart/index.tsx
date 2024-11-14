@@ -84,7 +84,7 @@ const PieChartComponent = (
       {$isHeader &&
         <Flexbox
           $padding="16px"
-          $gap="12px"
+          gap="12px"
           $align="center"
           $justify="space-between"
           $border={`1px solid ${theme.colors.surfacePrimary}`}
@@ -93,7 +93,7 @@ const PieChartComponent = (
             $variant="body-semibold"
             $color={theme.colors.textIconBaseSecondary}>{title}</Typography>
           <Flexbox
-            $gap="12px"
+            gap="12px"
             $align="center">
             {percent &&
               <Chip
@@ -127,7 +127,7 @@ const PieChartComponent = (
       }
 
       <Flexbox
-        $gap="16px"
+        gap="16px"
         $align="center"
         $width="100%"
         $padding="16px">
@@ -175,7 +175,7 @@ const PieChartComponent = (
             {variants.map((item, index) => (
               <Flexbox
                 key={`cell-${index}`}
-                $gap="4px"
+                gap="4px"
                 $align="center">
                 <StyledCircle color={item.color}/>
                 <Typography

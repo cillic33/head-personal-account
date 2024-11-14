@@ -51,7 +51,7 @@ const TableBodyTd = ({k: key, data, settings, onClick}: IProps) => {
   if (typeof data === "object") {
     return (
       <StyledTableBodyTd key={key} width={width} onClick={handleClick}>
-        <Flexbox $gap="8px" $align="center" $justify={isStatus ? "center" : undefined}>
+        <Flexbox gap="8px" $align="center" $justify={isStatus ? "center" : undefined}>
           {isEmployee &&
             <Person
               src={data["avatar" as keyof TTableCell]}
@@ -83,7 +83,7 @@ const TableBodyTd = ({k: key, data, settings, onClick}: IProps) => {
 
   return (
     <StyledTableBodyTd key={key} width={width} onClick={handleClick}>
-      <Flexbox $gap="8px" $align="center" $justify={isCenter ? "center" : undefined}>
+      <Flexbox gap="8px" $align="center" $justify={isCenter ? "center" : undefined}>
         {isDivision &&
           <Image src={DivisionBlueIcon} $width="24px" $height="24px" />
         }

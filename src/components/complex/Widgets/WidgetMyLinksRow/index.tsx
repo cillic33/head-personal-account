@@ -28,7 +28,7 @@ const WidgetMyLinksRow = ({$item, onEditClick, onDeleteClick}: IProps) => {
   return (
     <Flexbox
       key={$item.id}
-      $gap="12px"
+      gap="12px"
       $align="center"
       $padding="8px 12px"
       onMouseEnter={() => setIsHovered(true)}

@@ -15,7 +15,7 @@ const WidgetApplicationsForApproval = (props: IWidget) => {
       $isSplitter={true}
     >
       <Flexbox
-        $gap="4px"
+        gap="4px"
         $direction="column"
       >
         {MApplications.map((item) => (

@@ -36,13 +36,13 @@ const WidgetWorkloadOfEmployees = (props: IWidget) => {
       $externalLink={props.externalLink}
       $isSplitter={true}
     >
-      <Flexbox $gap="16px" $direction="column">
-        <Flexbox $justify="space-between" $gap="16px" $flexWrap="wrap" $direction="row-reverse" $align="center">
+      <Flexbox gap="16px" $direction="column">
+        <Flexbox $justify="space-between" gap="16px" $flexWrap="wrap" $direction="row-reverse" $align="center">
           {/*TODO Добавить обработку переключения периода (для всех переключателей)*/}
           <ButtonGroup buttons={MWeekMonthSwitcher} onClick={handlePeriodsSwitcherClick} $buttonsWidth="92px" />
           <SimpleSlider $weeksData={weeksData} $maxWidth="200px" $height="32px" $onSlide={handleSlide} />
         </Flexbox>
-        <Flexbox $gap="8px" $direction="column">
+        <Flexbox gap="8px" $direction="column">
           {MWorkloadOfEmployees.map(item => (
             <ProgressBar key={item.id} $percent={item.percent} $color={item.color} $title={item.title} />
           ))}

@@ -11,7 +11,7 @@ export interface IProps {
   $flexWrap?: TFlexWrap;
   $justify?: TJustify;
   $direction?: TDirection;
-  $gap?: string;
+  gap?: string;
   $padding?: string;
   $margin?: string;
   $background?: string;

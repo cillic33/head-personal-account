@@ -66,7 +66,7 @@ const TableHead = ({settings, sortClick}: IProps) => {
       <tr>
         {tableTitles.map((item, index) => (
           <StyledHeadTh key={index} width={item.width}>
-            <Flexbox $gap="4px" $align="center">
+            <Flexbox gap="4px" $align="center">
               <Typography $variant="caption-semibold" $color={theme.colors.textIconBaseSecondary}>{item.name}</Typography>
               {item.isSorted &&
                 <Button

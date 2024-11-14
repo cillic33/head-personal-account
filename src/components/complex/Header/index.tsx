@@ -21,15 +21,15 @@ const Header = () => {
     <StyledHeader>
       <Flexbox $align="center" $justify="space-between">
 
-        <Flexbox $gap="24px" $align="center">
+        <Flexbox gap="24px" $align="center">
           <Image src={LogoIbs} alt="Главная" $width="40px" $height="40px" />
           <Typography $variant="h3">
             Личный кабинет руководителя
           </Typography>
         </Flexbox>
 
-        <Flexbox $gap="18px" $align="center">
-          <Flexbox $gap="8px" $align="center">
+        <Flexbox gap="18px" $align="center">
+          <Flexbox gap="8px" $align="center">
             <Person src={AvatarIvanov} name="Иванов Сергей Владимирович" $width="40px" $height="40px" />
             <Button type="button" $variant="no-style" size="no-size">
               <Image src={CaretDownGray} $width="20px" $height="20px" />
