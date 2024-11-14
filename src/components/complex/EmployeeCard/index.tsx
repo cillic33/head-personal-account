@@ -89,57 +89,210 @@ const EmployeeCard = () => {
 
         {/*Общая информация*/}
         <EmployeeCardField>
-          <Expand title="Общая информация" $width="100%" $isOpen={true}>
+          <Expand title="Общая информация" $width="100%" $isOpen={true} $paddingHead="12px" $paddingBody="8px 12px 12px">
+            <Gridbox $gridTemplateColumns="200px auto" $rowGap="12px" $columnGap="16px">
+              <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Специализация</Typography>
+              <Typography $variant="body-regular">Тестировщик</Typography>
+
+              <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Направление</Typography>
+              <Typography $variant="body-regular">Автоматизированное тестирование</Typography>
+
+              <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Технология</Typography>
+              <Typography $variant="body-regular">Технология тестирования 1</Typography>
+
+              <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Стаж работы (IBS)</Typography>
+              <Typography $variant="body-regular">5 лет</Typography>
+
+              <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Общий стаж по трудовой</Typography>
+              <Typography $variant="body-regular">9 лет</Typography>
+
+              <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Место в структуре компании</Typography>
+              <Typography $variant="body-regular">Автоматизированное тестирование</Typography>
+
+              <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Юридическое лицо</Typography>
+              <Typography $variant="body-regular">ООО «ИБС Санкт-Петербург»</Typography>
+
+              <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Кластер</Typography>
+              <Typography $variant="body-regular">Северо-запад</Typography>
+
+              <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Код МВЗ</Typography>
+              <Typography $variant="body-regular">W16</Typography>
+
+              <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Региональный центр</Typography>
+              <Typography $variant="body-regular">Санкт-Петербург</Typography>
+
+              <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Гражданство</Typography>
+              <Typography $variant="body-regular">Россия</Typography>
+
+              <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Совместительство в ГК ИБС</Typography>
+              <Typography $variant="body-regular">Наименование юр.лица, Наименование юр.лица 2, Наименование юр.лица3, Наименование юр.лица 4, Наименование юр.лица3 </Typography>
+
+              <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Руководитель</Typography>
+              <Typography $variant="body-regular">
+                <LinkComponent href="/" $color={theme.colors.accentBrandNormal}>Александрова М. В.</LinkComponent>
+              </Typography>
+
+              <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>HR</Typography>
+              <Typography $variant="body-regular">
+                <LinkComponent href="/" $color={theme.colors.accentBrandNormal}>Коновалова М. В.</LinkComponent>
+              </Typography>
+            </Gridbox>
+          </Expand>
+        </EmployeeCardField>
+
+        {/*Проектная занятость*/}
+        <EmployeeCardField>
+          <Expand title="Проектная занятость" $width="100%" $isOpen={true} $paddingHead="12px" $paddingBody="8px 12px 12px">
+            <Gridbox $gridTemplateColumns="200px auto" $rowGap="12px" $columnGap="16px">
+              <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>50%</Typography>
+              <Flexbox $direction="column" $gap="4px">
+                <Typography $variant="body-regular">
+                  <LinkComponent href="/" $color={theme.colors.accentBrandNormal}>Сбербанк - Новое приложение</LinkComponent>
+                </Typography>
+                <Typography $variant="caption-regular" $color={theme.colors.textIconBaseTertiary}>
+                  CRP23 • SB4325 • Этап 1 - Технический • 10.10.2022 - 08.02.2023
+                </Typography>
+              </Flexbox>
+              <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>50%</Typography>
+              <Flexbox $direction="column" $gap="4px">
+                <Typography $variant="body-regular">
+                  <LinkComponent href="/" $color={theme.colors.accentBrandNormal}>Сбербанк - Новое приложение</LinkComponent>
+                </Typography>
+                <Typography $variant="caption-regular" $color={theme.colors.textIconBaseTertiary}>
+                  CRP23 • SB4325 • Этап 1 - Технический • 10.10.2022 - 08.02.2023
+                </Typography>
+              </Flexbox>
+            </Gridbox>
+          </Expand>
+        </EmployeeCardField>
+
+        {/*Ближайшее мероприятие*/}
+        <EmployeeCardField>
+          <Flexbox $direction="column" $width="100%">
+            <Flexbox $gap="12px" $align="center" $justify="space-between" $padding="12px" $width="100%">
+              <Typography $variant="h4" $flex="1 0 auto">Ближайшее мероприятие</Typography>
+              <LinkComponent href="/" target="_blank">
+                <Image src={GotoGrayIcon} $width="20px" $height="20px" />
+              </LinkComponent>
+            </Flexbox>
+
             <Flexbox $direction="column" $gap="12px" $padding="8px 12px 12px">
               <Gridbox $gridTemplateColumns="200px auto" $rowGap="12px" $columnGap="16px">
-                <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Специализация</Typography>
-                <Typography $variant="body-regular">Тестировщик</Typography>
+                <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Тип мероприятия</Typography>
+                <Typography $variant="body-regular">Установочная аттестация</Typography>
 
-                <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Направление</Typography>
-                <Typography $variant="body-regular">Автоматизированное тестирование</Typography>
-
-                <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Технология</Typography>
-                <Typography $variant="body-regular">Технология тестирования 1</Typography>
-
-                <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Стаж работы (IBS)</Typography>
-                <Typography $variant="body-regular">5 лет</Typography>
-
-                <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Общий стаж по трудовой</Typography>
-                <Typography $variant="body-regular">9 лет</Typography>
-
-                <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Место в структуре компании</Typography>
-                <Typography $variant="body-regular">Автоматизированное тестирование</Typography>
-
-                <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Юридическое лицо</Typography>
-                <Typography $variant="body-regular">ООО «ИБС Санкт-Петербург»</Typography>
-
-                <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Кластер</Typography>
-                <Typography $variant="body-regular">Северо-запад</Typography>
-
-                <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Код МВЗ</Typography>
-                <Typography $variant="body-regular">W16</Typography>
-
-                <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Региональный центр</Typography>
-                <Typography $variant="body-regular">Санкт-Петербург</Typography>
-
-                <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Гражданство</Typography>
-                <Typography $variant="body-regular">Россия</Typography>
-
-                <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Совместительство в ГК ИБС</Typography>
-                <Typography $variant="body-regular">Наименование юр.лица, Наименование юр.лица 2, Наименование юр.лица3, Наименование юр.лица 4, Наименование юр.лица3 </Typography>
-
-                <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Руководитель</Typography>
-                <Typography $variant="body-regular">
-                  <LinkComponent href="/">Александрова М. В.</LinkComponent>
-                </Typography>
-
-                <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>HR</Typography>
-                <Typography $variant="body-regular">
-                  <LinkComponent href="/">Коновалова М. В.</LinkComponent>
-                </Typography>
+                <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Период проведения</Typography>
+                <Typography $variant="body-regular">Окт. 24 - Нояб. 24</Typography>
               </Gridbox>
             </Flexbox>
+          </Flexbox>
+        </EmployeeCardField>
+
+        {/*Адаптация*/}
+        <EmployeeCardField>
+          <Flexbox $direction="column" $width="100%">
+            <Flexbox $gap="12px" $align="center" $justify="space-between" $padding="12px" $width="100%">
+              <Typography $variant="h4" $flex="1 0 auto">Адаптация</Typography>
+              <Chip $background={theme.colors.systemErrorFaintSecondary} $padding="2px 10px" $borderRadius="4px">
+                <Typography $variant="body-regular" $color={theme.colors.textIconAccentError}>В зоне риска</Typography>
+              </Chip>
+              <LinkComponent href="/" target="_blank">
+                <Image src={GotoGrayIcon} $width="20px" $height="20px" />
+              </LinkComponent>
+            </Flexbox>
+
+            <Flexbox $direction="column" $gap="12px" $padding="8px 12px 12px">
+              <Gridbox $gridTemplateColumns="200px auto" $rowGap="12px" $columnGap="16px">
+                <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Дата окончания ИС</Typography>
+                <Typography $variant="body-regular">02.03.24</Typography>
+
+                <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Прогресс плана</Typography>
+                <Typography $variant="body-regular">90%</Typography>
+
+                <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Наставник</Typography>
+                <Typography $variant="body-regular">Семенова М. В.</Typography>
+
+                <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Дата ближ. задачи</Typography>
+                <Typography $variant="body-regular">01.03.24</Typography>
+              </Gridbox>
+            </Flexbox>
+          </Flexbox>
+        </EmployeeCardField>
+
+        {/*Обучение*/}
+        <EmployeeCardField>
+          <Expand
+            title="Обучение"
+            $width="100%"
+            $isOpen={true}
+            $externalLink="/"
+            $paddingHead="12px"
+            $paddingBody="8px 12px 12px"
+            $chip={{title: "2 курса просрочено", color: theme.colors.textIconAccentError, bgColor: theme.colors.systemErrorFaintSecondary}}
+          >
+            <Gridbox $gridTemplateColumns="200px auto" $rowGap="12px" $columnGap="16px">
+              <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Просроченные курсы</Typography>
+              <Flexbox $direction="column" $gap="8px">
+                <Flexbox $direction="column" $gap="4px">
+                  <Typography $variant="body-regular">Fundamentals of graphic design</Typography>
+                  <Typography $variant="caption-regular" $color={theme.colors.textIconAccentError}>До 05.01.24</Typography>
+                </Flexbox>
+                <Flexbox $direction="column" $gap="4px">
+                  <Typography $variant="body-regular">Fundamentals of graphic design</Typography>
+                  <Typography $variant="caption-regular" $color={theme.colors.textIconAccentError}>До 05.01.24</Typography>
+                </Flexbox>
+              </Flexbox>
+
+              <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>В процессе</Typography>
+              <Flexbox $direction="column" $gap="4px">
+                <Typography $variant="body-regular">Fundamentals of graphic design</Typography>
+                <Typography $variant="caption-regular" $color={theme.colors.textIconBaseTertiary}>До 05.01.24</Typography>
+              </Flexbox>
+
+              <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Ближайшие обучения</Typography>
+              <Flexbox $direction="column" $gap="4px">
+                <Typography $variant="body-regular">Fundamentals of graphic design</Typography>
+                <Typography $variant="caption-regular" $color={theme.colors.textIconBaseTertiary}>До 05.01.24</Typography>
+              </Flexbox>
+            </Gridbox>
           </Expand>
+        </EmployeeCardField>
+
+        {/*Оборудование*/}
+        <EmployeeCardField>
+          <Expand
+            title="Оборудование"
+            $width="100%"
+            $isOpen={true}
+            $externalLink="/"
+            $paddingHead="12px"
+            $paddingBody="8px 12px 12px"
+            $chip={{title: "2", color: theme.colors.onSurfaceSecondary, bgColor: theme.colors.onSurfaceFaintTertiary}}
+          >
+            <Gridbox $gridTemplateColumns="200px auto" $rowGap="12px" $columnGap="16px">
+              <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Ноутбук</Typography>
+              <Flexbox $direction="column" $gap="4px">
+                <Typography $variant="body-regular">Huawei MateView GT 14.2</Typography>
+                <Typography $variant="caption-regular" $color={theme.colors.textIconBaseTertiary}>Выдан 05.01.24</Typography>
+              </Flexbox>
+
+              <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Телефон</Typography>
+              <Flexbox $direction="column" $gap="4px">
+                <Typography $variant="body-regular">Samsung Galaxy A35 5G 8/128GB</Typography>
+                <Typography $variant="caption-regular" $color={theme.colors.textIconBaseTertiary}>Выдан 05.01.24</Typography>
+              </Flexbox>
+            </Gridbox>
+          </Expand>
+        </EmployeeCardField>
+
+        {/*Расчетный лист*/}
+        <EmployeeCardField>
+          <Flexbox $gap="12px" $align="center" $justify="space-between" $padding="12px" $width="100%">
+            <Typography $variant="h4" $flex="1 0 auto">Расчетный лист</Typography>
+            <LinkComponent href="/" target="_blank">
+              <Image src={GotoGrayIcon} $width="20px" $height="20px" />
+            </LinkComponent>
+          </Flexbox>
         </EmployeeCardField>
 
       </Flexbox>

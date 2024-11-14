@@ -5,4 +5,5 @@ export interface IProps {
   href: string;
   target?: string;
   $flex?: string;
+  $color?: string;
 }

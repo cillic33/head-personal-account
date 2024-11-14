@@ -6,4 +6,5 @@ export interface IProps {
   $gridTemplateRows?: string;
   $rowGap?: string;
   $columnGap?: string;
+  $padding?: string;
 }

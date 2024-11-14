@@ -7,6 +7,7 @@ const StyledGridbox = styled.div<IProps>`
   grid-template-rows: ${props => props.$gridTemplateRows || undefined};
   row-gap: ${props => props.$rowGap || undefined};
   column-gap: ${props => props.$columnGap || undefined};
+  padding: ${props => props.$padding || undefined};
 `
 
 const Gridbox = (props: IProps) => {
