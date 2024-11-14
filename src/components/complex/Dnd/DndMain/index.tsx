@@ -8,6 +8,7 @@ import { IInitialDataColumn} from "@typing/TDnd";
 import {IProps} from "@components/complex/Dnd/DndMain/props";
 import DndColumn from "@components/complex/Dnd/DndColumn";
 
+// @barrelblur: неправильно размечена функция
 const DndMain = ({children, initialData}: IProps) => {
   const [data, setData] = useState(initialData);
 
@@ -20,9 +21,8 @@ const DndMain = ({children, initialData}: IProps) => {
     }
 
     // Если объект перетащили в то же самое место
-    if (destination.droppableId === source.droppableId
-      && destination.index === source.index) {
-      return;
+    if (destination.droppableId === source.droppableId && destination.index === source.index) {
+      return
     }
 
     const SourceColumn = data.columns[source.droppableId];
@@ -83,4 +83,5 @@ const DndMain = ({children, initialData}: IProps) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default DndMain;

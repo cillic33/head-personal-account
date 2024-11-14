@@ -23,6 +23,7 @@ const StyledCellList = styled.div<ICellListProps>`
   border-radius: 8px;
 `;
 
+// @barrelblur: неправильно размечена функция
 const DndColumn = ({children, cells, ...props}: IProps) => {
   const {id} = props.column;
 
@@ -36,6 +37,8 @@ const DndColumn = ({children, cells, ...props}: IProps) => {
             $isDraggingOver={snapshot.isDraggingOver}
           >
             {cells.map((cell, idx) => (
+                /* @barrelblur: Почему принимаешь children через атрибут, а не через вложение, как если бы обернула значение с помощью тега */
+                /* @barrelblur: использую передачу children через оборачивания тега */
               <DndCell key={cell.id} data={cell} index={idx} children={children} />
             ))}
             {provided.placeholder}
@@ -46,4 +49,5 @@ const DndColumn = ({children, cells, ...props}: IProps) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default DndColumn;

@@ -4,6 +4,8 @@ import {MWidgetAbsence} from "@utils/mock";
 import Flexbox from "@components/surfaces/Flexbox";
 import Typography from "@components/data-display/Typography";
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: убрать доллары
 const WidgetAbsence = (props: IWidget) => {
   return (
     <Expand
@@ -27,4 +29,5 @@ const WidgetAbsence = (props: IWidget) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetAbsence;

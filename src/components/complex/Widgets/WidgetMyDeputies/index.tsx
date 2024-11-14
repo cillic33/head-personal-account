@@ -3,6 +3,8 @@ import {IWidget} from "@typing/TWidget";
 import {MMyDeputies} from "@utils/mock";
 import WidgetMyDeputiesList from "@components/complex/Widgets/WidgetMyDeputiesList";
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: убрать доллары
 const WidgetMyDeputies = (props: IWidget) => {
   return (
     <Expand
@@ -17,4 +19,5 @@ const WidgetMyDeputies = (props: IWidget) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetMyDeputies;

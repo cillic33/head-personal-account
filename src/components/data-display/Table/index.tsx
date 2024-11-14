@@ -20,6 +20,8 @@ const StyledTable = styled.table`
   border-spacing: 0;
 `
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: убрать доллары
 const Table = ({data, $ref, onRowClick}: IProps) => {
   const handleSortClick = (id: string, direction: string) => {
     // TODO сделать сортировку данных
@@ -42,4 +44,5 @@ const Table = ({data, $ref, onRowClick}: IProps) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default Table;

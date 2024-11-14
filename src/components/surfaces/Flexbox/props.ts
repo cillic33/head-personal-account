@@ -1,6 +1,8 @@
 import {ReactNode} from "react";
 import {TAlign, TDirection, TJustify, TFlexWrap, TCursor, TPosition} from "@typing/TCssValues";
 
+// @barrelblur: откуда взялись эти доллары?
+// @barrelblur: убрать использование долларов
 export interface IProps {
   children: ReactNode;
   $width?: string;

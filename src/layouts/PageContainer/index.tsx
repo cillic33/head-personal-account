@@ -8,6 +8,8 @@ const StyledPageContainer = styled.div<IProps>`
   min-height: 100vh;
 `
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: убрать доллары
 const PageContainer = ({children}: IProps) => {
   return (
     <StyledPageContainer>
@@ -21,4 +23,5 @@ const PageContainer = ({children}: IProps) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default PageContainer;

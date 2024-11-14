@@ -28,6 +28,7 @@ const StyledTableWrap = styled.div`
   }
 `
 
+// @barrelblur: убрать доллары
 const EmployeesPage = () => {
   const [showPanel, setShowPanel] = useState<boolean>(false);
   const tableRef = useRef<HTMLTableElement | null>(null);
@@ -106,4 +107,5 @@ const EmployeesPage = () => {
   );
 }
 
+// @barrelblur: неправильно размечена функция
 export default EmployeesPage;

@@ -11,6 +11,8 @@ import Chip from "@components/data-display/Chip";
 import {Link} from "react-router-dom";
 import LinkComponent from "@components/data-display/Link";
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: убрать доллары
 const WidgetEmployeesRow = ({item}: IProps) => {
   const {id, title, count, link, important, warning} = item;
 
@@ -28,6 +30,9 @@ const WidgetEmployeesRow = ({item}: IProps) => {
       <Flexbox $gap="12px" $align="center">
         <Flexbox $gap="4px" $align="center">
           {important &&
+              // @barrelblur почему столько переопределяющихся параметров в каждом компоненте?
+              // @barrelblur если у тебя Chip выглядит по-другому, следует создаь другой варант на основе Chip
+
             <Chip $background={theme.colors.systemErrorFaintSecondary} $borderRadius="4px" $padding="2px 4px 2px 2px" $gap="2px">
               <Image src={ExclamationRoundRed} $width="16px" $height="16px" />
               <Typography $variant="chip-s" $color={theme.colors.textIconAccentError}>{important}</Typography>
@@ -57,4 +62,5 @@ const WidgetEmployeesRow = ({item}: IProps) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetEmployeesRow;

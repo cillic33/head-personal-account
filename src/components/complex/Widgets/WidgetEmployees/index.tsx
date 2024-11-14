@@ -4,6 +4,8 @@ import Flexbox from "@components/surfaces/Flexbox";
 import {MWidgetEmployees} from "@utils/mock";
 import WidgetEmployeesRow from "@components/complex/Widgets/WidgetEmployeesRow";
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: убрать доллары
 const WidgetEmployees = (props: IWidget) => {
   return (
     <Expand
@@ -21,4 +23,5 @@ const WidgetEmployees = (props: IWidget) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetEmployees;

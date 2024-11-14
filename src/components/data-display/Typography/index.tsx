@@ -73,6 +73,8 @@ const StyledTypography = styled.span<IProps>`
     }
   }}
   
+  // @barrelblur: мы не должн управлять данными значениями напрямую
+  // @barrelblur: убрать доллары
   color: ${props => props.$color || props.theme.colors.textIconBasePrimary};
   padding: ${props => props.$padding || undefined};
   white-space: ${props => props.$isNowrap && 'nowrap'};
@@ -90,10 +92,12 @@ const StyledTypography = styled.span<IProps>`
   }};
 `
 
+// @barrelblur: неправильно размечена функция
 const Typography = (props: IProps) => {
   return (
     <StyledTypography {...props} />
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default Typography;

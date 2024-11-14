@@ -9,6 +9,8 @@ import GotoGrayIcon from "@images/GotoGrayIcon.svg";
 import {IProps} from "./props";
 import LinkComponent from "@components/data-display/Link";
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: убрать доллары
 const WidgetApplicationsForApprovalRow = ({item}: IProps) => {
   return (
     <Flexbox
@@ -73,4 +75,5 @@ const WidgetApplicationsForApprovalRow = ({item}: IProps) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetApplicationsForApprovalRow;

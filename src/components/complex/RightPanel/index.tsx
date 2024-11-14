@@ -42,6 +42,8 @@ const StyledRightPanelScroll = styled.div`
   padding: 16px 16px 16px 0;
 `
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: убрать доллары
 const RightPanel = ({children, isShow, $width, onCloseClick}: IProps) => {
   const panelRef = useRef(null);
 
@@ -75,4 +77,5 @@ const RightPanel = ({children, isShow, $width, onCloseClick}: IProps) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default RightPanel;

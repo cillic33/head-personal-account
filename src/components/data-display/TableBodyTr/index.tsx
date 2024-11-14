@@ -11,6 +11,7 @@ const StyledTableBodyTr = styled.tr`
   }
 `
 
+// @barrelblur: неправильно размечена функция
 const TableBodyTr = ({data, settings, onClick}: IProps) => {
   const trRef = useRef<HTMLTableRowElement | null>(null);
   const handleClick = () => {
@@ -28,4 +29,5 @@ const TableBodyTr = ({data, settings, onClick}: IProps) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default TableBodyTr;

@@ -4,6 +4,8 @@ import Flexbox from "@components/surfaces/Flexbox";
 import WidgetApplicationsForApprovalRow from "@components/complex/Widgets/WidgetApplicationsForApprovalRow";
 import {IWidget} from "@typing/TWidget";
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: убрать доллары
 const WidgetApplicationsForApproval = (props: IWidget) => {
   return (
     <Expand
@@ -24,4 +26,5 @@ const WidgetApplicationsForApproval = (props: IWidget) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetApplicationsForApproval;

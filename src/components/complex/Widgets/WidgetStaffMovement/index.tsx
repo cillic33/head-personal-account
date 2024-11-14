@@ -15,6 +15,8 @@ import {TWeeksSlider} from "@typing/TWeeksSlider";
 import {getWeeksArray} from "@utils/index";
 import PieChartComponent from "@components/data-display/PieChart";
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: убрать доллары
 const WidgetStaffMovement = (props: IWidget) => {
   const [currentDate] = useState<Date>(new Date());
   const [weeksData] = useState<TWeeksSlider>(getWeeksArray(currentDate));
@@ -78,4 +80,5 @@ const WidgetStaffMovement = (props: IWidget) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetStaffMovement;

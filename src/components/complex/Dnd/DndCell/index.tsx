@@ -11,6 +11,7 @@ const StyledDndCell = styled.div<IDndCellProps>`
   opacity: ${props => props.$isDragging ? '0.85' : '1'};
 `;
 
+// @barrelblur: неправильно размечена функция
 const DndCell = ({children, index, ...props}: IProps) => {
   const { id } = props.data;
   
@@ -23,6 +24,7 @@ const DndCell = ({children, index, ...props}: IProps) => {
           ref={provided.innerRef}
           $isDragging={snapshot.isDragging}
         >
+          {/* @barrelblur: Зачем происходит итерация по children? Что не так с элементами? */}
           {Children.toArray(children).find((child) => {
             if (isValidElement<{id: string}>(child)) {
 
@@ -37,4 +39,6 @@ const DndCell = ({children, index, ...props}: IProps) => {
     </Draggable>
   )
 }
+
+// @barrelblur: не используем дефолтный экспорт
 export default DndCell;

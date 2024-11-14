@@ -45,6 +45,8 @@ const StyledWrapSlider = styled.div<IProps>`
   }
 `
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: не используем дефолтный экспорт
 export default function SimpleSlider(props: IProps) {
   const {$weeksData, $onSlide} = props;
   const [oldSlide, setOldSlide] = useState<number>(1);

@@ -39,6 +39,7 @@ const StyledHeadTh = styled.th<IStyledHeadTh>`
   width: ${props => props.width ? props.width + "px" : undefined};
 `
 
+// @barrelblur: неправильно размечена функция
 const TableHead = ({settings, sortClick}: IProps) => {
   const tableTitles = Object.values(settings);
 
@@ -87,4 +88,5 @@ const TableHead = ({settings, sortClick}: IProps) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default TableHead;

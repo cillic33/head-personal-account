@@ -14,6 +14,8 @@ import SimpleSlider from "@components/data-display/SimpleSlider";
 import {TWeeksSlider} from "@typing/TWeeksSlider";
 import {getWeeksArray} from "@utils/index";
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: убрать доллары
 const WidgetMoodMonitoring = (props: IWidget) => {
   const [currentDate] = useState<Date>(new Date());
   const [weeksData] = useState<TWeeksSlider>(getWeeksArray(currentDate));
@@ -97,4 +99,5 @@ const WidgetMoodMonitoring = (props: IWidget) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetMoodMonitoring;

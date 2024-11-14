@@ -21,6 +21,8 @@ const StyledWidgetMyLinks = styled.div`
   padding: 8px 6px 8px 0;
 `
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: убрать доллары
 const WidgetMyLinks = (props: IWidget) => {
   const [isPopupShow, setIsPopupShow] = useState<boolean>(false);
   const [isDisabledSubmit, setIsDisabledSubmit] = useState<boolean>(false);
@@ -111,4 +113,5 @@ const WidgetMyLinks = (props: IWidget) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetMyLinks;

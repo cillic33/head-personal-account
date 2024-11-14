@@ -6,6 +6,7 @@ import styled from "styled-components";
 import {theme} from "@utils/theme/theme";
 import Chip from "@components/data-display/Chip";
 
+// @barrelblur: что это такое? Это должно быть компоннетом
 function CustomLabel({viewBox, centerCount, centerText, postfix}: ICustomLabelProps) {
   const {cx, cy} = viewBox;
 
@@ -56,11 +57,16 @@ const StyledRightInfo = styled.div`
   flex: 1 0 auto;
 `
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: в этом компоненте не понятно, какая его единственная ответственность
+// @barrelblur: вроде выводится разметка, но аттрибуты будто заменают инлайновые стили
 const PieChartComponent = (
   {
+    // @barrelblur много лишних атрибутов
     $data,
     $width = 100,
     $height = 100,
+    // @barrelblur много лишних атрибутов
     $innerRadius = 35,
     $outerRadius = 50,
     $isCenterText = true,
@@ -138,6 +144,11 @@ const PieChartComponent = (
             dataKey="value"
             cornerRadius={2}
           >
+            {/*
+                @barrelblur
+                Здесь грубое нарушение использование index, согласно интерфейсу в элементе нет ID,
+                а ты используешь индекс элемента массива, и если какой-то элемент удалиться, то рендер сломается
+             */}
             {variants.map((item, index) => (
               <Cell
                 key={`cell-${index}`}
@@ -181,4 +192,5 @@ const PieChartComponent = (
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default PieChartComponent;

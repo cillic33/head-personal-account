@@ -4,6 +4,8 @@ import {theme} from "@utils/theme/theme";
 import {IProps} from "./props";
 import WidgetMyDeputiesRow from "@components/complex/Widgets/WidgetMyDeputiesRow";
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: убрать доллары
 const WidgetMyDeputiesList = ({data}: IProps) => {
   return (
     <Flexbox $gap="16px" $direction="column">
@@ -21,4 +23,5 @@ const WidgetMyDeputiesList = ({data}: IProps) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetMyDeputiesList;

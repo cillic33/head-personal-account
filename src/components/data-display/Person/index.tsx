@@ -9,6 +9,7 @@ const StyledPerson = styled.div`
   gap: 8px;
 `
 
+// @barrelblur: неправильно размечена функция
 const Person = ({src, name, $width = "32px", $height = "32px", $fontVariant, $isNowrap, $isEllipsis}: IProps) => {
   return (
     <StyledPerson>
@@ -18,4 +19,5 @@ const Person = ({src, name, $width = "32px", $height = "32px", $fontVariant, $is
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default Person;

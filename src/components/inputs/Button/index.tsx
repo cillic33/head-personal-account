@@ -3,12 +3,14 @@ import styled, {css} from "styled-components";
 import {RefObject} from "react";
 
 const StyledButton = styled.button<IProps>`
+  // @barrelblur: очень много лишних атрибутов, делающих работу с этим компонентом похожую на указание инлайновых стилей
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   cursor: pointer;
   white-space: nowrap;
+  // @barrelblur: убрать доллары
   position: ${props => props.$position || undefined};
   width: ${props => props.$width || undefined};
   height: ${props => props.$height || undefined};
@@ -136,10 +138,12 @@ const StyledButton = styled.button<IProps>`
   }
 `
 
+// @barrelblur: неправильно размечена функция
 const Button = (props: IProps) => {
   return (
     <StyledButton {...props} ref={props.$ref as RefObject<HTMLButtonElement>} />
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default Button;

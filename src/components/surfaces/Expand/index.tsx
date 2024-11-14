@@ -13,6 +13,8 @@ import Image from "@components/data-display/Image";
 import LinkComponent from "@components/data-display/Link";
 import {theme} from "@utils/theme/theme";
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: убрать доллары
 const StyledExpand = styled.div<Props>`
   width: ${props => props.$width || undefined};
   
@@ -51,12 +53,15 @@ const Expand = (props: Props) => {
     children,
     title,
     $isOpen = false,
+      // может быть заменить на typeIcon? Или просто Type?
     $isDragIcon = false,
+    $isPlusIcon = false,
     $externalLink = '',
     $internalLink = '',
-    $isPlusIcon = false,
     $onPlusClick,
   } = props;
+
+  // barrelblur: isOn, isSetOn
   const {isOn, toggle} = useBoolean($isOpen);
 
   const handlePlusClick = () => {
@@ -142,4 +147,5 @@ const Expand = (props: Props) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default Expand;

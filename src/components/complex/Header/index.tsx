@@ -15,7 +15,7 @@ const StyledHeader = styled.div`
   background: #fff;
   padding: 12px 32px;
 `
-
+// @barrelblur: убрать доллары в атрибутах
 const Header = () => {
   return (
     <StyledHeader>
@@ -60,4 +60,5 @@ const Header = () => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default Header;

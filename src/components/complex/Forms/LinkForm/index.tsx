@@ -9,7 +9,7 @@ const StyledForm = styled.form`
   gap: 8px;
   width: 100%;
 `
-
+// @barrelblur: неправильно размечена функция
 const LinkForm = ({action, method, initialDataForm, onChange}: IProps) => {
   const [dataForm, setDataForm] = useState(initialDataForm);
 
@@ -41,4 +41,5 @@ const LinkForm = ({action, method, initialDataForm, onChange}: IProps) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default LinkForm;

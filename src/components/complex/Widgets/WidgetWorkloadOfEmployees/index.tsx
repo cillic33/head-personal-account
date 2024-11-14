@@ -9,6 +9,8 @@ import SimpleSlider from "@components/data-display/SimpleSlider";
 import {getWeeksArray} from "@utils/index";
 import {TWeeksSlider} from "@typing/TWeeksSlider";
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: убрать доллары
 const WidgetWorkloadOfEmployees = (props: IWidget) => {
   const [currentDate] = useState<Date>(new Date());
   const [weeksData] = useState<TWeeksSlider>(getWeeksArray(currentDate));
@@ -50,4 +52,5 @@ const WidgetWorkloadOfEmployees = (props: IWidget) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetWorkloadOfEmployees;

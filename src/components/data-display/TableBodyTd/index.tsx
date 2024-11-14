@@ -23,8 +23,14 @@ const StyledTableBodyTd = styled.td<IStyledTableBodyTd>`
   max-width: ${props => props.width + "px" || undefined};
 `
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: непонятный атрибут «k»
 const TableBodyTd = ({k: key, data, settings, onClick}: IProps) => {
   const width = (settings && settings.width) ? settings.width : undefined;
+
+  // @barrelblur: твоя таблица предназначена только для единственной цели: отображать отображать данные как элемент дизайн системы
+  // Вместо этого у тебя таблица знает про сотрудников, дивизионы и прочую бизне-слогику
+  // Здесь требуется рефакторинг
   const isEmployee = (settings && settings.isEmployee) ? settings.isEmployee : undefined;
   const isDivision = (settings && settings.isDivision) ? settings.isDivision : undefined;
   const isCenter = (settings && settings.isCenter) ? settings.isCenter : undefined;
@@ -40,6 +46,8 @@ const TableBodyTd = ({k: key, data, settings, onClick}: IProps) => {
     return;
   }
 
+  // @barrelblur немного сложная и спицифичная форма полиформизма
+  // @barrelblur требуется рефакторинг
   if (typeof data === "object") {
     return (
       <StyledTableBodyTd key={key} width={width} onClick={handleClick}>
@@ -87,4 +95,5 @@ const TableBodyTd = ({k: key, data, settings, onClick}: IProps) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default TableBodyTd;

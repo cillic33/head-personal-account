@@ -4,6 +4,8 @@ import {MWidgetReportingWeekTS} from "@utils/mock";
 import Typography from "@components/data-display/Typography";
 import Flexbox from "@components/surfaces/Flexbox";
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: убрать доллары
 const WidgetReportingWeekTS = (props: IWidget) => {
   return (
     <Expand
@@ -27,4 +29,5 @@ const WidgetReportingWeekTS = (props: IWidget) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetReportingWeekTS;

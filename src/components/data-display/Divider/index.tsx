@@ -1,6 +1,7 @@
 import {IProps} from "./props";
 import styled, {css} from "styled-components";
 
+// @barrelblur: убрать доллары
 const StyledDivider = styled.div<IProps>`
   background: ${props => props.$color ? props.$color : props.theme.colors.surfacePrimary};
   
@@ -19,10 +20,12 @@ const StyledDivider = styled.div<IProps>`
   }}
 `
 
+// @barrelblur: неправильно размечена функция
 const Divider = (props: IProps) => {
   return (
     <StyledDivider {...props} />
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default Divider;

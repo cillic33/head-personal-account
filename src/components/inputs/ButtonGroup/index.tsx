@@ -22,6 +22,8 @@ const StyledButtonGroup = styled.div<IProps>`
   border: 1px solid ${props => props.theme.colors.surfacePrimary};
 `
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: убрать доллары
 const ButtonGroup = ({buttons, onClick, $buttonsWidth}: IProps) => {
   const [currentButtons, setCurrentButtons] = useState<IButtonGroupData[]>(ensure(buttons));
 
@@ -63,4 +65,5 @@ const ButtonGroup = ({buttons, onClick, $buttonsWidth}: IProps) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default ButtonGroup;

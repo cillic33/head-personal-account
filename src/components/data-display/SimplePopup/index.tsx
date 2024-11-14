@@ -29,6 +29,7 @@ const StyledPopup = styled.div<IStyledPopupProps>`
   width: ${props => props.$width || undefined}
 `
 
+// @barrelblur: неправильно размечена функция
 const SimplePopup = (
   {
     children,
@@ -84,6 +85,7 @@ const SimplePopup = (
     }
   }
 
+  // @barrelblur: убрать доллары
   return (
     <>
       {isShow &&
@@ -116,4 +118,5 @@ const SimplePopup = (
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default SimplePopup;

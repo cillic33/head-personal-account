@@ -22,6 +22,8 @@ const StyledFilledBar = styled.div<IProps>`
   bottom: 0;
 `
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: убрать доллары
 const ProgressBar = ({$percent, $color, $title = ""}: IProps) => {
   return (
     <Flexbox $gap="4px" $direction="column" $padding="4px 0">
@@ -38,4 +40,5 @@ const ProgressBar = ({$percent, $color, $title = ""}: IProps) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default ProgressBar;

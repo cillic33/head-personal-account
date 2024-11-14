@@ -8,9 +8,11 @@ import BagGrayIcon from "@images/BagGrayIcon.svg";
 import LinkComponent from "@components/data-display/Link";
 import GotoGrayIcon from "@images/GotoGrayIcon.svg";
 import EmployeeCardField from "@components/complex/EmployeeCardField";
+// @barrelblur: GridBox ← такое название правильное
 import Gridbox from "@components/surfaces/Gridbox";
 import Expand from "@components/surfaces/Expand";
 
+// @barrelblur: убрать доллары в начале названия атрибутов
 const EmployeeCard = () => {
   return (
     <Flexbox $gap="20px" $direction="column" $align="flex-start">
@@ -148,4 +150,5 @@ const EmployeeCard = () => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default EmployeeCard;

@@ -14,6 +14,8 @@ import Image from "@components/data-display/Image";
 import Divider from "@components/data-display/Divider";
 import PieChartComponent from "@components/data-display/PieChart";
 
+// @barrelblur: неправильно размечена функция
+// @barrelblur: убрать доллары
 const WidgetTraining = (props: IWidget) => {
   const [currentDate] = useState<Date>(new Date());
   const [weeksData] = useState<TWeeksSlider>(getWeeksArray(currentDate));
@@ -58,4 +60,5 @@ const WidgetTraining = (props: IWidget) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetTraining;
