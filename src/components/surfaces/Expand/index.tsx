@@ -13,6 +13,7 @@ import Image from "@components/data-display/Image";
 import LinkComponent from "@components/data-display/Link";
 import {theme} from "@utils/theme/theme";
 import Chip from "@components/data-display/Chip";
+import {Link} from "react-router-dom";
 
 const StyledExpand = styled.div<Props>`
   width: ${props => props.$width || undefined};
@@ -105,13 +106,13 @@ const Expand = (props: Props) => {
             }
             {$internalLink !== "" &&
               <Flexbox $width="24px" $height="24px" $align="center" $justify="center" $flex="1 0 20px">
-                <LinkComponent href={$internalLink} target="_blank">
+                <Link to={$internalLink}>
                   <Image
                     src={ArrowRightGray}
                     $width="20px"
                     $height="20px"
                   />
-                </LinkComponent>
+                </Link>
               </Flexbox>
             }
             {$externalLink !== "" &&

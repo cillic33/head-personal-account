@@ -1,6 +1,7 @@
 export enum AppRoutes {
   Main = "/",
   Employees = "/employees",
+  Training = "/training",
 }
 
 
