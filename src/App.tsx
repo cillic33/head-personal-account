@@ -7,7 +7,7 @@ import {MainPage} from "@pages/MainPage";
 import {Route, Routes} from "react-router-dom";
 import {EmployeesPage} from "@pages/EmployeesPage";
 import {AppRoutes} from "@utils/const";
-import TrainingPage from "@pages/TrainingPage";
+import {TrainingPage} from "@pages/TrainingPage";
 
 export function App() {
   return (

@@ -1,18 +1,18 @@
-import PageContainer from "@layouts/PageContainer";
-import Flexbox from "@components/surfaces/Flexbox";
+import {PageContainer} from "@layouts/PageContainer";
+import {Flexbox} from "@components/surfaces/Flexbox";
 import {Link} from "react-router-dom";
 import {AppRoutes} from "@utils/const";
-import Button from "@components/inputs/Button";
-import Image from "@components/data-display/Image";
+import {Button} from "@components/inputs/Button";
+import {Image} from "@components/data-display/Image";
 import ArrowLeftBlue from "@images/ArrowLeftBlue.svg";
-import Typography from "@components/data-display/Typography";
-import Input from "@components/inputs/Input";
+import {Typography} from "@components/data-display/Typography";
+import {Input} from "@components/inputs/Input";
 import SearchGray from "@images/SearchGray.svg";
 import ColumnBlueIcon from "@images/ColumnBlueIcon.svg";
 import FilterBlueIcon from "@images/FilterBlueIcon.svg";
 import DownloadBlueIcon from "@images/DownloadBlueIcon.svg";
 
-const TrainingPage = () => {
+export const TrainingPage = () => {
   return (
     <PageContainer>
       <Flexbox gap="16px" $direction="column" $width="100%" $borderRadius="8px">
@@ -48,5 +48,3 @@ const TrainingPage = () => {
     </PageContainer>
   );
 }
-
-export default TrainingPage;

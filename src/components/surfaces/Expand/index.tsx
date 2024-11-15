@@ -12,7 +12,7 @@ import {Flexbox} from "@components/surfaces/Flexbox";
 import {Image} from "@components/data-display/Image";
 import {LinkComponent} from "@components/data-display/Link";
 import {theme} from "@utils/theme/theme";
-import Chip from "@components/data-display/Chip";
+import {Chip} from "@components/data-display/Chip";
 import {Link} from "react-router-dom";
 import {FC} from "react";
 
