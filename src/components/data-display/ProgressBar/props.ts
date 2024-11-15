@@ -1,5 +1,5 @@
 export interface IProps {
-  $percent: number;
-  $color: string;
-  $title?: string;
+  percent: number;
+  color: string;
+  title?: string;
 }

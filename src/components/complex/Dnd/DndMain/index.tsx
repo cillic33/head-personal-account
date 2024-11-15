@@ -66,7 +66,7 @@ export const DndMain: FC<IProps> = ({children, initialData}) => {
 
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
-      <Flexbox gap="16px" $width="100%">
+      <Flexbox gap="16px" width="100%">
         {
           data.columnOrder.map(item => {
             const column = data.columns[item];

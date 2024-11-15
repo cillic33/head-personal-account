@@ -9,13 +9,12 @@ const StyledPageContainer = styled.div<IProps>`
   min-height: 100vh;
 `
 
-// @barrelblur: убрать доллары
 export const PageContainer: FC<IProps> = ({children}) => {
   return (
     <StyledPageContainer>
-      <Flexbox $direction="column">
+      <Flexbox direction="column">
         <Header />
-        <Flexbox $justify="space-between" $padding="24px 32px">
+        <Flexbox justify="space-between" padding="24px 32px">
           {children}
         </Flexbox>
       </Flexbox>

@@ -3,6 +3,6 @@ import {MutableRefObject, RefObject} from "react";
 
 export interface IProps {
   data: TTable;
-  $ref?: RefObject<HTMLTableElement> | null;
+  ref?: RefObject<HTMLTableElement> | null;
   onRowClick?: (trRef: MutableRefObject<HTMLTableRowElement | null>) => void;
 }

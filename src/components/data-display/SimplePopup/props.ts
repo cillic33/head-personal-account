@@ -4,13 +4,13 @@ export interface IProps {
   children: ReactNode;
   isShow: boolean;
   title: string;
-  $width?: string;
+  width?: string;
   submitTitle?: string;
   cancelTitle?: string;
   onClose?: () => void;
   onSubmit?: () => void;
   onCancel?: () => void;
-  $isDisabledSubmit?: boolean;
+  isDisabledSubmit?: boolean;
 }
 
 export interface IStyledOverlayProps {
@@ -18,5 +18,5 @@ export interface IStyledOverlayProps {
 }
 
 export interface IStyledPopupProps {
-  $width?: string;
+  width?: string;
 }

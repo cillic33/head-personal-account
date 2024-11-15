@@ -22,8 +22,7 @@ const StyledButtonGroup = styled.div<IProps>`
   border: 1px solid ${props => props.theme.colors.surfacePrimary};
 `
 
-// @barrelblur: убрать доллары
-export const ButtonGroup: FC<IProps> = ({buttons, onClick, $buttonsWidth}) => {
+export const ButtonGroup: FC<IProps> = ({buttons, onClick, buttonsWidth}) => {
   const [currentButtons, setCurrentButtons] = useState<IButtonGroupData[]>(ensure(buttons));
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
@@ -48,12 +47,12 @@ export const ButtonGroup: FC<IProps> = ({buttons, onClick, $buttonsWidth}) => {
             }
             <Button
               id={item.id}
-              $variant="light"
+              variant="light"
               size="s"
-              $padding="2px"
-              $isActive={item.isActive}
+              padding="2px"
+              isActive={item.isActive}
               onClick={handleClick}
-              $width={item.width || $buttonsWidth}
+              width={item.width || buttonsWidth}
             >
               {item.title}
             </Button>

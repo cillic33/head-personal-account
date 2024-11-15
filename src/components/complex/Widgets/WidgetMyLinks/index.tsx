@@ -21,7 +21,6 @@ const StyledWidgetMyLinks = styled.div`
   padding: 8px 6px 8px 0;
 `
 
-// @barrelblur: убрать доллары
 export const WidgetMyLinks: FC<IWidget> = (props) => {
   const [isPopupShow, setIsPopupShow] = useState<boolean>(false);
   const [isDisabledSubmit, setIsDisabledSubmit] = useState<boolean>(false);
@@ -83,16 +82,16 @@ export const WidgetMyLinks: FC<IWidget> = (props) => {
   return (
     <Expand
       title={props.title}
-      $isOpen={props.isOpen}
-      $isDragIcon={props.isDragIcon}
-      $isPlusIcon={props.isPlusIcon}
-      $onPlusClick={handlePlusClick}
-      $isSplitter={true}
+      isOpen={props.isOpen}
+      isDragIcon={props.isDragIcon}
+      isPlusIcon={props.isPlusIcon}
+      onPlusClick={handlePlusClick}
+      isSplitter={true}
     >
       <StyledWidgetMyLinks>
         {
           MWidgetMyLinks.map((item) => (
-            <WidgetMyLinksRow key={item.id} $item={item} onEditClick={handleEditLinkClick} onDeleteClick={handleDeleteLinkClick} />
+            <WidgetMyLinksRow key={item.id} item={item} onEditClick={handleEditLinkClick} onDeleteClick={handleDeleteLinkClick} />
           ))
         }
       </StyledWidgetMyLinks>
@@ -100,11 +99,11 @@ export const WidgetMyLinks: FC<IWidget> = (props) => {
       <SimplePopup
         isShow={isPopupShow}
         title={titleForm}
-        $width="448px"
+        width="448px"
         onClose={handlePopupCloseClick}
         onSubmit={handlePopupSubmitClick}
         onCancel={handlePopupCancelClick}
-        $isDisabledSubmit={isDisabledSubmit}
+        isDisabledSubmit={isDisabledSubmit}
       >
         <LinkForm action="/" method="post" initialDataForm={initialDataForm} onChange={handleChangeForm} />
       </SimplePopup>

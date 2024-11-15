@@ -9,13 +9,13 @@ import {FC, useState} from "react";
 const StyledWrapSlider = styled.div<IProps>`
   position: relative;
   width: 100%;
-  max-width: ${props => props.$maxWidth || "100%"};
-  height: ${props => props.$height || undefined};
+  max-width: ${props => props.maxWidth || "100%"};
+  height: ${props => props.height || undefined};
   border: ${props => "1px solid" + props.theme.colors.surfacePrimary};
   border-radius: 6px;
 
   .slick-slide {
-    height: ${props => props.$height || undefined};
+    height: ${props => props.height || undefined};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,7 +46,7 @@ const StyledWrapSlider = styled.div<IProps>`
 `
 
 export const SimpleSlider: FC<IProps> = (props) => {
-  const {$weeksData, $onSlide} = props;
+  const {weeksData, onSlide} = props;
   const [oldSlide, setOldSlide] = useState<number>(1);
 
   const settings = {
@@ -59,15 +59,15 @@ export const SimpleSlider: FC<IProps> = (props) => {
     slidesToScroll: 1,
     afterChange: (current: number) => {
       setOldSlide(current);
-      $onSlide(oldSlide, current);
+      onSlide(oldSlide, current);
     },
   };
 
   return (
     <StyledWrapSlider {...props}>
       <Slider {...settings}>
-        {$weeksData.map((item) => (
-          <Typography $variant="body-semibold" key={item.id} data-id={item.id}>
+        {weeksData.map((item) => (
+          <Typography variant="body-semibold" key={item.id} data-id={item.id}>
             {item.text}
           </Typography>
         ))}

@@ -8,5 +8,5 @@ export interface IProps {
 }
 
 export interface IDndCellProps {
-  $isDragging: boolean,
+  isDragging: boolean,
 }

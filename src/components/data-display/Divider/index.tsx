@@ -2,9 +2,8 @@ import {IProps} from "./props";
 import styled, {css} from "styled-components";
 import {FC} from "react";
 
-// @barrelblur: убрать доллары
 const StyledDivider = styled.div<IProps>`
-  background: ${props => props.$color ? props.$color : props.theme.colors.surfacePrimary};
+  background: ${props => props.color ? props.color : props.theme.colors.surfacePrimary};
   
   ${props => {
     switch (props.direction) {

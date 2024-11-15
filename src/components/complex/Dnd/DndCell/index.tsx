@@ -6,9 +6,9 @@ import styled from "styled-components";
 const StyledDndCell = styled.div<IDndCellProps>`
   border: #E1E7ED;
   border-radius: 8px;
-  background: ${props => props.$isDragging ? '#F5F7FA' : '#fff'};
+  background: ${props => props.isDragging ? '#F5F7FA' : '#fff'};
   margin-bottom: 16px;
-  opacity: ${props => props.$isDragging ? '0.85' : '1'};
+  opacity: ${props => props.isDragging ? '0.85' : '1'};
 `;
 
 export const DndCell: FC<IProps> = ({children, index, ...props}) => {
@@ -21,7 +21,7 @@ export const DndCell: FC<IProps> = ({children, index, ...props}) => {
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
-          $isDragging={snapshot.isDragging}
+          isDragging={snapshot.isDragging}
         >
           {/* @barrelblur: Зачем происходит итерация по children? Что не так с элементами? */}
           {Children.toArray(children).find((child) => {

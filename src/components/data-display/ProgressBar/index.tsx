@@ -13,9 +13,9 @@ const StyledBar = styled.div`
 `
 
 const StyledFilledBar = styled.div<IProps>`
-  width: ${props => props.$percent + "%"};
+  width: ${props => props.percent + "%"};
   height: 8px;
-  background: ${props => props.$color};
+  background: ${props => props.color};
   border-radius: 10px;
   position: absolute;
   left: 0;
@@ -23,18 +23,17 @@ const StyledFilledBar = styled.div<IProps>`
   bottom: 0;
 `
 
-// @barrelblur: убрать доллары
-export const ProgressBar: FC<IProps> = ({$percent, $color, $title = ""}) => {
+export const ProgressBar: FC<IProps> = ({percent, color, title = ""}) => {
   return (
-    <Flexbox gap="4px" $direction="column" $padding="4px 0">
-      {$title !== "" &&
-        <Flexbox $justify="space-between">
-          <Typography $variant="body-regular">{$title}</Typography>
-          <Typography $variant="body-semibold">{$percent} %</Typography>
+    <Flexbox gap="4px" direction="column" padding="4px 0">
+      {title !== "" &&
+        <Flexbox justify="space-between">
+          <Typography variant="body-regular">{title}</Typography>
+          <Typography variant="body-semibold">{percent} %</Typography>
         </Flexbox>
       }
       <StyledBar>
-        <StyledFilledBar $color={$color} $percent={$percent} />
+        <StyledFilledBar color={color} percent={percent} />
       </StyledBar>
     </Flexbox>
   );

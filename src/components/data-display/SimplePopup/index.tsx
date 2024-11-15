@@ -26,7 +26,7 @@ const StyledPopup = styled.div<IStyledPopupProps>`
   border: 1px solid ${theme.colors.surfacePrimary};
   border-radius: 12px;
   box-shadow: 0 16px 32px -16px ${theme.colors.baseShadowFar};
-  width: ${props => props.$width || undefined}
+  width: ${props => props.width || undefined}
 `
 
 export const SimplePopup: FC<IProps> = (
@@ -34,13 +34,13 @@ export const SimplePopup: FC<IProps> = (
     children,
     isShow,
     title,
-    $width,
+    width,
     submitTitle = 'Добавить',
     cancelTitle = 'Отменить',
     onClose,
     onSubmit,
     onCancel,
-    $isDisabledSubmit = false,
+    isDisabledSubmit = false,
   }) => {
   const overlayRef = useRef(null);
   const closeBtnRef = useRef(null);
@@ -84,31 +84,30 @@ export const SimplePopup: FC<IProps> = (
     }
   }
 
-  // @barrelblur: убрать доллары
   return (
     <>
       {isShow &&
         <StyledOverlay ref={overlayRef} onClick={handleCloseClick}>`
-          <StyledPopup $width={$width}>
-            <Flexbox $padding="16px 16px 16px 24px" $align="center" gap="16px" $justify="space-between" $background="#fff" $borderRadius="12px 12px 0 0">
-              <Typography $variant="h3">{title}</Typography>
-              <Button $variant="no-style" size="no-size" $width="32px" $height="32px" $ref={closeBtnRef}>
-                <Image src={CloseGrayIcon} $width="20px" $height="20px" $ref={closeImgRef} />
+          <StyledPopup width={width}>
+            <Flexbox padding="16px 16px 16px 24px" align="center" gap="16px" justify="space-between" background="#fff" borderRadius="12px 12px 0 0">
+              <Typography variant="h3">{title}</Typography>
+              <Button variant="no-style" size="no-size" width="32px" height="32px" ref={closeBtnRef}>
+                <Image src={CloseGrayIcon} width="20px" height="20px" ref={closeImgRef} />
               </Button>
             </Flexbox>
-            <Flexbox $padding="24px" $background={theme.colors.surfaceSecondary}>
+            <Flexbox padding="24px" background={theme.colors.surfaceSecondary}>
               {children}
             </Flexbox>
             <Flexbox
-              $padding="16px 24px"
+              padding="16px 24px"
               gap="16px"
-              $background="#fff"
-              $align="center"
-              $justify="flex-end"
-              $borderRadius="0 0 12px 12px"
+              background="#fff"
+              align="center"
+              justify="flex-end"
+              borderRadius="0 0 12px 12px"
             >
-              <Button $variant="primary" size="m" onClick={handleCancelClick}>{cancelTitle}</Button>
-              <Button $variant="dark" size="m" onClick={handleSubmitClick} disabled={$isDisabledSubmit}>{submitTitle}</Button>
+              <Button variant="primary" size="m" onClick={handleCancelClick}>{cancelTitle}</Button>
+              <Button variant="dark" size="m" onClick={handleSubmitClick} disabled={isDisabledSubmit}>{submitTitle}</Button>
             </Flexbox>
           </StyledPopup>
         </StyledOverlay>

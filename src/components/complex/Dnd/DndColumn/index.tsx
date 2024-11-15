@@ -20,7 +20,7 @@ const StyledDndColumn = styled.div`
 const StyledCellList = styled.div<ICellListProps>`
   display: flex;
   flex-direction: column;
-  background: ${props => props.$isDraggingOver ? '#bcbcbc14' : 'transparent'};
+  background: ${props => props.isDraggingOver ? '#bcbcbc14' : 'transparent'};
   border-radius: 8px;
 `;
 
@@ -34,7 +34,7 @@ export const DndColumn: FC<IProps> = ({children, cells, ...props}) => {
           <StyledCellList
             ref={provided.innerRef}
             {...provided.droppableProps}
-            $isDraggingOver={snapshot.isDraggingOver}
+            isDraggingOver={snapshot.isDraggingOver}
           >
             {cells.map((cell, idx) => (
               <DndCell key={cell.id} data={cell} index={idx}>

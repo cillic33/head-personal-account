@@ -16,5 +16,4 @@ export const StylesCSSTransition = `
   transform: translateX(100%);
   transition: transform ${SLIDE_PANEL_TIME}ms ease;
 }
-
 `

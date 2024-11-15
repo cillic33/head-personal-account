@@ -9,7 +9,6 @@ import {SimpleSlider} from "@components/data-display/SimpleSlider";
 import {getWeeksArray} from "@utils/index";
 import {TWeeksSlider} from "@typing/TWeeksSlider";
 
-// @barrelblur: убрать доллары
 export const WidgetWorkloadOfEmployees: FC<IWidget> = (props) => {
   const [currentDate] = useState<Date>(new Date());
   const [weeksData] = useState<TWeeksSlider>(getWeeksArray(currentDate));
@@ -30,20 +29,20 @@ export const WidgetWorkloadOfEmployees: FC<IWidget> = (props) => {
   return (
     <Expand
       title={props.title}
-      $isOpen={props.isOpen}
-      $isDragIcon={props.isDragIcon}
-      $externalLink={props.externalLink}
-      $isSplitter={true}
+      isOpen={props.isOpen}
+      isDragIcon={props.isDragIcon}
+      externalLink={props.externalLink}
+      isSplitter={true}
     >
-      <Flexbox gap="16px" $direction="column">
-        <Flexbox $justify="space-between" gap="16px" $flexWrap="wrap" $direction="row-reverse" $align="center">
+      <Flexbox gap="16px" direction="column">
+        <Flexbox justify="space-between" gap="16px" flexWrap="wrap" direction="row-reverse" align="center">
           {/*TODO Добавить обработку переключения периода (для всех переключателей)*/}
-          <ButtonGroup buttons={MWeekMonthSwitcher} onClick={handlePeriodsSwitcherClick} $buttonsWidth="92px" />
-          <SimpleSlider $weeksData={weeksData} $maxWidth="200px" $height="32px" $onSlide={handleSlide} />
+          <ButtonGroup buttons={MWeekMonthSwitcher} onClick={handlePeriodsSwitcherClick} buttonsWidth="92px" />
+          <SimpleSlider weeksData={weeksData} maxWidth="200px" height="32px" onSlide={handleSlide} />
         </Flexbox>
-        <Flexbox gap="8px" $direction="column">
+        <Flexbox gap="8px" direction="column">
           {MWorkloadOfEmployees.map(item => (
-            <ProgressBar key={item.id} $percent={item.percent} $color={item.color} $title={item.title} />
+            <ProgressBar key={item.id} percent={item.percent} color={item.color} title={item.title} />
           ))}
         </Flexbox>
       </Flexbox>

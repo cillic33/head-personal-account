@@ -9,7 +9,6 @@ import {SimpleSlider} from "@components/data-display/SimpleSlider";
 import {TWeeksSlider} from "@typing/TWeeksSlider";
 import {getWeeksArray} from "@utils/index";
 
-// @barrelblur: убрать доллары
 export const WidgetHappinessIndex: FC<IWidget> = (props) => {
   const dataHrMetric = MWidgetMetrics["hrMetric"];
   const dataMlMetric = MWidgetMetrics["mlMetric"];
@@ -27,20 +26,20 @@ export const WidgetHappinessIndex: FC<IWidget> = (props) => {
   return (
     <Expand
       title={props.title}
-      $isOpen={props.isOpen}
-      $isDragIcon={props.isDragIcon}
-      $externalLink={props.externalLink}
-      $isSplitter={true}
+      isOpen={props.isOpen}
+      isDragIcon={props.isDragIcon}
+      externalLink={props.externalLink}
+      isSplitter={true}
     >
-      <Flexbox gap="16px" $direction="column">
-        <Flexbox $justify="space-between" gap="16px" $flexWrap="wrap" $direction="row-reverse" $align="center">
-          <ButtonGroup buttons={MMonthQuarterYearSwitcher} onClick={handlePeriodsSwitcherClick} $buttonsWidth="74px" />
-          <SimpleSlider $weeksData={weeksData} $maxWidth="200px" $height="32px" $onSlide={handleSlide} />
+      <Flexbox gap="16px" direction="column">
+        <Flexbox justify="space-between" gap="16px" flexWrap="wrap" direction="row-reverse" align="center">
+          <ButtonGroup buttons={MMonthQuarterYearSwitcher} onClick={handlePeriodsSwitcherClick} buttonsWidth="74px" />
+          <SimpleSlider weeksData={weeksData} maxWidth="200px" height="32px" onSlide={handleSlide} />
         </Flexbox>
 
-        <Flexbox gap="16px" $padding="16px" $direction="column">
-          <PieChartComponent $data={dataHrMetric} />
-          <PieChartComponent $data={dataMlMetric} />
+        <Flexbox gap="16px" padding="16px" direction="column">
+          <PieChartComponent data={dataHrMetric} />
+          <PieChartComponent data={dataMlMetric} />
         </Flexbox>
       </Flexbox>
     </Expand>

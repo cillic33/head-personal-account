@@ -20,8 +20,7 @@ const StyledTable = styled.table`
   border-spacing: 0;
 `
 
-// @barrelblur: убрать доллары
-export const Table: FC<IProps> = ({data, $ref, onRowClick}) => {
+export const Table: FC<IProps> = ({data, ref, onRowClick}) => {
   const handleSortClick = (id: string, direction: string) => {
     // TODO сделать сортировку данных
     console.log('Столбец', id, 'Направление', direction)
@@ -35,7 +34,7 @@ export const Table: FC<IProps> = ({data, $ref, onRowClick}) => {
 
   return (
     <StyledTableWrap>
-      <StyledTable ref={$ref}>
+      <StyledTable ref={ref}>
         <TableHead settings={data.settings} sortClick={handleSortClick} />
         <TableBody settings={data.settings} data={data.body} onClick={handleRowClick} />
       </StyledTable>

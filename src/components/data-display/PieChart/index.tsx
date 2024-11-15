@@ -63,61 +63,61 @@ const StyledRightInfo = styled.div`
 export const PieChartComponent: FC<IProps> = (
   {
     // @barrelblur много лишних атрибутов
-    $data,
-    $width = 100,
-    $height = 100,
+    data,
+    width = 100,
+    height = 100,
     // @barrelblur много лишних атрибутов
-    $innerRadius = 35,
-    $outerRadius = 50,
-    $isCenterText = true,
-    $isRightInfo = true,
-    $isHeader = true,
+    innerRadius = 35,
+    outerRadius = 50,
+    isCenterText = true,
+    isRightInfo = true,
+    isHeader = true,
   }
 ) => {
-  const {title = "", percent, total, ratio, variants, centerCount, centerText, postfix} = $data;
+  const {title = "", percent, total, ratio, variants, centerCount, centerText, postfix} = data;
 
   return (
     <Flexbox
-      $direction="column"
-      $borderRadius="6px"
-      $border={`1px solid ${theme.colors.surfacePrimary}`}>
-      {$isHeader &&
+      direction="column"
+      borderRadius="6px"
+      border={`1px solid ${theme.colors.surfacePrimary}`}>
+      {isHeader &&
         <Flexbox
-          $padding="16px"
+          padding="16px"
           gap="12px"
-          $align="center"
-          $justify="space-between"
-          $border={`1px solid ${theme.colors.surfacePrimary}`}
-          $borderWidth="0 0 1px 0">
+          align="center"
+          justify="space-between"
+          border={`1px solid ${theme.colors.surfacePrimary}`}
+          borderWidth="0 0 1px 0">
           <Typography
-            $variant="body-semibold"
-            $color={theme.colors.textIconBaseSecondary}>{title}</Typography>
+            variant="body-semibold"
+            color={theme.colors.textIconBaseSecondary}>{title}</Typography>
           <Flexbox
             gap="12px"
-            $align="center">
+            align="center">
             {percent &&
               <Chip
-                $padding="2px 6px 2px 4px"
-                $background={percent > 0 ? theme.colors.complimentaryGreenFaintSecondary : theme.colors.systemErrorFaintSecondary}
-                $borderRadius="4px">
+                padding="2px 6px 2px 4px"
+                background={percent > 0 ? theme.colors.complimentaryGreenFaintSecondary : theme.colors.systemErrorFaintSecondary}
+                borderRadius="4px">
                 <Typography
-                  $variant="chip-m"
-                  $color={percent > 0 ? theme.colors.textIconAccentSuccess : theme.colors.textIconAccentError}
+                  variant="chip-m"
+                  color={percent > 0 ? theme.colors.textIconAccentSuccess : theme.colors.textIconAccentError}
                 >{percent}%</Typography>
               </Chip>
             }
             {total &&
               <Typography
-                $variant="h2"
-                $color={percent && percent > 0 ? theme.colors.textIconAccentSuccess : theme.colors.systemWarningDarkened}
+                variant="h2"
+                color={percent && percent > 0 ? theme.colors.textIconAccentSuccess : theme.colors.systemWarningDarkened}
               >
                 {total}{postfix ? ` ${postfix}` : ''}
               </Typography>
             }
             {ratio &&
               <Typography
-                $variant="h2"
-                $color={ratio <= 30 ? theme.colors.textIconAccentError : ratio <= 60 ?  theme.colors.systemWarningDarkened :  theme.colors.textIconAccentSuccess}
+                variant="h2"
+                color={ratio <= 30 ? theme.colors.textIconAccentError : ratio <= 60 ?  theme.colors.systemWarningDarkened :  theme.colors.textIconAccentSuccess}
               >
                 {ratio}%
               </Typography>
@@ -128,18 +128,18 @@ export const PieChartComponent: FC<IProps> = (
 
       <Flexbox
         gap="16px"
-        $align="center"
-        $width="100%"
-        $padding="16px">
+        align="center"
+        width="100%"
+        padding="16px">
         <PieChart
-          width={$width!}
-          height={$height!}>
+          width={width!}
+          height={height!}>
           <Pie
             data={variants}
             cx="50%"
             cy="50%"
-            innerRadius={$innerRadius}
-            outerRadius={$outerRadius}
+            innerRadius={innerRadius}
+            outerRadius={outerRadius}
             paddingAngle={2}
             dataKey="value"
             cornerRadius={2}
@@ -154,13 +154,13 @@ export const PieChartComponent: FC<IProps> = (
                 key={`cell-${index}`}
                 fill={item.color}/>
             ))}
-            {$isCenterText &&
+            {isCenterText &&
               <Label
                 width={60}
                 position="center"
                 content={
                   <CustomLabel
-                    viewBox={{cx: $width!, cy: $height!}}
+                    viewBox={{cx: width!, cy: height!}}
                     centerCount={centerCount}
                     centerText={centerText}
                     postfix={postfix}
@@ -170,19 +170,19 @@ export const PieChartComponent: FC<IProps> = (
           </Pie>
         </PieChart>
 
-        {$isRightInfo &&
+        {isRightInfo &&
           <StyledRightInfo>
             {variants.map((item, index) => (
               <Flexbox
                 key={`cell-${index}`}
                 gap="4px"
-                $align="center">
+                align="center">
                 <StyledCircle color={item.color}/>
                 <Typography
-                  $variant="caption-regular"
-                  $color={theme.colors.textIconBaseSecondary}>{item.name}</Typography>
+                  variant="caption-regular"
+                  color={theme.colors.textIconBaseSecondary}>{item.name}</Typography>
                 <StyledDottedLine/>
-                <Typography $variant="body-semibold">{item.value}{postfix ? ` ${postfix}` : ''}</Typography>
+                <Typography variant="body-semibold">{item.value}{postfix ? ` ${postfix}` : ''}</Typography>
               </Flexbox>
             ))}
           </StyledRightInfo>

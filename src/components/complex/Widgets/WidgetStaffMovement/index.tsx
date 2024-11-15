@@ -15,7 +15,6 @@ import {TWeeksSlider} from "@typing/TWeeksSlider";
 import {getWeeksArray} from "@utils/index";
 import {PieChartComponent} from "@components/data-display/PieChart";
 
-// @barrelblur: убрать доллары
 export const WidgetStaffMovement: FC<IWidget> = (props) => {
   const [currentDate] = useState<Date>(new Date());
   const [weeksData] = useState<TWeeksSlider>(getWeeksArray(currentDate));
@@ -32,48 +31,48 @@ export const WidgetStaffMovement: FC<IWidget> = (props) => {
   return (
     <Expand
       title={props.title}
-      $isOpen={props.isOpen}
-      $isDragIcon={props.isDragIcon}
-      $externalLink={props.externalLink}
-      $isSplitter={true}
+      isOpen={props.isOpen}
+      isDragIcon={props.isDragIcon}
+      externalLink={props.externalLink}
+      isSplitter={true}
     >
-      <Flexbox gap="16px" $direction="column">
-        <Flexbox $borderRadius="6px" $border={`1px solid ${theme.colors.surfacePrimary}`}>
-          <Flexbox $direction="column" gap="8px" $padding="16px 16px 16px 20px" $width="50%">
-            <Typography $variant="caption-semibold" $color={theme.colors.textIconBaseSecondary}>Открытые вакансии</Typography>
-            <Flexbox $align="center" gap="8px">
-              <Image src={PersonBlueIcon} $width="20px" $height="20px" />
-              <Typography $variant="body-semibold">40</Typography>
+      <Flexbox gap="16px" direction="column">
+        <Flexbox borderRadius="6px" border={`1px solid ${theme.colors.surfacePrimary}`}>
+          <Flexbox direction="column" gap="8px" padding="16px 16px 16px 20px" width="50%">
+            <Typography variant="caption-semibold" color={theme.colors.textIconBaseSecondary}>Открытые вакансии</Typography>
+            <Flexbox align="center" gap="8px">
+              <Image src={PersonBlueIcon} width="20px" height="20px" />
+              <Typography variant="body-semibold">40</Typography>
             </Flexbox>
           </Flexbox>
           <Divider direction="vertical" />
-          <Flexbox $direction="column" gap="8px" $padding="16px 16px 16px 20px" $width="50%">
-            <Typography $variant="caption-semibold" $color={theme.colors.textIconBaseSecondary}>Офферы по вакансиям</Typography>
-            <Flexbox $align="center" gap="8px">
-              <Image src={PaperBlueIcon} $width="20px" $height="20px" />
-              <Typography $variant="body-semibold">1</Typography>
+          <Flexbox direction="column" gap="8px" padding="16px 16px 16px 20px" width="50%">
+            <Typography variant="caption-semibold" color={theme.colors.textIconBaseSecondary}>Офферы по вакансиям</Typography>
+            <Flexbox align="center" gap="8px">
+              <Image src={PaperBlueIcon} width="20px" height="20px" />
+              <Typography variant="body-semibold">1</Typography>
             </Flexbox>
           </Flexbox>
         </Flexbox>
 
         <Flexbox
-          $justify="space-between"
+          justify="space-between"
           gap="16px"
-          $flexWrap="wrap"
-          $direction="row-reverse"
-          $align="center">
+          flexWrap="wrap"
+          direction="row-reverse"
+          align="center">
           <ButtonGroup
             buttons={MWeekMonthSwitcher}
             onClick={handlePeriodsSwitcherClick}
-            $buttonsWidth="92px"/>
+            buttonsWidth="92px"/>
           <SimpleSlider
-            $weeksData={weeksData}
-            $maxWidth="200px"
-            $height="32px"
-            $onSlide={handleSlide}/>
+            weeksData={weeksData}
+            maxWidth="200px"
+            height="32px"
+            onSlide={handleSlide}/>
         </Flexbox>
 
-        <PieChartComponent $data={dataStaffTurnoverRate} />
+        <PieChartComponent data={dataStaffTurnoverRate} />
       </Flexbox>
     </Expand>
   );

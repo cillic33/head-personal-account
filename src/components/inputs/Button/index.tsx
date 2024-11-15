@@ -10,21 +10,20 @@ const StyledButton = styled.button<IProps>`
   border: none;
   cursor: pointer;
   white-space: nowrap;
-  // @barrelblur: убрать доллары
-  position: ${props => props.$position || undefined};
-  width: ${props => props.$width || undefined};
-  height: ${props => props.$height || undefined};
-  flex: ${props => props.$flex || undefined};
-  opacity: ${props => props.$opacity || undefined};
-  background: ${props => props.$background || undefined};
-  border-radius: ${props => props.$borderRadius || undefined};
-  top: ${props => props.$top || undefined};
-  right: ${props => props.$right || undefined};
-  bottom: ${props => props.$bottom || undefined};
-  left: ${props => props.$left || undefined};
+  position: ${props => props.position || undefined};
+  width: ${props => props.width || undefined};
+  height: ${props => props.height || undefined};
+  flex: ${props => props.flex || undefined};
+  opacity: ${props => props.opacity || undefined};
+  background: ${props => props.background || undefined};
+  border-radius: ${props => props.borderRadius || undefined};
+  top: ${props => props.top || undefined};
+  right: ${props => props.right || undefined};
+  bottom: ${props => props.bottom || undefined};
+  left: ${props => props.left || undefined};
   
-  ${({$isActive, ...props}) => {
-    switch (props.$variant) {
+  ${({isActive, ...props}) => {
+    switch (props.variant) {
       case "primary":
         return css`
           background: ${props => props.theme.colors.accentFaintBrandQuaternary};
@@ -83,8 +82,8 @@ const StyledButton = styled.button<IProps>`
             outline: 2px solid transparent;
           }
 
-          color: ${props => $isActive === true && props.theme.colors.accentBrandNormal};
-          background: ${props => $isActive  && props.theme.colors.accentFaintBrandQuaternary};
+          color: ${props => isActive === true && props.theme.colors.accentBrandNormal};
+          background: ${props => isActive  && props.theme.colors.accentFaintBrandQuaternary};
         `
       case "no-style":
         return css`
@@ -121,7 +120,7 @@ const StyledButton = styled.button<IProps>`
     }
   }}
   
-  padding: ${props => props.$padding && props.$padding};
+  padding: ${props => props.padding && props.padding};
   
   &[disabled] {
     background: ${props => props.theme.colors.AccentBrandFaded};
@@ -140,6 +139,6 @@ const StyledButton = styled.button<IProps>`
 
 export const Button: FC<IProps> = (props) => {
   return (
-    <StyledButton {...props} ref={props.$ref as RefObject<HTMLButtonElement>} />
+    <StyledButton {...props} ref={props.ref as RefObject<HTMLButtonElement>} />
   );
 }
