@@ -970,3 +970,33 @@ export const MEmployees: TTable = {
     },
   ],
 };
+
+// Таблица на странице "Обучение"
+export const MEmployeesTraining: TTable = {
+  settings: {
+    employee: {id: 'employee', name: "Сотрудник", width: 254, isEmployee: true, isSorted: true},
+    courseName: {id: 'courseName', name: 'Название курса', width: 522},
+    dateStart: {id: 'dateStart', name: 'Дата начала обуч.', width: 150, isCenter: true},
+    dateEnd: {id: 'dateEnd', name: 'Дата оконч. обуч.', width: 150, isCenter: true},
+    cost: {id: 'cost', name: 'Стоимость, ₽', width: 150, isCenter: true},
+    trainingStatus: {id: 'trainingStatus', name: 'Статус обучения', width: 150, isCenter: true},
+  },
+  body: [
+    {
+      id: "1",
+      employee: {
+        avatar: "/src/images/AvatarAlekseeva.png",
+        name: "Алексеева Юлия Александровна",
+      },
+      courseName: "Изменение эмоциального состояния при взаимодействии с цветом",
+      dateStart: '01.07.24',
+      dateEnd: '02.07.24',
+      cost: 35000,
+      trainingStatus: {
+        title: "Неявка",
+        color: '#C83E3E',
+        bgColor: 'rgba(227, 79, 79, 0.15)',
+      },
+    },
+  ],
+}
