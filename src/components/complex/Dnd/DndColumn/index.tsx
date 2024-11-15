@@ -37,9 +37,9 @@ export const DndColumn: FC<IProps> = ({children, cells, ...props}) => {
             $isDraggingOver={snapshot.isDraggingOver}
           >
             {cells.map((cell, idx) => (
-                /* @barrelblur: Почему принимаешь children через атрибут, а не через вложение, как если бы обернула значение с помощью тега */
-                /* @barrelblur: использую передачу children через оборачивания тега */
-              <DndCell key={cell.id} data={cell} index={idx} children={children} />
+              <DndCell key={cell.id} data={cell} index={idx}>
+                {children}
+              </DndCell>
             ))}
             {provided.placeholder}
           </StyledCellList>

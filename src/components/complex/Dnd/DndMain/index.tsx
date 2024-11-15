@@ -73,7 +73,9 @@ export const DndMain: FC<IProps> = ({children, initialData}) => {
             const cells = column.cellIds.map(cellId => data.cells[cellId]);
 
             return (
-              <DndColumn key={column.id} column={column} cells={cells} children={children} />
+              <DndColumn key={column.id} column={column} cells={cells}>
+                {children}
+              </DndColumn>
             );
           })
         }

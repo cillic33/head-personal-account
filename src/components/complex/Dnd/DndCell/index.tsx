@@ -26,7 +26,6 @@ export const DndCell: FC<IProps> = ({children, index, ...props}) => {
           {/* @barrelblur: Зачем происходит итерация по children? Что не так с элементами? */}
           {Children.toArray(children).find((child) => {
             if (isValidElement<{id: string}>(child)) {
-
               if (child.props.id == id) {
                 return child;
               }
