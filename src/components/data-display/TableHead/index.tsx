@@ -56,7 +56,7 @@ export const TableHead: FC<IProps> = ({settings, sortClick}) => {
     <StyledTableHead>
       <tr>
         {tableTitles.map((item, index) => (
-          <th key={index} width={item.width}>
+          <th key={index}>
             <Flexbox gap="4px" align="center">
               <Typography variant="caption-semibold" color={theme.colors.textIconBaseSecondary}>{item.name}</Typography>
               {item.isSorted &&
