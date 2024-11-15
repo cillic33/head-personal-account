@@ -12,55 +12,9 @@ import ColumnBlueIcon from "@images/ColumnBlueIcon.svg";
 import FilterBlueIcon from "@images/FilterBlueIcon.svg";
 import DownloadBlueIcon from "@images/DownloadBlueIcon.svg";
 import {MEmployees} from "@utils/mock";
-import {Table} from "@components/data-display/Table";
-import {RightPanel} from "@components/complex/RightPanel";
-import {MutableRefObject, useRef, useState} from "react";
-import styled from "styled-components";
-import {SLIDE_PANEL_TIME} from "@utils/const"
-import {EmployeeCard} from "@components/complex/EmployeeCard";
-
-const StyledTableWrap = styled.div`
-  width: 100%;
-  transition: width ${SLIDE_PANEL_TIME}ms ease;
-  
-  &.active {
-    width: calc(100% - 560px - 16px);
-  }
-`
+import {TableWithEmployeePanel} from "@components/complex/TableWithEmployeePanel";
 
 export const EmployeesPage = () => {
-  const [showPanel, setShowPanel] = useState<boolean>(false);
-  const tableRef = useRef<HTMLTableElement | null>(null);
-
-  // Снятие выделения со всех строк таблицы
-  const unselectTableRows = () => {
-    if (tableRef.current) {
-      const rows = Array.from(tableRef.current.querySelectorAll('tr'));
-      rows.forEach(row => row.classList.remove('active'));
-    }
-  }
-
-  // Выделение строки таблицы
-  const selectTableRow = (trRef: MutableRefObject<HTMLTableRowElement | null>) => {
-    unselectTableRows();
-    if (trRef.current) {
-      trRef.current.classList.add('active');
-    }
-  }
-
-  // Обработка клика по строке таблицы
-  const handleRowClick = (trRef: MutableRefObject<HTMLTableRowElement | null>) => {
-    selectTableRow(trRef);
-    setShowPanel(true);
-    // TODO заменить данные в панели
-  }
-
-  // Обработка клика по кнопке закрытия панели
-  const handleClosePanelClick = () => {
-    unselectTableRows();
-    setShowPanel(false);
-  }
-
   return (
     <PageContainer>
       <Flexbox gap="16px" direction="column" width="100%" borderRadius="8px">
@@ -91,15 +45,7 @@ export const EmployeesPage = () => {
           </Flexbox>
         </Flexbox>
 
-        <Flexbox position="relative">
-          <StyledTableWrap className={showPanel ? 'active' : undefined}>
-            <Table data={MEmployees} ref={tableRef} onRowClick={handleRowClick} />
-          </StyledTableWrap>
-
-          <RightPanel isShow={showPanel} width="560px" onCloseClick={handleClosePanelClick}>
-            <EmployeeCard />
-          </RightPanel>
-        </Flexbox>
+        <TableWithEmployeePanel data={MEmployees} />
       </Flexbox>
     </PageContainer>
   );

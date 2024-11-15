@@ -11,8 +11,8 @@ import SearchGray from "@images/SearchGray.svg";
 import ColumnBlueIcon from "@images/ColumnBlueIcon.svg";
 import FilterBlueIcon from "@images/FilterBlueIcon.svg";
 import DownloadBlueIcon from "@images/DownloadBlueIcon.svg";
-import {Table} from "@components/data-display/Table";
 import {MEmployeesTraining} from "@utils/mock";
+import {TableWithEmployeePanel} from "@components/complex/TableWithEmployeePanel";
 
 export const TrainingPage = () => {
   return (
@@ -45,7 +45,7 @@ export const TrainingPage = () => {
           </Flexbox>
         </Flexbox>
 
-        <Table data={MEmployeesTraining} />
+        <TableWithEmployeePanel data={MEmployeesTraining} />
       </Flexbox>
     </PageContainer>
   );
