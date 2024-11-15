@@ -13,6 +13,7 @@ import FilterBlueIcon from "@images/FilterBlueIcon.svg";
 import DownloadBlueIcon from "@images/DownloadBlueIcon.svg";
 import {MEmployeesTraining} from "@utils/mock";
 import {TableWithEmployeePanel} from "@components/complex/TableWithEmployeePanel";
+import DatepickerGrayIcon from "@images/DatepickerGrayIcon.svg";
 
 export const TrainingPage = () => {
   return (
@@ -29,6 +30,10 @@ export const TrainingPage = () => {
           </Flexbox>
 
           <Flexbox gap="12px" align="center">
+            <Flexbox width="200px" flex="0 0 200px">
+              {/* TODO сделать выбор периода */}
+              <Input type="text" name="employeePeriodInput" placeholder="Выберите период" icon={DatepickerGrayIcon} />
+            </Flexbox>
             <Flexbox width="320px" flex="0 0 320px">
               {/* TODO сделать поиск */}
               <Input type="search" name="employeeSearchInput" placeholder="Начните вводить ФИО сотрудника" icon={SearchGray} />

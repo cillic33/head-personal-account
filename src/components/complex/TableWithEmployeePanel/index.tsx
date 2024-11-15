@@ -41,6 +41,7 @@ export const TableWithEmployeePanel: FC<IProps> = ({data}) => {
     selectTableRow(trRef);
     setShowPanel(true);
     // TODO заменить данные в панели
+    console.log('Row click');
   }
 
   // Обработка клика по кнопке закрытия панели
