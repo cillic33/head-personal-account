@@ -147,7 +147,7 @@ const EmployeeCard = () => {
           <Expand title="Проектная занятость" $width="100%" $isOpen={true} $paddingHead="12px" $paddingBody="8px 12px 12px">
             <Gridbox $gridTemplateColumns="200px auto" $rowGap="12px" $columnGap="16px">
               <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>50%</Typography>
-              <Flexbox $direction="column" $gap="4px">
+              <Flexbox $direction="column" gap="4px">
                 <Typography $variant="body-regular">
                   <LinkComponent href="/" $color={theme.colors.accentBrandNormal}>Сбербанк - Новое приложение</LinkComponent>
                 </Typography>
@@ -156,7 +156,7 @@ const EmployeeCard = () => {
                 </Typography>
               </Flexbox>
               <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>50%</Typography>
-              <Flexbox $direction="column" $gap="4px">
+              <Flexbox $direction="column" gap="4px">
                 <Typography $variant="body-regular">
                   <LinkComponent href="/" $color={theme.colors.accentBrandNormal}>Сбербанк - Новое приложение</LinkComponent>
                 </Typography>
@@ -171,14 +171,14 @@ const EmployeeCard = () => {
         {/*Ближайшее мероприятие*/}
         <EmployeeCardField>
           <Flexbox $direction="column" $width="100%">
-            <Flexbox $gap="12px" $align="center" $justify="space-between" $padding="12px" $width="100%">
+            <Flexbox gap="12px" $align="center" $justify="space-between" $padding="12px" $width="100%">
               <Typography $variant="h4" $flex="1 0 auto">Ближайшее мероприятие</Typography>
               <LinkComponent href="/" target="_blank">
                 <Image src={GotoGrayIcon} $width="20px" $height="20px" />
               </LinkComponent>
             </Flexbox>
 
-            <Flexbox $direction="column" $gap="12px" $padding="8px 12px 12px">
+            <Flexbox $direction="column" gap="12px" $padding="8px 12px 12px">
               <Gridbox $gridTemplateColumns="200px auto" $rowGap="12px" $columnGap="16px">
                 <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Тип мероприятия</Typography>
                 <Typography $variant="body-regular">Установочная аттестация</Typography>
@@ -193,7 +193,7 @@ const EmployeeCard = () => {
         {/*Адаптация*/}
         <EmployeeCardField>
           <Flexbox $direction="column" $width="100%">
-            <Flexbox $gap="12px" $align="center" $justify="space-between" $padding="12px" $width="100%">
+            <Flexbox gap="12px" $align="center" $justify="space-between" $padding="12px" $width="100%">
               <Typography $variant="h4" $flex="1 0 auto">Адаптация</Typography>
               <Chip $background={theme.colors.systemErrorFaintSecondary} $padding="2px 10px" $borderRadius="4px">
                 <Typography $variant="body-regular" $color={theme.colors.textIconAccentError}>В зоне риска</Typography>
@@ -203,7 +203,7 @@ const EmployeeCard = () => {
               </LinkComponent>
             </Flexbox>
 
-            <Flexbox $direction="column" $gap="12px" $padding="8px 12px 12px">
+            <Flexbox $direction="column" gap="12px" $padding="8px 12px 12px">
               <Gridbox $gridTemplateColumns="200px auto" $rowGap="12px" $columnGap="16px">
                 <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Дата окончания ИС</Typography>
                 <Typography $variant="body-regular">02.03.24</Typography>
@@ -234,25 +234,25 @@ const EmployeeCard = () => {
           >
             <Gridbox $gridTemplateColumns="200px auto" $rowGap="12px" $columnGap="16px">
               <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Просроченные курсы</Typography>
-              <Flexbox $direction="column" $gap="8px">
-                <Flexbox $direction="column" $gap="4px">
+              <Flexbox $direction="column" gap="8px">
+                <Flexbox $direction="column" gap="4px">
                   <Typography $variant="body-regular">Fundamentals of graphic design</Typography>
                   <Typography $variant="caption-regular" $color={theme.colors.textIconAccentError}>До 05.01.24</Typography>
                 </Flexbox>
-                <Flexbox $direction="column" $gap="4px">
+                <Flexbox $direction="column" gap="4px">
                   <Typography $variant="body-regular">Fundamentals of graphic design</Typography>
                   <Typography $variant="caption-regular" $color={theme.colors.textIconAccentError}>До 05.01.24</Typography>
                 </Flexbox>
               </Flexbox>
 
               <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>В процессе</Typography>
-              <Flexbox $direction="column" $gap="4px">
+              <Flexbox $direction="column" gap="4px">
                 <Typography $variant="body-regular">Fundamentals of graphic design</Typography>
                 <Typography $variant="caption-regular" $color={theme.colors.textIconBaseTertiary}>До 05.01.24</Typography>
               </Flexbox>
 
               <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Ближайшие обучения</Typography>
-              <Flexbox $direction="column" $gap="4px">
+              <Flexbox $direction="column" gap="4px">
                 <Typography $variant="body-regular">Fundamentals of graphic design</Typography>
                 <Typography $variant="caption-regular" $color={theme.colors.textIconBaseTertiary}>До 05.01.24</Typography>
               </Flexbox>
@@ -273,13 +273,13 @@ const EmployeeCard = () => {
           >
             <Gridbox $gridTemplateColumns="200px auto" $rowGap="12px" $columnGap="16px">
               <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Ноутбук</Typography>
-              <Flexbox $direction="column" $gap="4px">
+              <Flexbox $direction="column" gap="4px">
                 <Typography $variant="body-regular">Huawei MateView GT 14.2</Typography>
                 <Typography $variant="caption-regular" $color={theme.colors.textIconBaseTertiary}>Выдан 05.01.24</Typography>
               </Flexbox>
 
               <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Телефон</Typography>
-              <Flexbox $direction="column" $gap="4px">
+              <Flexbox $direction="column" gap="4px">
                 <Typography $variant="body-regular">Samsung Galaxy A35 5G 8/128GB</Typography>
                 <Typography $variant="caption-regular" $color={theme.colors.textIconBaseTertiary}>Выдан 05.01.24</Typography>
               </Flexbox>
@@ -289,7 +289,7 @@ const EmployeeCard = () => {
 
         {/*Расчетный лист*/}
         <EmployeeCardField>
-          <Flexbox $gap="12px" $align="center" $justify="space-between" $padding="12px" $width="100%">
+          <Flexbox gap="12px" $align="center" $justify="space-between" $padding="12px" $width="100%">
             <Typography $variant="h4" $flex="1 0 auto">Расчетный лист</Typography>
             <LinkComponent href="/" target="_blank">
               <Image src={GotoGrayIcon} $width="20px" $height="20px" />
