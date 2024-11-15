@@ -1,6 +1,6 @@
 import Expand from "@components/surfaces/Expand";
 import {IWidget} from "@typing/TWidget";
-import {MouseEvent, useState} from "react";
+import {FC, MouseEvent, useState} from "react";
 import Flexbox from "@components/surfaces/Flexbox";
 import ButtonGroup from "@components/inputs/ButtonGroup";
 import {MWeekMonthSwitcher, MWidgetMoodMonitoring} from "@utils/mock";
@@ -14,7 +14,8 @@ import SimpleSlider from "@components/data-display/SimpleSlider";
 import {TWeeksSlider} from "@typing/TWeeksSlider";
 import {getWeeksArray} from "@utils/index";
 
-const WidgetMoodMonitoring = (props: IWidget) => {
+// @barrelblur: убрать доллары
+const WidgetMoodMonitoring: FC<IWidget> = (props) => {
   const [currentDate] = useState<Date>(new Date());
   const [weeksData] = useState<TWeeksSlider>(getWeeksArray(currentDate));
 
@@ -35,11 +36,11 @@ const WidgetMoodMonitoring = (props: IWidget) => {
       $isSplitter={true}
     >
       <Flexbox
-        $gap="16px"
+        gap="16px"
         $direction="column">
         <Flexbox
           $justify="space-between"
-          $gap="16px"
+          gap="16px"
           $flexWrap="wrap"
           $direction="row-reverse"
           $align="center">
@@ -54,13 +55,13 @@ const WidgetMoodMonitoring = (props: IWidget) => {
             $onSlide={handleSlide}/>
         </Flexbox>
         <Flexbox
-          $gap="16px"
+          gap="16px"
           $direction="column">
           {
             MWidgetMoodMonitoring.map(item => (
               <Flexbox
                 key={item.id}
-                $gap="12px"
+                gap="12px"
                 $align="center"
                 $padding="16px"
                 $border={`1px solid ${theme.colors.surfacePrimary}`}
@@ -97,4 +98,5 @@ const WidgetMoodMonitoring = (props: IWidget) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetMoodMonitoring;

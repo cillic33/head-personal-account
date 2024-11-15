@@ -3,8 +3,10 @@ import {IWidget} from "@typing/TWidget";
 import {MWidgetReportingWeekTS} from "@utils/mock";
 import Typography from "@components/data-display/Typography";
 import Flexbox from "@components/surfaces/Flexbox";
+import {FC} from "react";
 
-const WidgetReportingWeekTS = (props: IWidget) => {
+// @barrelblur: убрать доллары
+const WidgetReportingWeekTS: FC<IWidget> = (props) => {
   return (
     <Expand
       title={props.title}
@@ -13,7 +15,7 @@ const WidgetReportingWeekTS = (props: IWidget) => {
       $externalLink={props.externalLink}
       $isSplitter={true}
     >
-      <Flexbox $gap="4px" $direction="column">
+      <Flexbox gap="4px" $direction="column">
         {
           MWidgetReportingWeekTS.map((item) => (
             <Flexbox $justify="space-between" key={item.id} $padding="8px 12px">
@@ -27,4 +29,5 @@ const WidgetReportingWeekTS = (props: IWidget) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetReportingWeekTS;

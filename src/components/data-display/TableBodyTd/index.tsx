@@ -8,6 +8,7 @@ import Person from "@components/data-display/Person";
 import Image from "@components/data-display/Image";
 import DivisionBlueIcon from "@images/DivisionBlueIcon.svg";
 import Chip from "@components/data-display/Chip";
+import {FC} from "react";
 
 interface IStyledTableBodyTd {
   width?: number;
@@ -23,8 +24,13 @@ const StyledTableBodyTd = styled.td<IStyledTableBodyTd>`
   max-width: ${props => props.width + "px" || undefined};
 `
 
-const TableBodyTd = ({k: key, data, settings, onClick}: IProps) => {
+// @barrelblur: непонятный атрибут «k»
+const TableBodyTd: FC<IProps> = ({k: key, data, settings, onClick}) => {
   const width = (settings && settings.width) ? settings.width : undefined;
+
+  // @barrelblur: твоя таблица предназначена только для единственной цели: отображать отображать данные как элемент дизайн системы
+  // Вместо этого у тебя таблица знает про сотрудников, дивизионы и прочую бизне-слогику
+  // Здесь требуется рефакторинг
   const isEmployee = (settings && settings.isEmployee) ? settings.isEmployee : undefined;
   const isDivision = (settings && settings.isDivision) ? settings.isDivision : undefined;
   const isCenter = (settings && settings.isCenter) ? settings.isCenter : undefined;
@@ -40,10 +46,12 @@ const TableBodyTd = ({k: key, data, settings, onClick}: IProps) => {
     return;
   }
 
+  // @barrelblur немного сложная и спицифичная форма полиформизма
+  // @barrelblur требуется рефакторинг
   if (typeof data === "object") {
     return (
       <StyledTableBodyTd key={key} width={width} onClick={handleClick}>
-        <Flexbox $gap="8px" $align="center" $justify={isStatus ? "center" : undefined}>
+        <Flexbox gap="8px" $align="center" $justify={isStatus ? "center" : undefined}>
           {isEmployee &&
             <Person
               src={data["avatar" as keyof TTableCell]}
@@ -75,7 +83,7 @@ const TableBodyTd = ({k: key, data, settings, onClick}: IProps) => {
 
   return (
     <StyledTableBodyTd key={key} width={width} onClick={handleClick}>
-      <Flexbox $gap="8px" $align="center" $justify={isCenter ? "center" : undefined}>
+      <Flexbox gap="8px" $align="center" $justify={isCenter ? "center" : undefined}>
         {isDivision &&
           <Image src={DivisionBlueIcon} $width="24px" $height="24px" />
         }
@@ -87,4 +95,5 @@ const TableBodyTd = ({k: key, data, settings, onClick}: IProps) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default TableBodyTd;

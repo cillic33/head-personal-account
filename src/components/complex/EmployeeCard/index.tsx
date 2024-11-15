@@ -8,23 +8,25 @@ import BagGrayIcon from "@images/BagGrayIcon.svg";
 import LinkComponent from "@components/data-display/Link";
 import GotoGrayIcon from "@images/GotoGrayIcon.svg";
 import EmployeeCardField from "@components/complex/EmployeeCardField";
+// @barrelblur: GridBox ← такое название правильное
 import Gridbox from "@components/surfaces/Gridbox";
 import Expand from "@components/surfaces/Expand";
 
+// @barrelblur: убрать доллары в начале названия атрибутов
 const EmployeeCard = () => {
   return (
-    <Flexbox $gap="20px" $direction="column" $align="flex-start">
+    <Flexbox gap="20px" $direction="column" $align="flex-start">
 
-      <Flexbox $gap="16px" $align="center">
+      <Flexbox gap="16px" $align="center">
         <Image src={AvatarBurmakinBig} $width="80px" $height="80px" />
-        <Flexbox $gap="4px" $direction="column">
+        <Flexbox gap="4px" $direction="column">
           <Typography $variant="h3">Бурмакин Евгений Дмитриевич</Typography>
           <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Старший дизайнер, 3 грейд</Typography>
           <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Екатеринбург, 09:40 (+2 МСК)</Typography>
         </Flexbox>
       </Flexbox>
 
-      <Chip $background={theme.colors.surfacePrimary} $gap="4px" $padding="4px 12px 4px 10px" $borderRadius="4px">
+      <Chip $background={theme.colors.surfacePrimary} gap="4px" $padding="4px 12px 4px 10px" $borderRadius="4px">
         <Image src={BagGrayIcon} $width="24px" $height="24px" />
         <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Будет в командировке с 12.10.2023 по 16.10.2023</Typography>
       </Chip>
@@ -33,7 +35,7 @@ const EmployeeCard = () => {
 
         {/*Профиль*/}
         <EmployeeCardField>
-          <Flexbox $gap="12px" $align="center" $justify="space-between" $padding="12px" $width="100%">
+          <Flexbox gap="12px" $align="center" $justify="space-between" $padding="12px" $width="100%">
             <Typography $variant="h4" $flex="1 0 auto">Профиль</Typography>
             <Chip $background={theme.colors.complimentaryGreenFaintSecondary} $padding="2px 10px" $borderRadius="4px">
               <Typography $variant="body-regular" $color={theme.colors.textIconAccentSuccess}>Актуален</Typography>
@@ -46,7 +48,7 @@ const EmployeeCard = () => {
 
         {/*TS за отчетную неделю*/}
         <EmployeeCardField>
-          <Flexbox $gap="12px" $align="center" $justify="space-between" $padding="12px" $width="100%">
+          <Flexbox gap="12px" $align="center" $justify="space-between" $padding="12px" $width="100%">
             <Typography $variant="h4" $flex="1 0 auto">TS за отчетную неделю</Typography>
             <Chip $background={theme.colors.complimentaryGreenFaintSecondary} $padding="2px 10px" $borderRadius="4px">
               <Typography $variant="body-regular" $color={theme.colors.textIconAccentSuccess}>Утвержден</Typography>
@@ -63,7 +65,7 @@ const EmployeeCard = () => {
             <Flexbox $align="center" $justify="space-between" $padding="12px">
               <Typography $variant="h4" $flex="1 0 auto">Контакты</Typography>
             </Flexbox>
-            <Flexbox $direction="column" $gap="12px" $padding="8px 12px 12px">
+            <Flexbox $direction="column" gap="12px" $padding="8px 12px 12px">
               <Gridbox $gridTemplateColumns="200px auto" $rowGap="12px" $columnGap="16px">
                 <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Почта</Typography>
                 <LinkComponent href="mailto:kkonstantinopolskiy@yandexmail.com">
@@ -301,4 +303,5 @@ const EmployeeCard = () => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default EmployeeCard;

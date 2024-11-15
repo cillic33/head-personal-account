@@ -5,7 +5,9 @@ import Typography from "@components/data-display/Typography";
 import styled from "styled-components";
 import {theme} from "@utils/theme/theme";
 import Chip from "@components/data-display/Chip";
+import {FC} from "react";
 
+// @barrelblur: что это такое? Это должно быть компоннетом
 function CustomLabel({viewBox, centerCount, centerText, postfix}: ICustomLabelProps) {
   const {cx, cy} = viewBox;
 
@@ -56,17 +58,21 @@ const StyledRightInfo = styled.div`
   flex: 1 0 auto;
 `
 
-const PieChartComponent = (
+// @barrelblur: в этом компоненте не понятно, какая его единственная ответственность
+// @barrelblur: вроде выводится разметка, но аттрибуты будто заменают инлайновые стили
+const PieChartComponent: FC<IProps> = (
   {
+    // @barrelblur много лишних атрибутов
     $data,
     $width = 100,
     $height = 100,
+    // @barrelblur много лишних атрибутов
     $innerRadius = 35,
     $outerRadius = 50,
     $isCenterText = true,
     $isRightInfo = true,
     $isHeader = true,
-  }: IProps
+  }
 ) => {
   const {title = "", percent, total, ratio, variants, centerCount, centerText, postfix} = $data;
 
@@ -78,7 +84,7 @@ const PieChartComponent = (
       {$isHeader &&
         <Flexbox
           $padding="16px"
-          $gap="12px"
+          gap="12px"
           $align="center"
           $justify="space-between"
           $border={`1px solid ${theme.colors.surfacePrimary}`}
@@ -87,7 +93,7 @@ const PieChartComponent = (
             $variant="body-semibold"
             $color={theme.colors.textIconBaseSecondary}>{title}</Typography>
           <Flexbox
-            $gap="12px"
+            gap="12px"
             $align="center">
             {percent &&
               <Chip
@@ -121,7 +127,7 @@ const PieChartComponent = (
       }
 
       <Flexbox
-        $gap="16px"
+        gap="16px"
         $align="center"
         $width="100%"
         $padding="16px">
@@ -138,6 +144,11 @@ const PieChartComponent = (
             dataKey="value"
             cornerRadius={2}
           >
+            {/*
+                @barrelblur
+                Здесь грубое нарушение использование index, согласно интерфейсу в элементе нет ID,
+                а ты используешь индекс элемента массива, и если какой-то элемент удалиться, то рендер сломается
+             */}
             {variants.map((item, index) => (
               <Cell
                 key={`cell-${index}`}
@@ -164,7 +175,7 @@ const PieChartComponent = (
             {variants.map((item, index) => (
               <Flexbox
                 key={`cell-${index}`}
-                $gap="4px"
+                gap="4px"
                 $align="center">
                 <StyledCircle color={item.color}/>
                 <Typography
@@ -181,4 +192,5 @@ const PieChartComponent = (
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default PieChartComponent;

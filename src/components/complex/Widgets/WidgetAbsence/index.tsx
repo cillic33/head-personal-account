@@ -3,8 +3,10 @@ import {IWidget} from "@typing/TWidget";
 import {MWidgetAbsence} from "@utils/mock";
 import Flexbox from "@components/surfaces/Flexbox";
 import Typography from "@components/data-display/Typography";
+import {FC} from "react";
 
-const WidgetAbsence = (props: IWidget) => {
+// @barrelblur: убрать доллары
+const WidgetAbsence: FC<IWidget> = (props) => {
   return (
     <Expand
       title={props.title}
@@ -13,7 +15,7 @@ const WidgetAbsence = (props: IWidget) => {
       $externalLink={props.externalLink}
       $isSplitter={true}
     >
-      <Flexbox $gap="4px" $direction="column">
+      <Flexbox gap="4px" $direction="column">
         {
           MWidgetAbsence.map((item) => (
             <Flexbox $justify="space-between" key={item.id} $padding="8px 12px">
@@ -27,4 +29,5 @@ const WidgetAbsence = (props: IWidget) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetAbsence;

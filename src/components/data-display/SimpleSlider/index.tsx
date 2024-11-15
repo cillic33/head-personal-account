@@ -4,7 +4,7 @@ import styled from "styled-components";
 import ChevronLeftBlue from "@images/ChevronLeftBlue.svg";
 import ChevronRightBlue from "@images/ChevronRightBlue.svg";
 import Typography from "@components/data-display/Typography";
-import {useState} from "react";
+import {FC, useState} from "react";
 
 const StyledWrapSlider = styled.div<IProps>`
   position: relative;
@@ -45,7 +45,7 @@ const StyledWrapSlider = styled.div<IProps>`
   }
 `
 
-export default function SimpleSlider(props: IProps) {
+const SimpleSlider: FC<IProps> = (props) => {
   const {$weeksData, $onSlide} = props;
   const [oldSlide, setOldSlide] = useState<number>(1);
 
@@ -75,3 +75,6 @@ export default function SimpleSlider(props: IProps) {
     </StyledWrapSlider>
   );
 }
+
+// @barrelblur: не используем дефолтный экспорт
+export default SimpleSlider;

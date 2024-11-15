@@ -1,6 +1,6 @@
 import {IProps, IStyledInput} from "./props";
 import styled from "styled-components";
-import {ChangeEvent, useRef, useState} from "react";
+import {ChangeEvent, FC, useRef, useState} from "react";
 import CloseGrayIcon from "@images/CloseGrayIcon.svg";
 import Image from "@components/data-display/Image";
 import Button from "@components/inputs/Button";
@@ -42,7 +42,7 @@ const StyledInput = styled.input<IStyledInput>`
   }
 `
 
-const Input = (
+const Input: FC<IProps> = (
   {
     type,
     name,
@@ -51,8 +51,11 @@ const Input = (
     onChange,
     onClear,
     icon,
-  }: IProps) => {
+  }) => {
+    // @barrelblur: Зачем инпуту свою стояние? Это же же компоннет должен предоставлять API для взаимодействия снаружи
   const [query, setQuery] = useState<string>(value || "");
+
+    // @barrelblur: зачем этому компоненту реф?
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -70,6 +73,9 @@ const Input = (
       inputRef.current.value = "";
     }
 
+    // @barrelblur: Этой функциональности в принипе не должно быть здесь
+    // @barrelblur: Типа мы в другом месте при использловании события передаем таргет на инпут?
+    // @barrelblur: А зачем передавать таргет, если мы можем передаь значение, который снаружи просто перезапишет стейт
     if (inputRef.current && onClear) {
       onClear(inputRef.current);
     }
@@ -98,4 +104,5 @@ const Input = (
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default Input;

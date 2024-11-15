@@ -10,12 +10,13 @@ import Divider from "@components/data-display/Divider";
 import ButtonGroup from "@components/inputs/ButtonGroup";
 import {MWeekMonthSwitcher, MWidgetMetrics} from "@utils/mock";
 import SimpleSlider from "@components/data-display/SimpleSlider";
-import {MouseEvent, useState} from "react";
+import {FC, MouseEvent, useState} from "react";
 import {TWeeksSlider} from "@typing/TWeeksSlider";
 import {getWeeksArray} from "@utils/index";
 import PieChartComponent from "@components/data-display/PieChart";
 
-const WidgetStaffMovement = (props: IWidget) => {
+// @barrelblur: убрать доллары
+const WidgetStaffMovement: FC<IWidget> = (props) => {
   const [currentDate] = useState<Date>(new Date());
   const [weeksData] = useState<TWeeksSlider>(getWeeksArray(currentDate));
   const dataStaffTurnoverRate = MWidgetMetrics["staffTurnoverRateMetric"];
@@ -36,19 +37,19 @@ const WidgetStaffMovement = (props: IWidget) => {
       $externalLink={props.externalLink}
       $isSplitter={true}
     >
-      <Flexbox $gap="16px" $direction="column">
+      <Flexbox gap="16px" $direction="column">
         <Flexbox $borderRadius="6px" $border={`1px solid ${theme.colors.surfacePrimary}`}>
-          <Flexbox $direction="column" $gap="8px" $padding="16px 16px 16px 20px" $width="50%">
+          <Flexbox $direction="column" gap="8px" $padding="16px 16px 16px 20px" $width="50%">
             <Typography $variant="caption-semibold" $color={theme.colors.textIconBaseSecondary}>Открытые вакансии</Typography>
-            <Flexbox $align="center" $gap="8px">
+            <Flexbox $align="center" gap="8px">
               <Image src={PersonBlueIcon} $width="20px" $height="20px" />
               <Typography $variant="body-semibold">40</Typography>
             </Flexbox>
           </Flexbox>
           <Divider direction="vertical" />
-          <Flexbox $direction="column" $gap="8px" $padding="16px 16px 16px 20px" $width="50%">
+          <Flexbox $direction="column" gap="8px" $padding="16px 16px 16px 20px" $width="50%">
             <Typography $variant="caption-semibold" $color={theme.colors.textIconBaseSecondary}>Офферы по вакансиям</Typography>
-            <Flexbox $align="center" $gap="8px">
+            <Flexbox $align="center" gap="8px">
               <Image src={PaperBlueIcon} $width="20px" $height="20px" />
               <Typography $variant="body-semibold">1</Typography>
             </Flexbox>
@@ -57,7 +58,7 @@ const WidgetStaffMovement = (props: IWidget) => {
 
         <Flexbox
           $justify="space-between"
-          $gap="16px"
+          gap="16px"
           $flexWrap="wrap"
           $direction="row-reverse"
           $align="center">
@@ -78,4 +79,5 @@ const WidgetStaffMovement = (props: IWidget) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetStaffMovement;

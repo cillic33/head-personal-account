@@ -2,8 +2,10 @@ import Expand from "@components/surfaces/Expand";
 import {IWidget} from "@typing/TWidget";
 import {MMyDeputies} from "@utils/mock";
 import WidgetMyDeputiesList from "@components/complex/Widgets/WidgetMyDeputiesList";
+import {FC} from "react";
 
-const WidgetMyDeputies = (props: IWidget) => {
+// @barrelblur: убрать доллары
+const WidgetMyDeputies: FC<IWidget> = (props) => {
   return (
     <Expand
       title={props.title}
@@ -17,4 +19,5 @@ const WidgetMyDeputies = (props: IWidget) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetMyDeputies;

@@ -3,8 +3,10 @@ import {MApplications} from "@utils/mock";
 import Flexbox from "@components/surfaces/Flexbox";
 import WidgetApplicationsForApprovalRow from "@components/complex/Widgets/WidgetApplicationsForApprovalRow";
 import {IWidget} from "@typing/TWidget";
+import {FC} from "react";
 
-const WidgetApplicationsForApproval = (props: IWidget) => {
+// @barrelblur: убрать доллары
+const WidgetApplicationsForApproval: FC<IWidget> = (props) => {
   return (
     <Expand
       title={props.title}
@@ -13,7 +15,7 @@ const WidgetApplicationsForApproval = (props: IWidget) => {
       $isSplitter={true}
     >
       <Flexbox
-        $gap="4px"
+        gap="4px"
         $direction="column"
       >
         {MApplications.map((item) => (
@@ -24,4 +26,5 @@ const WidgetApplicationsForApproval = (props: IWidget) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetApplicationsForApproval;

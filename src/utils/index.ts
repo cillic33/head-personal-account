@@ -20,6 +20,8 @@ export function getWeeksArray(date: Date) {
   const delta: number = (day > 1) ? day - 1 : 6;
   const closestMonday = new Date(date.valueOf() - delta * DAY);
 
+  // @barrelblur: что означает 1 и 2 в конце каждого названия меременной?
+  // @barrelblur: необходимо дать более семантическое название переменным
   const prevWeekDate1 = new Date(closestMonday.valueOf() - 7 * DAY);
   const prevWeekDate2 = new Date(closestMonday.valueOf() - 1 * DAY);
   const prevWeekStr = `${prevWeekDate1.getDate()}-${prevWeekDate2.getDate()} ${MONTHS[prevWeekDate2.getMonth()]}`;

@@ -1,5 +1,5 @@
 import {Draggable} from "@hello-pangea/dnd";
-import {Children, isValidElement} from "react";
+import {Children, FC, isValidElement} from "react";
 import {IDndCellProps, IProps} from "./props";
 import styled from "styled-components";
 
@@ -11,9 +11,9 @@ const StyledDndCell = styled.div<IDndCellProps>`
   opacity: ${props => props.$isDragging ? '0.85' : '1'};
 `;
 
-const DndCell = ({children, index, ...props}: IProps) => {
+const DndCell: FC<IProps> = ({children, index, ...props}) => {
   const { id } = props.data;
-  
+
   return (
     <Draggable draggableId={id} index={index}>
       {(provided, snapshot) => (
@@ -23,6 +23,7 @@ const DndCell = ({children, index, ...props}: IProps) => {
           ref={provided.innerRef}
           $isDragging={snapshot.isDragging}
         >
+          {/* @barrelblur: Зачем происходит итерация по children? Что не так с элементами? */}
           {Children.toArray(children).find((child) => {
             if (isValidElement<{id: string}>(child)) {
 
@@ -37,4 +38,6 @@ const DndCell = ({children, index, ...props}: IProps) => {
     </Draggable>
   )
 }
+
+// @barrelblur: не используем дефолтный экспорт
 export default DndCell;

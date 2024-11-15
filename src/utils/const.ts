@@ -4,7 +4,6 @@ export enum AppRoutes {
   Training = "/training",
 }
 
-
 export const SLIDE_PANEL_TIME = 500;
 
 export const SLIDE_PANEL_DELAY = 15;

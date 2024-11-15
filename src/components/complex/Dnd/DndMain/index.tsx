@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {FC, useState} from 'react';
 import {
   DragDropContext,
   DropResult,
@@ -8,7 +8,7 @@ import { IInitialDataColumn} from "@typing/TDnd";
 import {IProps} from "@components/complex/Dnd/DndMain/props";
 import DndColumn from "@components/complex/Dnd/DndColumn";
 
-const DndMain = ({children, initialData}: IProps) => {
+const DndMain: FC<IProps> = ({children, initialData}) => {
   const [data, setData] = useState(initialData);
 
   const handleDragEnd = (result: DropResult): void => {
@@ -20,9 +20,8 @@ const DndMain = ({children, initialData}: IProps) => {
     }
 
     // Если объект перетащили в то же самое место
-    if (destination.droppableId === source.droppableId
-      && destination.index === source.index) {
-      return;
+    if (destination.droppableId === source.droppableId && destination.index === source.index) {
+      return
     }
 
     const SourceColumn = data.columns[source.droppableId];
@@ -67,7 +66,7 @@ const DndMain = ({children, initialData}: IProps) => {
 
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
-      <Flexbox $gap="16px" $width="100%">
+      <Flexbox gap="16px" $width="100%">
         {
           data.columnOrder.map(item => {
             const column = data.columns[item];
@@ -83,4 +82,5 @@ const DndMain = ({children, initialData}: IProps) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default DndMain;

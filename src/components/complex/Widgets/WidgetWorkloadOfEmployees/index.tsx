@@ -4,12 +4,13 @@ import {MWeekMonthSwitcher, MWorkloadOfEmployees} from "@utils/mock";
 import ProgressBar from "@components/data-display/ProgressBar";
 import Flexbox from "@components/surfaces/Flexbox";
 import ButtonGroup from "@components/inputs/ButtonGroup";
-import {MouseEvent, useState} from "react";
+import {FC, MouseEvent, useState} from "react";
 import SimpleSlider from "@components/data-display/SimpleSlider";
 import {getWeeksArray} from "@utils/index";
 import {TWeeksSlider} from "@typing/TWeeksSlider";
 
-const WidgetWorkloadOfEmployees = (props: IWidget) => {
+// @barrelblur: убрать доллары
+const WidgetWorkloadOfEmployees: FC<IWidget> = (props) => {
   const [currentDate] = useState<Date>(new Date());
   const [weeksData] = useState<TWeeksSlider>(getWeeksArray(currentDate));
 
@@ -34,13 +35,13 @@ const WidgetWorkloadOfEmployees = (props: IWidget) => {
       $externalLink={props.externalLink}
       $isSplitter={true}
     >
-      <Flexbox $gap="16px" $direction="column">
-        <Flexbox $justify="space-between" $gap="16px" $flexWrap="wrap" $direction="row-reverse" $align="center">
+      <Flexbox gap="16px" $direction="column">
+        <Flexbox $justify="space-between" gap="16px" $flexWrap="wrap" $direction="row-reverse" $align="center">
           {/*TODO Добавить обработку переключения периода (для всех переключателей)*/}
           <ButtonGroup buttons={MWeekMonthSwitcher} onClick={handlePeriodsSwitcherClick} $buttonsWidth="92px" />
           <SimpleSlider $weeksData={weeksData} $maxWidth="200px" $height="32px" $onSlide={handleSlide} />
         </Flexbox>
-        <Flexbox $gap="8px" $direction="column">
+        <Flexbox gap="8px" $direction="column">
           {MWorkloadOfEmployees.map(item => (
             <ProgressBar key={item.id} $percent={item.percent} $color={item.color} $title={item.title} />
           ))}
@@ -50,4 +51,5 @@ const WidgetWorkloadOfEmployees = (props: IWidget) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetWorkloadOfEmployees;

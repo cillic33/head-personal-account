@@ -3,8 +3,10 @@ import {IWidget} from "@typing/TWidget";
 import Flexbox from "@components/surfaces/Flexbox";
 import {MWidgetEmployees} from "@utils/mock";
 import WidgetEmployeesRow from "@components/complex/Widgets/WidgetEmployeesRow";
+import {FC} from "react";
 
-const WidgetEmployees = (props: IWidget) => {
+// @barrelblur: убрать доллары
+const WidgetEmployees: FC<IWidget> = (props) => {
   return (
     <Expand
       title={props.title}
@@ -12,7 +14,7 @@ const WidgetEmployees = (props: IWidget) => {
       $isDragIcon={props.isDragIcon}
       $isSplitter={true}
     >
-      <Flexbox $gap="4px" $direction="column">
+      <Flexbox gap="4px" $direction="column">
         {MWidgetEmployees.map((item) => (
           <WidgetEmployeesRow key={item.id} item={item} />
         ))}
@@ -21,4 +23,5 @@ const WidgetEmployees = (props: IWidget) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetEmployees;

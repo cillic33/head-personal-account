@@ -6,7 +6,7 @@ import Flexbox from "@components/surfaces/Flexbox";
 import Button from "@components/inputs/Button";
 import Image from "@components/data-display/Image";
 import CaretDownGray from "@images/CaretDownGray.svg";
-import {MouseEvent} from "react";
+import {FC, MouseEvent} from "react";
 import {TTableSortDirections} from "@typing/TTable";
 
 const StyledTableHead = styled.thead`
@@ -39,7 +39,7 @@ const StyledHeadTh = styled.th<IStyledHeadTh>`
   width: ${props => props.width ? props.width + "px" : undefined};
 `
 
-const TableHead = ({settings, sortClick}: IProps) => {
+const TableHead: FC<IProps> = ({settings, sortClick}) => {
   const tableTitles = Object.values(settings);
 
   const handleSortClick = (event: MouseEvent<HTMLElement>, id: string) => {
@@ -65,7 +65,7 @@ const TableHead = ({settings, sortClick}: IProps) => {
       <tr>
         {tableTitles.map((item, index) => (
           <StyledHeadTh key={index} width={item.width}>
-            <Flexbox $gap="4px" $align="center">
+            <Flexbox gap="4px" $align="center">
               <Typography $variant="caption-semibold" $color={theme.colors.textIconBaseSecondary}>{item.name}</Typography>
               {item.isSorted &&
                 <Button
@@ -87,4 +87,5 @@ const TableHead = ({settings, sortClick}: IProps) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default TableHead;

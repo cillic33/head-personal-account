@@ -10,13 +10,15 @@ import {theme} from "@utils/theme/theme";
 import Chip from "@components/data-display/Chip";
 import {Link} from "react-router-dom";
 import LinkComponent from "@components/data-display/Link";
+import {FC} from "react";
 
-const WidgetEmployeesRow = ({item}: IProps) => {
+// @barrelblur: убрать доллары
+const WidgetEmployeesRow: FC<IProps> = ({item}) => {
   const {id, title, count, link, important, warning} = item;
 
   return (
     <Flexbox
-      $gap="12px"
+      gap="12px"
       $justify="space-between"
       $align="center"
       $background={theme.colors.surfaceSecondary}
@@ -25,16 +27,19 @@ const WidgetEmployeesRow = ({item}: IProps) => {
     >
       <Typography $variant="body-regular">{title}</Typography>
 
-      <Flexbox $gap="12px" $align="center">
-        <Flexbox $gap="4px" $align="center">
+      <Flexbox gap="12px" $align="center">
+        <Flexbox gap="4px" $align="center">
           {important &&
-            <Chip $background={theme.colors.systemErrorFaintSecondary} $borderRadius="4px" $padding="2px 4px 2px 2px" $gap="2px">
+              // @barrelblur почему столько переопределяющихся параметров в каждом компоненте?
+              // @barrelblur если у тебя Chip выглядит по-другому, следует создаь другой варант на основе Chip
+
+            <Chip $background={theme.colors.systemErrorFaintSecondary} $borderRadius="4px" $padding="2px 4px 2px 2px" gap="2px">
               <Image src={ExclamationRoundRed} $width="16px" $height="16px" />
               <Typography $variant="chip-s" $color={theme.colors.textIconAccentError}>{important}</Typography>
             </Chip>
           }
           {warning &&
-            <Chip $background={theme.colors.complimentaryYellowFaintSecondary} $borderRadius="4px" $padding="2px 4px 2px 2px" $gap="2px">
+            <Chip $background={theme.colors.complimentaryYellowFaintSecondary} $borderRadius="4px" $padding="2px 4px 2px 2px" gap="2px">
               <Image src={ExclamationTriangleYellow} $width="16px" $height="16px" />
               <Typography $variant="chip-s" $color={theme.colors.textIconAccentWarning}>{warning}</Typography>
             </Chip>
@@ -57,4 +62,5 @@ const WidgetEmployeesRow = ({item}: IProps) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetEmployeesRow;

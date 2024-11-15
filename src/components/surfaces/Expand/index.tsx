@@ -14,7 +14,9 @@ import LinkComponent from "@components/data-display/Link";
 import {theme} from "@utils/theme/theme";
 import Chip from "@components/data-display/Chip";
 import {Link} from "react-router-dom";
+import {FC} from "react";
 
+// @barrelblur: убрать доллары
 const StyledExpand = styled.div<Props>`
   width: ${props => props.$width || undefined};
   
@@ -48,18 +50,21 @@ const StyledExpand = styled.div<Props>`
   }
 `
 
-const Expand = (props: Props) => {
+const Expand: FC<Props> = (props) => {
   const {
     children,
     title,
     $isOpen = false,
+      // может быть заменить на typeIcon? Или просто Type?
     $isDragIcon = false,
+    $isPlusIcon = false,
     $externalLink = '',
     $internalLink = '',
-    $isPlusIcon = false,
     $onPlusClick,
     $chip,
   } = props;
+
+  // barrelblur: isOn, isSetOn
   const {isOn, toggle} = useBoolean($isOpen);
 
   const handlePlusClick = () => {
@@ -71,8 +76,8 @@ const Expand = (props: Props) => {
   return (
     <StyledExpand {...props}>
       <div className="expand__head">
-        <Flexbox $gap="12px" $align="center" $justify="space-between">
-          <Flexbox $gap="12px" $align="center">
+        <Flexbox gap="12px" $align="center" $justify="space-between">
+          <Flexbox gap="12px" $align="center">
             {$isDragIcon &&
               <Image
                 src={DragNDropIcon}
@@ -89,7 +94,7 @@ const Expand = (props: Props) => {
             </Typography>
           </Flexbox>
 
-          <Flexbox $gap="12px" $align="center">
+          <Flexbox gap="12px" $align="center">
             {$chip &&
               <Chip $background={$chip.bgColor} $padding="2px 10px" $borderRadius="4px">
                 <Typography $variant="body-regular" $color={$chip.color}>{$chip.title}</Typography>
@@ -150,4 +155,5 @@ const Expand = (props: Props) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default Expand;

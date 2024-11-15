@@ -1,6 +1,9 @@
 import {IProps} from "./props";
 import styled from "styled-components";
+import {FC} from "react";
 
+// @barrelblur: много лишних аттрибутов, которые можно было бы вывести в темы
+// @barrelblur: убрать доллары
 const StyledChip = styled.div<IProps>`
   width: ${props => props.$width || undefined};
   height: ${props => props.$height || undefined};
@@ -14,14 +17,15 @@ const StyledChip = styled.div<IProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: ${props => props.$gap || undefined};
+  gap: ${props => props.gap || undefined};
   flex: ${props => props.$flex || undefined};
 `
 
-const Chip = ({...props}: IProps) => {
+const Chip: FC<IProps> = ({...props}) => {
   return (
     <StyledChip {...props} />
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default Chip;

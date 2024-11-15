@@ -1,5 +1,6 @@
 import {IProps} from "./props";
 import styled, {css} from "styled-components";
+import {FC} from "react";
 
 const StyledTypography = styled.span<IProps>`
   ${props => {
@@ -73,6 +74,8 @@ const StyledTypography = styled.span<IProps>`
     }
   }}
   
+  // @barrelblur: мы не должн управлять данными значениями напрямую
+  // @barrelblur: убрать доллары
   color: ${props => props.$color || props.theme.colors.textIconBasePrimary};
   padding: ${props => props.$padding || undefined};
   white-space: ${props => props.$isNowrap && 'nowrap'};
@@ -90,10 +93,11 @@ const StyledTypography = styled.span<IProps>`
   }};
 `
 
-const Typography = (props: IProps) => {
+const Typography: FC<IProps> = (props) => {
   return (
     <StyledTypography {...props} />
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default Typography;

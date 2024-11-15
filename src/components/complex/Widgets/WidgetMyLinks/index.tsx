@@ -5,7 +5,7 @@ import WidgetMyLinksRow from "@components/complex/Widgets/WidgetMyLinksRow";
 import styled from "styled-components";
 import {scroll} from "@utils/mixins";
 import SimplePopup from "@components/data-display/SimplePopup";
-import {useState} from "react";
+import {FC, useState} from "react";
 import LinkForm from "@components/complex/Forms/LinkForm";
 import {ILinkForm} from "@typing/TLinkForm";
 import {IWidgetMyLink} from "@typing/TWidgetMyLinks";
@@ -21,7 +21,8 @@ const StyledWidgetMyLinks = styled.div`
   padding: 8px 6px 8px 0;
 `
 
-const WidgetMyLinks = (props: IWidget) => {
+// @barrelblur: убрать доллары
+const WidgetMyLinks: FC<IWidget> = (props) => {
   const [isPopupShow, setIsPopupShow] = useState<boolean>(false);
   const [isDisabledSubmit, setIsDisabledSubmit] = useState<boolean>(false);
   const [titleForm, setTitleForm] = useState<string>('')
@@ -111,4 +112,5 @@ const WidgetMyLinks = (props: IWidget) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetMyLinks;

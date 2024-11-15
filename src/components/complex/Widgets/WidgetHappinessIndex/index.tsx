@@ -3,13 +3,14 @@ import {IWidget} from "@typing/TWidget";
 import Flexbox from "@components/surfaces/Flexbox";
 import ButtonGroup from "@components/inputs/ButtonGroup";
 import {MMonthQuarterYearSwitcher, MWidgetMetrics} from "@utils/mock";
-import {MouseEvent, useState} from "react";
+import {FC, MouseEvent, useState} from "react";
 import PieChartComponent from "@components/data-display/PieChart";
 import SimpleSlider from "@components/data-display/SimpleSlider";
 import {TWeeksSlider} from "@typing/TWeeksSlider";
 import {getWeeksArray} from "@utils/index";
 
-const WidgetHappinessIndex = (props: IWidget) => {
+// @barrelblur: убрать доллары
+const WidgetHappinessIndex: FC<IWidget> = (props) => {
   const dataHrMetric = MWidgetMetrics["hrMetric"];
   const dataMlMetric = MWidgetMetrics["mlMetric"];
   const [currentDate] = useState<Date>(new Date());
@@ -31,13 +32,13 @@ const WidgetHappinessIndex = (props: IWidget) => {
       $externalLink={props.externalLink}
       $isSplitter={true}
     >
-      <Flexbox $gap="16px" $direction="column">
-        <Flexbox $justify="space-between" $gap="16px" $flexWrap="wrap" $direction="row-reverse" $align="center">
+      <Flexbox gap="16px" $direction="column">
+        <Flexbox $justify="space-between" gap="16px" $flexWrap="wrap" $direction="row-reverse" $align="center">
           <ButtonGroup buttons={MMonthQuarterYearSwitcher} onClick={handlePeriodsSwitcherClick} $buttonsWidth="74px" />
           <SimpleSlider $weeksData={weeksData} $maxWidth="200px" $height="32px" $onSlide={handleSlide} />
         </Flexbox>
 
-        <Flexbox $gap="16px" $padding="16px" $direction="column">
+        <Flexbox gap="16px" $padding="16px" $direction="column">
           <PieChartComponent $data={dataHrMetric} />
           <PieChartComponent $data={dataMlMetric} />
         </Flexbox>
@@ -46,4 +47,5 @@ const WidgetHappinessIndex = (props: IWidget) => {
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetHappinessIndex;

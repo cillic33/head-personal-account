@@ -6,7 +6,7 @@ import Typography from "@components/data-display/Typography";
 import Button from "@components/inputs/Button";
 import Image from "@components/data-display/Image";
 import CloseGrayIcon from "@images/CloseGrayIcon.svg";
-import {MouseEvent, useEffect, useRef} from "react";
+import {FC, MouseEvent, useEffect, useRef} from "react";
 
 const StyledOverlay = styled.div<IStyledOverlayProps>`
   position: fixed;
@@ -29,7 +29,7 @@ const StyledPopup = styled.div<IStyledPopupProps>`
   width: ${props => props.$width || undefined}
 `
 
-const SimplePopup = (
+const SimplePopup: FC<IProps> = (
   {
     children,
     isShow,
@@ -41,7 +41,7 @@ const SimplePopup = (
     onSubmit,
     onCancel,
     $isDisabledSubmit = false,
-  }: IProps) => {
+  }) => {
   const overlayRef = useRef(null);
   const closeBtnRef = useRef(null);
   const closeImgRef = useRef(null);
@@ -84,12 +84,13 @@ const SimplePopup = (
     }
   }
 
+  // @barrelblur: убрать доллары
   return (
     <>
       {isShow &&
         <StyledOverlay ref={overlayRef} onClick={handleCloseClick}>`
           <StyledPopup $width={$width}>
-            <Flexbox $padding="16px 16px 16px 24px" $align="center" $gap="16px" $justify="space-between" $background="#fff" $borderRadius="12px 12px 0 0">
+            <Flexbox $padding="16px 16px 16px 24px" $align="center" gap="16px" $justify="space-between" $background="#fff" $borderRadius="12px 12px 0 0">
               <Typography $variant="h3">{title}</Typography>
               <Button $variant="no-style" size="no-size" $width="32px" $height="32px" $ref={closeBtnRef}>
                 <Image src={CloseGrayIcon} $width="20px" $height="20px" $ref={closeImgRef} />
@@ -100,7 +101,7 @@ const SimplePopup = (
             </Flexbox>
             <Flexbox
               $padding="16px 24px"
-              $gap="16px"
+              gap="16px"
               $background="#fff"
               $align="center"
               $justify="flex-end"
@@ -116,4 +117,5 @@ const SimplePopup = (
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default SimplePopup;

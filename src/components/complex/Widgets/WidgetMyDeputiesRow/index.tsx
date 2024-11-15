@@ -2,14 +2,17 @@ import Flexbox from "@components/surfaces/Flexbox";
 import Typography from "@components/data-display/Typography";
 import Person from "@components/data-display/Person";
 import {IProps} from "./props";
+import {FC} from "react";
 
-const WidgetMyDeputiesRow = ({data}: IProps) => {
+// @barrelblur: убрать доллары
+const WidgetMyDeputiesRow: FC<IProps> = ({data}) => {
   return (
-    <Flexbox $gap="16px" $align="center" $justify="space-between">
+    <Flexbox gap="16px" $align="center" $justify="space-between">
       <Person src={data.src} name={data.name} />
       <Typography $variant="body-regular" $textAlign="end">{data.period}</Typography>
     </Flexbox>
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default WidgetMyDeputiesRow;

@@ -1,8 +1,8 @@
 import {IProps} from "./props";
 import TableBodyTr from "@components/data-display/TableBodyTr";
-import {MutableRefObject} from "react";
+import {FC, MutableRefObject} from "react";
 
-const TableBody = ({data, settings, onClick}: IProps) => {
+const TableBody: FC<IProps> = ({data, settings, onClick}) => {
   const handleClick = (trRef: MutableRefObject<HTMLTableRowElement | null>) => {
     if (onClick) {
       onClick(trRef);
@@ -12,10 +12,12 @@ const TableBody = ({data, settings, onClick}: IProps) => {
   return (
     <tbody>
     {data.map(row => (
+        // barrelblur: здесь правильно используется ID
       <TableBodyTr data={row} key={row.id as string} settings={settings} onClick={handleClick} />
     ))}
     </tbody>
   );
 }
 
+// @barrelblur: не используем дефолтный экспорт
 export default TableBody;
