@@ -15,10 +15,8 @@ export interface ITableSetting {
   id: string;
   name: string;
   width?: number;
-  isEmployee?: boolean;
-  isDivision?: boolean;
+  type?: string;
   isCenter?: boolean;
-  isStatus?: boolean;
   isSorted?: boolean;
 }
 
@@ -35,4 +33,10 @@ export enum TTableSortDirections {
   NONE = 'none',
   ASC = 'asc',
   DESC = 'desc',
+}
+
+export enum TTableTypes {
+  Person = 'person',
+  Division = 'division',
+  Chip = 'chip',
 }

@@ -1,7 +1,7 @@
 import {ITableSetting, TTableCell} from "@typing/TTable";
 
 export interface IProps {
-  k: string;
+  name: string;
   data: TTableCell;
   settings: ITableSetting;
   onClick?: () => void;

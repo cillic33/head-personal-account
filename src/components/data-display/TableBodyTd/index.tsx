@@ -1,5 +1,5 @@
 import {IProps} from "./props";
-import {TTableCell} from "@typing/TTable";
+import {TTableCell, TTableTypes} from "@typing/TTable";
 import styled from "styled-components";
 import {Typography} from "@components/data-display/Typography";
 import {theme} from "@utils/theme/theme";
@@ -25,16 +25,14 @@ const StyledTableBodyTd = styled.td<IStyledTableBodyTd>`
 `
 
 // @barrelblur: непонятный атрибут «k»
-export const TableBodyTd: FC<IProps> = ({k: key, data, settings, onClick}) => {
+export const TableBodyTd: FC<IProps> = ({name, data, settings, onClick}) => {
   const width = (settings && settings.width) ? settings.width : undefined;
 
-  // @barrelblur: твоя таблица предназначена только для единственной цели: отображать отображать данные как элемент дизайн системы
-  // Вместо этого у тебя таблица знает про сотрудников, дивизионы и прочую бизне-слогику
-  // Здесь требуется рефакторинг
-  const isEmployee = (settings && settings.isEmployee) ? settings.isEmployee : undefined;
-  const isDivision = (settings && settings.isDivision) ? settings.isDivision : undefined;
+  // Тип данных
+  const type = (settings && settings.type) ? settings.type : undefined;
+
+  // Если данные в колонке нужно оцентровать
   const isCenter = (settings && settings.isCenter) ? settings.isCenter : undefined;
-  const isStatus = (settings && settings.isStatus) ? settings.isStatus : undefined;
 
   const handleClick = () => {
     if (onClick) {
@@ -42,7 +40,7 @@ export const TableBodyTd: FC<IProps> = ({k: key, data, settings, onClick}) => {
     }
   }
 
-  if (key === "id") {
+  if (name === "id") {
     return;
   }
 
@@ -50,9 +48,9 @@ export const TableBodyTd: FC<IProps> = ({k: key, data, settings, onClick}) => {
   // @barrelblur требуется рефакторинг
   if (typeof data === "object") {
     return (
-      <StyledTableBodyTd key={key} width={width} onClick={handleClick}>
-        <Flexbox gap="8px" align="center" justify={isStatus ? "center" : undefined}>
-          {isEmployee &&
+      <StyledTableBodyTd key={name} width={width} onClick={handleClick}>
+        <Flexbox gap="8px" align="center" justify={isCenter ? "center" : undefined}>
+          {type === TTableTypes.Person &&
             <Person
               src={data["avatar" as keyof TTableCell]}
               name={data["name" as keyof TTableCell]}
@@ -61,30 +59,22 @@ export const TableBodyTd: FC<IProps> = ({k: key, data, settings, onClick}) => {
               isEllipsis
             />
           }
-          {isStatus &&
+          {type === TTableTypes.Chip &&
             <Chip background={data["bgColor" as keyof TTableCell]} padding="4px 12px" borderRadius="4px">
               <Typography variant="caption-semibold" color={data["color" as keyof TTableCell]} isNowrap>
                 {data["title" as keyof TTableCell]}
               </Typography>
             </Chip>
           }
-          {!isEmployee && !isStatus &&
-            Object.keys(data).map((nestedKey) => {
-              return (
-                <Typography variant="caption-regular" key={nestedKey}>
-                  {data[nestedKey as keyof TTableCell]}
-                </Typography>
-              );
-            })}
         </Flexbox>
       </StyledTableBodyTd>
     );
   }
 
   return (
-    <StyledTableBodyTd key={key} width={width} onClick={handleClick}>
+    <StyledTableBodyTd key={name} width={width} onClick={handleClick}>
       <Flexbox gap="8px" align="center" justify={isCenter ? "center" : undefined}>
-        {isDivision &&
+        {type === TTableTypes.Division &&
           <Image src={DivisionBlueIcon} width="24px" height="24px" />
         }
         <Typography variant="caption-regular" isNowrap isEllipsis>

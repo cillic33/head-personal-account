@@ -22,7 +22,7 @@ export const TableBodyTr: FC<IProps> = ({data, settings, onClick}) => {
   return (
     <StyledTableBodyTr ref={trRef}>
       {Object.keys(data).map(key => (
-        <TableBodyTd key={key} k={key} data={data[key]} settings={settings[key]} onClick={handleClick} />
+        <TableBodyTd key={key} name={key} data={data[key]} settings={settings[key]} onClick={handleClick} />
       ))}
     </StyledTableBodyTr>
   );
