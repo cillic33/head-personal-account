@@ -1,16 +1,16 @@
-import Expand from "@components/surfaces/Expand";
+import {Expand} from "@components/surfaces/Expand";
 import {IWidget} from "@typing/TWidget";
-import Flexbox from "@components/surfaces/Flexbox";
-import ButtonGroup from "@components/inputs/ButtonGroup";
+import {Flexbox} from "@components/surfaces/Flexbox";
+import {ButtonGroup} from "@components/inputs/ButtonGroup";
 import {MMonthQuarterYearSwitcher, MWidgetMetrics} from "@utils/mock";
 import {FC, MouseEvent, useState} from "react";
-import PieChartComponent from "@components/data-display/PieChart";
-import SimpleSlider from "@components/data-display/SimpleSlider";
+import {PieChartComponent} from "@components/data-display/PieChart";
+import {SimpleSlider} from "@components/data-display/SimpleSlider";
 import {TWeeksSlider} from "@typing/TWeeksSlider";
 import {getWeeksArray} from "@utils/index";
 
 // @barrelblur: убрать доллары
-const WidgetHappinessIndex: FC<IWidget> = (props) => {
+export const WidgetHappinessIndex: FC<IWidget> = (props) => {
   const dataHrMetric = MWidgetMetrics["hrMetric"];
   const dataMlMetric = MWidgetMetrics["mlMetric"];
   const [currentDate] = useState<Date>(new Date());
@@ -46,6 +46,3 @@ const WidgetHappinessIndex: FC<IWidget> = (props) => {
     </Expand>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default WidgetHappinessIndex;

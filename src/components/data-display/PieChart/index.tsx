@@ -1,10 +1,10 @@
 import {PieChart, Pie, Cell, Label} from "recharts";
 import {ICustomLabelProps, IProps, IStyledCircle} from "@components/data-display/PieChart/props";
-import Flexbox from "@components/surfaces/Flexbox";
-import Typography from "@components/data-display/Typography";
+import {Flexbox} from "@components/surfaces/Flexbox";
+import {Typography} from "@components/data-display/Typography";
 import styled from "styled-components";
 import {theme} from "@utils/theme/theme";
-import Chip from "@components/data-display/Chip";
+import {Chip} from "@components/data-display/Chip";
 import {FC} from "react";
 
 // @barrelblur: что это такое? Это должно быть компоннетом
@@ -60,7 +60,7 @@ const StyledRightInfo = styled.div`
 
 // @barrelblur: в этом компоненте не понятно, какая его единственная ответственность
 // @barrelblur: вроде выводится разметка, но аттрибуты будто заменают инлайновые стили
-const PieChartComponent: FC<IProps> = (
+export const PieChartComponent: FC<IProps> = (
   {
     // @barrelblur много лишних атрибутов
     $data,
@@ -191,6 +191,3 @@ const PieChartComponent: FC<IProps> = (
     </Flexbox>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default PieChartComponent;

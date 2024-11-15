@@ -21,11 +21,8 @@ const StyledDivider = styled.div<IProps>`
   }}
 `
 
-const Divider: FC<IProps> = (props) => {
+export const Divider: FC<IProps> = (props) => {
   return (
     <StyledDivider {...props} />
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default Divider;

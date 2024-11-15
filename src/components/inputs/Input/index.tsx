@@ -2,8 +2,8 @@ import {IProps, IStyledInput} from "./props";
 import styled from "styled-components";
 import {ChangeEvent, FC, useRef, useState} from "react";
 import CloseGrayIcon from "@images/CloseGrayIcon.svg";
-import Image from "@components/data-display/Image";
-import Button from "@components/inputs/Button";
+import {Image} from "@components/data-display/Image";
+import {Button} from "@components/inputs/Button";
 
 const StyledInputWrap = styled.div`
   display: flex;
@@ -42,7 +42,7 @@ const StyledInput = styled.input<IStyledInput>`
   }
 `
 
-const Input: FC<IProps> = (
+export const Input: FC<IProps> = (
   {
     type,
     name,
@@ -103,6 +103,3 @@ const Input: FC<IProps> = (
     </StyledInputWrap>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default Input;

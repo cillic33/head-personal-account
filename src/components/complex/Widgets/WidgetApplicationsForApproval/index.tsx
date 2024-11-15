@@ -1,12 +1,12 @@
-import Expand from "@components/surfaces/Expand";
+import {Expand} from "@components/surfaces/Expand";
 import {MApplications} from "@utils/mock";
-import Flexbox from "@components/surfaces/Flexbox";
-import WidgetApplicationsForApprovalRow from "@components/complex/Widgets/WidgetApplicationsForApprovalRow";
+import {Flexbox} from "@components/surfaces/Flexbox";
+import {WidgetApplicationsForApprovalRow} from "@components/complex/Widgets/WidgetApplicationsForApprovalRow";
 import {IWidget} from "@typing/TWidget";
 import {FC} from "react";
 
 // @barrelblur: убрать доллары
-const WidgetApplicationsForApproval: FC<IWidget> = (props) => {
+export const WidgetApplicationsForApproval: FC<IWidget> = (props) => {
   return (
     <Expand
       title={props.title}
@@ -25,6 +25,3 @@ const WidgetApplicationsForApproval: FC<IWidget> = (props) => {
     </Expand>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default WidgetApplicationsForApproval;

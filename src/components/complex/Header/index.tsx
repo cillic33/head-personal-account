@@ -1,22 +1,22 @@
 import styled from "styled-components";
-import Flexbox from "@components/surfaces/Flexbox";
-import Image from "@components/data-display/Image";
-import Typography from "@components/data-display/Typography";
+import {Flexbox} from "@components/surfaces/Flexbox";
+import {Image} from "@components/data-display/Image";
+import {Typography} from "@components/data-display/Typography";
 import LogoIbs from "@images/LogoIbs.svg"
 import AvatarIvanov from "@images/AvatarIvanov.png"
-import Button from "@components/inputs/Button";
+import {Button} from "@components/inputs/Button";
 import CaretDownGray from "@images/CaretDownGray.svg";
 import BellBlue from "@images/BellBlue.svg";
-import Chip from "@components/data-display/Chip";
+import {Chip} from "@components/data-display/Chip";
 import {theme} from "@utils/theme/theme";
-import Person from "@components/data-display/Person";
+import {Person} from "@components/data-display/Person";
 
 const StyledHeader = styled.div`
   background: #fff;
   padding: 12px 32px;
 `
 // @barrelblur: убрать доллары в атрибутах
-const Header = () => {
+export const Header = () => {
   return (
     <StyledHeader>
       <Flexbox $align="center" $justify="space-between">
@@ -59,6 +59,3 @@ const Header = () => {
     </StyledHeader>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default Header;

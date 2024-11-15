@@ -3,7 +3,7 @@ import {IProps} from "./props";
 import styled from "styled-components";
 import ChevronLeftBlue from "@images/ChevronLeftBlue.svg";
 import ChevronRightBlue from "@images/ChevronRightBlue.svg";
-import Typography from "@components/data-display/Typography";
+import {Typography} from "@components/data-display/Typography";
 import {FC, useState} from "react";
 
 const StyledWrapSlider = styled.div<IProps>`
@@ -45,7 +45,7 @@ const StyledWrapSlider = styled.div<IProps>`
   }
 `
 
-const SimpleSlider: FC<IProps> = (props) => {
+export const SimpleSlider: FC<IProps> = (props) => {
   const {$weeksData, $onSlide} = props;
   const [oldSlide, setOldSlide] = useState<number>(1);
 
@@ -75,6 +75,3 @@ const SimpleSlider: FC<IProps> = (props) => {
     </StyledWrapSlider>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default SimpleSlider;

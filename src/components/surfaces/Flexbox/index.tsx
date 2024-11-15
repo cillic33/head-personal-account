@@ -21,12 +21,10 @@ const StyledFlexbox = styled.div<IProps>`
   position: ${props => props.$position ||undefined};
 `
 
-const Flexbox = ({children, ...props}: IProps) => {
+export const Flexbox = ({children, ...props}: IProps) => {
   return (
     <StyledFlexbox {...props}>
       {children}
     </StyledFlexbox>
   );
 }
-
-export default Flexbox;

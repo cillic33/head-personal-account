@@ -3,12 +3,12 @@ import {
   DragDropContext,
   DropResult,
 } from '@hello-pangea/dnd';
-import Flexbox from "@components/surfaces/Flexbox";
+import {Flexbox} from "@components/surfaces/Flexbox";
 import { IInitialDataColumn} from "@typing/TDnd";
 import {IProps} from "@components/complex/Dnd/DndMain/props";
-import DndColumn from "@components/complex/Dnd/DndColumn";
+import {DndColumn} from "@components/complex/Dnd/DndColumn";
 
-const DndMain: FC<IProps> = ({children, initialData}) => {
+export const DndMain: FC<IProps> = ({children, initialData}) => {
   const [data, setData] = useState(initialData);
 
   const handleDragEnd = (result: DropResult): void => {
@@ -81,6 +81,3 @@ const DndMain: FC<IProps> = ({children, initialData}) => {
     </DragDropContext>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default DndMain;

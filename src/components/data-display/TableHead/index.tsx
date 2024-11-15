@@ -1,10 +1,10 @@
 import {IProps} from "./props";
 import styled from "styled-components";
 import {theme} from "@utils/theme/theme";
-import Typography from "@components/data-display/Typography";
-import Flexbox from "@components/surfaces/Flexbox";
-import Button from "@components/inputs/Button";
-import Image from "@components/data-display/Image";
+import {Typography} from "@components/data-display/Typography";
+import {Flexbox} from "@components/surfaces/Flexbox";
+import {Button} from "@components/inputs/Button";
+import {Image} from "@components/data-display/Image";
 import CaretDownGray from "@images/CaretDownGray.svg";
 import {FC, MouseEvent} from "react";
 import {TTableSortDirections} from "@typing/TTable";
@@ -39,7 +39,7 @@ const StyledHeadTh = styled.th<IStyledHeadTh>`
   width: ${props => props.width ? props.width + "px" : undefined};
 `
 
-const TableHead: FC<IProps> = ({settings, sortClick}) => {
+export const TableHead: FC<IProps> = ({settings, sortClick}) => {
   const tableTitles = Object.values(settings);
 
   const handleSortClick = (event: MouseEvent<HTMLElement>, id: string) => {
@@ -86,6 +86,3 @@ const TableHead: FC<IProps> = ({settings, sortClick}) => {
     </StyledTableHead>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default TableHead;

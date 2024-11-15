@@ -1,6 +1,6 @@
 import {useBoolean} from "@hooks/use-toggle";
 import clsx from "clsx";
-import Typography from "@components/data-display/Typography";
+import {Typography} from "@components/data-display/Typography";
 import {Props} from "./props";
 import DragNDropIcon from "@images/DragNDropIcon.svg";
 import ChevronDownGray from "@images/ChevronDownGray.svg";
@@ -8,9 +8,9 @@ import GotoGrayIcon from "@images/GotoGrayIcon.svg";
 import PlusCircleGrayIcon from "@images/PlusCircleGrayIcon.svg";
 import ArrowRightGray from "@images/ArrowRightGray.svg";
 import styled from "styled-components";
-import Flexbox from "@components/surfaces/Flexbox";
-import Image from "@components/data-display/Image";
-import LinkComponent from "@components/data-display/Link";
+import {Flexbox} from "@components/surfaces/Flexbox";
+import {Image} from "@components/data-display/Image";
+import {LinkComponent} from "@components/data-display/Link";
 import {theme} from "@utils/theme/theme";
 import {FC} from "react";
 
@@ -48,7 +48,7 @@ const StyledExpand = styled.div<Props>`
   }
 `
 
-const Expand: FC<Props> = (props) => {
+export const Expand: FC<Props> = (props) => {
   const {
     children,
     title,
@@ -146,6 +146,3 @@ const Expand: FC<Props> = (props) => {
     </StyledExpand>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default Expand;

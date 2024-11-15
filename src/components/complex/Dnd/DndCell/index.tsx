@@ -11,7 +11,7 @@ const StyledDndCell = styled.div<IDndCellProps>`
   opacity: ${props => props.$isDragging ? '0.85' : '1'};
 `;
 
-const DndCell: FC<IProps> = ({children, index, ...props}) => {
+export const DndCell: FC<IProps> = ({children, index, ...props}) => {
   const { id } = props.data;
 
   return (
@@ -38,6 +38,3 @@ const DndCell: FC<IProps> = ({children, index, ...props}) => {
     </Draggable>
   )
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default DndCell;

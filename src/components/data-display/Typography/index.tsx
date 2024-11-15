@@ -93,11 +93,8 @@ const StyledTypography = styled.span<IProps>`
   }};
 `
 
-const Typography: FC<IProps> = (props) => {
+export const Typography: FC<IProps> = (props) => {
   return (
     <StyledTypography {...props} />
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default Typography;

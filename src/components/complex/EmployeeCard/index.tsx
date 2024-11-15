@@ -1,19 +1,19 @@
-import Flexbox from "@components/surfaces/Flexbox";
-import Image from "@components/data-display/Image";
+import {Flexbox} from "@components/surfaces/Flexbox";
+import {Image} from "@components/data-display/Image";
 import AvatarBurmakinBig from "@images/AvatarBurmakinBig.png";
-import Typography from "@components/data-display/Typography";
+import {Typography} from "@components/data-display/Typography";
 import {theme} from "@utils/theme/theme";
-import Chip from "@components/data-display/Chip";
+import {Chip} from "@components/data-display/Chip";
 import BagGrayIcon from "@images/BagGrayIcon.svg";
-import LinkComponent from "@components/data-display/Link";
+import {LinkComponent} from "@components/data-display/Link";
 import GotoGrayIcon from "@images/GotoGrayIcon.svg";
-import EmployeeCardField from "@components/complex/EmployeeCardField";
+import {EmployeeCardField} from "@components/complex/EmployeeCardField";
 // @barrelblur: GridBox ← такое название правильное
-import Gridbox from "@components/surfaces/Gridbox";
-import Expand from "@components/surfaces/Expand";
+import {Gridbox} from "@components/surfaces/Gridbox";
+import {Expand} from "@components/surfaces/Expand";
 
 // @barrelblur: убрать доллары в начале названия атрибутов
-const EmployeeCard = () => {
+export const EmployeeCard = () => {
   return (
     <Flexbox gap="20px" $direction="column" $align="flex-start">
 
@@ -149,6 +149,3 @@ const EmployeeCard = () => {
     </Flexbox>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default EmployeeCard;

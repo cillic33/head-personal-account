@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {FC} from "react";
 
 // @barrelblur: убрать доллары
-const StyledGridbox = styled.div<IProps>`
+export const StyledGridbox = styled.div<IProps>`
   display: grid;
   grid-template-columns: ${props => props.$gridTemplateColumns || undefined};
   grid-template-rows: ${props => props.$gridTemplateRows || undefined};
@@ -11,11 +11,8 @@ const StyledGridbox = styled.div<IProps>`
   column-gap: ${props => props.$columnGap || undefined};
 `
 
-const Gridbox: FC<IProps> = (props) => {
+export const Gridbox: FC<IProps> = (props) => {
   return (
     <StyledGridbox {...props} />
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default Gridbox;

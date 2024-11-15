@@ -1,17 +1,17 @@
-import Flexbox from "@components/surfaces/Flexbox";
+import {Flexbox} from "@components/surfaces/Flexbox";
 import {theme} from "@utils/theme/theme";
-import Typography from "@components/data-display/Typography";
-import Chip from "@components/data-display/Chip";
-import Image from "@components/data-display/Image";
+import {Typography} from "@components/data-display/Typography";
+import {Chip} from "@components/data-display/Chip";
+import {Image} from "@components/data-display/Image";
 import FireRedIcon from "@images/FireRedIcon.svg";
 import PlusGreenIcon from "@images/PlusGreenIcon.svg";
 import GotoGrayIcon from "@images/GotoGrayIcon.svg";
 import {IProps} from "./props";
-import LinkComponent from "@components/data-display/Link";
+import {LinkComponent} from "@components/data-display/Link";
 import {FC} from "react";
 
 // @barrelblur: убрать доллары
-const WidgetApplicationsForApprovalRow: FC<IProps> = ({item}) => {
+export const WidgetApplicationsForApprovalRow: FC<IProps> = ({item}) => {
   return (
     <Flexbox
       gap="12px"
@@ -74,6 +74,3 @@ const WidgetApplicationsForApprovalRow: FC<IProps> = ({item}) => {
     </Flexbox>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default WidgetApplicationsForApprovalRow;

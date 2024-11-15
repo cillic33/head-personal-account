@@ -1,11 +1,11 @@
-import Expand from "@components/surfaces/Expand";
+import {Expand} from "@components/surfaces/Expand";
 import {IWidget} from "@typing/TWidget";
 import {MMyDeputies} from "@utils/mock";
-import WidgetMyDeputiesList from "@components/complex/Widgets/WidgetMyDeputiesList";
+import {WidgetMyDeputiesList} from "@components/complex/Widgets/WidgetMyDeputiesList";
 import {FC} from "react";
 
 // @barrelblur: убрать доллары
-const WidgetMyDeputies: FC<IWidget> = (props) => {
+export const WidgetMyDeputies: FC<IWidget> = (props) => {
   return (
     <Expand
       title={props.title}
@@ -18,6 +18,3 @@ const WidgetMyDeputies: FC<IWidget> = (props) => {
     </Expand>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default WidgetMyDeputies;

@@ -1,9 +1,9 @@
 import {IProps} from "@components/complex/EmployeeCardField/props";
 import {theme} from "@utils/theme/theme";
-import Flexbox from "@components/surfaces/Flexbox";
+import {Flexbox} from "@components/surfaces/Flexbox";
 import {FC} from "react";
 
-const EmployeeCardField: FC<IProps> = ({children}) => {
+export const EmployeeCardField: FC<IProps> = ({children}) => {
   return (
     <Flexbox
       /* @barrelblur: убрать доллары */
@@ -16,6 +16,3 @@ const EmployeeCardField: FC<IProps> = ({children}) => {
     </Flexbox>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default EmployeeCardField;

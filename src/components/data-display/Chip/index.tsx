@@ -21,11 +21,8 @@ const StyledChip = styled.div<IProps>`
   flex: ${props => props.$flex || undefined};
 `
 
-const Chip: FC<IProps> = ({...props}) => {
+export const Chip: FC<IProps> = ({...props}) => {
   return (
     <StyledChip {...props} />
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default Chip;

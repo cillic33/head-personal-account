@@ -1,9 +1,9 @@
-import Expand from "@components/surfaces/Expand";
+import {Expand} from "@components/surfaces/Expand";
 import {IWidget} from "@typing/TWidget";
 import {MWidgetMetrics} from "@utils/mock";
-import PieChartComponent from "@components/data-display/PieChart";
+import {PieChartComponent} from "@components/data-display/PieChart";
 
-const WidgetRelevanceOfProfiles = (props: IWidget) => {
+export const WidgetRelevanceOfProfiles = (props: IWidget) => {
   const dataRelevanceFactor = MWidgetMetrics["relevanceFactorMetric"];
 
   return (
@@ -18,5 +18,3 @@ const WidgetRelevanceOfProfiles = (props: IWidget) => {
     </Expand>
   );
 }
-
-export default WidgetRelevanceOfProfiles;

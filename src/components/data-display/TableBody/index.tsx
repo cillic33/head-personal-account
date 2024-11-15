@@ -1,8 +1,8 @@
 import {IProps} from "./props";
-import TableBodyTr from "@components/data-display/TableBodyTr";
+import {TableBodyTr} from "@components/data-display/TableBodyTr";
 import {FC, MutableRefObject} from "react";
 
-const TableBody: FC<IProps> = ({data, settings, onClick}) => {
+export const TableBody: FC<IProps> = ({data, settings, onClick}) => {
   const handleClick = (trRef: MutableRefObject<HTMLTableRowElement | null>) => {
     if (onClick) {
       onClick(trRef);
@@ -18,6 +18,3 @@ const TableBody: FC<IProps> = ({data, settings, onClick}) => {
     </tbody>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default TableBody;

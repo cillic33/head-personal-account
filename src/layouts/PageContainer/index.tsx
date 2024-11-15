@@ -1,7 +1,7 @@
 import {IProps} from "./props";
-import Flexbox from "@components/surfaces/Flexbox";
+import {Flexbox} from "@components/surfaces/Flexbox";
 import styled from "styled-components";
-import Header from "@components/complex/Header";
+import {Header} from "@components/complex/Header";
 import {FC} from "react";
 
 const StyledPageContainer = styled.div<IProps>`
@@ -10,7 +10,7 @@ const StyledPageContainer = styled.div<IProps>`
 `
 
 // @barrelblur: убрать доллары
-const PageContainer: FC<IProps> = ({children}) => {
+export const PageContainer: FC<IProps> = ({children}) => {
   return (
     <StyledPageContainer>
       <Flexbox $direction="column">
@@ -22,6 +22,3 @@ const PageContainer: FC<IProps> = ({children}) => {
     </StyledPageContainer>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default PageContainer;

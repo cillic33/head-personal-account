@@ -1,21 +1,21 @@
-import Expand from "@components/surfaces/Expand";
+import {Expand} from "@components/surfaces/Expand";
 import {IWidget} from "@typing/TWidget";
 import {FC, MouseEvent, useState} from "react";
 import {TWeeksSlider} from "@typing/TWeeksSlider";
 import {getWeeksArray} from "@utils/index";
-import Flexbox from "@components/surfaces/Flexbox";
-import ButtonGroup from "@components/inputs/ButtonGroup";
+import {Flexbox} from "@components/surfaces/Flexbox";
+import {ButtonGroup} from "@components/inputs/ButtonGroup";
 import {MMonthYearSwitcher, MWidgetMetrics} from "@utils/mock";
-import SimpleSlider from "@components/data-display/SimpleSlider";
-import Typography from "@components/data-display/Typography";
+import {SimpleSlider} from "@components/data-display/SimpleSlider";
+import {Typography} from "@components/data-display/Typography";
 import {theme} from "@utils/theme/theme";
 import EducationBlueIcon from "@images/EducationBlueIcon.svg"
-import Image from "@components/data-display/Image";
-import Divider from "@components/data-display/Divider";
-import PieChartComponent from "@components/data-display/PieChart";
+import {Image} from "@components/data-display/Image";
+import {Divider} from "@components/data-display/Divider";
+import {PieChartComponent} from "@components/data-display/PieChart";
 
 // @barrelblur: убрать доллары
-const WidgetTraining: FC<IWidget> = (props) => {
+export const WidgetTraining: FC<IWidget> = (props) => {
   const [currentDate] = useState<Date>(new Date());
   const [weeksData] = useState<TWeeksSlider>(getWeeksArray(currentDate));
   const dataCoursesMetric = MWidgetMetrics["coursesMetric"];
@@ -58,6 +58,3 @@ const WidgetTraining: FC<IWidget> = (props) => {
     </Expand>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default WidgetTraining;

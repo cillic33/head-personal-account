@@ -1,7 +1,7 @@
 import {FC, Fragment, MouseEvent, useState} from "react";
 import {IButtonGroupData} from "@typing/TButtonGroupData";
-import Button from "@components/inputs/Button";
-import Divider from "@components/data-display/Divider";
+import {Button} from "@components/inputs/Button";
+import {Divider} from "@components/data-display/Divider";
 import {IProps} from "./props";
 import styled from "styled-components";
 import {ensure} from "@utils/index";
@@ -23,7 +23,7 @@ const StyledButtonGroup = styled.div<IProps>`
 `
 
 // @barrelblur: убрать доллары
-const ButtonGroup: FC<IProps> = ({buttons, onClick, $buttonsWidth}) => {
+export const ButtonGroup: FC<IProps> = ({buttons, onClick, $buttonsWidth}) => {
   const [currentButtons, setCurrentButtons] = useState<IButtonGroupData[]>(ensure(buttons));
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
@@ -64,5 +64,3 @@ const ButtonGroup: FC<IProps> = ({buttons, onClick, $buttonsWidth}) => {
   );
 }
 
-// @barrelblur: не используем дефолтный экспорт
-export default ButtonGroup;
