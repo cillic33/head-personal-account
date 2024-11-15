@@ -31,14 +31,6 @@ const StyledTableHead = styled.thead`
   }
 `
 
-interface IStyledHeadTh {
-  width?: number;
-}
-
-const StyledHeadTh = styled.th<IStyledHeadTh>`
-  width: ${props => props.width ? props.width + "px" : undefined};
-`
-
 export const TableHead: FC<IProps> = ({settings, sortClick}) => {
   const tableTitles = Object.values(settings);
 
@@ -64,7 +56,7 @@ export const TableHead: FC<IProps> = ({settings, sortClick}) => {
     <StyledTableHead>
       <tr>
         {tableTitles.map((item, index) => (
-          <StyledHeadTh key={index} width={item.width}>
+          <th key={index} width={item.width}>
             <Flexbox gap="4px" align="center">
               <Typography variant="caption-semibold" color={theme.colors.textIconBaseSecondary}>{item.name}</Typography>
               {item.isSorted &&
@@ -80,7 +72,7 @@ export const TableHead: FC<IProps> = ({settings, sortClick}) => {
                 </Button>
               }
             </Flexbox>
-          </StyledHeadTh>
+          </th>
         ))}
       </tr>
     </StyledTableHead>

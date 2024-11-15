@@ -529,9 +529,9 @@ export const MMonthYearSwitcher: IButtonGroupData[] = [
 // Таблица "Сотрудники"
 export const MEmployees: TTable = {
   settings: {
-    employee: {id: 'employee', name: "Сотрудник", width: 238, type: TTableTypes.Person, isSorted: true},
-    division: {id: 'division', name: "Подразделение", width: 204, type: TTableTypes.Division},
-    specialization: {id: 'specialization', name: "Специализация", width: 180},
+    employee: {id: 'employee', name: "Сотрудник", width: '238px', type: TTableTypes.Person, isSorted: true},
+    division: {id: 'division', name: "Подразделение", width: '204px', type: TTableTypes.Division},
+    specialization: {id: 'specialization', name: "Специализация", width: '180px'},
     post: {id: 'post', name: "Должность"},
     direction: {id: 'direction', name: "Направление"},
     technology: {id: 'technology', name: "Технология"},
@@ -651,12 +651,12 @@ export const MEmployees: TTable = {
 // Таблица на странице "Обучение"
 export const MEmployeesTraining: TTable = {
   settings: {
-    employee: {id: 'employee', name: "Сотрудник", width: 254, type: TTableTypes.Person, isSorted: true},
-    courseName: {id: 'courseName', name: 'Название курса', width: 522},
-    dateStart: {id: 'dateStart', name: 'Дата начала обуч.', width: 150, isCenter: true},
-    dateEnd: {id: 'dateEnd', name: 'Дата оконч. обуч.', width: 150, isCenter: true},
-    cost: {id: 'cost', name: 'Стоимость, ₽', width: 150, isCenter: true},
-    trainingStatus: {id: 'trainingStatus', name: 'Статус обучения', width: 150, isCenter: true, type: TTableTypes.Chip},
+    employee: {id: 'employee', name: "Сотрудник", width: '254px', type: TTableTypes.Person, isSorted: true},
+    courseName: {id: 'courseName', name: 'Название курса', width: '100%'},
+    dateStart: {id: 'dateStart', name: 'Дата начала обуч.', width: '150px', isCenter: true},
+    dateEnd: {id: 'dateEnd', name: 'Дата оконч. обуч.', width: '150px', isCenter: true},
+    cost: {id: 'cost', name: 'Стоимость, ₽', width: '150px', isCenter: true},
+    trainingStatus: {id: 'trainingStatus', name: 'Статус обучения', width: '150px', isCenter: true, type: TTableTypes.Chip},
   },
   body: [
     {
@@ -673,6 +673,38 @@ export const MEmployeesTraining: TTable = {
         title: "Неявка",
         color: '#C83E3E',
         bgColor: 'rgba(227, 79, 79, 0.15)',
+      },
+    },
+    {
+      id: "2",
+      employee: {
+        avatar: "/src/images/AvatarAlekseeva.png",
+        name: "Горбунов Алексей Александрович",
+      },
+      courseName: "Изменение эмоциального состояния при взаимодействии с цветом",
+      dateStart: '01.07.24',
+      dateEnd: '02.07.24',
+      cost: 35000,
+      trainingStatus: {
+        title: "Завершен",
+        color: '#008670',
+        bgColor: 'rgba(0, 159, 132, 0.15)',
+      },
+    },
+    {
+      id: "3",
+      employee: {
+        avatar: "/src/images/AvatarAlekseeva.png",
+        name: "Гирькин Михаил Афанасьевич",
+      },
+      courseName: "Изменение эмоциального состояния при взаимодействии с цветом",
+      dateStart: '01.07.24',
+      dateEnd: '02.07.24',
+      cost: 35000,
+      trainingStatus: {
+        title: "В работе",
+        color: '#D18101',
+        bgColor: 'rgba(255, 170, 0, 0.15)',
       },
     },
   ],

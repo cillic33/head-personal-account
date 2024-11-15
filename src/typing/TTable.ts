@@ -14,7 +14,7 @@ type TTableKeys = keyof ITableRow;
 export interface ITableSetting {
   id: string;
   name: string;
-  width?: number;
+  width?: string;
   type?: string;
   isCenter?: boolean;
   isSorted?: boolean;

@@ -11,7 +11,7 @@ import {Chip} from "@components/data-display/Chip";
 import {FC} from "react";
 
 interface IStyledTableBodyTd {
-  width?: number;
+  width?: string;
 }
 
 const StyledTableBodyTd = styled.td<IStyledTableBodyTd>`
@@ -19,9 +19,9 @@ const StyledTableBodyTd = styled.td<IStyledTableBodyTd>`
   padding: 5px 8px;
   border-top: 1px solid #fff;
   border-bottom: 1px solid ${theme.colors.surfacePrimary};
-  width: ${props => props.width + "px" || undefined};
-  min-width: ${props => props.width + "px" || undefined};
-  max-width: ${props => props.width + "px" || undefined};
+  width: ${props => props.width || undefined};
+  min-width: ${props => props.width || undefined};
+  max-width: ${props => props.width || undefined};
 `
 
 // @barrelblur: непонятный атрибут «k»
