@@ -10,11 +10,11 @@ const StyledPerson = styled.div`
   gap: 8px;
 `
 
-export const Person: FC<IProps> = ({src, name, $width = "32px", $height = "32px", $fontVariant, $isNowrap, $isEllipsis}) => {
+export const Person: FC<IProps> = ({src, name, width = "32px", height = "32px", fontVariant, isNowrap, isEllipsis}) => {
   return (
     <StyledPerson>
-      <Image src={src} $width={$width} $height={$height} />
-      <Typography $variant={$fontVariant ? $fontVariant : "body-regular"} $isNowrap={$isNowrap} $isEllipsis={$isEllipsis}>{name}</Typography>
+      <Image src={src} width={width} height={height} />
+      <Typography variant={fontVariant ? fontVariant : "body-regular"} isNowrap={isNowrap} isEllipsis={isEllipsis}>{name}</Typography>
     </StyledPerson>
   );
 }

@@ -66,14 +66,16 @@ export const DndMain: FC<IProps> = ({children, initialData}) => {
 
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
-      <Flexbox gap="16px" $width="100%">
+      <Flexbox gap="16px" width="100%">
         {
           data.columnOrder.map(item => {
             const column = data.columns[item];
             const cells = column.cellIds.map(cellId => data.cells[cellId]);
 
             return (
-              <DndColumn key={column.id} column={column} cells={cells} children={children} />
+              <DndColumn key={column.id} column={column} cells={cells}>
+                {children}
+              </DndColumn>
             );
           })
         }

@@ -1,14 +1,14 @@
 import {IPieChartComponent} from "@typing/TPieChart";
 
 export interface IProps {
-  $data: IPieChartComponent;
-  $width?: number;
-  $height?: number;
-  $innerRadius?: number;
-  $outerRadius?: number;
-  $isCenterText?: boolean;
-  $isRightInfo?: boolean;
-  $isHeader?: boolean;
+  data: IPieChartComponent;
+  width?: number;
+  height?: number;
+  innerRadius?: number;
+  outerRadius?: number;
+  isCenterText?: boolean;
+  isRightInfo?: boolean;
+  isHeader?: boolean;
 }
 
 interface IViewBox {

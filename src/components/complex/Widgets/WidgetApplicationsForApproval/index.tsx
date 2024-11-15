@@ -5,18 +5,17 @@ import {WidgetApplicationsForApprovalRow} from "@components/complex/Widgets/Widg
 import {IWidget} from "@typing/TWidget";
 import {FC} from "react";
 
-// @barrelblur: убрать доллары
 export const WidgetApplicationsForApproval: FC<IWidget> = (props) => {
   return (
     <Expand
       title={props.title}
-      $isOpen={props.isOpen}
-      $isDragIcon={props.isDragIcon}
-      $isSplitter={true}
+      isOpen={props.isOpen}
+      isDragIcon={props.isDragIcon}
+      isSplitter={true}
     >
       <Flexbox
         gap="4px"
-        $direction="column"
+        direction="column"
       >
         {MApplications.map((item) => (
           <WidgetApplicationsForApprovalRow item={item} key={item.id} />

@@ -4,7 +4,7 @@ import {FC} from "react";
 
 const StyledTypography = styled.span<IProps>`
   ${props => {
-    switch (props.$variant) {
+    switch (props.variant) {
       case "h2":
         return css`
           font-size: 24px;
@@ -75,15 +75,14 @@ const StyledTypography = styled.span<IProps>`
   }}
   
   // @barrelblur: мы не должн управлять данными значениями напрямую
-  // @barrelblur: убрать доллары
-  color: ${props => props.$color || props.theme.colors.textIconBasePrimary};
-  padding: ${props => props.$padding || undefined};
-  white-space: ${props => props.$isNowrap && 'nowrap'};
-  text-align: ${props => props.$textAlign || undefined};
-  flex: ${props => props.$flex || undefined};
+  color: ${props => props.color || props.theme.colors.textIconBasePrimary};
+  padding: ${props => props.padding || undefined};
+  white-space: ${props => props.isNowrap && 'nowrap'};
+  text-align: ${props => props.textAlign || 'left'};
+  flex: ${props => props.flex || undefined};
   
   ${props => {
-    if (props.$isEllipsis) {
+    if (props.isEllipsis) {
       return css`
         display: block;
         overflow: hidden;

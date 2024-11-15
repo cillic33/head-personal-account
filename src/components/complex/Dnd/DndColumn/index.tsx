@@ -20,7 +20,7 @@ const StyledDndColumn = styled.div`
 const StyledCellList = styled.div<ICellListProps>`
   display: flex;
   flex-direction: column;
-  background: ${props => props.$isDraggingOver ? '#bcbcbc14' : 'transparent'};
+  background: ${props => props.isDraggingOver ? '#bcbcbc14' : 'transparent'};
   border-radius: 8px;
 `;
 
@@ -34,12 +34,12 @@ export const DndColumn: FC<IProps> = ({children, cells, ...props}) => {
           <StyledCellList
             ref={provided.innerRef}
             {...provided.droppableProps}
-            $isDraggingOver={snapshot.isDraggingOver}
+            isDraggingOver={snapshot.isDraggingOver}
           >
             {cells.map((cell, idx) => (
-                /* @barrelblur: Почему принимаешь children через атрибут, а не через вложение, как если бы обернула значение с помощью тега */
-                /* @barrelblur: использую передачу children через оборачивания тега */
-              <DndCell key={cell.id} data={cell} index={idx} children={children} />
+              <DndCell key={cell.id} data={cell} index={idx}>
+                {children}
+              </DndCell>
             ))}
             {provided.placeholder}
           </StyledCellList>

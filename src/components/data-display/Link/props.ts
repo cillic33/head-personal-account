@@ -4,6 +4,6 @@ export interface IProps {
   children: ReactNode;
   href: string;
   target?: string;
-  $flex?: string;
-  $color?: string;
+  flex?: string;
+  color?: string;
 }

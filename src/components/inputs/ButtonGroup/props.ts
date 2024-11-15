@@ -4,5 +4,5 @@ import {MouseEvent} from "react";
 export interface IProps {
   buttons?: IButtonGroupData[];
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
-  $buttonsWidth?: string;
+  buttonsWidth?: string;
 }

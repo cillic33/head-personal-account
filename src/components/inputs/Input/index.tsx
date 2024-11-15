@@ -84,7 +84,7 @@ export const Input: FC<IProps> = (
   return (
     <StyledInputWrap>
       {icon &&
-        <Image src={icon} $width="24px" $height="24px" />
+        <Image src={icon} width="24px" height="24px" />
       }
       <StyledInput
         type={type}
@@ -96,7 +96,7 @@ export const Input: FC<IProps> = (
         autoComplete="off"
       />
       {query && type !== "search" &&
-        <Button $variant="no-style" size="no-size" onClick={handleClear}>
+        <Button variant="no-style" size="no-size" onClick={handleClear}>
           <Image src={CloseGrayIcon} />
         </Button>
       }

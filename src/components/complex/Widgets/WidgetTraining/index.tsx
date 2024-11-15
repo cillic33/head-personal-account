@@ -14,7 +14,6 @@ import {Image} from "@components/data-display/Image";
 import {Divider} from "@components/data-display/Divider";
 import {PieChartComponent} from "@components/data-display/PieChart";
 
-// @barrelblur: убрать доллары
 export const WidgetTraining: FC<IWidget> = (props) => {
   const [currentDate] = useState<Date>(new Date());
   const [weeksData] = useState<TWeeksSlider>(getWeeksArray(currentDate));
@@ -32,28 +31,28 @@ export const WidgetTraining: FC<IWidget> = (props) => {
   return (
     <Expand
       title={props.title}
-      $isOpen={props.isOpen}
-      $isDragIcon={props.isDragIcon}
-      $internalLink={props.internalLink}
-      $isSplitter={true}
+      isOpen={props.isOpen}
+      isDragIcon={props.isDragIcon}
+      internalLink={props.internalLink}
+      isSplitter={true}
     >
-      <Flexbox gap="16px" $direction="column">
-        <Flexbox $align="center" gap="16px" $padding="16px" $border={`1px solid ${theme.colors.surfacePrimary}`} $borderRadius="6px">
-          <Image src={EducationBlueIcon} $width="20px" $flex="0 0 20px"></Image>
-          <Typography $variant="body-semibold" $color={theme.colors.textIconBasePrimary} $flex="1 0 auto">Сотрудники на обучении</Typography>
-          <Typography $variant="h2">2</Typography>
+      <Flexbox gap="16px" direction="column">
+        <Flexbox align="center" gap="16px" padding="16px" border={`1px solid ${theme.colors.surfacePrimary}`} borderRadius="6px">
+          <Image src={EducationBlueIcon} width="20px" flex="0 0 20px"></Image>
+          <Typography variant="body-semibold" color={theme.colors.textIconBasePrimary} flex="1 0 auto">Сотрудники на обучении</Typography>
+          <Typography variant="h2">2</Typography>
         </Flexbox>
 
-        <Divider direction="horizontal" $color={theme.colors.onSurfaceFaintQuaternary} />
+        <Divider direction="horizontal" color={theme.colors.onSurfaceFaintQuaternary} />
 
-        <Flexbox $justify="space-between" gap="16px" $flexWrap="wrap" $direction="row-reverse" $align="center">
-          <ButtonGroup buttons={MMonthYearSwitcher} onClick={handlePeriodsSwitcherClick} $buttonsWidth="92px" />
-          <SimpleSlider $weeksData={weeksData} $maxWidth="200px" $height="32px" $onSlide={handleSlide} />
+        <Flexbox justify="space-between" gap="16px" flexWrap="wrap" direction="row-reverse" align="center">
+          <ButtonGroup buttons={MMonthYearSwitcher} onClick={handlePeriodsSwitcherClick} buttonsWidth="92px" />
+          <SimpleSlider weeksData={weeksData} maxWidth="200px" height="32px" onSlide={handleSlide} />
         </Flexbox>
 
-        <PieChartComponent $data={dataCoursesMetric} $isHeader={false} />
+        <PieChartComponent data={dataCoursesMetric} isHeader={false} />
 
-        <PieChartComponent $data={dataCostsMetric} $isHeader={false} />
+        <PieChartComponent data={dataCostsMetric} isHeader={false} />
       </Flexbox>
     </Expand>
   );

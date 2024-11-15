@@ -15,7 +15,7 @@ const StyledCSSTransition = styled.div`
 `
 
 const StyledRightPanel = styled.div<IPanelProps>`
-  width: calc(${props => props.$width || SLIDE_PANEL_WIDTH} + 16px);
+  width: calc(${props => props.width || SLIDE_PANEL_WIDTH} + 16px);
   position: absolute;
   right: 0;
   top: 0;
@@ -24,7 +24,7 @@ const StyledRightPanel = styled.div<IPanelProps>`
 `
 
 const StyledRightPanelInside = styled.div<IPanelProps>`
-  width: ${props => props.$width || SLIDE_PANEL_WIDTH};
+  width: ${props => props.width || SLIDE_PANEL_WIDTH};
   height: 100%;
   margin-left: 16px;
   background: #fff;
@@ -42,8 +42,7 @@ const StyledRightPanelScroll = styled.div`
   padding: 16px 16px 16px 0;
 `
 
-// @barrelblur: убрать доллары
-export const RightPanel: FC<IProps> = ({children, isShow, $width, onCloseClick}) => {
+export const RightPanel: FC<IProps> = ({children, isShow, width, onCloseClick}) => {
   const panelRef = useRef(null);
 
   const handleCloseClick = () => {
@@ -61,11 +60,11 @@ export const RightPanel: FC<IProps> = ({children, isShow, $width, onCloseClick})
         classNames="panel__panel"
         nodeRef={panelRef}
       >
-        <StyledRightPanel ref={panelRef} $width={$width}>
-          <StyledRightPanelInside $width={$width}>
+        <StyledRightPanel ref={panelRef} width={width}>
+          <StyledRightPanelInside width={width}>
             <StyledRightPanelScroll>
-              <Button $width="32px" $height="32px" $position="absolute" $top="8px" $right="16px" onClick={handleCloseClick}>
-                <Image src={CloseGrayIcon} $width="20px" $height="20px" />
+              <Button width="32px" height="32px" position="absolute" top="8px" right="16px" onClick={handleCloseClick}>
+                <Image src={CloseGrayIcon} width="20px" height="20px" />
               </Button>
               {children}
             </StyledRightPanelScroll>

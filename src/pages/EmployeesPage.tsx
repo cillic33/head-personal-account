@@ -28,7 +28,6 @@ const StyledTableWrap = styled.div`
   }
 `
 
-// @barrelblur: убрать доллары
 export const EmployeesPage = () => {
   const [showPanel, setShowPanel] = useState<boolean>(false);
   const tableRef = useRef<HTMLTableElement | null>(null);
@@ -64,40 +63,40 @@ export const EmployeesPage = () => {
 
   return (
     <PageContainer>
-      <Flexbox gap="16px" $direction="column" $width="100%" $borderRadius="8px">
-        <Flexbox gap="16px" $align="center" $justify="space-between" $width="100%">
-          <Flexbox gap="16px" $align="center">
+      <Flexbox gap="16px" direction="column" width="100%" borderRadius="8px">
+        <Flexbox gap="16px" align="center" justify="space-between" width="100%">
+          <Flexbox gap="16px" align="center">
             <Link to={AppRoutes.Main}>
-              <Button $variant="primary" size="no-size" $width="32px" $height="32px">
-                <Image src={ArrowLeftBlue} $width="20px" $height="20px" />
+              <Button variant="primary" size="no-size" width="32px" height="32px">
+                <Image src={ArrowLeftBlue} width="20px" height="20px" />
               </Button>
             </Link>
-            <Typography $variant="h2">Сотрудники</Typography>
+            <Typography variant="h2">Сотрудники</Typography>
           </Flexbox>
 
-          <Flexbox gap="12px" $align="center">
-            <Flexbox $width="320px" $flex="0 0 320px">
+          <Flexbox gap="12px" align="center">
+            <Flexbox width="320px" flex="0 0 320px">
               {/* TODO сделать поиск */}
               <Input type="search" name="employeeSearchInput" placeholder="Начните вводить ФИО сотрудника" icon={SearchGray} />
             </Flexbox>
-            <Button $variant="primary" size="no-size" $width="40px" $height="40px" $flex="0 0 40px">
-              <Image src={ColumnBlueIcon} $width="24px" $height="24px" />
+            <Button variant="primary" size="no-size" width="40px" height="40px" flex="0 0 40px">
+              <Image src={ColumnBlueIcon} width="24px" height="24px" />
             </Button>
-            <Button $variant="primary" size="no-size" $width="40px" $height="40px" $flex="0 0 40px">
-              <Image src={FilterBlueIcon} $width="24px" $height="24px" />
+            <Button variant="primary" size="no-size" width="40px" height="40px" flex="0 0 40px">
+              <Image src={FilterBlueIcon} width="24px" height="24px" />
             </Button>
-            <Button $variant="primary" size="no-size" $width="40px" $height="40px" $flex="0 0 40px">
-              <Image src={DownloadBlueIcon} $width="24px" $height="24px" />
+            <Button variant="primary" size="no-size" width="40px" height="40px" flex="0 0 40px">
+              <Image src={DownloadBlueIcon} width="24px" height="24px" />
             </Button>
           </Flexbox>
         </Flexbox>
 
-        <Flexbox $position="relative">
+        <Flexbox position="relative">
           <StyledTableWrap className={showPanel ? 'active' : undefined}>
-            <Table data={MEmployees} $ref={tableRef} onRowClick={handleRowClick} />
+            <Table data={MEmployees} ref={tableRef} onRowClick={handleRowClick} />
           </StyledTableWrap>
 
-          <RightPanel isShow={showPanel} $width="560px" onCloseClick={handleClosePanelClick}>
+          <RightPanel isShow={showPanel} width="560px" onCloseClick={handleClosePanelClick}>
             <EmployeeCard />
           </RightPanel>
         </Flexbox>

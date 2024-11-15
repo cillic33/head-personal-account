@@ -51,19 +51,19 @@ export const TableBodyTd: FC<IProps> = ({k: key, data, settings, onClick}) => {
   if (typeof data === "object") {
     return (
       <StyledTableBodyTd key={key} width={width} onClick={handleClick}>
-        <Flexbox gap="8px" $align="center" $justify={isStatus ? "center" : undefined}>
+        <Flexbox gap="8px" align="center" justify={isStatus ? "center" : undefined}>
           {isEmployee &&
             <Person
               src={data["avatar" as keyof TTableCell]}
               name={data["name" as keyof TTableCell]}
-              $fontVariant="caption-regular"
-              $isNowrap
-              $isEllipsis
+              fontVariant="caption-regular"
+              isNowrap
+              isEllipsis
             />
           }
           {isStatus &&
-            <Chip $background={data["bgColor" as keyof TTableCell]} $padding="4px 12px" $borderRadius="4px">
-              <Typography $variant="caption-semibold" $color={data["color" as keyof TTableCell]} $isNowrap>
+            <Chip background={data["bgColor" as keyof TTableCell]} padding="4px 12px" borderRadius="4px">
+              <Typography variant="caption-semibold" color={data["color" as keyof TTableCell]} isNowrap>
                 {data["title" as keyof TTableCell]}
               </Typography>
             </Chip>
@@ -71,7 +71,7 @@ export const TableBodyTd: FC<IProps> = ({k: key, data, settings, onClick}) => {
           {!isEmployee && !isStatus &&
             Object.keys(data).map((nestedKey) => {
               return (
-                <Typography $variant="caption-regular" key={nestedKey}>
+                <Typography variant="caption-regular" key={nestedKey}>
                   {data[nestedKey as keyof TTableCell]}
                 </Typography>
               );
@@ -83,11 +83,11 @@ export const TableBodyTd: FC<IProps> = ({k: key, data, settings, onClick}) => {
 
   return (
     <StyledTableBodyTd key={key} width={width} onClick={handleClick}>
-      <Flexbox gap="8px" $align="center" $justify={isCenter ? "center" : undefined}>
+      <Flexbox gap="8px" align="center" justify={isCenter ? "center" : undefined}>
         {isDivision &&
-          <Image src={DivisionBlueIcon} $width="24px" $height="24px" />
+          <Image src={DivisionBlueIcon} width="24px" height="24px" />
         }
-        <Typography $variant="caption-regular" $isNowrap $isEllipsis>
+        <Typography variant="caption-regular" isNowrap isEllipsis>
           {data}
         </Typography>
       </Flexbox>

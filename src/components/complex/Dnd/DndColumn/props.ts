@@ -8,5 +8,5 @@ export interface IProps {
 }
 
 export interface ICellListProps {
-  $isDraggingOver: boolean,
+  isDraggingOver: boolean,
 }

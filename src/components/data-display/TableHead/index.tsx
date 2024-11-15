@@ -65,18 +65,18 @@ export const TableHead: FC<IProps> = ({settings, sortClick}) => {
       <tr>
         {tableTitles.map((item, index) => (
           <StyledHeadTh key={index} width={item.width}>
-            <Flexbox gap="4px" $align="center">
-              <Typography $variant="caption-semibold" $color={theme.colors.textIconBaseSecondary}>{item.name}</Typography>
+            <Flexbox gap="4px" align="center">
+              <Typography variant="caption-semibold" color={theme.colors.textIconBaseSecondary}>{item.name}</Typography>
               {item.isSorted &&
                 <Button
-                  $width="16px"
-                  $height="16px"
-                  $background={theme.colors.onSurfaceFaintQuaternary}
-                  $borderRadius="2.67px"
+                  width="16px"
+                  height="16px"
+                  background={theme.colors.onSurfaceFaintQuaternary}
+                  borderRadius="2.67px"
                   data-sort={TTableSortDirections.NONE}
                   onClick={(event) => handleSortClick(event, item.id)}
                 >
-                  <Image src={CaretDownGray} $width="14px" />
+                  <Image src={CaretDownGray} width="14px" />
                 </Button>
               }
             </Flexbox>
