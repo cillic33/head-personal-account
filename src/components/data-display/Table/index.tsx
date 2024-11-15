@@ -1,9 +1,9 @@
 import {IProps} from "./props";
-import TableBody from "@components/data-display/TableBody";
+import {TableBody} from "@components/data-display/TableBody";
 import styled from "styled-components";
 import {scrollX} from "@utils/mixins";
 import {theme} from "@utils/theme/theme";
-import TableHead from "@components/data-display/TableHead";
+import {TableHead} from "@components/data-display/TableHead";
 import {FC, MutableRefObject} from "react";
 
 const StyledTableWrap = styled.div`
@@ -21,7 +21,7 @@ const StyledTable = styled.table`
 `
 
 // @barrelblur: убрать доллары
-const Table: FC<IProps> = ({data, $ref, onRowClick}) => {
+export const Table: FC<IProps> = ({data, $ref, onRowClick}) => {
   const handleSortClick = (id: string, direction: string) => {
     // TODO сделать сортировку данных
     console.log('Столбец', id, 'Направление', direction)
@@ -42,6 +42,3 @@ const Table: FC<IProps> = ({data, $ref, onRowClick}) => {
     </StyledTableWrap>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default Table;

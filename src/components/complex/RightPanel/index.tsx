@@ -5,9 +5,9 @@ import { CSSTransition } from 'react-transition-group';
 import {FC, useRef} from "react";
 import {StylesCSSTransition} from "./styles"
 import {SLIDE_PANEL_TIME, SLIDE_PANEL_WIDTH} from "@utils/const";
-import Button from "@components/inputs/Button";
+import {Button} from "@components/inputs/Button";
 import CloseGrayIcon from "@images/CloseGrayIcon.svg";
-import Image from "@components/data-display/Image";
+import {Image} from "@components/data-display/Image";
 import {scrollXS} from "@utils/mixins";
 
 const StyledCSSTransition = styled.div`
@@ -43,7 +43,7 @@ const StyledRightPanelScroll = styled.div`
 `
 
 // @barrelblur: убрать доллары
-const RightPanel: FC<IProps> = ({children, isShow, $width, onCloseClick}) => {
+export const RightPanel: FC<IProps> = ({children, isShow, $width, onCloseClick}) => {
   const panelRef = useRef(null);
 
   const handleCloseClick = () => {
@@ -75,6 +75,3 @@ const RightPanel: FC<IProps> = ({children, isShow, $width, onCloseClick}) => {
     </StyledCSSTransition>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default RightPanel;

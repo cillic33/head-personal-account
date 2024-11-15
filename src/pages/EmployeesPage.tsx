@@ -1,23 +1,23 @@
-import PageContainer from "@layouts/PageContainer";
-import Flexbox from "@components/surfaces/Flexbox";
-import Button from "@components/inputs/Button";
+import {PageContainer} from "@layouts/PageContainer";
+import {Flexbox} from "@components/surfaces/Flexbox";
+import {Button} from "@components/inputs/Button";
 import ArrowLeftBlue from "@images/ArrowLeftBlue.svg";
-import Image from "@components/data-display/Image";
-import Typography from "@components/data-display/Typography";
+import {Image} from "@components/data-display/Image";
+import {Typography} from "@components/data-display/Typography";
 import {AppRoutes} from "@utils/const";
 import {Link} from "react-router-dom";
-import Input from "@components/inputs/Input";
+import {Input} from "@components/inputs/Input";
 import SearchGray from "@images/SearchGray.svg";
 import ColumnBlueIcon from "@images/ColumnBlueIcon.svg";
 import FilterBlueIcon from "@images/FilterBlueIcon.svg";
 import DownloadBlueIcon from "@images/DownloadBlueIcon.svg";
 import {MEmployees} from "@utils/mock";
-import Table from "@components/data-display/Table";
-import RightPanel from "@components/complex/RightPanel";
+import {Table} from "@components/data-display/Table";
+import {RightPanel} from "@components/complex/RightPanel";
 import {MutableRefObject, useRef, useState} from "react";
 import styled from "styled-components";
 import {SLIDE_PANEL_TIME} from "@utils/const"
-import EmployeeCard from "@components/complex/EmployeeCard";
+import {EmployeeCard} from "@components/complex/EmployeeCard";
 
 const StyledTableWrap = styled.div`
   width: 100%;
@@ -29,7 +29,7 @@ const StyledTableWrap = styled.div`
 `
 
 // @barrelblur: убрать доллары
-const EmployeesPage = () => {
+export const EmployeesPage = () => {
   const [showPanel, setShowPanel] = useState<boolean>(false);
   const tableRef = useRef<HTMLTableElement | null>(null);
 
@@ -105,6 +105,3 @@ const EmployeesPage = () => {
     </PageContainer>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default EmployeesPage;

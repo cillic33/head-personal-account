@@ -1,11 +1,11 @@
-import Flexbox from "@components/surfaces/Flexbox";
-import Typography from "@components/data-display/Typography";
-import Person from "@components/data-display/Person";
+import {Flexbox} from "@components/surfaces/Flexbox";
+import {Typography} from "@components/data-display/Typography";
+import {Person} from "@components/data-display/Person";
 import {IProps} from "./props";
 import {FC} from "react";
 
 // @barrelblur: убрать доллары
-const WidgetMyDeputiesRow: FC<IProps> = ({data}) => {
+export const WidgetMyDeputiesRow: FC<IProps> = ({data}) => {
   return (
     <Flexbox gap="16px" $align="center" $justify="space-between">
       <Person src={data.src} name={data.name} />
@@ -13,6 +13,3 @@ const WidgetMyDeputiesRow: FC<IProps> = ({data}) => {
     </Flexbox>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default WidgetMyDeputiesRow;

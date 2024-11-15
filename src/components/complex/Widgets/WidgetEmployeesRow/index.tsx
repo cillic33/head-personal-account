@@ -1,19 +1,19 @@
-import Flexbox from "@components/surfaces/Flexbox";
+import {Flexbox} from "@components/surfaces/Flexbox";
 import {IProps} from "@components/complex/Widgets/WidgetEmployeesRow/props";
-import Typography from "@components/data-display/Typography";
+import {Typography} from "@components/data-display/Typography";
 import GotoGrayIcon from "@images/GotoGrayIcon.svg";
 import ArrowRightGray from "@images/ArrowRightGray.svg";
 import ExclamationRoundRed from "@images/ExclamationRoundRed.svg";
 import ExclamationTriangleYellow from "@images/ExclamationTriangleYellow.svg";
-import Image from "@components/data-display/Image";
+import {Image} from "@components/data-display/Image";
 import {theme} from "@utils/theme/theme";
-import Chip from "@components/data-display/Chip";
+import {Chip} from "@components/data-display/Chip";
 import {Link} from "react-router-dom";
-import LinkComponent from "@components/data-display/Link";
+import {LinkComponent} from "@components/data-display/Link";
 import {FC} from "react";
 
 // @barrelblur: убрать доллары
-const WidgetEmployeesRow: FC<IProps> = ({item}) => {
+ export const WidgetEmployeesRow: FC<IProps> = ({item}) => {
   const {id, title, count, link, important, warning} = item;
 
   return (
@@ -61,6 +61,3 @@ const WidgetEmployeesRow: FC<IProps> = ({item}) => {
     </Flexbox>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default WidgetEmployeesRow;

@@ -1,22 +1,22 @@
-import Expand from "@components/surfaces/Expand";
+import {Expand} from "@components/surfaces/Expand";
 import {IWidget} from "@typing/TWidget";
-import Flexbox from "@components/surfaces/Flexbox";
+import {Flexbox} from "@components/surfaces/Flexbox";
 import {theme} from "@utils/theme/theme";
-import Typography from "@components/data-display/Typography";
+import {Typography} from "@components/data-display/Typography";
 import PersonBlueIcon from "@images/PersonBlueIcon.svg";
 import PaperBlueIcon from "@images/PaperBlueIcon.svg";
-import Image from "@components/data-display/Image";
-import Divider from "@components/data-display/Divider";
-import ButtonGroup from "@components/inputs/ButtonGroup";
+import {Image} from "@components/data-display/Image";
+import {Divider} from "@components/data-display/Divider";
+import {ButtonGroup} from "@components/inputs/ButtonGroup";
 import {MWeekMonthSwitcher, MWidgetMetrics} from "@utils/mock";
-import SimpleSlider from "@components/data-display/SimpleSlider";
+import {SimpleSlider} from "@components/data-display/SimpleSlider";
 import {FC, MouseEvent, useState} from "react";
 import {TWeeksSlider} from "@typing/TWeeksSlider";
 import {getWeeksArray} from "@utils/index";
-import PieChartComponent from "@components/data-display/PieChart";
+import {PieChartComponent} from "@components/data-display/PieChart";
 
 // @barrelblur: убрать доллары
-const WidgetStaffMovement: FC<IWidget> = (props) => {
+export const WidgetStaffMovement: FC<IWidget> = (props) => {
   const [currentDate] = useState<Date>(new Date());
   const [weeksData] = useState<TWeeksSlider>(getWeeksArray(currentDate));
   const dataStaffTurnoverRate = MWidgetMetrics["staffTurnoverRateMetric"];
@@ -78,6 +78,3 @@ const WidgetStaffMovement: FC<IWidget> = (props) => {
     </Expand>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default WidgetStaffMovement;

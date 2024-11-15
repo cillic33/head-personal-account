@@ -1,21 +1,21 @@
-import Expand from "@components/surfaces/Expand";
+import {Expand} from "@components/surfaces/Expand";
 import {IWidget} from "@typing/TWidget";
 import {FC, MouseEvent, useState} from "react";
-import Flexbox from "@components/surfaces/Flexbox";
-import ButtonGroup from "@components/inputs/ButtonGroup";
+import {Flexbox} from "@components/surfaces/Flexbox";
+import {ButtonGroup} from "@components/inputs/ButtonGroup";
 import {MWeekMonthSwitcher, MWidgetMoodMonitoring} from "@utils/mock";
-import Typography from "@components/data-display/Typography";
-import Chip from "@components/data-display/Chip";
+import {Typography} from "@components/data-display/Typography";
+import {Chip} from "@components/data-display/Chip";
 import {theme} from "@utils/theme/theme";
-import Image from "@components/data-display/Image";
+import {Image} from "@components/data-display/Image";
 import MoodImg5 from "@images/MoodImg5.svg"
 import MoodImg4 from "@images/MoodImg4.svg"
-import SimpleSlider from "@components/data-display/SimpleSlider";
+import {SimpleSlider} from "@components/data-display/SimpleSlider";
 import {TWeeksSlider} from "@typing/TWeeksSlider";
 import {getWeeksArray} from "@utils/index";
 
 // @barrelblur: убрать доллары
-const WidgetMoodMonitoring: FC<IWidget> = (props) => {
+export const WidgetMoodMonitoring: FC<IWidget> = (props) => {
   const [currentDate] = useState<Date>(new Date());
   const [weeksData] = useState<TWeeksSlider>(getWeeksArray(currentDate));
 
@@ -97,6 +97,3 @@ const WidgetMoodMonitoring: FC<IWidget> = (props) => {
     </Expand>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default WidgetMoodMonitoring;

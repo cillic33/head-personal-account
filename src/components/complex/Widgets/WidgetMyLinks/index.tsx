@@ -1,12 +1,12 @@
-import Expand from "@components/surfaces/Expand";
+import {Expand} from "@components/surfaces/Expand";
 import {IWidget} from "@typing/TWidget";
 import {MWidgetMyLinks} from "@utils/mock";
-import WidgetMyLinksRow from "@components/complex/Widgets/WidgetMyLinksRow";
+import {WidgetMyLinksRow} from "@components/complex/Widgets/WidgetMyLinksRow";
 import styled from "styled-components";
 import {scroll} from "@utils/mixins";
-import SimplePopup from "@components/data-display/SimplePopup";
+import {SimplePopup} from "@components/data-display/SimplePopup";
 import {FC, useState} from "react";
-import LinkForm from "@components/complex/Forms/LinkForm";
+import {LinkForm} from "@components/complex/Forms/LinkForm";
 import {ILinkForm} from "@typing/TLinkForm";
 import {IWidgetMyLink} from "@typing/TWidgetMyLinks";
 
@@ -22,7 +22,7 @@ const StyledWidgetMyLinks = styled.div`
 `
 
 // @barrelblur: убрать доллары
-const WidgetMyLinks: FC<IWidget> = (props) => {
+export const WidgetMyLinks: FC<IWidget> = (props) => {
   const [isPopupShow, setIsPopupShow] = useState<boolean>(false);
   const [isDisabledSubmit, setIsDisabledSubmit] = useState<boolean>(false);
   const [titleForm, setTitleForm] = useState<string>('')
@@ -111,6 +111,3 @@ const WidgetMyLinks: FC<IWidget> = (props) => {
     </Expand>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default WidgetMyLinks;

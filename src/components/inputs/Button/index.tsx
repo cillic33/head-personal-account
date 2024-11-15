@@ -138,11 +138,8 @@ const StyledButton = styled.button<IProps>`
   }
 `
 
-const Button: FC<IProps> = (props) => {
+export const Button: FC<IProps> = (props) => {
   return (
     <StyledButton {...props} ref={props.$ref as RefObject<HTMLButtonElement>} />
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default Button;

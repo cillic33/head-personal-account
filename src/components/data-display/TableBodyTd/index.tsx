@@ -1,13 +1,13 @@
 import {IProps} from "./props";
 import {TTableCell} from "@typing/TTable";
 import styled from "styled-components";
-import Typography from "@components/data-display/Typography";
+import {Typography} from "@components/data-display/Typography";
 import {theme} from "@utils/theme/theme";
-import Flexbox from "@components/surfaces/Flexbox";
-import Person from "@components/data-display/Person";
-import Image from "@components/data-display/Image";
+import {Flexbox} from "@components/surfaces/Flexbox";
+import {Person} from "@components/data-display/Person";
+import {Image} from "@components/data-display/Image";
 import DivisionBlueIcon from "@images/DivisionBlueIcon.svg";
-import Chip from "@components/data-display/Chip";
+import {Chip} from "@components/data-display/Chip";
 import {FC} from "react";
 
 interface IStyledTableBodyTd {
@@ -25,7 +25,7 @@ const StyledTableBodyTd = styled.td<IStyledTableBodyTd>`
 `
 
 // @barrelblur: непонятный атрибут «k»
-const TableBodyTd: FC<IProps> = ({k: key, data, settings, onClick}) => {
+export const TableBodyTd: FC<IProps> = ({k: key, data, settings, onClick}) => {
   const width = (settings && settings.width) ? settings.width : undefined;
 
   // @barrelblur: твоя таблица предназначена только для единственной цели: отображать отображать данные как элемент дизайн системы
@@ -94,6 +94,3 @@ const TableBodyTd: FC<IProps> = ({k: key, data, settings, onClick}) => {
     </StyledTableBodyTd>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default TableBodyTd;

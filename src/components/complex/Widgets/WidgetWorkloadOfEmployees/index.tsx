@@ -1,16 +1,16 @@
-import Expand from "@components/surfaces/Expand";
+import {Expand} from "@components/surfaces/Expand";
 import {IWidget} from "@typing/TWidget";
 import {MWeekMonthSwitcher, MWorkloadOfEmployees} from "@utils/mock";
-import ProgressBar from "@components/data-display/ProgressBar";
-import Flexbox from "@components/surfaces/Flexbox";
-import ButtonGroup from "@components/inputs/ButtonGroup";
+import {ProgressBar} from "@components/data-display/ProgressBar";
+import {Flexbox} from "@components/surfaces/Flexbox";
+import {ButtonGroup} from "@components/inputs/ButtonGroup";
 import {FC, MouseEvent, useState} from "react";
-import SimpleSlider from "@components/data-display/SimpleSlider";
+import {SimpleSlider} from "@components/data-display/SimpleSlider";
 import {getWeeksArray} from "@utils/index";
 import {TWeeksSlider} from "@typing/TWeeksSlider";
 
 // @barrelblur: убрать доллары
-const WidgetWorkloadOfEmployees: FC<IWidget> = (props) => {
+export const WidgetWorkloadOfEmployees: FC<IWidget> = (props) => {
   const [currentDate] = useState<Date>(new Date());
   const [weeksData] = useState<TWeeksSlider>(getWeeksArray(currentDate));
 
@@ -50,6 +50,3 @@ const WidgetWorkloadOfEmployees: FC<IWidget> = (props) => {
     </Expand>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default WidgetWorkloadOfEmployees;

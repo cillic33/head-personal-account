@@ -1,4 +1,4 @@
-import Input from "@components/inputs/Input";
+import {Input} from "@components/inputs/Input";
 import {ChangeEvent, FC, useState} from "react";
 import styled from "styled-components";
 import {IProps} from "./props";
@@ -10,7 +10,7 @@ const StyledForm = styled.form`
   width: 100%;
 `
 
-const LinkForm: FC<IProps> = ({action, method, initialDataForm, onChange}) => {
+export const LinkForm: FC<IProps> = ({action, method, initialDataForm, onChange}) => {
   const [dataForm, setDataForm] = useState(initialDataForm);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -40,6 +40,3 @@ const LinkForm: FC<IProps> = ({action, method, initialDataForm, onChange}) => {
     </StyledForm>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default LinkForm;

@@ -1,10 +1,10 @@
 import {IProps, IStyledOverlayProps, IStyledPopupProps} from "./props";
 import {theme} from "@utils/theme/theme";
 import styled from "styled-components";
-import Flexbox from "@components/surfaces/Flexbox";
-import Typography from "@components/data-display/Typography";
-import Button from "@components/inputs/Button";
-import Image from "@components/data-display/Image";
+import {Flexbox} from "@components/surfaces/Flexbox";
+import {Typography} from "@components/data-display/Typography";
+import {Button} from "@components/inputs/Button";
+import {Image} from "@components/data-display/Image";
 import CloseGrayIcon from "@images/CloseGrayIcon.svg";
 import {FC, MouseEvent, useEffect, useRef} from "react";
 
@@ -29,7 +29,7 @@ const StyledPopup = styled.div<IStyledPopupProps>`
   width: ${props => props.$width || undefined}
 `
 
-const SimplePopup: FC<IProps> = (
+export const SimplePopup: FC<IProps> = (
   {
     children,
     isShow,
@@ -116,6 +116,3 @@ const SimplePopup: FC<IProps> = (
     </>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default SimplePopup;

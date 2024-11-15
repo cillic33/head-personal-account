@@ -1,12 +1,12 @@
-import Flexbox from "@components/surfaces/Flexbox";
-import Typography from "@components/data-display/Typography";
+import {Flexbox} from "@components/surfaces/Flexbox";
+import {Typography} from "@components/data-display/Typography";
 import {theme} from "@utils/theme/theme";
 import {IProps} from "./props";
-import WidgetMyDeputiesRow from "@components/complex/Widgets/WidgetMyDeputiesRow";
+import {WidgetMyDeputiesRow} from "@components/complex/Widgets/WidgetMyDeputiesRow";
 import {FC} from "react";
 
 // @barrelblur: убрать доллары
-const WidgetMyDeputiesList: FC<IProps> = ({data}) => {
+export const WidgetMyDeputiesList: FC<IProps> = ({data}) => {
   return (
     <Flexbox gap="16px" $direction="column">
       {data.map(item => (
@@ -22,6 +22,3 @@ const WidgetMyDeputiesList: FC<IProps> = ({data}) => {
     </Flexbox>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default WidgetMyDeputiesList;

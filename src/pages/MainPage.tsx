@@ -1,20 +1,20 @@
-import PageContainer from "@layouts/PageContainer";
+import {PageContainer} from "@layouts/PageContainer";
 import {MInitialData} from "@utils/mock";
-import WidgetApplicationsForApproval from "@components/complex/Widgets/WidgetApplicationsForApproval";
-import WidgetMyDeputies from "@components/complex/Widgets/WidgetMyDeputies";
-import WidgetWorkloadOfEmployees from "@components/complex/Widgets/WidgetWorkloadOfEmployees";
-import WidgetReportingWeekTS from "@components/complex/Widgets/WidgetReportingWeekTS";
-import WidgetAbsence from "@components/complex/Widgets/WidgetAbsence";
-import WidgetHappinessIndex from "@components/complex/Widgets/WidgetHappinessIndex";
-import WidgetMoodMonitoring from "@components/complex/Widgets/WidgetMoodMonitoring";
-import WidgetMyLinks from "@components/complex/Widgets/WidgetMyLinks";
-import WidgetTraining from "@components/complex/Widgets/WidgetTraining";
-import WidgetStaffMovement from "@components/complex/Widgets/WidgetStaffMovement";
-import WidgetRelevanceOfProfiles from "@components/complex/Widgets/WidgetRelevanceOfProfiles";
-import DndMain from "@components/complex/Dnd/DndMain";
-import WidgetEmployees from "@components/complex/Widgets/WidgetEmployees";
+import {WidgetApplicationsForApproval} from "@components/complex/Widgets/WidgetApplicationsForApproval";
+import {WidgetMyDeputies} from "@components/complex/Widgets/WidgetMyDeputies";
+import {WidgetWorkloadOfEmployees} from "@components/complex/Widgets/WidgetWorkloadOfEmployees";
+import {WidgetReportingWeekTS} from "@components/complex/Widgets/WidgetReportingWeekTS";
+import {WidgetAbsence} from "@components/complex/Widgets/WidgetAbsence";
+import {WidgetHappinessIndex} from "@components/complex/Widgets/WidgetHappinessIndex";
+import {WidgetMoodMonitoring} from "@components/complex/Widgets/WidgetMoodMonitoring";
+import {WidgetMyLinks} from "@components/complex/Widgets/WidgetMyLinks";
+import {WidgetTraining} from "@components/complex/Widgets/WidgetTraining";
+import {WidgetStaffMovement} from "@components/complex/Widgets/WidgetStaffMovement";
+import {WidgetRelevanceOfProfiles} from "@components/complex/Widgets/WidgetRelevanceOfProfiles";
+import {DndMain} from "@components/complex/Dnd/DndMain";
+import {WidgetEmployees} from "@components/complex/Widgets/WidgetEmployees";
 
-const MainPage = () => {
+export const MainPage = () => {
   const {
     ["widget-1"]: dataApplicationsForApproval,
     ["widget-2"]: dataMyDeputies,
@@ -49,5 +49,3 @@ const MainPage = () => {
     </PageContainer>
   );
 }
-
-export default MainPage;

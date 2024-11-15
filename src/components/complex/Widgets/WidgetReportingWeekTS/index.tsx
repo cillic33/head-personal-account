@@ -1,12 +1,12 @@
-import Expand from "@components/surfaces/Expand";
+import {Expand} from "@components/surfaces/Expand";
 import {IWidget} from "@typing/TWidget";
 import {MWidgetReportingWeekTS} from "@utils/mock";
-import Typography from "@components/data-display/Typography";
-import Flexbox from "@components/surfaces/Flexbox";
+import {Typography} from "@components/data-display/Typography";
+import {Flexbox} from "@components/surfaces/Flexbox";
 import {FC} from "react";
 
 // @barrelblur: убрать доллары
-const WidgetReportingWeekTS: FC<IWidget> = (props) => {
+export const WidgetReportingWeekTS: FC<IWidget> = (props) => {
   return (
     <Expand
       title={props.title}
@@ -28,6 +28,3 @@ const WidgetReportingWeekTS: FC<IWidget> = (props) => {
     </Expand>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default WidgetReportingWeekTS;

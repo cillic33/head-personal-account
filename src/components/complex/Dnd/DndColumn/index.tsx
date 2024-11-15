@@ -1,5 +1,5 @@
 import {Droppable} from "@hello-pangea/dnd";
-import DndCell from "@components/complex/Dnd/DndCell";
+import {DndCell} from "@components/complex/Dnd/DndCell";
 import styled from "styled-components";
 import {ICellListProps, IProps} from "./props";
 import {theme} from "@utils/theme/theme";
@@ -24,7 +24,7 @@ const StyledCellList = styled.div<ICellListProps>`
   border-radius: 8px;
 `;
 
-const DndColumn: FC<IProps> = ({children, cells, ...props}) => {
+export const DndColumn: FC<IProps> = ({children, cells, ...props}) => {
   const {id} = props.column;
 
   return (
@@ -48,6 +48,3 @@ const DndColumn: FC<IProps> = ({children, cells, ...props}) => {
     </StyledDndColumn>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default DndColumn;

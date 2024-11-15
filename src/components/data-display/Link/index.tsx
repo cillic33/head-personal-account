@@ -8,11 +8,8 @@ const StyledLink = styled.a<IProps>`
   color: ${props => props.$color || undefined};
 `
 
-const LinkComponent: FC<IProps> = ({...props}) => {
+export const LinkComponent: FC<IProps> = ({...props}) => {
   return (
     <StyledLink {...props} />
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default LinkComponent;

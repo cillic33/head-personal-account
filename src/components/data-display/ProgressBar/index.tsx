@@ -1,6 +1,6 @@
 import {IProps} from "./props";
-import Flexbox from "@components/surfaces/Flexbox";
-import Typography from "@components/data-display/Typography";
+import {Flexbox} from "@components/surfaces/Flexbox";
+import {Typography} from "@components/data-display/Typography";
 import styled from "styled-components";
 import {FC} from "react";
 
@@ -24,7 +24,7 @@ const StyledFilledBar = styled.div<IProps>`
 `
 
 // @barrelblur: убрать доллары
-const ProgressBar: FC<IProps> = ({$percent, $color, $title = ""}) => {
+export const ProgressBar: FC<IProps> = ({$percent, $color, $title = ""}) => {
   return (
     <Flexbox gap="4px" $direction="column" $padding="4px 0">
       {$title !== "" &&
@@ -39,6 +39,3 @@ const ProgressBar: FC<IProps> = ({$percent, $color, $title = ""}) => {
     </Flexbox>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default ProgressBar;

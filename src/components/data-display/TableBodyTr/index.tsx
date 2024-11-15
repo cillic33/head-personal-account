@@ -1,5 +1,5 @@
 import {IProps} from "@components/data-display/TableBodyTr/props";
-import TableBodyTd from "@components/data-display/TableBodyTd";
+import {TableBodyTd} from "@components/data-display/TableBodyTd";
 import styled from "styled-components";
 import {theme} from "@utils/theme/theme";
 import {FC, useRef} from "react";
@@ -11,7 +11,7 @@ const StyledTableBodyTr = styled.tr`
   }
 `
 
-const TableBodyTr: FC<IProps> = ({data, settings, onClick}) => {
+export const TableBodyTr: FC<IProps> = ({data, settings, onClick}) => {
   const trRef = useRef<HTMLTableRowElement | null>(null);
   const handleClick = () => {
     if (onClick) {
@@ -27,6 +27,3 @@ const TableBodyTr: FC<IProps> = ({data, settings, onClick}) => {
     </StyledTableBodyTr>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default TableBodyTr;

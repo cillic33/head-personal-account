@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
   ${Reset}
 `
 
-const Theme = ({children}: Props): JSX.Element => {
+export const Theme = ({children}: Props): JSX.Element => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
@@ -16,5 +16,3 @@ const Theme = ({children}: Props): JSX.Element => {
     </ThemeProvider>
   );
 }
-
-export default Theme;

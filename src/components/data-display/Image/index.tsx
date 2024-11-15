@@ -9,11 +9,8 @@ const StyledImage = styled.img<IProps>`
   flex: ${props => props.$flex || undefined};
 `
 
-const Image: FC<IProps> = ({...props}) => {
+export const Image: FC<IProps> = ({...props}) => {
   return (
     <StyledImage {...props} ref={props.$ref as RefObject<HTMLImageElement>} />
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default Image;

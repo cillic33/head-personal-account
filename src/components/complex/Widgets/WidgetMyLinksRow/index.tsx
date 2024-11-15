@@ -1,15 +1,15 @@
 import {IProps} from "./props";
-import Flexbox from "@components/surfaces/Flexbox";
-import Image from "@components/data-display/Image";
-import Typography from "@components/data-display/Typography";
-import Button from "@components/inputs/Button";
+import {Flexbox} from "@components/surfaces/Flexbox";
+import {Image} from "@components/data-display/Image";
+import {Typography} from "@components/data-display/Typography";
+import {Button} from "@components/inputs/Button";
 import EditBlueIcon from "@images/EditBlueIcon.svg";
 import DeleteRedIcon from "@images/DeleteRedIcon.svg";
 import {FC, useState} from "react";
 import {theme} from "@utils/theme/theme";
 
 // @barrelblur: убрать доллары
-const WidgetMyLinksRow: FC<IProps> = ({$item, onEditClick, onDeleteClick}) => {
+export const WidgetMyLinksRow: FC<IProps> = ({$item, onEditClick, onDeleteClick}) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   const handlerEditClick = () => {
@@ -74,6 +74,3 @@ const WidgetMyLinksRow: FC<IProps> = ({$item, onEditClick, onDeleteClick}) => {
     </Flexbox>
   );
 }
-
-// @barrelblur: не используем дефолтный экспорт
-export default WidgetMyLinksRow;
