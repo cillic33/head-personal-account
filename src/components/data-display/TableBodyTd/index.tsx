@@ -8,6 +8,7 @@ import Person from "@components/data-display/Person";
 import Image from "@components/data-display/Image";
 import DivisionBlueIcon from "@images/DivisionBlueIcon.svg";
 import Chip from "@components/data-display/Chip";
+import {FC} from "react";
 
 interface IStyledTableBodyTd {
   width?: number;
@@ -23,9 +24,8 @@ const StyledTableBodyTd = styled.td<IStyledTableBodyTd>`
   max-width: ${props => props.width + "px" || undefined};
 `
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: непонятный атрибут «k»
-const TableBodyTd = ({k: key, data, settings, onClick}: IProps) => {
+const TableBodyTd: FC<IProps> = ({k: key, data, settings, onClick}) => {
   const width = (settings && settings.width) ? settings.width : undefined;
 
   // @barrelblur: твоя таблица предназначена только для единственной цели: отображать отображать данные как элемент дизайн системы

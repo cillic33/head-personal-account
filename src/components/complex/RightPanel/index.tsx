@@ -2,7 +2,7 @@ import {IPanelProps, IProps} from "@components/complex/RightPanel/props";
 import styled from "styled-components";
 import {theme} from "@utils/theme/theme";
 import { CSSTransition } from 'react-transition-group';
-import {useRef} from "react";
+import {FC, useRef} from "react";
 import {StylesCSSTransition} from "./styles"
 import {SLIDE_PANEL_TIME, SLIDE_PANEL_WIDTH} from "@utils/const";
 import Button from "@components/inputs/Button";
@@ -42,9 +42,8 @@ const StyledRightPanelScroll = styled.div`
   padding: 16px 16px 16px 0;
 `
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: убрать доллары
-const RightPanel = ({children, isShow, $width, onCloseClick}: IProps) => {
+const RightPanel: FC<IProps> = ({children, isShow, $width, onCloseClick}) => {
   const panelRef = useRef(null);
 
   const handleCloseClick = () => {

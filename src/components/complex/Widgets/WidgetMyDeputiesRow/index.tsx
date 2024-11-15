@@ -2,10 +2,10 @@ import Flexbox from "@components/surfaces/Flexbox";
 import Typography from "@components/data-display/Typography";
 import Person from "@components/data-display/Person";
 import {IProps} from "./props";
+import {FC} from "react";
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: убрать доллары
-const WidgetMyDeputiesRow = ({data}: IProps) => {
+const WidgetMyDeputiesRow: FC<IProps> = ({data}) => {
   return (
     <Flexbox gap="16px" $align="center" $justify="space-between">
       <Person src={data.src} name={data.name} />

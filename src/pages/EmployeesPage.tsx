@@ -107,5 +107,5 @@ const EmployeesPage = () => {
   );
 }
 
-// @barrelblur: неправильно размечена функция
+// @barrelblur: не используем дефолтный экспорт
 export default EmployeesPage;

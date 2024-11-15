@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {scrollX} from "@utils/mixins";
 import {theme} from "@utils/theme/theme";
 import TableHead from "@components/data-display/TableHead";
-import {MutableRefObject} from "react";
+import {FC, MutableRefObject} from "react";
 
 const StyledTableWrap = styled.div`
   width: 100%;
@@ -20,9 +20,8 @@ const StyledTable = styled.table`
   border-spacing: 0;
 `
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: убрать доллары
-const Table = ({data, $ref, onRowClick}: IProps) => {
+const Table: FC<IProps> = ({data, $ref, onRowClick}) => {
   const handleSortClick = (id: string, direction: string) => {
     // TODO сделать сортировку данных
     console.log('Столбец', id, 'Направление', direction)

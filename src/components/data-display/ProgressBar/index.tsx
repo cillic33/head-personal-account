@@ -2,6 +2,7 @@ import {IProps} from "./props";
 import Flexbox from "@components/surfaces/Flexbox";
 import Typography from "@components/data-display/Typography";
 import styled from "styled-components";
+import {FC} from "react";
 
 const StyledBar = styled.div`
   width: 100%;
@@ -22,9 +23,8 @@ const StyledFilledBar = styled.div<IProps>`
   bottom: 0;
 `
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: убрать доллары
-const ProgressBar = ({$percent, $color, $title = ""}: IProps) => {
+const ProgressBar: FC<IProps> = ({$percent, $color, $title = ""}) => {
   return (
     <Flexbox gap="4px" $direction="column" $padding="4px 0">
       {$title !== "" &&

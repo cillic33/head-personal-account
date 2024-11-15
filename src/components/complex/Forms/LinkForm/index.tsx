@@ -1,5 +1,5 @@
 import Input from "@components/inputs/Input";
-import {ChangeEvent, useState} from "react";
+import {ChangeEvent, FC, useState} from "react";
 import styled from "styled-components";
 import {IProps} from "./props";
 
@@ -9,8 +9,8 @@ const StyledForm = styled.form`
   gap: 8px;
   width: 100%;
 `
-// @barrelblur: неправильно размечена функция
-const LinkForm = ({action, method, initialDataForm, onChange}: IProps) => {
+
+const LinkForm: FC<IProps> = ({action, method, initialDataForm, onChange}) => {
   const [dataForm, setDataForm] = useState(initialDataForm);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {

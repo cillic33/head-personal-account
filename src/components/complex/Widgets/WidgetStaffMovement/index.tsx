@@ -10,14 +10,13 @@ import Divider from "@components/data-display/Divider";
 import ButtonGroup from "@components/inputs/ButtonGroup";
 import {MWeekMonthSwitcher, MWidgetMetrics} from "@utils/mock";
 import SimpleSlider from "@components/data-display/SimpleSlider";
-import {MouseEvent, useState} from "react";
+import {FC, MouseEvent, useState} from "react";
 import {TWeeksSlider} from "@typing/TWeeksSlider";
 import {getWeeksArray} from "@utils/index";
 import PieChartComponent from "@components/data-display/PieChart";
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: убрать доллары
-const WidgetStaffMovement = (props: IWidget) => {
+const WidgetStaffMovement: FC<IWidget> = (props) => {
   const [currentDate] = useState<Date>(new Date());
   const [weeksData] = useState<TWeeksSlider>(getWeeksArray(currentDate));
   const dataStaffTurnoverRate = MWidgetMetrics["staffTurnoverRateMetric"];

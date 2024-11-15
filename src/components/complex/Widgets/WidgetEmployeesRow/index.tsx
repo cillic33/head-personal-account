@@ -10,10 +10,10 @@ import {theme} from "@utils/theme/theme";
 import Chip from "@components/data-display/Chip";
 import {Link} from "react-router-dom";
 import LinkComponent from "@components/data-display/Link";
+import {FC} from "react";
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: убрать доллары
-const WidgetEmployeesRow = ({item}: IProps) => {
+const WidgetEmployeesRow: FC<IProps> = ({item}) => {
   const {id, title, count, link, important, warning} = item;
 
   return (

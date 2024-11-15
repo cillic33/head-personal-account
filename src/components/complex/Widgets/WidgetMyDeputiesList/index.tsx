@@ -3,10 +3,10 @@ import Typography from "@components/data-display/Typography";
 import {theme} from "@utils/theme/theme";
 import {IProps} from "./props";
 import WidgetMyDeputiesRow from "@components/complex/Widgets/WidgetMyDeputiesRow";
+import {FC} from "react";
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: убрать доллары
-const WidgetMyDeputiesList = ({data}: IProps) => {
+const WidgetMyDeputiesList: FC<IProps> = ({data}) => {
   return (
     <Flexbox gap="16px" $direction="column">
       {data.map(item => (

@@ -3,6 +3,7 @@ import DndCell from "@components/complex/Dnd/DndCell";
 import styled from "styled-components";
 import {ICellListProps, IProps} from "./props";
 import {theme} from "@utils/theme/theme";
+import {FC} from "react";
 
 const StyledDndColumn = styled.div`
   width: calc(100% / 3 - 16px * 2 / 3);
@@ -23,8 +24,7 @@ const StyledCellList = styled.div<ICellListProps>`
   border-radius: 8px;
 `;
 
-// @barrelblur: неправильно размечена функция
-const DndColumn = ({children, cells, ...props}: IProps) => {
+const DndColumn: FC<IProps> = ({children, cells, ...props}) => {
   const {id} = props.column;
 
   return (

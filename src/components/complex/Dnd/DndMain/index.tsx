@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {FC, useState} from 'react';
 import {
   DragDropContext,
   DropResult,
@@ -8,8 +8,7 @@ import { IInitialDataColumn} from "@typing/TDnd";
 import {IProps} from "@components/complex/Dnd/DndMain/props";
 import DndColumn from "@components/complex/Dnd/DndColumn";
 
-// @barrelblur: неправильно размечена функция
-const DndMain = ({children, initialData}: IProps) => {
+const DndMain: FC<IProps> = ({children, initialData}) => {
   const [data, setData] = useState(initialData);
 
   const handleDragEnd = (result: DropResult): void => {

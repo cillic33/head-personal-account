@@ -1,6 +1,6 @@
 import Expand from "@components/surfaces/Expand";
 import {IWidget} from "@typing/TWidget";
-import {MouseEvent, useState} from "react";
+import {FC, MouseEvent, useState} from "react";
 import Flexbox from "@components/surfaces/Flexbox";
 import ButtonGroup from "@components/inputs/ButtonGroup";
 import {MWeekMonthSwitcher, MWidgetMoodMonitoring} from "@utils/mock";
@@ -14,9 +14,8 @@ import SimpleSlider from "@components/data-display/SimpleSlider";
 import {TWeeksSlider} from "@typing/TWeeksSlider";
 import {getWeeksArray} from "@utils/index";
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: убрать доллары
-const WidgetMoodMonitoring = (props: IWidget) => {
+const WidgetMoodMonitoring: FC<IWidget> = (props) => {
   const [currentDate] = useState<Date>(new Date());
   const [weeksData] = useState<TWeeksSlider>(getWeeksArray(currentDate));
 

@@ -6,7 +6,7 @@ import Typography from "@components/data-display/Typography";
 import Button from "@components/inputs/Button";
 import Image from "@components/data-display/Image";
 import CloseGrayIcon from "@images/CloseGrayIcon.svg";
-import {MouseEvent, useEffect, useRef} from "react";
+import {FC, MouseEvent, useEffect, useRef} from "react";
 
 const StyledOverlay = styled.div<IStyledOverlayProps>`
   position: fixed;
@@ -29,8 +29,7 @@ const StyledPopup = styled.div<IStyledPopupProps>`
   width: ${props => props.$width || undefined}
 `
 
-// @barrelblur: неправильно размечена функция
-const SimplePopup = (
+const SimplePopup: FC<IProps> = (
   {
     children,
     isShow,
@@ -42,7 +41,7 @@ const SimplePopup = (
     onSubmit,
     onCancel,
     $isDisabledSubmit = false,
-  }: IProps) => {
+  }) => {
   const overlayRef = useRef(null);
   const closeBtnRef = useRef(null);
   const closeImgRef = useRef(null);

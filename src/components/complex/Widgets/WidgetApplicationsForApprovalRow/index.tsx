@@ -8,10 +8,10 @@ import PlusGreenIcon from "@images/PlusGreenIcon.svg";
 import GotoGrayIcon from "@images/GotoGrayIcon.svg";
 import {IProps} from "./props";
 import LinkComponent from "@components/data-display/Link";
+import {FC} from "react";
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: убрать доллары
-const WidgetApplicationsForApprovalRow = ({item}: IProps) => {
+const WidgetApplicationsForApprovalRow: FC<IProps> = ({item}) => {
   return (
     <Flexbox
       gap="12px"

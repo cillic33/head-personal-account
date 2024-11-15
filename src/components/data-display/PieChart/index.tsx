@@ -5,6 +5,7 @@ import Typography from "@components/data-display/Typography";
 import styled from "styled-components";
 import {theme} from "@utils/theme/theme";
 import Chip from "@components/data-display/Chip";
+import {FC} from "react";
 
 // @barrelblur: что это такое? Это должно быть компоннетом
 function CustomLabel({viewBox, centerCount, centerText, postfix}: ICustomLabelProps) {
@@ -57,10 +58,9 @@ const StyledRightInfo = styled.div`
   flex: 1 0 auto;
 `
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: в этом компоненте не понятно, какая его единственная ответственность
 // @barrelblur: вроде выводится разметка, но аттрибуты будто заменают инлайновые стили
-const PieChartComponent = (
+const PieChartComponent: FC<IProps> = (
   {
     // @barrelblur много лишних атрибутов
     $data,
@@ -72,7 +72,7 @@ const PieChartComponent = (
     $isCenterText = true,
     $isRightInfo = true,
     $isHeader = true,
-  }: IProps
+  }
 ) => {
   const {title = "", percent, total, ratio, variants, centerCount, centerText, postfix} = $data;
 

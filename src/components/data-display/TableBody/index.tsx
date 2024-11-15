@@ -1,9 +1,8 @@
 import {IProps} from "./props";
 import TableBodyTr from "@components/data-display/TableBodyTr";
-import {MutableRefObject} from "react";
+import {FC, MutableRefObject} from "react";
 
-// @barrelblur: неправильно размечена функция
-const TableBody = ({data, settings, onClick}: IProps) => {
+const TableBody: FC<IProps> = ({data, settings, onClick}) => {
   const handleClick = (trRef: MutableRefObject<HTMLTableRowElement | null>) => {
     if (onClick) {
       onClick(trRef);

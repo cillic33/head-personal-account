@@ -2,10 +2,10 @@ import Expand from "@components/surfaces/Expand";
 import {IWidget} from "@typing/TWidget";
 import {MMyDeputies} from "@utils/mock";
 import WidgetMyDeputiesList from "@components/complex/Widgets/WidgetMyDeputiesList";
+import {FC} from "react";
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: убрать доллары
-const WidgetMyDeputies = (props: IWidget) => {
+const WidgetMyDeputies: FC<IWidget> = (props) => {
   return (
     <Expand
       title={props.title}

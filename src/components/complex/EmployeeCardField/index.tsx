@@ -1,13 +1,9 @@
 import {IProps} from "@components/complex/EmployeeCardField/props";
 import {theme} from "@utils/theme/theme";
 import Flexbox from "@components/surfaces/Flexbox";
+import {FC} from "react";
 
-// @barrelblur: неправильно размечена типизация функции
-/**
- @barrelblur: вот такая разметка правильная:
- const EmployeeCardField: FC<IProps> = ({children}) => {
- */
-const EmployeeCardField = ({children}: IProps) => {
+const EmployeeCardField: FC<IProps> = ({children}) => {
   return (
     <Flexbox
       /* @barrelblur: убрать доллары */

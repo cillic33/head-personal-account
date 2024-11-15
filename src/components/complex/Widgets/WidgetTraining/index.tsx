@@ -1,6 +1,6 @@
 import Expand from "@components/surfaces/Expand";
 import {IWidget} from "@typing/TWidget";
-import {MouseEvent, useState} from "react";
+import {FC, MouseEvent, useState} from "react";
 import {TWeeksSlider} from "@typing/TWeeksSlider";
 import {getWeeksArray} from "@utils/index";
 import Flexbox from "@components/surfaces/Flexbox";
@@ -14,9 +14,8 @@ import Image from "@components/data-display/Image";
 import Divider from "@components/data-display/Divider";
 import PieChartComponent from "@components/data-display/PieChart";
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: убрать доллары
-const WidgetTraining = (props: IWidget) => {
+const WidgetTraining: FC<IWidget> = (props) => {
   const [currentDate] = useState<Date>(new Date());
   const [weeksData] = useState<TWeeksSlider>(getWeeksArray(currentDate));
   const dataCoursesMetric = MWidgetMetrics["coursesMetric"];

@@ -5,12 +5,11 @@ import Typography from "@components/data-display/Typography";
 import Button from "@components/inputs/Button";
 import EditBlueIcon from "@images/EditBlueIcon.svg";
 import DeleteRedIcon from "@images/DeleteRedIcon.svg";
-import {useState} from "react";
+import {FC, useState} from "react";
 import {theme} from "@utils/theme/theme";
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: убрать доллары
-const WidgetMyLinksRow = ({$item, onEditClick, onDeleteClick}: IProps) => {
+const WidgetMyLinksRow: FC<IProps> = ({$item, onEditClick, onDeleteClick}) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   const handlerEditClick = () => {

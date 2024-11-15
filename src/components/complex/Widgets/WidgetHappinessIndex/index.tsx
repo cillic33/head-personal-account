@@ -3,15 +3,14 @@ import {IWidget} from "@typing/TWidget";
 import Flexbox from "@components/surfaces/Flexbox";
 import ButtonGroup from "@components/inputs/ButtonGroup";
 import {MMonthQuarterYearSwitcher, MWidgetMetrics} from "@utils/mock";
-import {MouseEvent, useState} from "react";
+import {FC, MouseEvent, useState} from "react";
 import PieChartComponent from "@components/data-display/PieChart";
 import SimpleSlider from "@components/data-display/SimpleSlider";
 import {TWeeksSlider} from "@typing/TWeeksSlider";
 import {getWeeksArray} from "@utils/index";
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: убрать доллары
-const WidgetHappinessIndex = (props: IWidget) => {
+const WidgetHappinessIndex: FC<IWidget> = (props) => {
   const dataHrMetric = MWidgetMetrics["hrMetric"];
   const dataMlMetric = MWidgetMetrics["mlMetric"];
   const [currentDate] = useState<Date>(new Date());

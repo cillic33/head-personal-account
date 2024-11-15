@@ -6,7 +6,7 @@ import Flexbox from "@components/surfaces/Flexbox";
 import Button from "@components/inputs/Button";
 import Image from "@components/data-display/Image";
 import CaretDownGray from "@images/CaretDownGray.svg";
-import {MouseEvent} from "react";
+import {FC, MouseEvent} from "react";
 import {TTableSortDirections} from "@typing/TTable";
 
 const StyledTableHead = styled.thead`
@@ -39,8 +39,7 @@ const StyledHeadTh = styled.th<IStyledHeadTh>`
   width: ${props => props.width ? props.width + "px" : undefined};
 `
 
-// @barrelblur: неправильно размечена функция
-const TableHead = ({settings, sortClick}: IProps) => {
+const TableHead: FC<IProps> = ({settings, sortClick}) => {
   const tableTitles = Object.values(settings);
 
   const handleSortClick = (event: MouseEvent<HTMLElement>, id: string) => {

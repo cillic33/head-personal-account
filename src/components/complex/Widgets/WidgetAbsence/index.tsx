@@ -3,10 +3,10 @@ import {IWidget} from "@typing/TWidget";
 import {MWidgetAbsence} from "@utils/mock";
 import Flexbox from "@components/surfaces/Flexbox";
 import Typography from "@components/data-display/Typography";
+import {FC} from "react";
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: убрать доллары
-const WidgetAbsence = (props: IWidget) => {
+const WidgetAbsence: FC<IWidget> = (props) => {
   return (
     <Expand
       title={props.title}

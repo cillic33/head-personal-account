@@ -1,5 +1,6 @@
 import {IProps} from "./props";
 import styled, {css} from "styled-components";
+import {FC} from "react";
 
 const StyledTypography = styled.span<IProps>`
   ${props => {
@@ -92,8 +93,7 @@ const StyledTypography = styled.span<IProps>`
   }};
 `
 
-// @barrelblur: неправильно размечена функция
-const Typography = (props: IProps) => {
+const Typography: FC<IProps> = (props) => {
   return (
     <StyledTypography {...props} />
   );

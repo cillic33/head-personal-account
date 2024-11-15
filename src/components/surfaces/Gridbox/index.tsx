@@ -1,5 +1,6 @@
 import {IProps} from "@components/surfaces/Gridbox/props";
 import styled from "styled-components";
+import {FC} from "react";
 
 // @barrelblur: убрать доллары
 const StyledGridbox = styled.div<IProps>`
@@ -10,8 +11,7 @@ const StyledGridbox = styled.div<IProps>`
   column-gap: ${props => props.$columnGap || undefined};
 `
 
-// @barrelblur: неправильно размечена функция
-const Gridbox = (props: IProps) => {
+const Gridbox: FC<IProps> = (props) => {
   return (
     <StyledGridbox {...props} />
   );

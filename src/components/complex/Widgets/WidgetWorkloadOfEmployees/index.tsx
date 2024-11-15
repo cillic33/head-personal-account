@@ -4,14 +4,13 @@ import {MWeekMonthSwitcher, MWorkloadOfEmployees} from "@utils/mock";
 import ProgressBar from "@components/data-display/ProgressBar";
 import Flexbox from "@components/surfaces/Flexbox";
 import ButtonGroup from "@components/inputs/ButtonGroup";
-import {MouseEvent, useState} from "react";
+import {FC, MouseEvent, useState} from "react";
 import SimpleSlider from "@components/data-display/SimpleSlider";
 import {getWeeksArray} from "@utils/index";
 import {TWeeksSlider} from "@typing/TWeeksSlider";
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: убрать доллары
-const WidgetWorkloadOfEmployees = (props: IWidget) => {
+const WidgetWorkloadOfEmployees: FC<IWidget> = (props) => {
   const [currentDate] = useState<Date>(new Date());
   const [weeksData] = useState<TWeeksSlider>(getWeeksArray(currentDate));
 

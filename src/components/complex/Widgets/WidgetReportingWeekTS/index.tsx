@@ -3,10 +3,10 @@ import {IWidget} from "@typing/TWidget";
 import {MWidgetReportingWeekTS} from "@utils/mock";
 import Typography from "@components/data-display/Typography";
 import Flexbox from "@components/surfaces/Flexbox";
+import {FC} from "react";
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: убрать доллары
-const WidgetReportingWeekTS = (props: IWidget) => {
+const WidgetReportingWeekTS: FC<IWidget> = (props) => {
   return (
     <Expand
       title={props.title}

@@ -1,5 +1,6 @@
 import {IProps} from "./props";
 import styled from "styled-components";
+import {FC} from "react";
 
 // @barrelblur: много лишних аттрибутов, которые можно было бы вывести в темы
 // @barrelblur: убрать доллары
@@ -20,8 +21,7 @@ const StyledChip = styled.div<IProps>`
   flex: ${props => props.$flex || undefined};
 `
 
-// @barrelblur: неправильно размечена функция
-const Chip = ({...props}: IProps) => {
+const Chip: FC<IProps> = ({...props}) => {
   return (
     <StyledChip {...props} />
   );

@@ -12,8 +12,8 @@ import Flexbox from "@components/surfaces/Flexbox";
 import Image from "@components/data-display/Image";
 import LinkComponent from "@components/data-display/Link";
 import {theme} from "@utils/theme/theme";
+import {FC} from "react";
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: убрать доллары
 const StyledExpand = styled.div<Props>`
   width: ${props => props.$width || undefined};
@@ -48,7 +48,7 @@ const StyledExpand = styled.div<Props>`
   }
 `
 
-const Expand = (props: Props) => {
+const Expand: FC<Props> = (props) => {
   const {
     children,
     title,

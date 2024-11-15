@@ -3,10 +3,10 @@ import {IWidget} from "@typing/TWidget";
 import Flexbox from "@components/surfaces/Flexbox";
 import {MWidgetEmployees} from "@utils/mock";
 import WidgetEmployeesRow from "@components/complex/Widgets/WidgetEmployeesRow";
+import {FC} from "react";
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: убрать доллары
-const WidgetEmployees = (props: IWidget) => {
+const WidgetEmployees: FC<IWidget> = (props) => {
   return (
     <Expand
       title={props.title}

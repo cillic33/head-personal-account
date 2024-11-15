@@ -1,6 +1,6 @@
 import {IProps, IStyledInput} from "./props";
 import styled from "styled-components";
-import {ChangeEvent, useRef, useState} from "react";
+import {ChangeEvent, FC, useRef, useState} from "react";
 import CloseGrayIcon from "@images/CloseGrayIcon.svg";
 import Image from "@components/data-display/Image";
 import Button from "@components/inputs/Button";
@@ -42,8 +42,7 @@ const StyledInput = styled.input<IStyledInput>`
   }
 `
 
-// @barrelblur: неправильно размечена функция
-const Input = (
+const Input: FC<IProps> = (
   {
     type,
     name,
@@ -52,7 +51,7 @@ const Input = (
     onChange,
     onClear,
     icon,
-  }: IProps) => {
+  }) => {
     // @barrelblur: Зачем инпуту свою стояние? Это же же компоннет должен предоставлять API для взаимодействия снаружи
   const [query, setQuery] = useState<string>(value || "");
 

@@ -1,4 +1,4 @@
-import {Fragment, MouseEvent, useState} from "react";
+import {FC, Fragment, MouseEvent, useState} from "react";
 import {IButtonGroupData} from "@typing/TButtonGroupData";
 import Button from "@components/inputs/Button";
 import Divider from "@components/data-display/Divider";
@@ -22,9 +22,8 @@ const StyledButtonGroup = styled.div<IProps>`
   border: 1px solid ${props => props.theme.colors.surfacePrimary};
 `
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: убрать доллары
-const ButtonGroup = ({buttons, onClick, $buttonsWidth}: IProps) => {
+const ButtonGroup: FC<IProps> = ({buttons, onClick, $buttonsWidth}) => {
   const [currentButtons, setCurrentButtons] = useState<IButtonGroupData[]>(ensure(buttons));
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {

@@ -3,10 +3,10 @@ import {MApplications} from "@utils/mock";
 import Flexbox from "@components/surfaces/Flexbox";
 import WidgetApplicationsForApprovalRow from "@components/complex/Widgets/WidgetApplicationsForApprovalRow";
 import {IWidget} from "@typing/TWidget";
+import {FC} from "react";
 
-// @barrelblur: неправильно размечена функция
 // @barrelblur: убрать доллары
-const WidgetApplicationsForApproval = (props: IWidget) => {
+const WidgetApplicationsForApproval: FC<IWidget> = (props) => {
   return (
     <Expand
       title={props.title}

@@ -1,5 +1,6 @@
 import {IProps} from "./props";
 import styled, {css} from "styled-components";
+import {FC} from "react";
 
 // @barrelblur: убрать доллары
 const StyledDivider = styled.div<IProps>`
@@ -20,8 +21,7 @@ const StyledDivider = styled.div<IProps>`
   }}
 `
 
-// @barrelblur: неправильно размечена функция
-const Divider = (props: IProps) => {
+const Divider: FC<IProps> = (props) => {
   return (
     <StyledDivider {...props} />
   );
