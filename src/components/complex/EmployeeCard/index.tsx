@@ -8,8 +8,7 @@ import BagGrayIcon from "@images/BagGrayIcon.svg";
 import {LinkComponent} from "@components/data-display/Link";
 import GotoGrayIcon from "@images/GotoGrayIcon.svg";
 import {EmployeeCardField} from "@components/complex/EmployeeCardField";
-// @barrelblur: GridBox ← такое название правильное
-import {Gridbox} from "@components/surfaces/Gridbox";
+import {GridBox} from "@components/surfaces/GridBox";
 import {Expand} from "@components/surfaces/Expand";
 
 // @barrelblur: убрать доллары в начале названия атрибутов
@@ -66,7 +65,7 @@ export const EmployeeCard = () => {
               <Typography $variant="h4" $flex="1 0 auto">Контакты</Typography>
             </Flexbox>
             <Flexbox $direction="column" gap="12px" $padding="8px 12px 12px">
-              <Gridbox $gridTemplateColumns="200px auto" $rowGap="12px" $columnGap="16px">
+              <GridBox $gridTemplateColumns="200px auto" $rowGap="12px" $columnGap="16px">
                 <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Почта</Typography>
                 <LinkComponent href="mailto:kkonstantinopolskiy@yandexmail.com">
                   <Typography $variant="body-regular" $color={theme.colors.accentBrandNormal}>kkonstantinopolskiy@yandexmail.com</Typography>
@@ -84,7 +83,7 @@ export const EmployeeCard = () => {
 
                 <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Внутренний телефон</Typography>
                 <Typography $variant="body-regular">3488</Typography>
-              </Gridbox>
+              </GridBox>
             </Flexbox>
           </Flexbox>
         </EmployeeCardField>
@@ -93,7 +92,7 @@ export const EmployeeCard = () => {
         <EmployeeCardField>
           <Expand title="Общая информация" $width="100%" $isOpen={true}>
             <Flexbox $direction="column" gap="12px" $padding="8px 12px 12px">
-              <Gridbox $gridTemplateColumns="200px auto" $rowGap="12px" $columnGap="16px">
+              <GridBox $gridTemplateColumns="200px auto" $rowGap="12px" $columnGap="16px">
                 <Typography $variant="body-regular" $color={theme.colors.textIconBaseTertiary}>Специализация</Typography>
                 <Typography $variant="body-regular">Тестировщик</Typography>
 
@@ -139,7 +138,7 @@ export const EmployeeCard = () => {
                 <Typography $variant="body-regular">
                   <LinkComponent href="/">Коновалова М. В.</LinkComponent>
                 </Typography>
-              </Gridbox>
+              </GridBox>
             </Flexbox>
           </Expand>
         </EmployeeCardField>

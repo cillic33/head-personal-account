@@ -1,9 +1,9 @@
-import {IProps} from "@components/surfaces/Gridbox/props";
+import {IProps} from "@components/surfaces/GridBox/props";
 import styled from "styled-components";
 import {FC} from "react";
 
 // @barrelblur: убрать доллары
-export const StyledGridbox = styled.div<IProps>`
+export const StyledGridBox = styled.div<IProps>`
   display: grid;
   grid-template-columns: ${props => props.$gridTemplateColumns || undefined};
   grid-template-rows: ${props => props.$gridTemplateRows || undefined};
@@ -11,8 +11,8 @@ export const StyledGridbox = styled.div<IProps>`
   column-gap: ${props => props.$columnGap || undefined};
 `
 
-export const Gridbox: FC<IProps> = (props) => {
+export const GridBox: FC<IProps> = (props) => {
   return (
-    <StyledGridbox {...props} />
+    <StyledGridBox {...props} />
   );
 }
